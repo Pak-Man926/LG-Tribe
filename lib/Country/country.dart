@@ -27,19 +27,20 @@ class Country extends StatelessWidget {
             Column(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                CircleAvatar(
-                  radius: 50,
-                  child: Container(
-                    //color: Colors.white,
-                    decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      color: Colors.white,
-                      image: DecorationImage(
-                        image: AssetImage('assets/LGE_Logo_HeritageRed_Grey_RGB.png'),
-                        fit: BoxFit.scaleDown,
+                Container(
+                  width: 100, // Diameter of CircleAvatar (2 * radius)
+                  height: 100,
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    image: DecorationImage(
+                      image: AssetImage(
+                        'assets/LGE_Logo_HeritageRed_Grey_RGB.png',
                       ),
+                      fit:
+                          BoxFit
+                              .scaleDown, // Ensures the image covers the circle fully
                     ),
-                  )
+                  ),
                 ),
                 Padding(padding: EdgeInsets.all(10)),
                 Column(
@@ -71,9 +72,9 @@ class Country extends StatelessWidget {
                 children: [
                   MaterialButton(
                     onPressed: () {
-                      Navigator.of(context).push(
-                        MaterialPageRoute(builder: (context) => Login()),
-                        );
+                      Navigator.of(
+                        context,
+                      ).push(MaterialPageRoute(builder: (context) => Login()));
                     },
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10),
