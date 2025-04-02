@@ -30,8 +30,10 @@ class Country extends StatelessWidget {
                 CircleAvatar(
                   radius: 50,
                   child: Container(
+                    //color: Colors.white,
                     decoration: BoxDecoration(
                       shape: BoxShape.circle,
+                      color: Colors.white,
                       image: DecorationImage(
                         image: AssetImage('assets/LGE_Logo_HeritageRed_Grey_RGB.png'),
                         fit: BoxFit.scaleDown,
