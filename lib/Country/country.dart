@@ -29,7 +29,15 @@ class Country extends StatelessWidget {
               children: [
                 CircleAvatar(
                   radius: 50,
-                  backgroundImage: AssetImage('assets/lg_tribe_logo.png'),
+                  child: Container(
+                    decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      image: DecorationImage(
+                        image: AssetImage('assets/LGE_Logo_HeritageRed_Grey_RGB.png'),
+                        fit: BoxFit.scaleDown,
+                      ),
+                    ),
+                  )
                 ),
                 Padding(padding: EdgeInsets.all(10)),
                 Column(

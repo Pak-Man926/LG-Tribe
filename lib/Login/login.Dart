@@ -16,13 +16,16 @@ class Login extends StatelessWidget {
               Positioned(
                 top: 50, // Adjust to move image up/down
                 left: 20,  // Adjust to move image left/right
-                child: BoxDecoration(
-                shape: BoxShape.circle,
-                image: DecorationImage(
-                  image: AssetImage('assets/LGE_Logo_HeritageRed_Grey_RGB.png'),
-                  fit:
-                      BoxFit
-                          .scaleDown, // Ensures the image covers the circle fully
+                child: Container(
+                      decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      image: DecorationImage(
+                        image: AssetImage('assets/LGE_Logo_HeritageRed_Grey_RGB.png'),
+                        fit: BoxFit.scaleDown,
+                      ),
+                    ),
+                  width: 100, // Set a width for the container
+                  height: 100, // Set a height for the container
                 ),
               ),
               Positioned(
