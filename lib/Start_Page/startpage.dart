@@ -1,18 +1,18 @@
 import "package:flutter/material.dart";
 import "package:lg_tribe/Country/country.dart";
 
-class Homepage extends StatelessWidget {
-  const Homepage({super.key});
+class Startpage extends StatelessWidget {
+  const Startpage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Scaffold(body: homePage(context)),
+      home: Scaffold(body: StartPage(context)),
     );
   }
 
-  Column homePage(BuildContext context) {
+  Column StartPage(BuildContext context) {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[

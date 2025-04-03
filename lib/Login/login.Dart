@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:lg_tribe/Country/country.dart';
 import 'package:intl_phone_field/intl_phone_field.dart';
 import 'package:lg_tribe/Forgot%20Password/forgot_password.dart';
+import "package:lg_tribe/Homepage/homepage.dart";
 
 class Login extends StatelessWidget {
   @override
@@ -111,7 +112,12 @@ class Login extends StatelessWidget {
                             SizedBox(
                             width: double.infinity,
                             child: MaterialButton(
-                              onPressed: (){},
+                              onPressed: (){
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(builder: (context) => Homepage()),
+                                );
+                              },
                               color:Color.fromARGB(255, 206, 25, 12),
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.vertical(),
