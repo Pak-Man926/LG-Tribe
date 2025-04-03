@@ -68,7 +68,7 @@ class Password extends StatelessWidget {
                   width: double.infinity,
                   child: MaterialButton(
                     onPressed: () {},
-                    color: const Color.fromARGB(255, 206, 25, 12),
+                    color: Color(0xFFA50034),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.vertical(),
                     ),

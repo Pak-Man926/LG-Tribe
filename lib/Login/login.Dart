@@ -101,7 +101,7 @@ class Login extends StatelessWidget {
                                   MaterialPageRoute(builder: (context) => Password()),
                                 );
                               },
-                              child: Text("Forgot Password?",style: TextStyle(color:Color.fromARGB(255, 206, 25, 12))),
+                              child: Text("Forgot Password?",style: TextStyle(color: Color(0xFFA50034))),
                             ),
                           ],
                         ),
@@ -118,7 +118,7 @@ class Login extends StatelessWidget {
                                   MaterialPageRoute(builder: (context) => Homepage()),
                                 );
                               },
-                              color:Color.fromARGB(255, 206, 25, 12),
+                              color: Color(0xFFA50034),
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.vertical(),
                               ),
