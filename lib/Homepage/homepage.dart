@@ -1,6 +1,8 @@
 import "package:flutter/material.dart";
-import "package:lg_tribe/Login/login.dart";
-import "package:lg_tribe/States/bottomnavigation.dart";
+import "package:lg_tribe/Homepage/Screens/homescreen.dart";
+import "package:lg_tribe/Homepage/Screens/uploadscreen.dart";
+import "package:lg_tribe/Homepage/Screens/notificationsscreen.dart";
+import "package:lg_tribe/Homepage/Screens/profilescreen.dart";
 
 class Homepage extends StatefulWidget {
   @override
@@ -17,10 +19,10 @@ class _HomepageState extends State<Homepage> {
   }
 
   final List<Widget> _children = [
-    Center(child: Text("Home")),
-    Center(child: Text("Upload")),
-    Center(child: Text("Notifications")),
-    Center(child: Text("Profile")),
+    Homescreen(),
+    UploadScreen(),
+    NotificationsScreen(),
+    ProfileScreen()
   ];
   @override
   Widget build(BuildContext context) {
