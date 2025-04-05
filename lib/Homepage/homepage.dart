@@ -30,7 +30,7 @@ class _HomepageState extends State<Homepage> {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
-          leading: Icon(Icons.arrow_back, color: Colors.blueGrey),
+          leading: Icon(Icons.arrow_back, color: Colors.blueGrey,),
           centerTitle: true,
           title: Text(
             "LG Tr!be",
