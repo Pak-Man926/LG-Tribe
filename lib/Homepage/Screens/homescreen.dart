@@ -104,12 +104,15 @@ class _HomescreenState extends State<Homescreen> {
                     ],
                   ),
                 ),
-              ),
-              Column(
                 children: [
-                  Icon(Icons.arrow_upward),
-                  Icon(Icons.arrow_downward),
-                ],
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    Icon(Icons.arrow_upward),
+                    Icon(Icons.arrow_downward),
+                  ],
+                ),
+              ]
               ),
             ],
           ),
