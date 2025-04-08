@@ -2,118 +2,69 @@ import 'package:flutter/material.dart';
 import "package:lg_tribe/Homepage/Screens/models/homescreen_model.dart";
 
 class Homescreen extends StatefulWidget {
+  const Homescreen({super.key});
+
   @override
-  _HomescreenState createState() => _HomescreenState();
+  State<Homescreen> createState() => _HomescreenState();
 }
 
 class _HomescreenState extends State<Homescreen> {
   bool isReadMore = false;
 
-  List<Post> posts = [
-    Post(
-      username: "Esther Wanjiru",
-      userImageUrl: "https://picsum.photos/250?image=9",
-      timestamp: "1hr ago",
-      contentText:
-          "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
-      contentImageUrl: "https://picsum.photos/id/27/367/267",
-    ),
-  ];
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          // Profile section
           Row(
             children: [
+              //Profile Picture
               Container(
                 alignment: Alignment.center,
                 margin: EdgeInsets.only(left: 10, top: 10),
+                //Padding(padding: edgeInsets.all(10),),
                 child: CircleAvatar(
-                  backgroundImage: NetworkImage(posts[0].userImageUrl),
+                  backgroundImage: NetworkImage(
+                    "https://picsum.photos/250?image=9",
+                  ),
                   radius: 30,
                 ),
               ),
               SizedBox(width: 10),
+              //Username
               Text(
-                posts[0].username,
+                "Esther Wanjiru",
                 style: TextStyle(fontSize: 10, fontWeight: FontWeight.bold),
               ),
               SizedBox(width: 10),
+              //Timestamp
               Text(
-                posts[0].timestamp,
+                "1h ago",
                 style: TextStyle(fontSize: 10, fontWeight: FontWeight.w200),
               ),
             ],
           ),
           SizedBox(height: 5),
-
-          // Post image
-          Container(
-            height: 200,
-            margin: EdgeInsets.symmetric(vertical: 10),
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                image: NetworkImage(posts[0].contentImageUrl),
-                fit: BoxFit.cover,
-              ),
-            ),
-          ),
-
-          // Post caption and buttons
+          //Post Content
+          Container(height: 400, color: Colors.grey[300]),
+          //Below the post => Post caption, like and dislike buttons
           Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Expanded(
-                child: Padding(
-                  padding: EdgeInsets.only(left: 10, right: 10),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        posts[0].contentText,
-                        style: TextStyle(
-                          fontSize: 10,
-                          fontWeight: FontWeight.w200,
-                          color: Colors.black,
-                        ),
-                        maxLines: isReadMore ? null : 2,
-                        overflow:
-                            isReadMore
-                                ? TextOverflow.visible
-                                : TextOverflow.ellipsis,
-                      ),
-                      GestureDetector(
-                        onTap: () {
-                          setState(() {
-                            isReadMore = !isReadMore;
-                          });
-                        },
-                        child: Text(
-                          isReadMore ? 'Read less' : 'Read more',
-                          style: TextStyle(
-                            fontSize: 10,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.blue,
-                          ),
-                        ),
-                      ),
-                    ],
+              //Post caption
+                Expanded(
+                child: Container(
+                  padding: EdgeInsets.all(10),
+                  child: Text(
+                    isReadMore
+                        ? "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+                        : "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                    maxLines: isReadMore ? null : 2,
+                    overflow: isReadMore ? null : TextOverflow.ellipsis,
                   ),
                 ),
-                children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    Icon(Icons.arrow_upward),
-                    Icon(Icons.arrow_downward),
-                  ],
                 ),
-              ]
-              ),
+              //Icon(Icons.arrow_upward),
+              //Icon(Icons.arrow_downward),
             ],
           ),
         ],

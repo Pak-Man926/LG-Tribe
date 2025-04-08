@@ -5,6 +5,8 @@ import "package:lg_tribe/Homepage/Screens/notificationsscreen.dart";
 import "package:lg_tribe/Homepage/Screens/profilescreen.dart";
 
 class Homepage extends StatefulWidget {
+  const Homepage({super.key});
+
   @override
   State<Homepage> createState() => _HomepageState();
 }
