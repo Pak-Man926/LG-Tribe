@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import "package:lg_tribe/Homepage/Screens/models/homescreen_model.dart";
 
 class Homescreen extends StatefulWidget {
   const Homescreen({super.key});
@@ -24,136 +23,128 @@ class _HomescreenState extends State<Homescreen> {
     });
   }
 
+  // Sample data for posts
+  final List<Map<String, String>> posts = [
+    {
+      "username": "Esther Wanjiru",
+      "timestamp": "1h ago",
+      "imageUrl": "https://picsum.photos/250?image=9",
+      "caption": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    },
+    {
+      "username": "John Doe",
+      "timestamp": "2h ago",
+      "imageUrl": "https://picsum.photos/250?image=8",
+      "caption": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+    },
+    {
+      "username": "Jane Smith",
+      "timestamp": "3h ago",
+      "imageUrl": "https://picsum.photos/250?image=7",
+      "caption": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+    },
+  ];
+
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        body: SingleChildScrollView(
-          child: Column(
-            children: [
-              _buildProfileRow(),
-              _buildPostImage(),
-              _buildPostCaption(),
-              _buildVoteButtons(),
-            ],
-          ),
-        ),
-      ),
-    );
-  }
+    return Scaffold(
+      body: ListView.builder(
+        itemCount: posts.length, // Number of posts
+        itemBuilder: (context, index) {
+          var post = posts[index]; // Get post data
 
-  // Profile row with image and text
-  Widget _buildProfileRow() {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
-      child: Row(
-        children: [
-          CircleAvatar(
-            backgroundImage: NetworkImage("https://picsum.photos/250?image=9"),
-            radius: 30,
-          ),
-          SizedBox(width: 10),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                "Esther Wanjiru",
-                style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
-              ),
-              Text(
-                "1h ago",
-                style: TextStyle(fontSize: 12, fontWeight: FontWeight.w200),
-              ),
-            ],
-          ),
-        ],
-      ),
-    );
-  }
-
-  // Post image with height 400
-  Widget _buildPostImage() {
-    return Container(
-      height: 400,
-      child: Image.network(
-        "https://picsum.photos/250?image=9",
-        fit: BoxFit.cover,
-      ),
-    );
-  }
-
-  // Post caption and read more toggle
-  Widget _buildPostCaption() {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(
-            isReadMore
-                ? "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-                : "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-            maxLines: isReadMore ? null : 2,
-            overflow: isReadMore ? null : TextOverflow.ellipsis,
-            style: TextStyle(fontSize: 14),
-          ),
-          GestureDetector(
-            onTap: () {
-              setState(() {
-                isReadMore = !isReadMore;
-              });
-            },
-            child: Text(
-              isReadMore ? 'Read less' : 'Read more',
-              style: TextStyle(
-                fontSize: 14,
-                fontWeight: FontWeight.bold,
-                color: Colors.blue,
-              ),
+          return Padding(
+            padding: const EdgeInsets.all(10),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                // Profile section
+                Row(
+                  children: [
+                    CircleAvatar(
+                      backgroundImage: NetworkImage(post['imageUrl']!),
+                      radius: 30,
+                    ),
+                    SizedBox(width: 10),
+                    Text(
+                      post['username']!,
+                      style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
+                    ),
+                    SizedBox(width: 10),
+                    Text(
+                      post['timestamp']!,
+                      style: TextStyle(fontSize: 12, fontWeight: FontWeight.w200),
+                    ),
+                  ],
+                ),
+                SizedBox(height: 10),
+                // Post Image
+                Container(
+                  height: 400,
+                  child: Image.network(
+                    post['imageUrl']!,
+                    fit: BoxFit.cover,
+                  ),
+                ),
+                SizedBox(height: 10),
+                // Post Caption + Read More Toggle
+                Text(
+                  isReadMore
+                      ? post['caption']!
+                      : post['caption']!.substring(0, 60) + '...',
+                  style: TextStyle(fontSize: 14),
+                ),
+                GestureDetector(
+                  onTap: () {
+                    setState(() {
+                      isReadMore = !isReadMore;
+                    });
+                  },
+                  child: Text(
+                    isReadMore ? 'Read less' : 'Read more',
+                    style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold, color: Colors.blue),
+                  ),
+                ),
+                SizedBox(height: 10),
+                // Upvote and Downvote Buttons
+                Row(
+                  children: [
+                    IconButton(
+                      iconSize: 22,
+                      padding: EdgeInsets.zero,
+                      constraints: BoxConstraints(),
+                      onPressed: _incrementVote,
+                      icon: Icon(
+                        Icons.arrow_upward_outlined,
+                        color: Colors.black87,
+                      ),
+                      tooltip: "Upvote",
+                    ),
+                    SizedBox(width: 5),
+                    IconButton(
+                      iconSize: 22,
+                      padding: EdgeInsets.zero,
+                      constraints: BoxConstraints(),
+                      onPressed: _decrementVote,
+                      icon: Icon(
+                        Icons.arrow_downward_outlined,
+                        color: Colors.black87,
+                      ),
+                      tooltip: "Downvote",
+                    ),
+                    SizedBox(width: 10),
+                    Text(
+                      '$_voteCount',
+                      style: TextStyle(fontSize: 14),
+                    ),
+                  ],
+                ),
+                Divider(),
+              ],
             ),
-          ),
-        ],
+          );
+        },
       ),
-    );
-  }
-
-  // Upvote and downvote buttons
-  Widget _buildVoteButtons() {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
-      child: Row(
-        children: [
-          _buildVoteButton(
-            icon: Icons.arrow_upward_outlined,
-            onPressed: _incrementVote,
-            tooltip: "Upvote",
-          ),
-          SizedBox(width: 5),
-          _buildVoteButton(
-            icon: Icons.arrow_downward_outlined,
-            onPressed: _decrementVote,
-            tooltip: "Downvote",
-          ),
-          SizedBox(width: 10),
-          Text('$_voteCount', style: TextStyle(fontSize: 14)),
-        ],
-      ),
-    );
-  }
-
-  // Single vote button widget
-  Widget _buildVoteButton({
-    required IconData icon,
-    required VoidCallback onPressed,
-    required String tooltip,
-  }) {
-    return IconButton(
-      iconSize: 22,
-      padding: EdgeInsets.zero,
-      constraints: BoxConstraints(),
-      onPressed: onPressed,
-      icon: Icon(icon, color: Colors.black87),
-      tooltip: tooltip,
     );
   }
 }
