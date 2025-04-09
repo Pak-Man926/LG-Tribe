@@ -79,7 +79,7 @@ class _HomescreenState extends State<Homescreen> {
                 ),
                 SizedBox(height: 10),
                 // Post Image
-                Container(
+                SizedBox(
                   height: 400,
                   child: Image.network(
                     post['imageUrl']!,
@@ -91,7 +91,7 @@ class _HomescreenState extends State<Homescreen> {
                 Text(
                   isReadMore
                       ? post['caption']!
-                      : post['caption']!.substring(0, 60) + '...',
+                      : '${post['caption']!.substring(0, 60)}...',
                   style: TextStyle(fontSize: 14),
                 ),
                 GestureDetector(
