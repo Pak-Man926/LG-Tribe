@@ -8,12 +8,79 @@ class UploadScreen extends StatefulWidget {
   State<UploadScreen> createState() => _UploadScreenState();
 }
 
-class _UploadScreenState extends State<UploadScreen> {
+class _UploadScreenState extends State<UploadScreen> 
+{
+  List<CameraDescription> cameras = [];
+  CameraController? cameraController;
+
+  @override
+  void initState() 
+  {
+    super.initState();
+    _setupCameraController();
+  }
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      body: _buildUI(),
     );
   }
 
-  Future<void>
+  Widget _buildUI()
+  {
+    if(cameraController == null || cameraController?.value.isInitialized == false)
+    {
+      return const Center(
+        child: CircularProgressIndicator(),
+        );
+    }
+
+    return SafeArea(
+      child: SizedBox.expand(
+        child: Column(
+          children: [
+            SizedBox(
+              height: MediaQuery.of(context).size.height * 0.5,
+              width: MediaQuery.of(context).size.width * 0.5,
+              child: CameraPreview(cameraController!)
+              ),
+            IconButton(
+              onPressed: () {},
+               icon: Icon(Icons.camera_outlined, color:Colors.red),
+                iconSize: 100,
+               )
+          ],
+          )
+      )
+    );
+    
+  }
+
+  Future<void> _setupCameraController() async
+  {
+    List<CameraDescription> _cameras = await availableCameras();
+
+    if(_cameras.isNotEmpty)
+    {
+      setState(()
+      {
+        cameras = _cameras;
+        cameraController = CameraController(
+          _cameras.first,
+          // Set the desired resolution preset  
+          ResolutionPreset.high,
+
+        );
+      });
+      cameraController?.initialize().then((_)
+      {
+        setState(()
+        {
+
+        });
+      });
+    }
+  }
 }
