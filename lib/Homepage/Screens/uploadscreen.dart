@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:camera/camera.dart';
 
 class UploadScreen extends StatelessWidget {
   const UploadScreen({super.key});
