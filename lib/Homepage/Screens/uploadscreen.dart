@@ -60,15 +60,15 @@ class _UploadScreenState extends State<UploadScreen>
 
   Future<void> _setupCameraController() async
   {
-    List<CameraDescription> _cameras = await availableCameras();
+    List<CameraDescription> cameras = await availableCameras();
 
-    if(_cameras.isNotEmpty)
+    if(cameras.isNotEmpty)
     {
       setState(()
       {
-        cameras = _cameras;
+        cameras = cameras;
         cameraController = CameraController(
-          _cameras.first,
+          cameras.first,
           // Set the desired resolution preset  
           ResolutionPreset.high,
 
