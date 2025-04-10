@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:camera/camera.dart';
+import 'package:gal/gal.dart';
 
 class UploadScreen extends StatefulWidget {
   const UploadScreen({super.key});
@@ -8,10 +9,30 @@ class UploadScreen extends StatefulWidget {
   State<UploadScreen> createState() => _UploadScreenState();
 }
 
-class _UploadScreenState extends State<UploadScreen> 
+class _UploadScreenState extends State<UploadScreen> with WidgetsBindingObserver
 {
   List<CameraDescription> cameras = [];
   CameraController? cameraController;
+
+  @override
+  void didChangeAppLifecycleState(AppLifecycleState state) {
+    // TODO: implement didChangeAppLifecycleState
+    super.didChangeAppLifecycleState(state);
+
+    if(cameraController == null || cameraController?.value.isInitialized == false)
+    {
+      return;
+    }
+
+    if(state == AppLifecycleState.inactive)
+    {
+      cameraController?.dispose();
+    }
+    else if(state == AppLifecycleState.resumed)
+    {
+      _setupCameraController();
+    }
+  }
 
   @override
   void initState() 
@@ -51,13 +72,18 @@ class _UploadScreenState extends State<UploadScreen>
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 IconButton(
-                  onPressed: () {},
+                  onPressed: () async {
+                    XFile picture = await cameraController!.takePicture();
+                    Gal.putImage(picture.path);
+                  },
                    icon: Icon(Icons.camera_outlined, color: Color(0xFFA50034)),
                     iconSize: 100,
                    ),
                 const SizedBox(width: 20),
                 IconButton(
-                  onPressed: () {},
+                  onPressed: () {
+
+                  },
                   icon: Icon(Icons.switch_camera_outlined, color: Color(0xFFA50034)), 
                   iconSize: 30, 
                 )
@@ -80,7 +106,7 @@ class _UploadScreenState extends State<UploadScreen>
       {
         cameras = cameras;
         cameraController = CameraController(
-          cameras.first,
+          cameras.length > 1 ? cameras[1] : cameras[0], // Use the first camera if only one is available
           // Set the desired resolution preset  
           ResolutionPreset.high,
 
@@ -88,11 +114,21 @@ class _UploadScreenState extends State<UploadScreen>
       });
       cameraController?.initialize().then((_)
       {
+
+        if(!mounted)
+        {
+          return;
+        }
         setState(()
         {
 
         });
-      });
+      }).catchError(
+        (Object e)
+        {
+          print(e);
+        }
+        );
     }
   }
 }
