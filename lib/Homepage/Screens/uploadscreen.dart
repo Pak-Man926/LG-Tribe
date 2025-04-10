@@ -42,15 +42,27 @@ class _UploadScreenState extends State<UploadScreen>
         child: Column(
           children: [
             SizedBox(
-              height: MediaQuery.of(context).size.height * 0.5,
-              width: MediaQuery.of(context).size.width * 0.5,
+              height: MediaQuery.of(context).size.height * 0.6,
+              width: MediaQuery.of(context).size.width * 1,
               child: CameraPreview(cameraController!)
               ),
-            IconButton(
-              onPressed: () {},
-               icon: Icon(Icons.camera_outlined, color:Colors.red),
-                iconSize: 100,
-               )
+            const SizedBox(height: 30),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                IconButton(
+                  onPressed: () {},
+                   icon: Icon(Icons.camera_outlined, color: Color(0xFFA50034)),
+                    iconSize: 100,
+                   ),
+                const SizedBox(width: 20),
+                IconButton(
+                  onPressed: () {},
+                  icon: Icon(Icons.switch_camera_outlined, color: Color(0xFFA50034)), 
+                  iconSize: 30, 
+                )
+              ],
+            )
           ],
           )
       )
