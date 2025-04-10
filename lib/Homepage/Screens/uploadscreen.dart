@@ -9,53 +9,44 @@ class UploadScreen extends StatefulWidget {
   State<UploadScreen> createState() => _UploadScreenState();
 }
 
-class _UploadScreenState extends State<UploadScreen> with WidgetsBindingObserver
-{
+class _UploadScreenState extends State<UploadScreen>
+    with WidgetsBindingObserver {
   List<CameraDescription> cameras = [];
   CameraController? cameraController;
+  int selectedCameraIdx = 0;
 
   @override
   void didChangeAppLifecycleState(AppLifecycleState state) {
     // TODO: implement didChangeAppLifecycleState
     super.didChangeAppLifecycleState(state);
 
-    if(cameraController == null || cameraController?.value.isInitialized == false)
-    {
+    if (cameraController == null ||
+        cameraController?.value.isInitialized == false) {
       return;
     }
 
-    if(state == AppLifecycleState.inactive)
-    {
+    if (state == AppLifecycleState.inactive) {
       cameraController?.dispose();
-    }
-    else if(state == AppLifecycleState.resumed)
-    {
+    } else if (state == AppLifecycleState.resumed) {
       _setupCameraController();
     }
   }
 
   @override
-  void initState() 
-  {
+  void initState() {
     super.initState();
     _setupCameraController();
   }
 
-
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: _buildUI(),
-    );
+    return Scaffold(body: _buildUI());
   }
 
-  Widget _buildUI()
-  {
-    if(cameraController == null || cameraController?.value.isInitialized == false)
-    {
-      return const Center(
-        child: CircularProgressIndicator(),
-        );
+  Widget _buildUI() {
+    if (cameraController == null ||
+        cameraController?.value.isInitialized == false) {
+      return const Center(child: CircularProgressIndicator());
     }
 
     return SafeArea(
@@ -65,8 +56,8 @@ class _UploadScreenState extends State<UploadScreen> with WidgetsBindingObserver
             SizedBox(
               height: MediaQuery.of(context).size.height * 0.6,
               width: MediaQuery.of(context).size.width * 1,
-              child: CameraPreview(cameraController!)
-              ),
+              child: CameraPreview(cameraController!),
+            ),
             const SizedBox(height: 30),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -76,59 +67,56 @@ class _UploadScreenState extends State<UploadScreen> with WidgetsBindingObserver
                     XFile picture = await cameraController!.takePicture();
                     Gal.putImage(picture.path);
                   },
-                   icon: Icon(Icons.camera_outlined, color: Color(0xFFA50034)),
-                    iconSize: 100,
-                   ),
+                  icon: Icon(Icons.camera_outlined, color: Color(0xFFA50034)),
+                  iconSize: 100,
+                ),
                 const SizedBox(width: 20),
                 IconButton(
-                  onPressed: () {
+                  onPressed: () async {
+                    if (cameras.length < 2) return; // No camera to switch to
 
+                    selectedCameraIdx =
+                        (selectedCameraIdx + 1) % cameras.length;
+
+                    await cameraController?.dispose();
+                    await _setupCameraController(); // Reinitialize with new camera
                   },
-                  icon: Icon(Icons.switch_camera_outlined, color: Color(0xFFA50034)), 
-                  iconSize: 30, 
-                )
+                  icon: Icon(
+                    Icons.switch_camera_outlined,
+                    color: Color(0xFFA50034),
+                  ),
+                  iconSize: 30,
+                ),
               ],
-            )
+            ),
           ],
-          )
-      )
+        ),
+      ),
     );
-    
   }
 
-  Future<void> _setupCameraController() async
-  {
+  Future<void> _setupCameraController() async {
     List<CameraDescription> cameras = await availableCameras();
 
-    if(cameras.isNotEmpty)
-    {
-      setState(()
-      {
-        cameras = cameras;
+    if (cameras.isNotEmpty) {
+      setState(() {
+        this.cameras = cameras;
         cameraController = CameraController(
-          cameras.length > 1 ? cameras[1] : cameras[0], // Use the first camera if only one is available
-          // Set the desired resolution preset  
+          cameras[selectedCameraIdx],
           ResolutionPreset.high,
-
         );
       });
-      cameraController?.initialize().then((_)
-      {
-
-        if(!mounted)
-        {
-          return;
-        }
-        setState(()
-        {
-
-        });
-      }).catchError(
-        (Object e)
-        {
-          print(e);
-        }
-        );
+      cameraController
+          ?.initialize()
+          .then((_) {
+            if (!mounted) {
+              return;
+            }
+            setState(() {});
+          })
+          .catchError((Object e) {
+            print(e);
+          });
     }
   }
 }
