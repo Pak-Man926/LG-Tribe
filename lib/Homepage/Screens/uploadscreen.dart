@@ -56,7 +56,9 @@ class _UploadScreenState extends State<UploadScreen>
             SizedBox(
               height: MediaQuery.of(context).size.height * 0.6,
               width: MediaQuery.of(context).size.width * 1,
-              child: CameraPreview(cameraController!),
+              child: AspectRatio(
+                aspectRatio: cameraController!.value.aspectRatio,
+                child: CameraPreview(cameraController!)),
             ),
             const SizedBox(height: 30),
             Row(
@@ -103,7 +105,7 @@ class _UploadScreenState extends State<UploadScreen>
         this.cameras = cameras;
         cameraController = CameraController(
           cameras[selectedCameraIdx],
-          ResolutionPreset.high,
+          ResolutionPreset.low,
         );
       });
       cameraController
@@ -117,6 +119,7 @@ class _UploadScreenState extends State<UploadScreen>
           .catchError((Object e) {
             print(e);
           });
+        cameraController!.setZoomLevel(1.0);
     }
   }
 }
