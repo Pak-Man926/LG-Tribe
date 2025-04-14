@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import "package:country_flags/country_flags.dart";
+import "package:lg_tribe/Profile Page/profile.dart";
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
@@ -54,6 +55,18 @@ class ProfileScreen extends StatelessWidget {
                       const Text(
                         'Kenya, East Africa',
                         style: TextStyle(fontWeight: FontWeight.w500),
+                      ),
+                      SizedBox(width: 120),
+                      IconButton(
+                        onPressed: () {
+                          Navigator.of(context).push(
+                            MaterialPageRoute(builder: (context) => Profile()),
+                          );
+                        },
+                        icon: Icon(
+                          Icons.more_vert_rounded,
+                          color: Colors.grey.shade600,
+                        ),
                       ),
                     ],
                   ),
