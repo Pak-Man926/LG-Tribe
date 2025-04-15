@@ -70,6 +70,7 @@ class Profile extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 10),
+            //Personal Details
             Container(
               margin: EdgeInsets.all(10),
               padding: EdgeInsets.all(20),
@@ -97,22 +98,156 @@ class Profile extends StatelessWidget {
                       Column(
                         children: [
                           Text("Phone Number"),
-                          Text("+254 712 345 678", style: TextStyle(fontWeight: FontWeight.w700)),
+                          Text(
+                            "+254 712 345 678",
+                            style: TextStyle(fontWeight: FontWeight.w700),
+                          ),
                         ],
                       ),
                       Column(
                         children: [
                           Text("ID Number"),
-                          Text("1122334455", style: TextStyle(fontWeight: FontWeight.w700)),
+                          Text(
+                            "1122334455",
+                            style: TextStyle(fontWeight: FontWeight.w700),
+                          ),
                         ],
                       ),
                       Column(
                         children: [
                           Text("Email"),
-                          Text("promoter@lge.com", style: TextStyle(fontWeight: FontWeight.w700)),
+                          Text(
+                            "promoter@lge.com",
+                            style: TextStyle(fontWeight: FontWeight.w700),
+                          ),
                         ],
                       ),
                     ],
+                  ),
+                ],
+              ),
+            ),
+            const SizedBox(height: 10),
+            //Settings
+            Container(
+              padding: EdgeInsets.all(30),
+              margin: EdgeInsets.all(10),
+              decoration: BoxDecoration(
+                color: Colors.grey.shade200,
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: Column(
+                children: [
+                  Align(
+                    alignment: Alignment.topLeft,
+                    child: Text(
+                      "Settings",
+                      style: TextStyle(
+                        fontSize: 15,
+                        fontWeight: FontWeight.w300,
+                      ),
+                    ),
+                  ),
+                  Divider(color: Colors.grey.shade400, thickness: 1),
+                  SizedBox(height: 10),
+                  //About App Button
+                  MaterialButton(
+                    onPressed: () {
+                      // Navigator.of(
+                      //   context,
+                      // ).push(MaterialPageRoute(builder: (context) => Login()));
+                    },
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    padding: EdgeInsets.all(10),
+                    child: Row(
+                      //mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Icon(Icons.info_outline, color: Colors.blueGrey),
+                        SizedBox(width: 10),
+                        Text("About App"),
+                        Expanded(
+                          //alignment: Alignment.topRight,
+                          child: Icon(Icons.arrow_forward_ios, size: 15),
+                        ),
+                      ],
+                    ),
+                  ),
+                  SizedBox(height: 10),
+                  //Change Password Button
+                  MaterialButton(
+                    onPressed: () {
+                      // Navigator.of(
+                      //   context,
+                      // ).push(MaterialPageRoute(builder: (context) => Login()));
+                    },
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    padding: EdgeInsets.all(10),
+                    child: Row(
+                      //mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Icon(Icons.lock, color: Colors.blueGrey),
+                        SizedBox(width: 10),
+                        Text("Change Password"),
+                        Expanded(
+                          //alignment: Alignment.topRight,
+                          child: Icon(Icons.arrow_forward_ios, size: 15),
+                        ),
+                      ],
+                    ),
+                  ),
+                  SizedBox(height: 10),
+                  //Call for Enquiries Button
+                  MaterialButton(
+                    onPressed: () {
+                      // Navigator.of(
+                      //   context,
+                      // ).push(MaterialPageRoute(builder: (context) => Login()));
+                    },
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    padding: EdgeInsets.all(10),
+                    child: Row(
+                      //mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Icon(Icons.call_sharp, color: Colors.blueGrey),
+                        SizedBox(width: 10),
+                        Text("Call for Enquiries"),
+                        Expanded(
+                          //alignment: Alignment.topRight,
+                          child: Icon(Icons.arrow_forward_ios, size: 15),
+                        ),
+                      ],
+                    ),
+                  ),
+                  SizedBox(height: 10),
+                  //Logout Button
+                  MaterialButton(
+                    onPressed: () {
+                      // Navigator.of(
+                      //   context,
+                      // ).push(MaterialPageRoute(builder: (context) => Login()));
+                    },
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    padding: EdgeInsets.all(10),
+                    child: Row(
+                      //mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Icon(Icons.logout_outlined, color: Colors.blueGrey),
+                        SizedBox(width: 10),
+                        Text("Logout"),
+                        Expanded(
+                          //alignment: Alignment.topRight,
+                          child: Icon(Icons.arrow_forward_ios, size: 15),
+                        ),
+                      ],
+                    ),
                   ),
                 ],
               ),
