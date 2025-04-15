@@ -28,14 +28,15 @@ class Profile extends StatelessWidget {
           children: [
             Container(
               padding: EdgeInsets.all(10),
+              margin: EdgeInsets.all(10),
               decoration: BoxDecoration(
                 color: Colors.grey.shade200,
                 borderRadius: BorderRadius.circular(10),
               ),
               child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Column(
-                    //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       Text(
                         'Esther Wanjiru',
@@ -54,14 +55,64 @@ class Profile extends StatelessWidget {
                       ),
                     ],
                   ),
-                  SizedBox(width: 160),
                   //Brand Logo
-                  Image(
-                    image: AssetImage(
-                      "assets/LGE_Logo_HeritageRed_Grey_RGB.png",
+                  Align(
+                    alignment: Alignment.bottomRight,
+                    child: Image(
+                      image: AssetImage(
+                        "assets/LGE_Logo_HeritageRed_Grey_RGB.png",
+                      ),
+                      height: 80,
+                      width: 80,
                     ),
-                    height: 80,
-                    width: 80,
+                  ),
+                ],
+              ),
+            ),
+            const SizedBox(height: 10),
+            Container(
+              margin: EdgeInsets.all(10),
+              padding: EdgeInsets.all(20),
+              decoration: BoxDecoration(
+                color: Colors.grey.shade200,
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: Column(
+                children: [
+                  Align(
+                    alignment: Alignment.topLeft,
+                    child: Text(
+                      "Personal Information",
+                      style: TextStyle(
+                        fontSize: 15,
+                        fontWeight: FontWeight.w300,
+                      ),
+                    ),
+                  ),
+                  Divider(color: Colors.grey.shade400, thickness: 1),
+                  SizedBox(height: 10),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Column(
+                        children: [
+                          Text("Phone Number"),
+                          Text("+254 712 345 678", style: TextStyle(fontWeight: FontWeight.w700)),
+                        ],
+                      ),
+                      Column(
+                        children: [
+                          Text("ID Number"),
+                          Text("1122334455", style: TextStyle(fontWeight: FontWeight.w700)),
+                        ],
+                      ),
+                      Column(
+                        children: [
+                          Text("Email"),
+                          Text("promoter@lge.com", style: TextStyle(fontWeight: FontWeight.w700)),
+                        ],
+                      ),
+                    ],
                   ),
                 ],
               ),
