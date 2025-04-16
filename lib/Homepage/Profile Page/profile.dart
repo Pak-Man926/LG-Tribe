@@ -1,4 +1,5 @@
 import "package:flutter/material.dart";
+import "package:lg_tribe/Homepage/Profile%20Page/Screens/about.dart";
 import "package:lg_tribe/Homepage/homepage.dart";
 
 class Profile extends StatelessWidget {
@@ -153,9 +154,9 @@ class Profile extends StatelessWidget {
                   //About App Button
                   MaterialButton(
                     onPressed: () {
-                      // Navigator.of(
-                      //   context,
-                      // ).push(MaterialPageRoute(builder: (context) => Login()));
+                       Navigator.of(
+                         context,
+                       ).push(MaterialPageRoute(builder: (context) => About()));
                     },
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10),
