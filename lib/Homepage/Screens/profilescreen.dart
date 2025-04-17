@@ -28,45 +28,47 @@ class ProfileScreen extends StatelessWidget {
               //   child: SizedBox(width: 20, height: 20),
               // ),
               const SizedBox(width: 10),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  //UserName
-                  const Text(
-                    'Esther Wanjiru',
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-                  ),
-                  const SizedBox(height: 5),
-                  Row(
-                    children: [
-                      //Country Fag
-                      CountryFlag.fromCountryCode(
-                        "KE",
-                        height: 20, // Set height
-                        width:
-                            30, // Set width if you want a rectangular flag, optional
-                      ),
-                      const SizedBox(width: 5),
-                      //Country Name
-                      const Text(
-                        'Kenya, East Africa',
-                        style: TextStyle(fontWeight: FontWeight.w500),
-                      ),
-                      SizedBox(width: 120),
-                      IconButton(
-                        onPressed: () {
-                          Navigator.of(context).push(
-                            MaterialPageRoute(builder: (context) => Profile()),
-                          );
-                        },
-                        icon: Icon(
-                          Icons.more_vert_rounded,
-                          color: Colors.grey.shade600,
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    //UserName
+                    const Text(
+                      'Esther Wanjiru',
+                      style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                    ),
+                    const SizedBox(height: 5),
+                    Row(
+                      children: [
+                        //Country Fag
+                        CountryFlag.fromCountryCode(
+                          "KE",
+                          height: 20, // Set height
+                          width:
+                              30, // Set width if you want a rectangular flag, optional
                         ),
-                      ),
-                    ],
-                  ),
-                ],
+                        const SizedBox(width: 5),
+                        //Country Name
+                        const Text(
+                          'Kenya, East Africa',
+                          style: TextStyle(fontWeight: FontWeight.w500),
+                        ),
+                        Spacer(),
+                        IconButton(
+                          onPressed: () {
+                            Navigator.of(context).push(
+                              MaterialPageRoute(builder: (context) => Profile()),
+                            );
+                          },
+                          icon: Icon(
+                            Icons.more_vert_rounded,
+                            color: Colors.grey.shade600,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
               ),
             ],
           ),
