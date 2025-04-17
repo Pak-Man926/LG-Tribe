@@ -12,25 +12,21 @@ class ProfileScreen extends StatelessWidget {
         children: [
           Row(
             children: [
-              Stack(
-                children: [
-                  //Profile Picture
-                  CircleAvatar(
-                    radius: 40,
-                    // backgroundImage: NetworkImage(
-                    //   'https://example.com/profile.jpg',
-                    // ),
-                  ),
-                  // DecoratedBox(
-                  //   decoration: BoxDecoration(
-                  //     color: Colors.green,
-                  //     shape: BoxShape.circle,
-                  //     border: Border.all(color: Colors.white, width: 3),
-                  //   ),
-                  //   child: SizedBox(width: 20, height: 20),
-                  // ),
-                ],
+              //Profile Picture
+              CircleAvatar(
+                radius: 40,
+                // backgroundImage: NetworkImage(
+                //   'https://example.com/profile.jpg',
+                // ),
               ),
+              // DecoratedBox(
+              //   decoration: BoxDecoration(
+              //     color: Colors.green,
+              //     shape: BoxShape.circle,
+              //     border: Border.all(color: Colors.white, width: 3),
+              //   ),
+              //   child: SizedBox(width: 20, height: 20),
+              // ),
               const SizedBox(width: 10),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
