@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import "package:lg_tribe/Homepage/Profile Page/profile.dart";
 class About extends StatelessWidget
 {
+  const About({super.key});
+
   @override
   Widget build(BuildContext context)
   {
@@ -25,9 +27,13 @@ class About extends StatelessWidget
           )
         )
       ),
-      // body: Center(
-      //   child: 
-      // )
+       body: Center(
+         child: Column(
+          children: [
+            Text("Hello"),
+          ],
+         ) 
+       )
     );
   }
 }
