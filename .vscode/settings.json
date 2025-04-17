@@ -2,5 +2,6 @@
     "java.configuration.updateBuildConfiguration": "automatic",
     "java.project.sourcePaths": [
         "lib/Homepage/Screens/models"
-    ]
+    ],
+    "files.autoSave": "onFocusChange"
 }
