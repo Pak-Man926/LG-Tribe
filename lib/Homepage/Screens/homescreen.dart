@@ -23,38 +23,41 @@ class _HomescreenState extends State<Homescreen> {
     });
   }
 
-  // Sample data for posts
   final List<Map<String, String>> posts = [
     {
       "username": "Esther Wanjiru",
       "timestamp": "1h ago",
       "imageUrl": "https://picsum.photos/250?image=9",
-      "caption": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+      "caption": "Lorem ipsum dolor sit amet, consectetur adipiscing elit...",
     },
     {
       "username": "John Doe",
       "timestamp": "2h ago",
       "imageUrl": "https://picsum.photos/250?image=8",
-      "caption": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+      "caption": "Lorem ipsum dolor sit amet, consectetur adipiscing elit...",
     },
     {
       "username": "Jane Smith",
       "timestamp": "3h ago",
       "imageUrl": "https://picsum.photos/250?image=7",
-      "caption": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+      "caption": "Lorem ipsum dolor sit amet, consectetur adipiscing elit...",
     },
   ];
 
   @override
   Widget build(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
+    final screenHeight = MediaQuery.of(context).size.height;
+    final textScale = screenWidth * 0.035;
+
     return Scaffold(
       body: ListView.builder(
-        itemCount: posts.length, // Number of posts
+        itemCount: posts.length,
         itemBuilder: (context, index) {
-          var post = posts[index]; // Get post data
+          var post = posts[index];
 
           return Padding(
-            padding: const EdgeInsets.all(10),
+            padding: EdgeInsets.all(screenWidth * 0.04),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -63,36 +66,49 @@ class _HomescreenState extends State<Homescreen> {
                   children: [
                     CircleAvatar(
                       backgroundImage: NetworkImage(post['imageUrl']!),
-                      radius: 30,
+                      radius: screenWidth * 0.08,
                     ),
-                    SizedBox(width: 10),
-                    Text(
-                      post['username']!,
-                      style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
-                    ),
-                    SizedBox(width: 10),
-                    Text(
-                      post['timestamp']!,
-                      style: TextStyle(fontSize: 12, fontWeight: FontWeight.w200),
+                    SizedBox(width: screenWidth * 0.03),
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            post['username']!,
+                            style: TextStyle(
+                              fontSize: textScale + 2,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          Text(
+                            post['timestamp']!,
+                            style: TextStyle(
+                              fontSize: textScale,
+                              fontWeight: FontWeight.w300,
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
                   ],
                 ),
-                SizedBox(height: 10),
+                SizedBox(height: screenHeight * 0.015),
                 // Post Image
                 SizedBox(
-                  height: 400,
-                  child: Image.network(
-                    post['imageUrl']!,
-                    fit: BoxFit.cover,
+                  height: screenHeight * 0.3,
+                  width: double.infinity,
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(12),
+                    child: Image.network(post['imageUrl']!, fit: BoxFit.cover),
                   ),
                 ),
-                SizedBox(height: 10),
+                SizedBox(height: screenHeight * 0.015),
                 // Post Caption + Read More Toggle
                 Text(
                   isReadMore
                       ? post['caption']!
                       : '${post['caption']!.substring(0, 60)}...',
-                  style: TextStyle(fontSize: 14),
+                  style: TextStyle(fontSize: textScale),
                 ),
                 GestureDetector(
                   onTap: () {
@@ -102,44 +118,39 @@ class _HomescreenState extends State<Homescreen> {
                   },
                   child: Text(
                     isReadMore ? 'Read less' : 'Read more',
-                    style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold, color: Colors.blue),
+                    style: TextStyle(
+                      fontSize: textScale,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.blue,
+                    ),
                   ),
                 ),
-                SizedBox(height: 10),
-                // Upvote and Downvote Buttons
+                SizedBox(height: screenHeight * 0.015),
+                // Vote buttons
                 Row(
                   children: [
                     IconButton(
-                      iconSize: 22,
+                      iconSize: screenWidth * 0.05,
                       padding: EdgeInsets.zero,
-                      constraints: BoxConstraints(),
+                      constraints: const BoxConstraints(),
                       onPressed: _incrementVote,
-                      icon: Icon(
-                        Icons.arrow_upward_outlined,
-                        color: Colors.black87,
-                      ),
+                      icon: const Icon(Icons.arrow_upward_outlined),
                       tooltip: "Upvote",
                     ),
-                    SizedBox(width: 5),
+                    SizedBox(width: screenWidth * 0.02),
                     IconButton(
-                      iconSize: 22,
+                      iconSize: screenWidth * 0.05,
                       padding: EdgeInsets.zero,
-                      constraints: BoxConstraints(),
+                      constraints: const BoxConstraints(),
                       onPressed: _decrementVote,
-                      icon: Icon(
-                        Icons.arrow_downward_outlined,
-                        color: Colors.black87,
-                      ),
+                      icon: const Icon(Icons.arrow_downward_outlined),
                       tooltip: "Downvote",
                     ),
-                    SizedBox(width: 10),
-                    Text(
-                      '$_voteCount',
-                      style: TextStyle(fontSize: 14),
-                    ),
+                    SizedBox(width: screenWidth * 0.03),
+                    Text('$_voteCount', style: TextStyle(fontSize: textScale)),
                   ],
                 ),
-                Divider(),
+                Divider(thickness: 1.2),
               ],
             ),
           );
