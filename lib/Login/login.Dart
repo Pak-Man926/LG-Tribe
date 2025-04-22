@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:lg_tribe/Country/country.dart';
 import 'package:intl_phone_field/intl_phone_field.dart';
 import 'package:lg_tribe/Forgot%20Password/forgot_password.dart';
-import 'package:lg_tribe/Homepage/homepage.dart';
-import 'package:http/http.dart' as http;
-import 'dart:convert';
+import 'package:lg_tribe/login/controller/login_controller.dart';
 
 class Login extends StatefulWidget 
 {
@@ -17,32 +14,6 @@ class Login extends StatefulWidget
 class _LoginState extends State<Login> {
   String phoneNumber = '';
   String password = '';
-
-  Future<void> loginUser() async {
-    final url = Uri.parse('http://localhost:8080/users');
-
-    final response = await http.post(
-      url,
-      headers: {'Content-Type': 'application/json'},
-      body: jsonEncode({
-        'phoneNumber': phoneNumber,
-        'password': password,
-      }),
-    );
-
-    if (response.statusCode == 200) {
-      print('✅ Login successful: ${response.body}');
-      Navigator.push(
-        context,
-        MaterialPageRoute(builder: (context) => Homepage()),
-      );
-    } else {
-      print('❌ Login failed: ${response.body}');
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('Login failed. Check credentials.')),
-      );
-    }
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -135,7 +106,7 @@ class _LoginState extends State<Login> {
                         SizedBox(
                           width: double.infinity,
                           child: MaterialButton(
-                            onPressed: loginUser,
+                            onPressed: ()=> LoginController().loginUser(phoneNumber: phoneNumber, password: password, context: context),
                             color: Color(0xFFA50034),
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.vertical(),
