@@ -4,8 +4,21 @@ import 'package:intl_phone_field/intl_phone_field.dart';
 import 'package:lg_tribe/Forgot%20Password/forgot_password.dart';
 import "package:lg_tribe/Homepage/homepage.dart";
 
-class Login extends StatelessWidget
+class Login extends Statefulwidget
+{
+  const Login({super.key});
+
+  @override
+  State<Login> createState() => _LoginState();
+}
+
+class _LoginState extends State<Login>
  {
+  string phoneNumber = '';
+  string password = '';
+
+  final _formkey = GlobalKey<FormState>();
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
