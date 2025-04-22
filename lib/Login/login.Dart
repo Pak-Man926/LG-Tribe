@@ -2,22 +2,46 @@ import 'package:flutter/material.dart';
 import 'package:lg_tribe/Country/country.dart';
 import 'package:intl_phone_field/intl_phone_field.dart';
 import 'package:lg_tribe/Forgot%20Password/forgot_password.dart';
-import "package:lg_tribe/Homepage/homepage.dart";
+import 'package:lg_tribe/Homepage/homepage.dart';
+import 'package:http/http.dart' as http;
+import 'dart:convert';
 
-class Login extends Statefulwidget
-{
-  const Login({super.key});
+class Login extends StatefulWidget {
+  const Login({Key? key}) : super(key: key);
 
   @override
-  State<Login> createState() => _LoginState();
+  _LoginState createState() => _LoginState();
 }
 
-class _LoginState extends State<Login>
- {
-  string phoneNumber = '';
-  string password = '';
+class _LoginState extends State<Login> {
+  String phoneNumber = '';
+  String password = '';
 
-  final _formkey = GlobalKey<FormState>();
+  Future<void> loginUser() async {
+    final url = Uri.parse('http://10.0.2.2:8080/users');
+
+    final response = await http.post(
+      url,
+      headers: {'Content-Type': 'application/json'},
+      body: jsonEncode({
+        'phoneNumber': phoneNumber,
+        'password': password,
+      }),
+    );
+
+    if (response.statusCode == 200) {
+      print('✅ Login successful: ${response.body}');
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => Homepage()),
+      );
+    } else {
+      print('❌ Login failed: ${response.body}');
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text('Login failed. Check credentials.')),
+      );
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -27,87 +51,73 @@ class _LoginState extends State<Login>
         body: SafeArea(
           child: Stack(
             children: [
-              // Background content
               Positioned(
-                top: 50, // Adjust to move image up/down
-                left: 20,  // Adjust to move image left/right
+                top: 50,
+                left: 20,
                 child: Container(
-                      decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      image: DecorationImage(
-                        image: AssetImage('assets/LGE_Logo_HeritageRed_Grey_RGB.png'),
-                        fit: BoxFit.scaleDown,
-                      ),
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    image: DecorationImage(
+                      image: AssetImage('assets/LGE_Logo_HeritageRed_Grey_RGB.png'),
+                      fit: BoxFit.scaleDown,
                     ),
-                  width: 100, // Set a width for the container
-                  height: 100, // Set a height for the container
+                  ),
+                  width: 100,
+                  height: 100,
                 ),
               ),
               Positioned(
                 top: 250,
                 left: 20,
-                right: 20, // Ensure it doesn't overflow horizontally
+                right: 20,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
                       "Welcome back! Please enter your details",
-                      style: TextStyle(
-                        fontSize: 12,
-                        fontWeight: FontWeight.w100,
-                      ),
+                      style: TextStyle(fontSize: 12, fontWeight: FontWeight.w100),
                     ),
-                    SizedBox(height: 20), // Spacing between text and input
+                    SizedBox(height: 20),
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(
-                          "Phone Number:",
-                          style: TextStyle(
-                            fontSize: 12,
-                            fontWeight: FontWeight.w500,
-                          ),
-                        ),
-                        SizedBox(height: 5), // Space between label and text field
+                        Text("Phone Number:", style: TextStyle(fontSize: 12, fontWeight: FontWeight.w500)),
+                        SizedBox(height: 5),
                         IntlPhoneField(
                           decoration: const InputDecoration(
                             hintText: "Enter your phone number",
                             border: OutlineInputBorder(),
                           ),
                           initialCountryCode: 'KE',
-                          // onChanged: (phone) {
-                          //   print(phone.completeNumber);
-                         // },
+                          onChanged: (phone) {
+                            setState(() {
+                              phoneNumber = phone.completeNumber;
+                            });
+                          },
                         ),
                         SizedBox(height: 5),
-                        Text(
-                          "Password:",
-                          style: TextStyle(
-                            fontSize: 12,
-                            fontWeight: FontWeight.w500,
-                          ),
-                        ),
+                        Text("Password:", style: TextStyle(fontSize: 12, fontWeight: FontWeight.w500)),
                         SizedBox(height: 5),
                         TextField(
                           obscureText: true,
-                          decoration: InputDecoration(
-                            border: OutlineInputBorder(),
-                            //labelText: "Password",
-                          ),
+                          decoration: InputDecoration(border: OutlineInputBorder()),
+                          onChanged: (value) {
+                            setState(() {
+                              password = value;
+                            });
+                          },
                         ),
                         SizedBox(height: 5),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Row(
-                              children: [
-                                Checkbox(
-                                  value: false,
-                                  onChanged: (bool? value) {},
-                                ),
-                                Text("Remember me for 30 days"),
-                              ]
-                            ),
+                            Row(children: [
+                              Checkbox(
+                                value: false,
+                                onChanged: (bool? value) {},
+                              ),
+                              Text("Remember me for 30 days"),
+                            ]),
                             GestureDetector(
                               onTap: () {
                                 Navigator.push(
@@ -115,45 +125,35 @@ class _LoginState extends State<Login>
                                   MaterialPageRoute(builder: (context) => Password()),
                                 );
                               },
-                              child: Text("Forgot Password?",style: TextStyle(color: Color(0xFFA50034))),
+                              child: Text("Forgot Password?", style: TextStyle(color: Color(0xFFA50034))),
                             ),
                           ],
                         ),
                         SizedBox(height: 5),
-                        Column(
-                          children: [
-                            Padding(padding: EdgeInsets.all(10)),
-                            SizedBox(
-                            width: double.infinity,
-                            child: MaterialButton(
-                              onPressed: (){
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(builder: (context) => Homepage()),
-                                );
-                              },
-                              color: Color(0xFFA50034),
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.vertical(),
-                              ),
-                              child: Text("Sign In", style: TextStyle(color: Colors.white)),
+                        Padding(padding: EdgeInsets.all(10)),
+                        SizedBox(
+                          width: double.infinity,
+                          child: MaterialButton(
+                            onPressed: loginUser,
+                            color: Color(0xFFA50034),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.vertical(),
                             ),
+                            child: Text("Sign In", style: TextStyle(color: Colors.white)),
                           ),
-                Padding(padding: EdgeInsets.all(10)),
-                SizedBox(
-                  width: double.infinity,
-                  child: MaterialButton(
-                    onPressed: () {},
-                    color: Colors.white,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.vertical(),
-                  ),
-                    child: Text("Sign in as different user", style: TextStyle(color: Colors.black)),
-                  ),
-                ),
-                
-              ],
-            ),
+                        ),
+                        Padding(padding: EdgeInsets.all(10)),
+                        SizedBox(
+                          width: double.infinity,
+                          child: MaterialButton(
+                            onPressed: () {},
+                            color: Colors.white,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.vertical(),
+                            ),
+                            child: Text("Sign in as different user", style: TextStyle(color: Colors.black)),
+                          ),
+                        ),
                       ],
                     ),
                   ],
