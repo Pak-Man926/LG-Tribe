@@ -6,7 +6,8 @@ import 'package:lg_tribe/Homepage/homepage.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 
-class Login extends StatefulWidget {
+class Login extends StatefulWidget 
+{
   const Login({Key? key}) : super(key: key);
 
   @override
@@ -18,7 +19,7 @@ class _LoginState extends State<Login> {
   String password = '';
 
   Future<void> loginUser() async {
-    final url = Uri.parse('http://10.0.2.2:8080/users');
+    final url = Uri.parse('http://localhost:8080/users');
 
     final response = await http.post(
       url,
