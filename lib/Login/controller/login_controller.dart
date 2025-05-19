@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 
-import '../../Homepage/homepage.dart';
 
 class LoginController {
   Future<void> loginUser({
@@ -12,7 +11,7 @@ class LoginController {
   }) async {
     final url = Uri.parse('http://localhost:8080/users');
 
-    print('✅ Url: ${url}');
+    print('✅ Url: $url');
 
     final response = await http.post(
       url,

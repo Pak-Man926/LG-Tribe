@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:intl_phone_field/intl_phone_field.dart';
 import 'package:lg_tribe/Forgot%20Password/forgot_password.dart';
+import 'package:lg_tribe/Homepage/homepage.dart';
 import 'package:lg_tribe/login/controller/login_controller.dart';
 
 class Login extends StatefulWidget 
 {
-  const Login({Key? key}) : super(key: key);
+  const Login({super.key});
 
   @override
   _LoginState createState() => _LoginState();
@@ -106,7 +107,12 @@ class _LoginState extends State<Login> {
                         SizedBox(
                           width: double.infinity,
                           child: MaterialButton(
-                            onPressed: ()=> LoginController().loginUser(phoneNumber: phoneNumber, password: password, context: context),
+                            onPressed: ()
+                            {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(builder: (context) => Homepage()));
+                            },
                             color: Color(0xFFA50034),
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.vertical(),
