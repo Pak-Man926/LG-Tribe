@@ -1,0 +1,11 @@
+{
+  "moduleName": "lg_tribe",
+  "tables": [],
+  "installedModules": [
+    {
+      "module": "serverpod",
+      "version": "20240516151843329"
+    }
+  ],
+  "migrationApiVersion": 1
+}

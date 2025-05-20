@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:intl_phone_field/intl_phone_field.dart';
 import 'package:lg_tribe/Forgot%20Password/forgot_password.dart';
 import 'package:lg_tribe/Homepage/homepage.dart';
-import 'package:lg_tribe/login/controller/login_controller.dart';
+import "package:lg_tribe/login/registration/user_registration.dart";
 
 class Login extends StatefulWidget 
 {
@@ -119,6 +119,17 @@ class _LoginState extends State<Login> {
                             ),
                             child: Text("Sign In", style: TextStyle(color: Colors.white)),
                           ),
+                        ),
+                        SizedBox(height: 5),
+                        GestureDetector(
+                          onTap: () {
+                            // Navigate to the registration page
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => UserRegistration()),
+                            );
+                          },
+                          child: Text("Don't have an account? Sign up", style: TextStyle(color: Color(0xFFA50034))),
                         ),
                         Padding(padding: EdgeInsets.all(10)),
                         SizedBox(
