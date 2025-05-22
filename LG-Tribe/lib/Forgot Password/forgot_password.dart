@@ -1,7 +1,7 @@
 import "package:flutter/material.dart";
 import 'package:intl_phone_field/intl_phone_field.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:lg_tribe/Login/login.dart';
+import 'package:lg_tribe/Login/user_login.dart';
 
 class Password extends StatelessWidget {
   const Password({super.key});
