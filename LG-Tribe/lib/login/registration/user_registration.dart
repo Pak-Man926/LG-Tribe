@@ -31,7 +31,7 @@ class UserRegistration extends StatelessWidget
                 ),
               ),
               SizedBox(height: 50),
-              Text("Welcome to LG Tribe!"),
+              Text("Welcome to LG Tribe!", style: TextStyle(fontSize: 12, fontWeight: FontWeight.w100)),
             ]
           )
         ),

@@ -120,17 +120,6 @@ class _LoginState extends State<Login> {
                             child: Text("Sign In", style: TextStyle(color: Colors.white)),
                           ),
                         ),
-                        SizedBox(height: 5),
-                        GestureDetector(
-                          onTap: () {
-                            // Navigate to the registration page
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(builder: (context) => UserRegistration()),
-                            );
-                          },
-                          child: Text("Don't have an account? Sign up", style: TextStyle(color: Color(0xFFA50034))),
-                        ),
                         Padding(padding: EdgeInsets.all(10)),
                         SizedBox(
                           width: double.infinity,
@@ -142,6 +131,17 @@ class _LoginState extends State<Login> {
                             ),
                             child: Text("Sign in as different user", style: TextStyle(color: Colors.black)),
                           ),
+                        ),
+                        SizedBox(height: 5),
+                        GestureDetector(
+                          onTap: () {
+                            // Navigate to the registration page
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => UserRegistration()),
+                            );
+                          },
+                          child: Text("Don't have an account? Sign up", style: TextStyle(color: Color(0xFFA50034))),
                         ),
                       ],
                     ),
