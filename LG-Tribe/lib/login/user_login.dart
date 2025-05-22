@@ -160,11 +160,13 @@ class _LoginState extends State<Login> {
                         SizedBox(
                           width: double.infinity,
                           child: MaterialButton(
-                            onPressed: ()
+                            onPressed: () async
                             {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(builder: (context) => Homepage()));
+                              await _login();
+
+                              // Navigator.push(
+                              //   context,
+                              //   MaterialPageRoute(builder: (context) => Homepage()));
                             },
                             color: Color(0xFFA50034),
                             shape: RoundedRectangleBorder(
