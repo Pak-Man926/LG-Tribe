@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:intl_phone_field/intl_phone_field.dart';
+import "package:lg_tribe_client/lg_tribe_client.dart";
+import "package:serverpod_flutter/serverpod_flutter.dart";
 //import 'package:http/http.dart' as http;
 //import 'dart:convert';
 
@@ -14,6 +16,64 @@ class _UserRegistrationState extends State<UserRegistration>
 {
   String phoneNumber = '';
   String password = '';
+
+  final firstNameController = TextEditingController();
+  final lastNameController = TextEditingController();
+  final emailController = TextEditingController();
+  final contactNumberController = TextEditingController();
+  final passwordController = TextEditingController();
+
+  var client = Client('http://localhost:8080/')
+    ..connectivityMonitor = FlutterConnectivityMonitor();
+
+  @override
+  void dispose() {
+    firstNameController.dispose();
+    lastNameController.dispose();
+    emailController.dispose();
+    contactNumberController.dispose();
+    passwordController.dispose();
+    super.dispose();
+  }
+
+  Future<void> _register() async {
+    final firstName = firstNameController.text;
+    final lastName = lastNameController.text;
+    final email = emailController.text;
+    final contactNumber = int.tryParse(contactNumberController.text);
+    final password = passwordController.text;
+
+    if (firstName.isEmpty ||
+        lastName.isEmpty ||
+        email.isEmpty ||
+        contactNumber == null ||
+        password.isEmpty) {
+      // Show error message
+      return;
+    }
+
+    try {
+      final result = await client.userEndpoints.registerUser(
+        firstName,
+        lastName,
+        contactNumber,
+        email,
+        password,
+      );
+
+      // if (result == true) {
+      //   // Registration successful
+      //   print('User registered successfully');
+      // } else {
+      //   // Registration failed
+      //   print("User registration failed!")
+      // }
+    } 
+    catch (e) {
+      // Handle error
+      print('Error: $e');
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -65,6 +125,7 @@ class _UserRegistrationState extends State<UserRegistration>
                 Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: TextFormField(
+                    controller: firstNameController,
                     decoration: InputDecoration(
                       border: OutlineInputBorder(),
                       hintText: 'Enter your first name',
@@ -83,6 +144,7 @@ class _UserRegistrationState extends State<UserRegistration>
                 Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: TextFormField(
+                    controller: lastNameController,
                     decoration: InputDecoration(
                       border: OutlineInputBorder(),
                       hintText: 'Enter your last name',
@@ -101,6 +163,7 @@ class _UserRegistrationState extends State<UserRegistration>
                 Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: TextFormField(
+                    controller: emailController,
                     decoration: InputDecoration(
                       border: OutlineInputBorder(),
                       hintText: 'Enter your email address',
@@ -119,6 +182,7 @@ class _UserRegistrationState extends State<UserRegistration>
                 Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: IntlPhoneField(
+                          controller: contactNumberController,
                           decoration: const InputDecoration(
                             hintText: "Enter your phone number",
                             border: OutlineInputBorder(),
@@ -143,6 +207,7 @@ class _UserRegistrationState extends State<UserRegistration>
                 Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: TextFormField(
+                    controller: passwordController,
                     obscureText: true,
                     decoration: InputDecoration(
                       border: OutlineInputBorder(),
