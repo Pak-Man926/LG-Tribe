@@ -1,9 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:intl_phone_field/intl_phone_field.dart';
 //import 'package:http/http.dart' as http;
 //import 'dart:convert';
 
-class UserRegistration extends StatelessWidget {
+class UserRegistration extends StatefulWidget {
   const UserRegistration({super.key});
+
+  @override
+  State<UserRegistration> createState() => _UserRegistrationState();
+}
+
+class _UserRegistrationState extends State<UserRegistration> 
+{
+  String phoneNumber = '';
+  String password = '';
 
   @override
   Widget build(BuildContext context) {
@@ -40,9 +50,122 @@ class UserRegistration extends StatelessWidget {
             ],
           ),
           SizedBox(height: 10),
-          Column(
-           crossAxisAl            
-          )
+          Form(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(left: 10),
+                  child: Text(
+                    "First Name:",
+                    style: TextStyle(fontSize: 12, fontWeight: FontWeight.w500),
+                  ),
+                ),
+                SizedBox(height: 5),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: TextFormField(
+                    decoration: InputDecoration(
+                      border: OutlineInputBorder(),
+                      hintText: 'Enter your first name',
+                    ),
+                  ),
+                ),
+                SizedBox(height: 10),
+                Padding(
+                  padding: const EdgeInsets.only(left: 10),
+                  child: Text(
+                    "Last Name:",
+                    style: TextStyle(fontSize: 12, fontWeight: FontWeight.w500),
+                  ),
+                ),
+                SizedBox(height: 5),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: TextFormField(
+                    decoration: InputDecoration(
+                      border: OutlineInputBorder(),
+                      hintText: 'Enter your last name',
+                    ),
+                  ),
+                ),
+                SizedBox(height: 10),
+                Padding(
+                  padding: const EdgeInsets.only(left: 10),
+                  child: Text(
+                    "Email:",
+                    style: TextStyle(fontSize: 12, fontWeight: FontWeight.w500),
+                  ),
+                ),
+                SizedBox(height: 5),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: TextFormField(
+                    decoration: InputDecoration(
+                      border: OutlineInputBorder(),
+                      hintText: 'Enter your email address',
+                    ),
+                  ),
+                ),
+                SizedBox(height: 10),
+                Padding(
+                  padding: const EdgeInsets.only(left: 10),
+                  child: Text(
+                    "Phone Number:",
+                    style: TextStyle(fontSize: 12, fontWeight: FontWeight.w500),
+                  ),
+                ),
+                SizedBox(height: 5),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: IntlPhoneField(
+                          decoration: const InputDecoration(
+                            hintText: "Enter your phone number",
+                            border: OutlineInputBorder(),
+                          ),
+                          initialCountryCode: 'KE',
+                          onChanged: (phone) {
+                            setState(() {
+                              phoneNumber = phone.completeNumber;
+                            });
+                          },
+                        ),
+                ),
+                SizedBox(height: 5),
+                Padding(
+                  padding: const EdgeInsets.only(left: 10),
+                  child: Text(
+                    "Password:",
+                    style: TextStyle(fontSize: 12, fontWeight: FontWeight.w500),
+                  ),
+                ),
+                SizedBox(height: 5),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: TextFormField(
+                    obscureText: true,
+                    decoration: InputDecoration(
+                      border: OutlineInputBorder(),
+                      hintText: 'Enter your password',
+                    ),
+                    onChanged: (value) {
+                      setState(() {
+                        password = value;
+                      });
+                    },
+                  ),
+                ),
+                SizedBox(height: 10),
+                Padding(
+                  padding: const EdgeInsets.only(left: 120),
+                  child: FilledButton.tonal(
+                    onPressed: () {},
+                  child: Text("Create Account")
+                  ),
+                ),
+              ],
+            ),
+          ),
         ],
       ),
     );
