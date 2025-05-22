@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:intl_phone_field/intl_phone_field.dart';
 import "package:lg_tribe_client/lg_tribe_client.dart";
 import "package:serverpod_flutter/serverpod_flutter.dart";
+import "package:lg_tribe/login/user_login.dart";
 //import 'package:http/http.dart' as http;
 //import 'dart:convert';
 
@@ -12,8 +13,7 @@ class UserRegistration extends StatefulWidget {
   State<UserRegistration> createState() => _UserRegistrationState();
 }
 
-class _UserRegistrationState extends State<UserRegistration> 
-{
+class _UserRegistrationState extends State<UserRegistration> {
   String phoneNumber = '';
   String password = '';
 
@@ -68,8 +68,7 @@ class _UserRegistrationState extends State<UserRegistration>
       //   // Registration failed
       //   print("User registration failed!")
       // }
-    } 
-    catch (e) {
+    } catch (e) {
       // Handle error
       print('Error: $e');
     }
@@ -182,18 +181,18 @@ class _UserRegistrationState extends State<UserRegistration>
                 Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: IntlPhoneField(
-                          controller: contactNumberController,
-                          decoration: const InputDecoration(
-                            hintText: "Enter your phone number",
-                            border: OutlineInputBorder(),
-                          ),
-                          initialCountryCode: 'KE',
-                          onChanged: (phone) {
-                            setState(() {
-                              phoneNumber = phone.completeNumber;
-                            });
-                          },
-                        ),
+                    controller: contactNumberController,
+                    decoration: const InputDecoration(
+                      hintText: "Enter your phone number",
+                      border: OutlineInputBorder(),
+                    ),
+                    initialCountryCode: 'KE',
+                    onChanged: (phone) {
+                      setState(() {
+                        phoneNumber = phone.completeNumber;
+                      });
+                    },
+                  ),
                 ),
                 SizedBox(height: 5),
                 Padding(
@@ -225,8 +224,15 @@ class _UserRegistrationState extends State<UserRegistration>
                 Padding(
                   padding: const EdgeInsets.only(left: 120),
                   child: FilledButton.tonal(
-                    onPressed: () {},
-                  child: Text("Create Account")
+                    onPressed: () async {
+                      await _register();
+
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => const Login()),
+                      );
+                    },
+                    child: Text("Create Account"),
                   ),
                 ),
               ],
