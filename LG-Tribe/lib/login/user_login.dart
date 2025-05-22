@@ -3,6 +3,8 @@ import 'package:intl_phone_field/intl_phone_field.dart';
 import 'package:lg_tribe/Forgot%20Password/forgot_password.dart';
 import 'package:lg_tribe/Homepage/homepage.dart';
 import "package:lg_tribe/login/registration/user_registration.dart";
+import "package:lg_tribe_client/lg_tribe_client.dart";
+import "package:serverpod_flutter/serverpod_flutter.dart";
 
 class Login extends StatefulWidget 
 {
@@ -15,6 +17,54 @@ class Login extends StatefulWidget
 class _LoginState extends State<Login> {
   String phoneNumber = '';
   String password = '';
+
+  final contactNumberController = TextEditingController();
+  final passwordController = TextEditingController();
+
+  var client = Client('http://localhost:8080/')
+    ..connectivityMonitor = FlutterConnectivityMonitor();
+
+  @override
+  void dispose() {
+    contactNumberController.dispose();
+    passwordController.dispose();
+    super.dispose();
+  }
+
+  Future<void> _login() async {
+    final contactNumber = int.tryParse(contactNumberController.text);
+    final password = passwordController.text;
+
+    if (contactNumber == null || password.isEmpty) {
+      // Show error message
+      return;
+    }
+
+    try {
+      final result = await client.userEndpoints.loginUser(
+        contactNumber,
+        password,
+      );
+
+      if (result != null) {
+        // Login successful
+        print('User logged in successfully');
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => Homepage(),
+          ),
+        );
+      } else {
+        // Invalid credentials
+        print('Invalid credentials');
+      }
+    } catch (e) {
+      // Handle error
+      print('Error: $e');
+    }
+  }
+
 
   @override
   Widget build(BuildContext context) {
@@ -57,6 +107,7 @@ class _LoginState extends State<Login> {
                         Text("Phone Number:", style: TextStyle(fontSize: 12, fontWeight: FontWeight.w500)),
                         SizedBox(height: 5),
                         IntlPhoneField(
+                          controller: contactNumberController,
                           decoration: const InputDecoration(
                             hintText: "Enter your phone number",
                             border: OutlineInputBorder(),
@@ -72,6 +123,8 @@ class _LoginState extends State<Login> {
                         Text("Password:", style: TextStyle(fontSize: 12, fontWeight: FontWeight.w500)),
                         SizedBox(height: 5),
                         TextField(
+                          controller: passwordController,
+                          keyboardType: TextInputType.visiblePassword,
                           obscureText: true,
                           decoration: InputDecoration(border: OutlineInputBorder()),
                           onChanged: (value) {

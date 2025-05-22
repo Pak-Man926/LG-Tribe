@@ -208,6 +208,7 @@ class _UserRegistrationState extends State<UserRegistration>
                   padding: const EdgeInsets.all(8.0),
                   child: TextFormField(
                     controller: passwordController,
+                    keyboardType: TextInputType.visiblePassword,
                     obscureText: true,
                     decoration: InputDecoration(
                       border: OutlineInputBorder(),
