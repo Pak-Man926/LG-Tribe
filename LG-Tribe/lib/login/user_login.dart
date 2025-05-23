@@ -6,8 +6,7 @@ import "package:lg_tribe/login/registration/user_registration.dart";
 import "package:lg_tribe_client/lg_tribe_client.dart";
 import "package:serverpod_flutter/serverpod_flutter.dart";
 
-class Login extends StatefulWidget 
-{
+class Login extends StatefulWidget {
   const Login({super.key});
 
   @override
@@ -48,15 +47,26 @@ class _LoginState extends State<Login> {
 
       if (result != null) {
         // Login successful
+        ScaffoldMessenger.of(res).showSnackBar(
+          SnackBar(
+            content: Text('User login successfully'),
+            duration: Duration(seconds: 2),
+          ),
+        );
+
         print('User logged in successfully');
         Navigator.push(
           context,
-          MaterialPageRoute(
-            builder: (context) => Homepage(),
-          ),
+          MaterialPageRoute(builder: (context) => Homepage()),
         );
       } else {
         // Invalid credentials
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text('User login failed!'),
+            duration: Duration(seconds: 2),
+          ),
+        );
         print('Invalid credentials');
       }
     } catch (e) {
@@ -64,7 +74,6 @@ class _LoginState extends State<Login> {
       print('Error: $e');
     }
   }
-
 
   @override
   Widget build(BuildContext context) {
@@ -81,7 +90,9 @@ class _LoginState extends State<Login> {
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
                     image: DecorationImage(
-                      image: AssetImage('assets/LGE_Logo_HeritageRed_Grey_RGB.png'),
+                      image: AssetImage(
+                        'assets/LGE_Logo_HeritageRed_Grey_RGB.png',
+                      ),
                       fit: BoxFit.scaleDown,
                     ),
                   ),
@@ -98,13 +109,22 @@ class _LoginState extends State<Login> {
                   children: [
                     Text(
                       "Welcome back! Please enter your details",
-                      style: TextStyle(fontSize: 12, fontWeight: FontWeight.w100),
+                      style: TextStyle(
+                        fontSize: 12,
+                        fontWeight: FontWeight.w100,
+                      ),
                     ),
                     SizedBox(height: 20),
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text("Phone Number:", style: TextStyle(fontSize: 12, fontWeight: FontWeight.w500)),
+                        Text(
+                          "Phone Number:",
+                          style: TextStyle(
+                            fontSize: 12,
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
                         SizedBox(height: 5),
                         IntlPhoneField(
                           controller: contactNumberController,
@@ -120,13 +140,21 @@ class _LoginState extends State<Login> {
                           },
                         ),
                         SizedBox(height: 5),
-                        Text("Password:", style: TextStyle(fontSize: 12, fontWeight: FontWeight.w500)),
+                        Text(
+                          "Password:",
+                          style: TextStyle(
+                            fontSize: 12,
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
                         SizedBox(height: 5),
                         TextField(
                           controller: passwordController,
                           keyboardType: TextInputType.visiblePassword,
                           obscureText: true,
-                          decoration: InputDecoration(border: OutlineInputBorder()),
+                          decoration: InputDecoration(
+                            border: OutlineInputBorder(),
+                          ),
                           onChanged: (value) {
                             setState(() {
                               password = value;
@@ -137,21 +165,28 @@ class _LoginState extends State<Login> {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Row(children: [
-                              Checkbox(
-                                value: false,
-                                onChanged: (bool? value) {},
-                              ),
-                              Text("Remember me for 30 days"),
-                            ]),
+                            Row(
+                              children: [
+                                Checkbox(
+                                  value: false,
+                                  onChanged: (bool? value) {},
+                                ),
+                                Text("Remember me for 30 days"),
+                              ],
+                            ),
                             GestureDetector(
                               onTap: () {
                                 Navigator.push(
                                   context,
-                                  MaterialPageRoute(builder: (context) => Password()),
+                                  MaterialPageRoute(
+                                    builder: (context) => Password(),
+                                  ),
                                 );
                               },
-                              child: Text("Forgot Password?", style: TextStyle(color: Color(0xFFA50034))),
+                              child: Text(
+                                "Forgot Password?",
+                                style: TextStyle(color: Color(0xFFA50034)),
+                              ),
                             ),
                           ],
                         ),
@@ -160,8 +195,7 @@ class _LoginState extends State<Login> {
                         SizedBox(
                           width: double.infinity,
                           child: MaterialButton(
-                            onPressed: () async
-                            {
+                            onPressed: () async {
                               await _login();
 
                               // Navigator.push(
@@ -172,7 +206,10 @@ class _LoginState extends State<Login> {
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.vertical(),
                             ),
-                            child: Text("Sign In", style: TextStyle(color: Colors.white)),
+                            child: Text(
+                              "Sign In",
+                              style: TextStyle(color: Colors.white),
+                            ),
                           ),
                         ),
                         Padding(padding: EdgeInsets.all(10)),
@@ -184,7 +221,10 @@ class _LoginState extends State<Login> {
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.vertical(),
                             ),
-                            child: Text("Sign in as different user", style: TextStyle(color: Colors.black)),
+                            child: Text(
+                              "Sign in as different user",
+                              style: TextStyle(color: Colors.black),
+                            ),
                           ),
                         ),
                         SizedBox(height: 5),
@@ -193,10 +233,15 @@ class _LoginState extends State<Login> {
                             // Navigate to the registration page
                             Navigator.push(
                               context,
-                              MaterialPageRoute(builder: (context) => UserRegistration()),
+                              MaterialPageRoute(
+                                builder: (context) => UserRegistration(),
+                              ),
                             );
                           },
-                          child: Text("Don't have an account? Sign up", style: TextStyle(color: Color(0xFFA50034))),
+                          child: Text(
+                            "Don't have an account? Sign up",
+                            style: TextStyle(color: Color(0xFFA50034)),
+                          ),
                         ),
                       ],
                     ),

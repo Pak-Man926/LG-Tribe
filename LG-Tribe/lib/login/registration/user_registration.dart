@@ -71,6 +71,11 @@ class _UserRegistrationState extends State<UserRegistration> {
             duration: Duration(seconds: 2),
           ),
         );
+
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => const Login()),
+        );
       } else {
         // Registration failed
         //print("User registration failed!")
@@ -241,11 +246,6 @@ class _UserRegistrationState extends State<UserRegistration> {
                     child: FilledButton(
                       onPressed: () async {
                         await _register();
-                    
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (context) => const Login()),
-                        );
                       },
                       child: Text("Create Account"),
                     ),
