@@ -223,16 +223,19 @@ class _UserRegistrationState extends State<UserRegistration> {
                 SizedBox(height: 10),
                 Padding(
                   padding: const EdgeInsets.only(left: 120),
-                  child: FilledButton.tonal(
-                    onPressed: () async {
-                      await _register();
-
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => const Login()),
-                      );
-                    },
-                    child: Text("Create Account"),
+                  child: Align(
+                    alignment: Alignment.bottomCenter,
+                    child: FilledButton(
+                      onPressed: () async {
+                        await _register();
+                    
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => const Login()),
+                        );
+                      },
+                      child: Text("Create Account"),
+                    ),
                   ),
                 ),
               ],
