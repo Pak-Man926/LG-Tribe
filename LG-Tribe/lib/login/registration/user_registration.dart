@@ -61,13 +61,26 @@ class _UserRegistrationState extends State<UserRegistration> {
         password,
       );
 
-      // if (result == true) {
-      //   // Registration successful
-      //   print('User registered successfully');
-      // } else {
-      //   // Registration failed
-      //   print("User registration failed!")
-      // }
+      if (result == true) {
+        // Registration successful
+        //print('User registered successfully');
+
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text('User registered successfully'),
+            duration: Duration(seconds: 2),
+          ),
+        );
+      } else {
+        // Registration failed
+        //print("User registration failed!")
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text('User registration failed!'),
+            duration: Duration(seconds: 2),
+          ),
+        );
+      }
     } catch (e) {
       // Handle error
       print('Error: $e');
