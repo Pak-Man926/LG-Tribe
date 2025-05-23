@@ -2,6 +2,7 @@ import "dart:async";
 
 import "package:serverpod/serverpod.dart";
 import "package:lg_tribe_server/src/generated/user_models.dart";
+import "package:bcrypt/bcrypt.dart";
 
 class UserEndpoints extends Endpoint 
 {
@@ -17,13 +18,14 @@ class UserEndpoints extends Endpoint
     }
     // Create a new user
 
+    final hashedPassword = BCrypt.hashpw(password, BCrypt.gensalt());
 
     final user = User(
       firstName:firstName,
       lastName: lastName,
       contacts: contacts,
       email: email,
-      password: password, 
+      password: hashedPassword, 
     );
 
     await User.db.insertRow(session, user);
@@ -33,6 +35,15 @@ class UserEndpoints extends Endpoint
 
   Future<User?> loginUser(Session session, int contacts, String password) async
   {
+    if (contacts == null || password.isEmpty) {
+      return null; // Invalid credentials
+    }
+
+    if(!BCrypt.checkpw(password, password))
+    {
+      return null; // Invalid credentials
+    }
+    
     // Find the user with the given contacts and password
     var user = await User.db.findFirstRow(
       session,
