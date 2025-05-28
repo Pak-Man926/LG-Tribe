@@ -47,7 +47,7 @@ class _LoginState extends State<Login> {
 
       if (result != null) {
         // Login successful
-        ScaffoldMessenger.of(res).showSnackBar(
+        ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
             content: Text('User login successfully'),
             duration: Duration(seconds: 2),
