@@ -56,7 +56,7 @@ class Startpage extends StatelessWidget {
             SizedBox(
               width: 250,
               child: OutlinedButton(
-                onPressed: () => Get.toNamed("/") ,
+                onPressed: () => Get.toNamed("/country"),
                 child: Text("Merchandiser"),
               ),
             ),
