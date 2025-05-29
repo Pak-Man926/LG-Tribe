@@ -16,7 +16,8 @@ void main() {
         GetPage(name: "/", page: () => SplashScreen()),
         GetPage(name: "/startpage", page: () => Startpage()),
         GetPage(name: "/country", page: () => Country()),
-        GetPage(name: "/userlogin", page: () => )
+        GetPage(name: "/userlogin", page: () => Login() ),
+        GetPage(name: "/homepage", page: () => Homepage()),
 
       ],
     )
