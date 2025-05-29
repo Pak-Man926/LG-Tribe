@@ -13,7 +13,7 @@ void main() {
       debugShowCheckedModeBanner: false,  
       initialRoute: "/",
       getPages: [
-        GetPage(name: "/", page: () => SplashScreen()),
+        GetPage(name: "/", page: () => SplashScreen()), // Initial route 
         GetPage(name: "/startpage", page: () => Startpage()),
         GetPage(name: "/country", page: () => Country()),
         GetPage(name: "/userlogin", page: () => Login() ),
