@@ -5,6 +5,8 @@ import "package:get/get.dart";
 class Startpage extends StatelessWidget {
   const Startpage({super.key});
 
+  //Get.offAll(Nextpage());
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
