@@ -4,6 +4,7 @@ import "package:get/get.dart";
 import "package:lg_tribe/Start_Page/startpage.dart";
 import "package:lg_tribe/Country/country.dart";
 import "package:lg_tribe/login/user_login.dart";
+import "package:lg_tribe/Homepage/homepage.dart";
 
 
 void main() {
@@ -14,6 +15,8 @@ void main() {
       getPages: [
         GetPage(name: "/", page: () => SplashScreen()),
         GetPage(name: "/startpage", page: () => Startpage()),
+        GetPage(name: "/country", page: () => Country()),
+        GetPage(name: "/userlogin", page: () => )
 
       ],
     )
