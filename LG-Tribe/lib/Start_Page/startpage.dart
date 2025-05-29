@@ -1,5 +1,6 @@
 import "package:flutter/material.dart";
 import "package:lg_tribe/Country/country.dart";
+import "package:get/get.dart";
 
 class Startpage extends StatelessWidget {
   const Startpage({super.key});
@@ -55,11 +56,7 @@ class Startpage extends StatelessWidget {
             SizedBox(
               width: 250,
               child: OutlinedButton(
-                onPressed: () {
-                  Navigator.of(
-                    context,
-                  ).push(MaterialPageRoute(builder: (context) => Country()));
-                },
+                onPressed: ,
                 child: Text("Merchandiser"),
               ),
             ),
