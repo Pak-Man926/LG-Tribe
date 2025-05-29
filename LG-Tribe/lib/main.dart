@@ -3,7 +3,7 @@ import 'package:lg_tribe/Splash_Screen/splash_screen.dart';
 import "package:get/get.dart";
 import "package:lg_tribe/Start_Page/startpage.dart";
 import "package:lg_tribe/Country/country.dart";
-import
+import "package:lg_tribe/login/user_login.dart";
 
 
 void main() {
