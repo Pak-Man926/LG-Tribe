@@ -64,11 +64,7 @@ class Startpage extends StatelessWidget {
             SizedBox(
               width: 250,
               child: OutlinedButton(
-                onPressed: () {
-                  Navigator.of(
-                    context,
-                  ).push(MaterialPageRoute(builder: (context) => Country()));
-                },
+                onPressed:() => Get.toNamed("/country"),
                 child: Text("Promoter"),
               ),
             ),
@@ -76,11 +72,7 @@ class Startpage extends StatelessWidget {
             SizedBox(
               width: 250,
               child: OutlinedButton(
-                onPressed: () {
-                  Navigator.of(
-                    context,
-                  ).push(MaterialPageRoute(builder: (context) => Country()));
-                },
+                onPressed: () => Get.toNamed("/country"),
                 child: Text("Floor Service Provider"),
               ),
             ),
