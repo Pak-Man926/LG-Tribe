@@ -1,5 +1,5 @@
 import "package:flutter/material.dart";
-import "package:lg_tribe/Country/country.dart";
+//import "package:lg_tribe/Country/country.dart";
 import "package:get/get.dart";
 
 class Startpage extends StatelessWidget {
