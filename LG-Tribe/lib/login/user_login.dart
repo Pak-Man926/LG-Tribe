@@ -58,7 +58,7 @@ class _LoginState extends State<Login> {
 
         print('User logged in successfully');
 
-         Get.toNamed("/"),
+         Get.toNamed("/homepage");
       } else {
         // Invalid credentials
         ScaffoldMessenger.of(context).showSnackBar(
@@ -216,7 +216,7 @@ class _LoginState extends State<Login> {
                         SizedBox(
                           width: double.infinity,
                           child: MaterialButton(
-                            onPressed: () {},
+                            onPressed: () => Get.toNamed("/sta"),,
                             color: Colors.white,
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.vertical(),
