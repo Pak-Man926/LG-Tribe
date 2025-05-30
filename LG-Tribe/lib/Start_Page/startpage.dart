@@ -2,7 +2,7 @@ import "package:flutter/material.dart";
 //import "package:lg_tribe/Country/country.dart";
 import "package:get/get.dart";
 
-//Startpage 
+//Startpage. User chooses
 class Startpage extends StatelessWidget {
   const Startpage({super.key});
 
