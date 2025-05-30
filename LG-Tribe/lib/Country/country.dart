@@ -2,7 +2,7 @@ import "package:country_flags/country_flags.dart";
 import "package:flutter/material.dart";
 import 'package:lg_tribe/Login/user_login.dart';
 
-
+//User selects the country they are in before proceeding to login.
 class Country extends StatelessWidget {
   const Country({super.key});
 
