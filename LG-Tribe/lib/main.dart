@@ -6,6 +6,7 @@ import "package:lg_tribe/Country/country.dart";
 import "package:lg_tribe/login/user_login.dart";
 import "package:lg_tribe/Homepage/homepage.dart";
 import "package:lg_tribe/login/registration/user_registration.dart";
+import "package:"
 
 
 void main() {
@@ -19,6 +20,7 @@ void main() {
         GetPage(name: "/country", page: () => Country()), // Third route
         GetPage(name: "/userlogin", page: () => Login() ),// Fourth route
         GetPage(name: "/userregistration", page: () => UserRegistration()), // Fifth route
+        GetPage(name: "/forgotpassword", page: () => ForgotPassword()), // Sixth route
         GetPage(name: "/homepage", page: () => Homepage()),
 
       ],
