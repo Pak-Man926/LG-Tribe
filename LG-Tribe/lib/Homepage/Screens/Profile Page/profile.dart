@@ -1,6 +1,7 @@
 import "package:flutter/material.dart";
 import "package:lg_tribe/Homepage/Screens/Profile%20Page/Screens/about.dart";
-import "package:lg_tribe/Homepage/homepage.dart";
+//import "package:lg_tribe/Homepage/homepage.dart";
+import "package:get/get.dart";  
 
 class Profile extends StatelessWidget {
   const Profile({super.key});
@@ -12,11 +13,7 @@ class Profile extends StatelessWidget {
       home: Scaffold(
         appBar: AppBar(
           leading: IconButton(
-            onPressed: () {
-              Navigator.of(
-                context,
-              ).push(MaterialPageRoute(builder: (context) => Homepage()));
-            },
+            onPressed: () => Get.toNamed("/profilescreen"),
             icon: Icon(Icons.arrow_back, color: Colors.blueGrey),
           ),
           centerTitle: true,
