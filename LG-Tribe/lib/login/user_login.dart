@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:intl_phone_field/intl_phone_field.dart';
-import 'package:lg_tribe/Forgot%20Password/forgot_password.dart';
-import 'package:lg_tribe/Homepage/homepage.dart';
-import "package:lg_tribe/login/registration/user_registration.dart";
+//import 'package:lg_tribe/Forgot%20Password/forgot_password.dart';
+//import 'package:lg_tribe/Homepage/homepage.dart';
+//import "package:lg_tribe/login/registration/user_registration.dart";
 import "package:lg_tribe_client/lg_tribe_client.dart";
 import "package:serverpod_flutter/serverpod_flutter.dart";
 import "package:get/get.dart";
@@ -222,15 +222,7 @@ class _LoginState extends State<Login> {
                         ),
                         SizedBox(height: 5),
                         GestureDetector(
-                          onTap: () {
-                            // Navigate to the registration page
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => UserRegistration(),
-                              ),
-                            );
-                          },
+                          onTap: () => Get.toNamed("/userregistration"),
                           child: Text(
                             "Don't have an account? Sign up",
                             style: TextStyle(color: Color(0xFFA50034)),
