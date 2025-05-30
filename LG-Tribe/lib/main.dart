@@ -26,6 +26,7 @@ void main() {
         GetPage(name: "/homepage", page: () => Homepage()),
         GetPage(name: "/profilescreen", page: () => ProfileScreen()),
         GetPage(name: "/profilepage", page: () => Profile())
+        GetPage(name: "/aboutapp", page: () => AboutApp()), 
 
       ],
     )
