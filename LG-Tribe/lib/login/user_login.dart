@@ -21,6 +21,7 @@ class _LoginState extends State<Login> {
   final contactNumberController = TextEditingController();
   final passwordController = TextEditingController();
 
+  // Initialize the client with the server URL
   var client = Client('http://localhost:8080/')
     ..connectivityMonitor = FlutterConnectivityMonitor();
 
@@ -56,10 +57,8 @@ class _LoginState extends State<Login> {
         );
 
         print('User logged in successfully');
-        Navigator.push(
-          context,
-          MaterialPageRoute(builder: (context) => Homepage()),
-        );
+
+         Get.toNamed("/"),
       } else {
         // Invalid credentials
         ScaffoldMessenger.of(context).showSnackBar(
