@@ -150,11 +150,7 @@ class Profile extends StatelessWidget {
                   SizedBox(height: 10),
                   //About App Button
                   MaterialButton(
-                    onPressed: () {
-                       Navigator.of(
-                         context,
-                       ).push(MaterialPageRoute(builder: (context) => About()));
-                    },
+                    onPressed: () => Get.toNamed("/aboutapp"),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10),
                     ),
