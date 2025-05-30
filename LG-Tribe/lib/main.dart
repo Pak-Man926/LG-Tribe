@@ -5,6 +5,7 @@ import "package:lg_tribe/Start_Page/startpage.dart";
 import "package:lg_tribe/Country/country.dart";
 import "package:lg_tribe/login/user_login.dart";
 import "package:lg_tribe/Homepage/homepage.dart";
+import "package:lg_tribe/login/registration/user_registration.dart";
 
 
 void main() {
@@ -14,9 +15,10 @@ void main() {
       initialRoute: "/",
       getPages: [
         GetPage(name: "/", page: () => SplashScreen()), // Initial route 
-        GetPage(name: "/startpage", page: () => Startpage()),
-        GetPage(name: "/country", page: () => Country()),
-        GetPage(name: "/userlogin", page: () => Login() ),
+        GetPage(name: "/startpage", page: () => Startpage()), //Second route
+        GetPage(name: "/country", page: () => Country()), // Third route
+        GetPage(name: "/userlogin", page: () => Login() ),// Fourth route
+        GetPage(name: "/userregistration", page: () => UserRegistration()), // Fifth route
         GetPage(name: "/homepage", page: () => Homepage()),
 
       ],
