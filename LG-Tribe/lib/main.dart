@@ -23,6 +23,7 @@ void main() {
         GetPage(name: "/userregistration", page: () => UserRegistration()), // Fifth route
         GetPage(name: "/forgotpassword", page: () => Password()), // Sixth route
         GetPage(name: "/homepage", page: () => Homepage()),
+        GetPage(name: "/profilescreen", page: () => )
         GetPage(name: "/profilepage", page: () => Profile())
 
       ],
