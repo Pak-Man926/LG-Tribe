@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import "package:lg_tribe/Homepage/Profile Page/profile.dart";
+import "package:lg_tribe/Homepage/Screens/Profile%20Page/profile.dart";
 class About extends StatelessWidget
 {
   const About({super.key});

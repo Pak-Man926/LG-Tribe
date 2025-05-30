@@ -1,5 +1,5 @@
 import "package:flutter/material.dart";
-import "package:lg_tribe/Homepage/Profile%20Page/Screens/about.dart";
+import "package:lg_tribe/Homepage/Screens/Profile%20Page/Screens/about.dart";
 import "package:lg_tribe/Homepage/homepage.dart";
 
 class Profile extends StatelessWidget {

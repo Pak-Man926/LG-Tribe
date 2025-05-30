@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import "package:country_flags/country_flags.dart";
-import "package:lg_tribe/Homepage/Profile%20Page/profile.dart";
+import "package:lg_tribe/Homepage/Screens/Profile%20Page/profile.dart";
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
