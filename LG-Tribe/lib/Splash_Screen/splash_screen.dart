@@ -25,6 +25,7 @@ class _SplashScreenState extends State<SplashScreen> {
 
   @override
   Widget build(BuildContext context) {
+    // Getoff(NextScreen());
     return Scaffold(
       body: Container(
         decoration: BoxDecoration(
