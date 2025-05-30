@@ -3,7 +3,8 @@ import "package:lg_tribe/Homepage/Screens/homescreen.dart";
 import "package:lg_tribe/Homepage/Screens/uploadscreen.dart";
 import "package:lg_tribe/Homepage/Screens/notificationsscreen.dart";
 import "package:lg_tribe/Homepage/Screens/profilescreen.dart";
-import "package:lg_tribe/Start_Page/startpage.dart";
+//import "package:lg_tribe/Start_Page/startpage.dart";
+import "package:get/get.dart";
 
 class Homepage extends StatefulWidget {
   const Homepage({super.key});
@@ -34,11 +35,7 @@ class _HomepageState extends State<Homepage> {
       home: Scaffold(
         appBar: AppBar(
           leading: IconButton(
-            onPressed: () {
-              Navigator.of(
-                    context,
-                  ).push(MaterialPageRoute(builder: (context) => Startpage()));
-            },
+            onPressed: () => Get.toNamed("/startpage"),
             icon: Icon(Icons.arrow_back, color: Colors.blueGrey,)),
           centerTitle: true,
           title: Text(
