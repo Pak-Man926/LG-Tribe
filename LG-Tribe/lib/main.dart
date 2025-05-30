@@ -6,7 +6,7 @@ import "package:lg_tribe/Country/country.dart";
 import "package:lg_tribe/login/user_login.dart";
 import "package:lg_tribe/Homepage/homepage.dart";
 import "package:lg_tribe/login/registration/user_registration.dart";
-import "package:"
+import "package:lg_tribe/login/Forgot Password/forgot_password.dart";
 
 
 void main() {
