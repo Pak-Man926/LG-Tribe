@@ -59,6 +59,7 @@ class Startpage extends StatelessWidget {
             SizedBox(
               width: 250,
               child: OutlinedButton(
+                //Merchandiser route
                 onPressed: () => Get.toNamed("/country"),
                 child: Text("Merchandiser"),
               ),
@@ -67,6 +68,7 @@ class Startpage extends StatelessWidget {
             SizedBox(
               width: 250,
               child: OutlinedButton(
+                //Promoter route
                 onPressed:() => Get.toNamed("/country"),
                 child: Text("Promoter"),
               ),
@@ -75,6 +77,7 @@ class Startpage extends StatelessWidget {
             SizedBox(
               width: 250,
               child: OutlinedButton(
+                //Floor Service Provider route
                 onPressed: () => Get.toNamed("/country"),
                 child: Text("Floor Service Provider"),
               ),
