@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import "package:lg_tribe/Homepage/Screens/Profile%20Page/Screens/about.dart";
 import "package:lg_tribe/Homepage/Screens/Profile%20Page/profile.dart";
 import "package:lg_tribe/Homepage/Screens/profilescreen.dart";
 import 'package:lg_tribe/Splash_Screen/splash_screen.dart';
@@ -25,8 +26,8 @@ void main() {
         GetPage(name: "/forgotpassword", page: () => Password()), // Sixth route
         GetPage(name: "/homepage", page: () => Homepage()),
         GetPage(name: "/profilescreen", page: () => ProfileScreen()),
-        GetPage(name: "/profilepage", page: () => Profile())
-        GetPage(name: "/aboutapp", page: () => AboutApp()), 
+        GetPage(name: "/profilepage", page: () => Profile()),
+        GetPage(name: "/aboutapp", page: () => About()), 
 
       ],
     )
