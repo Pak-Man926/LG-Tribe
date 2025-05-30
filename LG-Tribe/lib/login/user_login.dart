@@ -5,6 +5,7 @@ import 'package:lg_tribe/Homepage/homepage.dart';
 import "package:lg_tribe/login/registration/user_registration.dart";
 import "package:lg_tribe_client/lg_tribe_client.dart";
 import "package:serverpod_flutter/serverpod_flutter.dart";
+import "package:get/get.dart";
 
 class Login extends StatefulWidget {
   const Login({super.key});
