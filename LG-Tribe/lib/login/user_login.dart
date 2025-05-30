@@ -216,7 +216,7 @@ class _LoginState extends State<Login> {
                         SizedBox(
                           width: double.infinity,
                           child: MaterialButton(
-                            onPressed: () => Get.toNamed("/startpage"),,
+                            onPressed: () => Get.toNamed("/startpage"),
                             color: Colors.white,
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.vertical(),
