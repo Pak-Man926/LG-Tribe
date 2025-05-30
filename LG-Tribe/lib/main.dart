@@ -20,7 +20,7 @@ void main() {
         GetPage(name: "/country", page: () => Country()), // Third route
         GetPage(name: "/userlogin", page: () => Login() ),// Fourth route
         GetPage(name: "/userregistration", page: () => UserRegistration()), // Fifth route
-        GetPage(name: "/forgotpassword", page: () => ForgotPassword()), // Sixth route
+        GetPage(name: "/forgotpassword", page: () => Password()), // Sixth route
         GetPage(name: "/homepage", page: () => Homepage()),
 
       ],
