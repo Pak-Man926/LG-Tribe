@@ -1,6 +1,8 @@
 import "package:country_flags/country_flags.dart";
 import "package:flutter/material.dart";
-import 'package:lg_tribe/Login/user_login.dart';
+//import "package:get/instance_manager.dart";
+//import 'package:lg_tribe/Login/user_login.dart';
+import "package:get/get.dart";
 
 //User selects the country they are in before proceeding to login.
 class Country extends StatelessWidget {
@@ -71,8 +73,9 @@ class Country extends StatelessWidget {
               child: ListView(
                 padding: EdgeInsets.all(10),
                 children: [
+                  //Kenyan Country
                   MaterialButton(
-                    onPressed: () ,
+                    onPressed: () => Get.toNamed("/userlogin"),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10),
                     ),
@@ -91,7 +94,8 @@ class Country extends StatelessWidget {
                     ),
                   ),
                   MaterialButton(
-                    onPressed: () {},
+                    //Ethiopian Country
+                    onPressed: () => Get.toNamed("/userlogin"),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10),
                     ),
@@ -110,7 +114,8 @@ class Country extends StatelessWidget {
                     ),
                   ),
                   MaterialButton(
-                    onPressed: () {},
+                    //Tanzanian Country
+                    onPressed: () => Get.toNamed("/userlogin"),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10),
                     ),
@@ -129,7 +134,8 @@ class Country extends StatelessWidget {
                     ),
                   ),
                   MaterialButton(
-                    onPressed: () {},
+                    //Sudanese Country
+                    onPressed: () => Get.toNamed("/userlogin"),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10),
                     ),
@@ -148,7 +154,8 @@ class Country extends StatelessWidget {
                     ),
                   ),
                   MaterialButton(
-                    onPressed: () {},
+                    //Ugandan Country
+                    onPressed: () => Get.toNamed("/userlogin"),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10),
                     ),
@@ -167,7 +174,8 @@ class Country extends StatelessWidget {
                     ),
                   ),
                   MaterialButton(
-                    onPressed: () {},
+                    //Zambian Country
+                    onPressed: () => Get.toNamed("/userlogin"),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10),
                     ),
