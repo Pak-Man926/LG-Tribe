@@ -175,7 +175,7 @@ class _LoginState extends State<Login> {
                               ],
                             ),
                             GestureDetector(
-                              onTap: () => Get.to,
+                              onTap: () => Get.toNamed("/forgotpassword"),
                               child: Text(
                                 "Forgot Password?",
                                 style: TextStyle(color: Color(0xFFA50034)),
