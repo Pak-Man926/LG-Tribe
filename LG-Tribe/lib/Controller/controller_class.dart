@@ -44,4 +44,12 @@ class UserStateController extends GetxController
     isLoggedIn.value = true;
     userName.value = User;
   }
+
+  void logout()
+  {
+    isLoggedIn.value = false;
+    userName.value = "";
+    selectedAuthLevel.value = null;
+    selectedCountry.value = null;
+  }
 }
