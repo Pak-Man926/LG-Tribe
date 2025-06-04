@@ -12,7 +12,9 @@ import "package:lg_tribe/login/registration/user_registration.dart";
 import "package:lg_tribe/login/Forgot Password/forgot_password.dart";
 
 
-void main() {
+void main()
+{
+  Get.put(UserStateController()); // Initialize the UserStateController
   runApp(
     GetMaterialApp(
       debugShowCheckedModeBanner: false,  
