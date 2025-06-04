@@ -24,8 +24,15 @@ class UserStateController extends GetxController
   var isLoggedIn = false.obs;
   var userName = "".obs;
 
-  void setAuthLevel(AuthLevel? authLevel)
+  void setAuthLevel(AuthLevel? level)
   {
-    selectedAuthLevel.value = authLevel;  
+    selectedAuthLevel.value = level;  
   }
+
+  void setCountry(Country? country)
+  {
+    selectedCountry.value = country;  
+  }
+
+  
 }
