@@ -34,5 +34,14 @@ class UserStateController extends GetxController
     selectedCountry.value = country;  
   }
 
-  
+  void setUsername(String name)
+  {
+    userName.value = name;
+  }
+
+  void login(String User)
+  {
+    isLoggedIn.value = true;
+    userName.value = User;
+  }
 }
