@@ -96,7 +96,8 @@ class Country extends StatelessWidget {
                         ),
                         Expanded(
                           //SizedBox(width: 10),
-                          child: Text("     Kenya")),
+                          child: Text("     Kenya"),
+                        ),
                         Icon(Icons.arrow_forward_ios, size: 15),
                       ],
                     ),
@@ -106,7 +107,7 @@ class Country extends StatelessWidget {
                     onPressed: () {
                       userState.setCountry(CountryLocated.ethopia);
                       Get.toNamed("/userlogin");
-                    }, 
+                    },
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10),
                     ),
