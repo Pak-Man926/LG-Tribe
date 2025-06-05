@@ -5,9 +5,9 @@ import "package:lg_tribe/Controller/controller_class.dart";
 
 //Startpage. User chooses a role to proceed with the app.
 class Startpage extends StatelessWidget {
-  //const Startpage({super.key});
+  const Startpage({super.key});
 
-  var userState = Get.find<UserStateController>();
+  final userState = Get.find<UserStateController>();
 
   //Get.offAll(Nextpage());
 
