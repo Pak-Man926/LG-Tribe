@@ -126,7 +126,10 @@ class Country extends StatelessWidget {
                   ),
                   MaterialButton(
                     //Tanzanian Country
-                    onPressed: () => Get.toNamed("/userlogin"),
+                    onPressed: () {
+                      userState.setCountry(CountryLocated.tanzania);
+                      Get.toNamed("/userlogin");
+                    },
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10),
                     ),
@@ -146,7 +149,10 @@ class Country extends StatelessWidget {
                   ),
                   MaterialButton(
                     //Sudanese Country
-                    onPressed: () => Get.toNamed("/userlogin"),
+                    onPressed: () {
+                      userState.setCountry(CountryLocated.sudan);
+                      Get.toNamed("/userlogin");
+                    },
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10),
                     ),
@@ -166,7 +172,10 @@ class Country extends StatelessWidget {
                   ),
                   MaterialButton(
                     //Ugandan Country
-                    onPressed: () => Get.toNamed("/userlogin"),
+                    onPressed: () {
+                      userState.setCountry(CountryLocated.uganda);
+                      Get.toNamed("/userlogin");
+                    },
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10),
                     ),
@@ -186,7 +195,10 @@ class Country extends StatelessWidget {
                   ),
                   MaterialButton(
                     //Zambian Country
-                    onPressed: () => Get.toNamed("/userlogin"),
+                    onPressed: () {
+                      userState.setCountry(CountryLocated.zambia);
+                      Get.toNamed("/userlogin");
+                    },
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10),
                     ),
