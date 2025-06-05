@@ -5,7 +5,7 @@ import "package:flutter/material.dart";
 import "package:get/get.dart";
 
 //User selects the country they are in before proceeding to login.
-class CountrySelection extends StatelessWidget {
+class Country extends StatelessWidget {
   const Country({super.key});
 
   @override
