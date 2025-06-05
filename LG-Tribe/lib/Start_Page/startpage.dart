@@ -22,7 +22,7 @@ class Startpage extends StatelessWidget {
   Column StartPage(BuildContext context) {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
-      children: <Widget>[
+      children: [
         Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -57,12 +57,13 @@ class Startpage extends StatelessWidget {
           ],
         ),
         Column(
-          children: [
+          children: AuthLevel.values.map((level)) [
             Padding(padding: EdgeInsets.all(10)),
             SizedBox(
               width: 250,
               child: OutlinedButton(
                 //Merchandiser route
+                userState.setAuthLevel(AuthLevel.merchandiser),
                 onPressed: () => Get.toNamed("/country"),
                 child: Text("Merchandiser"),
               ),
