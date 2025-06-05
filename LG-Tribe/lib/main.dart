@@ -5,7 +5,7 @@ import "package:lg_tribe/Homepage/Screens/profilescreen.dart";
 import 'package:lg_tribe/Splash_Screen/splash_screen.dart';
 import "package:get/get.dart";
 import "package:lg_tribe/Start_Page/startpage.dart";
-import "package:lg_tribe/Country/country.dart";
+//import "package:lg_tribe/Country/country.dart";
 import "package:lg_tribe/login/user_login.dart";
 import "package:lg_tribe/Homepage/homepage.dart";
 import "package:lg_tribe/login/registration/user_registration.dart";
