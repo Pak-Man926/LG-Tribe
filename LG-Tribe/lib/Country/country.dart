@@ -78,7 +78,10 @@ class Country extends StatelessWidget {
                 children: [
                   //Kenyan Country
                   MaterialButton(
-                    onPressed: () => Get.toNamed("/userlogin"),
+                    onPressed: () {
+                      userState.setCountry(CountryLocated.kenya);
+                      Get.toNamed("/userlogin");
+                    },
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10),
                     ),
