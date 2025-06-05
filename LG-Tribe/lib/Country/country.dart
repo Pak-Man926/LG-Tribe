@@ -74,7 +74,7 @@ class Country extends StatelessWidget {
             ),
             Expanded(
               child: ListView(
-                padding: EdgeInsets.all(10),
+                //padding: EdgeInsets.all(10),
                 children: [
                   //Kenyan Country
                   MaterialButton(
@@ -95,7 +95,7 @@ class Country extends StatelessWidget {
                           shape: const Circle(),
                         ),
                         Expanded(
-                          SizedBox(width: 10),
+                          //SizedBox(width: 10),
                           child: Text("Kenya")),
                         Icon(Icons.arrow_forward_ios, size: 15),
                       ],
