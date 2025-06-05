@@ -9,6 +9,8 @@ class Startpage extends StatelessWidget {
 
   final userState = Get.put(UserStateController());
 
+  const Startpage({super.key});
+
   //Get.offAll(Nextpage());
 
   @override
