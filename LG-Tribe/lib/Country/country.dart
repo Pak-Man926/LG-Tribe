@@ -6,7 +6,9 @@ import "package:get/get.dart";
 
 //User selects the country they are in before proceeding to login.
 class Country extends StatelessWidget {
-  const Country({super.key});
+  //const Country({super.key});
+
+  final userState = Get.put(UserStateController());
 
   @override
   Widget build(BuildContext context) {
