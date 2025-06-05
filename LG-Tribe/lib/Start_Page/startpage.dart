@@ -57,7 +57,7 @@ class Startpage extends StatelessWidget {
           ],
         ),
         Column(
-          children: AuthLevel.values.map((level)) {
+          children: AuthLevel.values.map [
             Padding(padding: EdgeInsets.all(10)),
             SizedBox(
               width: 250,
@@ -87,7 +87,7 @@ class Startpage extends StatelessWidget {
               ),
             ),
             Padding(padding: EdgeInsets.all(10)),
-          },
+          ],
         ),
       ],
     );
