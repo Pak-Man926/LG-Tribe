@@ -26,12 +26,12 @@ class UserStateController extends GetxController
 
   void setAuthLevel(AuthLevel? level)
   {
-    selectedAuthLevel.value = level;  
+    selectedAuthLevel.value = [level];  
   }
 
   void setCountry(Country? country)
   {
-    selectedCountry.value = country;  
+    selectedCountry.value = [country];  
   }
 
   void setUsername(String name)
@@ -49,7 +49,7 @@ class UserStateController extends GetxController
   {
     isLoggedIn.value = false;
     userName.value = "";
-    selectedAuthLevel.value = null;
-    selectedCountry.value = null;
+    selectedAuthLevel.value = [];
+    selectedCountry.value = [];
   }
 }
