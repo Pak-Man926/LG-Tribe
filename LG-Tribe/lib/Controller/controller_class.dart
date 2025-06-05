@@ -19,8 +19,8 @@ enum Country
 
 class UserStateController extends GetxController
 {
-  var selectedAuthLevel = Rx<AuthLevel?>(null);
-  var selectedCountry = Rx<Country?>(null);
+  var selectedAuthLevel = <AuthLevel?>[].obs;
+  var selectedCountry = <Country?>[].obs;
   var isLoggedIn = false.obs;
   var userName = "".obs;
 
