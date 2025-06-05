@@ -7,7 +7,7 @@ enum AuthLevel
   floorServiceprovider,
 }
 
-enum Country
+enum CountryLocated
 {
   kenya,
   ethopia,
@@ -20,7 +20,7 @@ enum Country
 class UserStateController extends GetxController
 {
   var selectedAuthLevel = <AuthLevel?>[].obs;
-  var selectedCountry = <Country?>[].obs;
+  var selectedCountry = <CountryLocated?>[].obs;
   var isLoggedIn = false.obs;
   var userName = "".obs;
 
@@ -29,7 +29,7 @@ class UserStateController extends GetxController
     selectedAuthLevel.value = [level];  
   }
 
-  void setCountry(Country? country)
+  void setCountry(CountryLocated? country)
   {
     selectedCountry.value = [country];  
   }
