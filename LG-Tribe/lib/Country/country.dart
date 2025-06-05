@@ -3,6 +3,7 @@ import "package:flutter/material.dart";
 //import "package:get/instance_manager.dart";
 //import 'package:lg_tribe/Login/user_login.dart';
 import "package:get/get.dart";
+import "package:lg_tribe/Controller/controller_class.dart";
 
 //User selects the country they are in before proceeding to login.
 class Country extends StatelessWidget {
