@@ -7,7 +7,7 @@ import "package:lg_tribe/Controller/controller_class.dart";
 class Startpage extends StatelessWidget {
   //const Startpage({super.key});
 
-  final userState = GetX<UserStateController>();
+  final userState = Get.put(UserStateController());
 
   //Get.offAll(Nextpage());
 
@@ -63,8 +63,10 @@ class Startpage extends StatelessWidget {
               width: 250,
               child: OutlinedButton(
                 //Merchandiser route
-                userState.setAuthLevel(AuthLevel.merchandiser),
-                onPressed: () => Get.toNamed("/country"),
+                onPressed: () {
+                  userState.setAuthLevel(AuthLevel.merchandiser);
+                  Get.toNamed("/country");
+                },
                 child: Text("Merchandiser"),
               ),
             ),
@@ -73,7 +75,10 @@ class Startpage extends StatelessWidget {
               width: 250,
               child: OutlinedButton(
                 //Promoter route
-                onPressed:() => Get.toNamed("/country"),
+                onPressed:() {
+                  userState.setAuthLevel(AuthLevel.promoter);
+                  Get.toNamed("/country");
+                }, 
                 child: Text("Promoter"),
               ),
             ),
@@ -82,7 +87,10 @@ class Startpage extends StatelessWidget {
               width: 250,
               child: OutlinedButton(
                 //Floor Service Provider route
-                onPressed: () => Get.toNamed("/country"),
+                onPressed: () {
+                  userState.setAuthLevel(AuthLevel.floorServiceprovider);
+                  Get.toNamed("/country");
+                }, 
                 child: Text("Floor Service Provider"),
               ),
             ),
