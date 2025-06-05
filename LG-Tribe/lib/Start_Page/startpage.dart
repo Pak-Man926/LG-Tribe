@@ -75,10 +75,10 @@ class Startpage extends StatelessWidget {
               width: 250,
               child: OutlinedButton(
                 //Promoter route
-                onPressed:() {
+                onPressed: () {
                   userState.setAuthLevel(AuthLevel.promoter);
                   Get.toNamed("/country");
-                }, 
+                },
                 child: Text("Promoter"),
               ),
             ),
@@ -90,7 +90,7 @@ class Startpage extends StatelessWidget {
                 onPressed: () {
                   userState.setAuthLevel(AuthLevel.floorServiceprovider);
                   Get.toNamed("/country");
-                }, 
+                },
                 child: Text("Floor Service Provider"),
               ),
             ),
