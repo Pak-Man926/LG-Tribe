@@ -39,10 +39,10 @@ class UserStateController extends GetxController
     userName.value = name;
   }
 
-  void login(String User)
+  void login(String user)
   {
     isLoggedIn.value = true;
-    userName.value = User;
+    userName.value = user;
   }
 
   void logout()
