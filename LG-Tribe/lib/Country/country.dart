@@ -94,11 +94,9 @@ class Country extends StatelessWidget {
                           "KE",
                           shape: const Circle(),
                         ),
-                        //Expanded(
+                        Expanded(
                           //SizedBox(width: 10),
-                          //child:
-                          //SizedBox(width: 5,),
-                           Text("Kenya"),
+                          child: Text("Kenya")),
                         Icon(Icons.arrow_forward_ios, size: 15),
                       ],
                     ),
