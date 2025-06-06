@@ -6,16 +6,11 @@ import 'package:intl_phone_field/intl_phone_field.dart';
 import "package:lg_tribe_client/lg_tribe_client.dart";
 import "package:serverpod_flutter/serverpod_flutter.dart";
 import "package:get/get.dart";
+import "package:lg_tribe/Controller/controller_class.dart";
 
-class Login extends StatefulWidget {
- // const Login({super.key});
-
-  @override
-  _LoginState createState() => _LoginState();
-}
-
-class _LoginState extends State<Login> {
-  
+class Login extends StatelessWidget 
+{
+  final userState = Get
 
   @override
   Widget build(BuildContext context) {
