@@ -11,7 +11,6 @@ class Country extends StatelessWidget {
 
   final userState = Get.put(UserStateController());
 
-  const Country({super.key});
 
   @override
   Widget build(BuildContext context) {

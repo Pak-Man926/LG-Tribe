@@ -8,72 +8,14 @@ import "package:serverpod_flutter/serverpod_flutter.dart";
 import "package:get/get.dart";
 
 class Login extends StatefulWidget {
-  const Login({super.key});
+ // const Login({super.key});
 
   @override
   _LoginState createState() => _LoginState();
 }
 
 class _LoginState extends State<Login> {
-  String phoneNumber = '';
-  String password = '';
-
-  final contactNumberController = TextEditingController();
-  final passwordController = TextEditingController();
-
-  // Initialize the client with the server URL
-  var client = Client('http://localhost:8080/')
-    ..connectivityMonitor = FlutterConnectivityMonitor();
-
-  @override
-  void dispose() {
-    contactNumberController.dispose();
-    passwordController.dispose();
-    super.dispose();
-  }
-
-  Future<void> _login() async {
-    final contactNumber = int.tryParse(contactNumberController.text);
-    final password = passwordController.text;
-
-    if (contactNumber == null || password.isEmpty) {
-      // Show error message
-      return;
-    }
-
-    try {
-      final result = await client.userEndpoints.loginUser(
-        contactNumber,
-        password,
-      );
-
-      if (result != null) {
-        // Login successful
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(
-            content: Text('User login successfully'),
-            duration: Duration(seconds: 2),
-          ),
-        );
-
-        print('User logged in successfully');
-
-         Get.toNamed("/homepage");
-      } else {
-        // Invalid credentials
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(
-            content: Text('User login failed!'),
-            duration: Duration(seconds: 2),
-          ),
-        );
-        print('Invalid credentials');
-      }
-    } catch (e) {
-      // Handle error
-      print('Error: $e');
-    }
-  }
+  
 
   @override
   Widget build(BuildContext context) {
