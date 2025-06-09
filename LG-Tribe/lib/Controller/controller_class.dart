@@ -26,6 +26,7 @@ class UserStateController extends GetxController
   var secondName = "".obs;
   var phoneNumber = "".obs;
   var email = "".obs;
+  var userName = "".obs;
 
   void setAuthLevel(AuthLevel? level)
   {
