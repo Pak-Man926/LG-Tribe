@@ -15,7 +15,7 @@ class Login extends StatelessWidget
   final contactNumberController = TextEditingController();
   final passwordController = TextEditingController();
 
-  
+  void 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -48,6 +48,8 @@ class Login extends StatelessWidget
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
+                    Text("$"),
+                    SizedBox(height: 10),
                     Text(
                       "Welcome back! Please enter your details",
                       style: TextStyle(
