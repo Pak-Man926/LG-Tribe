@@ -144,7 +144,7 @@ class Login extends StatelessWidget
                             // setState(() {
                             //   phoneNumber = phone.completeNumber;
                             // });
-                            phone.value = phone.completeNumber;
+                            phone = phone.completeNumber;
                           },
                         ),
                         SizedBox(height: 5),
