@@ -22,7 +22,7 @@ class UserStateController extends GetxController
   var selectedAuthLevel = <AuthLevel?>[].obs;
   var selectedCountry = <CountryLocated?>[].obs;
   var isLoggedIn = false.obs;
-  var userName = "".obs;
+  var firstName = "".obs;
 
   void setAuthLevel(AuthLevel? level)
   {
@@ -34,9 +34,9 @@ class UserStateController extends GetxController
     selectedCountry.value = [country];  
   }
 
-  void setUsername(String name)
+  void setFirstname(String firstName)
   {
-    userName.value = name;
+    firstName.value = firstName;
   }
 
   void login(String user)
