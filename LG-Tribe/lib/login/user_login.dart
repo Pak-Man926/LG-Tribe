@@ -141,9 +141,10 @@ class Login extends StatelessWidget
                           ),
                           initialCountryCode: initialCountryCode,
                           onChanged: (phone) {
-                            setState(() {
-                              phoneNumber = phone.completeNumber;
-                            });
+                            // setState(() {
+                            //   phoneNumber = phone.completeNumber;
+                            // });
+                            phone.value = phone.completeNumber;
                           },
                         ),
                         SizedBox(height: 5),
@@ -248,7 +249,7 @@ class Login extends StatelessWidget
   }
 }
 
-String getInitialCountryCode(Country? country)
+String getInitialCountryCode(country? country)
 {
   switch (country) {
     case Country.kenya:
@@ -257,10 +258,12 @@ String getInitialCountryCode(Country? country)
       return 'ET';
     case Country.tanzania:
       return 'TZ';
+    case Country.sudan:
+      return 'SD';  
     case Country.uganda:
       return 'UG';
-    case Country.rwanda:
-      return 'RW';
+    case Country.Zambia:
+      return 'ZM';
     default:
       return 'KE'; // Default to Kenya if no country is selected
   }
