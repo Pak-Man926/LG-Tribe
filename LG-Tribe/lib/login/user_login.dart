@@ -12,6 +12,10 @@ class Login extends StatelessWidget
 {
   final userState = Get.put(UserStateController());
 
+  final contactNumberController = TextEditingController();
+  final passwordController = TextEditingController();
+
+  
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
