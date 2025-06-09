@@ -76,7 +76,7 @@ class Login extends StatelessWidget
   @override
   Widget build(BuildContext context) 
   {
-    String initialCountryCode = getInitialCountryCode(userState.selectedCountry.value);
+    String initialCountryCode = getInitialCountryCode(userState.selectedCountry.value ?? CountryLocated.kenya);
 
     return MaterialApp(
       debugShowCheckedModeBanner: false,
@@ -249,20 +249,20 @@ class Login extends StatelessWidget
   }
 }
 
-String getInitialCountryCode(country? country)
+String getInitialCountryCode(CountryLocated country)
 {
   switch (country) {
-    case Country.kenya:
+    case CountryLocated.kenya:
       return 'KE';
-    case Country.ethopia:
+    case CountryLocated.ethopia:
       return 'ET';
-    case Country.tanzania:
+    case CountryLocated.tanzania:
       return 'TZ';
-    case Country.sudan:
+    case CountryLocated.sudan:
       return 'SD';  
-    case Country.uganda:
+    case CountryLocated.uganda:
       return 'UG';
-    case Country.Zambia:
+    case CountryLocated.zambia:
       return 'ZM';
     default:
       return 'KE'; // Default to Kenya if no country is selected
