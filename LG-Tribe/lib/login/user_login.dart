@@ -105,7 +105,7 @@ class Login extends StatelessWidget
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text("${userState.selectedCountry.value}",
+                    Text("${userState..value}",
                         style: TextStyle(
                           fontSize: 20,
                           fontWeight: FontWeight.bold,
