@@ -10,13 +10,12 @@ import "package:lg_tribe/Controller/controller_class.dart";
 
 class Login extends StatelessWidget 
 {
-  
   final userState = Get.put(UserStateController());
 
   final contactNumberController = TextEditingController();
   final passwordController = TextEditingController();
 
-
+  
 
   void attemptLogin() async
   {
