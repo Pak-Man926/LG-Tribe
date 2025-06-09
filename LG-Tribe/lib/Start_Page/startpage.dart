@@ -66,7 +66,7 @@ class Startpage extends StatelessWidget {
               child: OutlinedButton(
                 //Merchandiser route
                 onPressed: () {
-                  userState.setAuthLevel(AuthLevel.merchandiser);
+                  userState.setAuthLevel(level);
                   Get.toNamed("/country");
                 },
                 child: Text("Merchandiser"),
