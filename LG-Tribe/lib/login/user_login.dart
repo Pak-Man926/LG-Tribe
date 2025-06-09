@@ -52,7 +52,7 @@ class Login extends StatelessWidget
     try {
       final result = await client.userEndpoints.loginUser(phoneNumber, password);
       if (result != null) {
-        userState.firstName.value = result.firstName + " " + result.lastName;
+        userState.userName.value = result.firstName + " " + result.lastName;
         Get.toNamed("/homepage");
       } else {
         Get.snackbar("Error", "Invalid phone number or password",
