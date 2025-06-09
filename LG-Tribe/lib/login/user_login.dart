@@ -109,7 +109,7 @@ class Login extends StatelessWidget
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text("${userState.selectedAuthLevel.value}",
+                    Text("${userState.selectedAuthLevel.}",
                         style: TextStyle(
                           fontSize: 20,
                           fontWeight: FontWeight.bold,
