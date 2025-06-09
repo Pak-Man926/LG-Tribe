@@ -74,7 +74,7 @@ class _UserRegistrationState extends State<UserRegistration> {
 
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => const Login()),
+          MaterialPageRoute(builder: (context) => Login()),
         );
       } else {
         // Registration failed
