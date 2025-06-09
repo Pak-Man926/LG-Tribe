@@ -30,12 +30,12 @@ class UserStateController extends GetxController
 
   void setAuthLevel(AuthLevel? level)
   {
-    selectedAuthLevel.value = [level];  
+    selectedAuthLevel.value = level;  
   }
 
   void setCountry(CountryLocated? country)
   {
-    selectedCountry.value = [country];  
+    selectedCountry.value = country;  
   }
 
   void setFirstname(String firstName)
@@ -60,8 +60,8 @@ class UserStateController extends GetxController
     isLoggedIn.value = true;
     firstName.value = username;
     this.phoneNumber.value = phoneNumber.toString();
-    selectedAuthLevel.value = [];
-    selectedCountry.value = [];
+    selectedAuthLevel.value = null;
+    selectedCountry.value = null;
     //this.email.value = email;
   }
   // {
@@ -73,7 +73,7 @@ class UserStateController extends GetxController
   {
     isLoggedIn.value = false;
     firstName.value = "";
-    selectedAuthLevel.value = [];
-    selectedCountry.value = [];
+    selectedAuthLevel.value = null;
+    selectedCountry.value = null;
   }
 }
