@@ -39,10 +39,22 @@ class UserStateController extends GetxController
 
   void setFirstname(String firstName)
   {
-    firstName = firstName;
+    this.firstName.value = firstName;
+  }
+  void setSecondName(String secondName)
+  {
+    this.secondName.value = secondName;
+  }
+  void setPhoneNumber(String phoneNumber)
+  {
+    this.phoneNumber.value = phoneNumber;
+  }
+  void setEmail(String email)
+  {
+    this.email.value = email;
   }
 
-  void login(String user)
+  void login(var )
   {
     isLoggedIn.value = true;
     firstName.value = user;
