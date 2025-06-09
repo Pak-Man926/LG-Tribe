@@ -40,25 +40,33 @@ class Login extends StatelessWidget
   // }
 
   Future<void> _login() async {
-    final phoneNumber = contactNumberController.text;
+    final phoneNumber = int.tryParse(contactNumberController.text);
     final password = passwordController.text;
 
-    if (phoneNumber.isEmpty || password.isEmpty) {
+    if (phoneNumber == null || password.isEmpty)
+    {
       Get.snackbar("Error", "Please fill in all fields",
           snackPosition: SnackPosition.BOTTOM);
       return;
     }
 
-    try {
+    try
+    {
       final result = await client.userEndpoints.loginUser(phoneNumber, password);
-      if (result != null) {
-        userState.username.value = result.firstName + " " + result.lastName;
+
+      if (result != null)
+      {
+        userState.userName.value = result.firstName + " " + result.lastName;
         Get.toNamed("/homepage");
-      } else {
+      }
+      else 
+      {
         Get.snackbar("Error", "Invalid phone number or password",
             snackPosition: SnackPosition.BOTTOM);
       }
-    } catch (e) {
+    }
+    catch (e)
+    {
       Get.snackbar("Error", "An error occurred while logging in",
           snackPosition: SnackPosition.BOTTOM);
     }
