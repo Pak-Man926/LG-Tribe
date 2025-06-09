@@ -54,11 +54,19 @@ class UserStateController extends GetxController
     this.email.value = email;
   }
 
-  void login(var )
+  void login(String username, int phoneNumber)
   {
     isLoggedIn.value = true;
-    firstName.value = user;
+    firstName.value = username;
+    this.phoneNumber.value = phoneNumber.toString();
+    selectedAuthLevel.value = [];
+    selectedCountry.value = [];
+    //this.email.value = email;
   }
+  // {
+  //   isLoggedIn.value = true;
+  //   firstName.value = user;
+  // }
 
   void logout()
   {
