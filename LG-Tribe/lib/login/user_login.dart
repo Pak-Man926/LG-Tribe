@@ -15,20 +15,53 @@ class Login extends StatelessWidget
   final contactNumberController = TextEditingController();
   final passwordController = TextEditingController();
 
-  
+  var client = Client('http://localhost:8080/')
+    ..connectivityMonitor = FlutterConnectivityMonitor();
 
-  void attemptLogin() async
+  @override
+  void dispose()
   {
+    contactNumberController.dispose();
+    passwordController.dispose();
+  }
+
+  // void attemptLogin() async
+  // {
+  //   final phoneNumber = contactNumberController.text;
+  //   final password = passwordController.text;
+
+  //   if (phoneNumber.isEmpty || password.isEmpty)
+  //   {
+  //     Get.snackbar("Error", "Please fill in all fields",
+  //         snackPosition: SnackPosition.BOTTOM);
+  //   }
+
+  //   return;
+  // }
+
+  Future<void> _login() async {
     final phoneNumber = contactNumberController.text;
     final password = passwordController.text;
 
-    if (phoneNumber.isEmpty || password.isEmpty)
-    {
+    if (phoneNumber.isEmpty || password.isEmpty) {
       Get.snackbar("Error", "Please fill in all fields",
           snackPosition: SnackPosition.BOTTOM);
+      return;
     }
 
-    return;
+    try {
+      final result = await client.userEndpoints.loginUser(phoneNumber, password);
+      if (result != null) {
+        userState.userName.value = result.firstName + " " + result.lastName;
+        Get.toNamed("/homepage");
+      } else {
+        Get.snackbar("Error", "Invalid phone number or password",
+            snackPosition: SnackPosition.BOTTOM);
+      }
+    } catch (e) {
+      Get.snackbar("Error", "An error occurred while logging in",
+          snackPosition: SnackPosition.BOTTOM);
+    }
   }
 
 
