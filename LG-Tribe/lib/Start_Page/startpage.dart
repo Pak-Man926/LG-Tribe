@@ -76,7 +76,7 @@ class Startpage extends StatelessWidget {
               child: OutlinedButton(
                 //Promoter route
                 onPressed: () {
-                  userState.setAuthLevel(AuthLevel.promoter);
+                  userState.setAuthLevel(AuthLevel.promoter).;
                   Get.toNamed("/country");
                 },
                 child: Text("Promoter"),
