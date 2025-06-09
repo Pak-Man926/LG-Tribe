@@ -162,11 +162,11 @@ class Login extends StatelessWidget
                           decoration: InputDecoration(
                             border: OutlineInputBorder(),
                           ),
-                          onChanged: (value) {
-                            setState(() {
-                              password = value;
-                            });
-                          },
+                          // onChanged: (value) {
+                          //   setState(() {
+                          //     password = value;
+                          //   });
+                          // },
                         ),
                         SizedBox(height: 5),
                         Row(
