@@ -57,7 +57,7 @@ class Startpage extends StatelessWidget {
           ],
         ),
         Column(
-          children: <Obx> [
+          children: [
             Padding(padding: EdgeInsets.all(10)),
             SizedBox(
               width: 250,
