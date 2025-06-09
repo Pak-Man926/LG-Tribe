@@ -74,7 +74,10 @@ class Login extends StatelessWidget
 
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context) 
+  {
+    String initialCountryCode = getInitialCountryCode(userState.selectedCountry.value);
+
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
@@ -136,7 +139,7 @@ class Login extends StatelessWidget
                             hintText: "Enter your phone number",
                             border: OutlineInputBorder(),
                           ),
-                          initialCountryCode: 'KE',
+                          initialCountryCode: initialCountryCode,
                           onChanged: (phone) {
                             setState(() {
                               phoneNumber = phone.completeNumber;
@@ -242,5 +245,23 @@ class Login extends StatelessWidget
         ),
       ),
     );
+  }
+}
+
+String getInitialCountryCode(Country? country)
+{
+  switch (country) {
+    case Country.kenya:
+      return 'KE';
+    case Country.ethopia:
+      return 'ET';
+    case Country.tanzania:
+      return 'TZ';
+    case Country.uganda:
+      return 'UG';
+    case Country.rwanda:
+      return 'RW';
+    default:
+      return 'KE'; // Default to Kenya if no country is selected
   }
 }
