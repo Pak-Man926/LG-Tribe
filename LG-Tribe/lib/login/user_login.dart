@@ -48,7 +48,7 @@ class Login extends StatelessWidget
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text("$"),
+                    Text("$user"),
                     SizedBox(height: 10),
                     Text(
                       "Welcome back! Please enter your details",
