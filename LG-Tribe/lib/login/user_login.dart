@@ -15,7 +15,21 @@ class Login extends StatelessWidget
   final contactNumberController = TextEditingController();
   final passwordController = TextEditingController();
 
-  void 
+  void attemptLogin() async
+  {
+    final phoneNumber = contactNumberController.text;
+    final password = passwordController.text;
+
+    if (phoneNumber.isEmpty || password.isEmpty)
+    {
+      Get.snackbar("Error", "Please fill in all fields",
+          snackPosition: SnackPosition.BOTTOM);
+    }
+
+    return;
+  }
+
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -48,7 +62,11 @@ class Login extends StatelessWidget
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text("$user"),
+                    Text("$userState.userName.value",
+                        style: TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                        )),
                     SizedBox(height: 10),
                     Text(
                       "Welcome back! Please enter your details",
