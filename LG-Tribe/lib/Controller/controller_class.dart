@@ -77,3 +77,4 @@ class UserStateController extends GetxController
     selectedCountry.value = null;
   }
 }
+
