@@ -78,4 +78,7 @@ class UserStateController extends GetxController
   }
 }
 
-Future<void> 
+Future<void> readData() async
+{
+  
+}
