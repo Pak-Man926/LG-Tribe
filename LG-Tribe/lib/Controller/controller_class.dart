@@ -80,5 +80,5 @@ class UserStateController extends GetxController
 
 Future<void> readData() async
 {
-  
+  final sharedPreferences = await Get.find<SharedPreferences>();
 }
