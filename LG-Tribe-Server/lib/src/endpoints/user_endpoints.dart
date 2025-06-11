@@ -1,5 +1,4 @@
 import "dart:async";
-
 import "package:serverpod/serverpod.dart";
 import "package:lg_tribe_server/src/generated/user_models.dart";
 import "package:bcrypt/bcrypt.dart";
