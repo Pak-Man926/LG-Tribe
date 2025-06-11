@@ -78,7 +78,7 @@ class UserStateController extends GetxController
   }
 }
 
-Future<void> readData() async
-{
-  final sharedPreferences prefs = await Get.find<SharedPreferences>();
-}
+// Future<void> readData() async
+// {
+//   final sharedPreferences prefs = await Get.find<SharedPreferences>();
+// }
