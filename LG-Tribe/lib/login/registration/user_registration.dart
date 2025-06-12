@@ -226,12 +226,12 @@ class _UserRegistrationState extends State<UserRegistration> {
                   //Enter country of origin
                   DropdownButton(
                     items: const[
-                      DropdownMenuItem(child: Text("Kenya"), value: CountryLocated.kenya),
-                      DropdownMenuItem(child: Text("Ethiopia"), value: CountryLocated.ethopia),
-                      DropdownMenuItem(child: Text("Tanzania"), value: CountryLocated.tanzania),
-                      DropdownMenuItem(child: Text("Sudan"), value: CountryLocated.sudan),
-                      DropdownMenuItem(child: Text("Uganda"), value: CountryLocated.uganda),
-                      DropdownMenuItem(child: Text("Zambia"), value: CountryLocated.zambia),
+                      DropdownMenuItem(value: CountryLocated.kenya, child: Text("Kenya"),),
+                      DropdownMenuItem(value: CountryLocated.ethopia, child: Text("Ethiopia"),),
+                      DropdownMenuItem(value: CountryLocated.tanzania, child: Text("Tanzania"),),
+                      DropdownMenuItem(value: CountryLocated.sudan, child: Text("Sudan"),),
+                      DropdownMenuItem(value: CountryLocated.uganda, child: Text("Uganda"),),
+                      DropdownMenuItem(value: CountryLocated.zambia, child: Text("Zambia"),),
                     ], 
                     onChanged: (CountryLocated? newValue) {
                       userState.setCountry(newValue);
