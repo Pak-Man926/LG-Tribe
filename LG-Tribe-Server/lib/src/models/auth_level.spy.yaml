@@ -1,4 +1,4 @@
-enum: AuthLevel
+enum: AuthenticationLevel
 values:
     - merchandiser
     - promoter
