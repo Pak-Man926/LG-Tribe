@@ -32,7 +32,7 @@ abstract class User implements _i1.SerializableModel {
     required int contacts,
     required String email,
     required String password,
-    required _i2.AuthLevel authlevel,
+    required _i2.AuthenticationLevel authlevel,
     required _i3.Country country,
   }) = _UserImpl;
 
@@ -44,8 +44,8 @@ abstract class User implements _i1.SerializableModel {
       contacts: jsonSerialization['contacts'] as int,
       email: jsonSerialization['email'] as String,
       password: jsonSerialization['password'] as String,
-      authlevel:
-          _i2.AuthLevel.fromJson((jsonSerialization['authlevel'] as int)),
+      authlevel: _i2.AuthenticationLevel.fromJson(
+          (jsonSerialization['authlevel'] as int)),
       country: _i3.Country.fromJson((jsonSerialization['country'] as int)),
     );
   }
@@ -65,7 +65,7 @@ abstract class User implements _i1.SerializableModel {
 
   String password;
 
-  _i2.AuthLevel authlevel;
+  _i2.AuthenticationLevel authlevel;
 
   _i3.Country country;
 
@@ -79,7 +79,7 @@ abstract class User implements _i1.SerializableModel {
     int? contacts,
     String? email,
     String? password,
-    _i2.AuthLevel? authlevel,
+    _i2.AuthenticationLevel? authlevel,
     _i3.Country? country,
   });
   @override
@@ -112,7 +112,7 @@ class _UserImpl extends User {
     required int contacts,
     required String email,
     required String password,
-    required _i2.AuthLevel authlevel,
+    required _i2.AuthenticationLevel authlevel,
     required _i3.Country country,
   }) : super._(
           id: id,
@@ -136,7 +136,7 @@ class _UserImpl extends User {
     int? contacts,
     String? email,
     String? password,
-    _i2.AuthLevel? authlevel,
+    _i2.AuthenticationLevel? authlevel,
     _i3.Country? country,
   }) {
     return User(

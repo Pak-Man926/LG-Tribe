@@ -14,10 +14,7 @@
 import 'package:serverpod_test/serverpod_test.dart' as _i1;
 import 'package:serverpod/serverpod.dart' as _i2;
 import 'dart:async' as _i3;
-import 'package:lg_tribe_server/src/generated/auth_level.dart' as _i4;
-import 'package:lg_tribe_server/src/generated/country.dart' as _i5;
-import 'package:lg_tribe_server/src/generated/user_models.dart' as _i6;
-import 'package:lg_tribe_server/src/generated/greeting.dart' as _i7;
+import 'package:lg_tribe_server/src/generated/greeting.dart' as _i4;
 import 'package:lg_tribe_server/src/generated/protocol.dart';
 import 'package:lg_tribe_server/src/generated/endpoints.dart';
 export 'package:serverpod_test/serverpod_test_public_exports.dart';
@@ -102,8 +99,6 @@ void withServerpod(
 }
 
 class TestEndpoints {
-  late final _UserEndpoints userEndpoints;
-
   late final _GreetingEndpoint greeting;
 }
 
@@ -114,101 +109,10 @@ class _InternalTestEndpoints extends TestEndpoints
     _i2.SerializationManager serializationManager,
     _i2.EndpointDispatch endpoints,
   ) {
-    userEndpoints = _UserEndpoints(
-      endpoints,
-      serializationManager,
-    );
     greeting = _GreetingEndpoint(
       endpoints,
       serializationManager,
     );
-  }
-}
-
-class _UserEndpoints {
-  _UserEndpoints(
-    this._endpointDispatch,
-    this._serializationManager,
-  );
-
-  final _i2.EndpointDispatch _endpointDispatch;
-
-  final _i2.SerializationManager _serializationManager;
-
-  _i3.Future<bool> registerUser(
-    _i1.TestSessionBuilder sessionBuilder,
-    String firstName,
-    String lastName,
-    int contacts,
-    String email,
-    String password,
-    _i4.AuthLevel authlevel,
-    _i5.Country country,
-  ) async {
-    return _i1.callAwaitableFunctionAndHandleExceptions(() async {
-      var _localUniqueSession =
-          (sessionBuilder as _i1.InternalTestSessionBuilder).internalBuild(
-        endpoint: 'userEndpoints',
-        method: 'registerUser',
-      );
-      try {
-        var _localCallContext = await _endpointDispatch.getMethodCallContext(
-          createSessionCallback: (_) => _localUniqueSession,
-          endpointPath: 'userEndpoints',
-          methodName: 'registerUser',
-          parameters: _i1.testObjectToJson({
-            'firstName': firstName,
-            'lastName': lastName,
-            'contacts': contacts,
-            'email': email,
-            'password': password,
-            'authlevel': authlevel,
-            'country': country,
-          }),
-          serializationManager: _serializationManager,
-        );
-        var _localReturnValue = await (_localCallContext.method.call(
-          _localUniqueSession,
-          _localCallContext.arguments,
-        ) as _i3.Future<bool>);
-        return _localReturnValue;
-      } finally {
-        await _localUniqueSession.close();
-      }
-    });
-  }
-
-  _i3.Future<_i6.User?> loginUser(
-    _i1.TestSessionBuilder sessionBuilder,
-    int contacts,
-    String password,
-  ) async {
-    return _i1.callAwaitableFunctionAndHandleExceptions(() async {
-      var _localUniqueSession =
-          (sessionBuilder as _i1.InternalTestSessionBuilder).internalBuild(
-        endpoint: 'userEndpoints',
-        method: 'loginUser',
-      );
-      try {
-        var _localCallContext = await _endpointDispatch.getMethodCallContext(
-          createSessionCallback: (_) => _localUniqueSession,
-          endpointPath: 'userEndpoints',
-          methodName: 'loginUser',
-          parameters: _i1.testObjectToJson({
-            'contacts': contacts,
-            'password': password,
-          }),
-          serializationManager: _serializationManager,
-        );
-        var _localReturnValue = await (_localCallContext.method.call(
-          _localUniqueSession,
-          _localCallContext.arguments,
-        ) as _i3.Future<_i6.User?>);
-        return _localReturnValue;
-      } finally {
-        await _localUniqueSession.close();
-      }
-    });
   }
 }
 
@@ -222,7 +126,7 @@ class _GreetingEndpoint {
 
   final _i2.SerializationManager _serializationManager;
 
-  _i3.Future<_i7.Greeting> hello(
+  _i3.Future<_i4.Greeting> hello(
     _i1.TestSessionBuilder sessionBuilder,
     String name,
   ) async {
@@ -243,7 +147,7 @@ class _GreetingEndpoint {
         var _localReturnValue = await (_localCallContext.method.call(
           _localUniqueSession,
           _localCallContext.arguments,
-        ) as _i3.Future<_i7.Greeting>);
+        ) as _i3.Future<_i4.Greeting>);
         return _localReturnValue;
       } finally {
         await _localUniqueSession.close();

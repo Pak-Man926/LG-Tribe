@@ -36,8 +36,8 @@ class Protocol extends _i1.SerializationManager {
     if (t == _i2.Greeting) {
       return _i2.Greeting.fromJson(data) as T;
     }
-    if (t == _i3.AuthLevel) {
-      return _i3.AuthLevel.fromJson(data) as T;
+    if (t == _i3.AuthenticationLevel) {
+      return _i3.AuthenticationLevel.fromJson(data) as T;
     }
     if (t == _i4.Country) {
       return _i4.Country.fromJson(data) as T;
@@ -48,8 +48,9 @@ class Protocol extends _i1.SerializationManager {
     if (t == _i1.getType<_i2.Greeting?>()) {
       return (data != null ? _i2.Greeting.fromJson(data) : null) as T;
     }
-    if (t == _i1.getType<_i3.AuthLevel?>()) {
-      return (data != null ? _i3.AuthLevel.fromJson(data) : null) as T;
+    if (t == _i1.getType<_i3.AuthenticationLevel?>()) {
+      return (data != null ? _i3.AuthenticationLevel.fromJson(data) : null)
+          as T;
     }
     if (t == _i1.getType<_i4.Country?>()) {
       return (data != null ? _i4.Country.fromJson(data) : null) as T;
@@ -67,8 +68,8 @@ class Protocol extends _i1.SerializationManager {
     if (data is _i2.Greeting) {
       return 'Greeting';
     }
-    if (data is _i3.AuthLevel) {
-      return 'AuthLevel';
+    if (data is _i3.AuthenticationLevel) {
+      return 'AuthenticationLevel';
     }
     if (data is _i4.Country) {
       return 'Country';
@@ -88,8 +89,8 @@ class Protocol extends _i1.SerializationManager {
     if (dataClassName == 'Greeting') {
       return deserialize<_i2.Greeting>(data['data']);
     }
-    if (dataClassName == 'AuthLevel') {
-      return deserialize<_i3.AuthLevel>(data['data']);
+    if (dataClassName == 'AuthenticationLevel') {
+      return deserialize<_i3.AuthenticationLevel>(data['data']);
     }
     if (dataClassName == 'Country') {
       return deserialize<_i4.Country>(data['data']);

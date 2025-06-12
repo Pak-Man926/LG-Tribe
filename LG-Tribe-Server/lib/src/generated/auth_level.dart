@@ -11,22 +11,22 @@
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:serverpod/serverpod.dart' as _i1;
 
-enum AuthLevel implements _i1.SerializableModel {
+enum AuthenticationLevel implements _i1.SerializableModel {
   merchandiser,
   promoter,
   floorServiceprovider;
 
-  static AuthLevel fromJson(int index) {
+  static AuthenticationLevel fromJson(int index) {
     switch (index) {
       case 0:
-        return AuthLevel.merchandiser;
+        return AuthenticationLevel.merchandiser;
       case 1:
-        return AuthLevel.promoter;
+        return AuthenticationLevel.promoter;
       case 2:
-        return AuthLevel.floorServiceprovider;
+        return AuthenticationLevel.floorServiceprovider;
       default:
         throw ArgumentError(
-            'Value "$index" cannot be converted to "AuthLevel"');
+            'Value "$index" cannot be converted to "AuthenticationLevel"');
     }
   }
 

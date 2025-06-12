@@ -75,7 +75,7 @@ class Protocol extends _i1.SerializationManagerServer {
           name: 'authlevel',
           columnType: _i2.ColumnType.bigint,
           isNullable: false,
-          dartType: 'protocol:AuthLevel',
+          dartType: 'protocol:AuthenticationLevel',
         ),
         _i2.ColumnDefinition(
           name: 'country',
@@ -114,8 +114,8 @@ class Protocol extends _i1.SerializationManagerServer {
     if (t == _i3.Greeting) {
       return _i3.Greeting.fromJson(data) as T;
     }
-    if (t == _i4.AuthLevel) {
-      return _i4.AuthLevel.fromJson(data) as T;
+    if (t == _i4.AuthenticationLevel) {
+      return _i4.AuthenticationLevel.fromJson(data) as T;
     }
     if (t == _i5.Country) {
       return _i5.Country.fromJson(data) as T;
@@ -126,8 +126,9 @@ class Protocol extends _i1.SerializationManagerServer {
     if (t == _i1.getType<_i3.Greeting?>()) {
       return (data != null ? _i3.Greeting.fromJson(data) : null) as T;
     }
-    if (t == _i1.getType<_i4.AuthLevel?>()) {
-      return (data != null ? _i4.AuthLevel.fromJson(data) : null) as T;
+    if (t == _i1.getType<_i4.AuthenticationLevel?>()) {
+      return (data != null ? _i4.AuthenticationLevel.fromJson(data) : null)
+          as T;
     }
     if (t == _i1.getType<_i5.Country?>()) {
       return (data != null ? _i5.Country.fromJson(data) : null) as T;
@@ -148,8 +149,8 @@ class Protocol extends _i1.SerializationManagerServer {
     if (data is _i3.Greeting) {
       return 'Greeting';
     }
-    if (data is _i4.AuthLevel) {
-      return 'AuthLevel';
+    if (data is _i4.AuthenticationLevel) {
+      return 'AuthenticationLevel';
     }
     if (data is _i5.Country) {
       return 'Country';
@@ -173,8 +174,8 @@ class Protocol extends _i1.SerializationManagerServer {
     if (dataClassName == 'Greeting') {
       return deserialize<_i3.Greeting>(data['data']);
     }
-    if (dataClassName == 'AuthLevel') {
-      return deserialize<_i4.AuthLevel>(data['data']);
+    if (dataClassName == 'AuthenticationLevel') {
+      return deserialize<_i4.AuthenticationLevel>(data['data']);
     }
     if (dataClassName == 'Country') {
       return deserialize<_i5.Country>(data['data']);
