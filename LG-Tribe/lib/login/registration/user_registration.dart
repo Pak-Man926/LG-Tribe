@@ -6,6 +6,9 @@ import "package:lg_tribe/login/user_login.dart";
 import "package:get/get.dart";
 //import 'package:http/http.dart' as http;
 //import 'dart:convert';
+import 'package:lg_tribe/Controller/controller_class.dart';
+
+
 
 class UserRegistration extends StatefulWidget {
   const UserRegistration({super.key});
@@ -220,7 +223,7 @@ class _UserRegistrationState extends State<UserRegistration> {
                   //Enter country of origin
                   DropdownButton(
                     items: const[
-                      Dropdown
+                      DropdownMenuItem(child: Text("Kenya"), value: CountryLocated.kenya),
                     ], 
                     onChanged: onChanged),
                   Padding(
