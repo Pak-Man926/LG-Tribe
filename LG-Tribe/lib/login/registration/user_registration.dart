@@ -234,7 +234,8 @@ class _UserRegistrationState extends State<UserRegistration> {
                     onChanged: (CountryLocated? newValue) {
                       userState.setCountry(newValue);
                     },
-                    iconEnabledColor: ,
+                    iconEnabledColor:  Color(0xFFA50034),
+                    
                     ),
                     SizedBox(height: 10),
                   Padding(
