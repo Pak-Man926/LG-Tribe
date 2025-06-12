@@ -4,23 +4,20 @@ import "package:lg_tribe_client/lg_tribe_client.dart";
 import "package:serverpod_flutter/serverpod_flutter.dart";
 import "package:lg_tribe/login/user_login.dart";
 import "package:get/get.dart";
-//import 'package:http/http.dart' as http;
-//import 'dart:convert';
 import 'package:lg_tribe/Controller/controller_class.dart';
 import "package:lg_tribe/main.dart";
 
-final userState = Get.put(UserStateController());
+class UserRegistration extends StatelessWidget
+{
+  final userState = Get.put(UserStateController());
+  UserStateController controller = Get.find();
+  //UserRegistration({super.key});
 
-class UserRegistration extends StatefulWidget {
-  const UserRegistration({super.key});
 
-  @override
-  State<UserRegistration> createState() => _UserRegistrationState();
-}
-
-class _UserRegistrationState extends State<UserRegistration> {
   String phoneNumber = '';
   String password = '';
+  AuthLevel? authenticationlevel;
+  CountryLocated? selectedCountry;
 
   final firstNameController = TextEditingController();
   final lastNameController = TextEditingController();
@@ -68,7 +65,7 @@ class _UserRegistrationState extends State<UserRegistration> {
         email,
         password,
         authenticationlevel,
-        country,
+        selectedCountry,
       );
 
       if (result == true) {
