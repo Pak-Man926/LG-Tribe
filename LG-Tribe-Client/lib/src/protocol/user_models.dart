@@ -10,6 +10,8 @@
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:serverpod_client/serverpod_client.dart' as _i1;
+import 'auth_level.dart' as _i2;
+import 'country.dart' as _i3;
 
 abstract class User implements _i1.SerializableModel {
   User._({
@@ -19,6 +21,8 @@ abstract class User implements _i1.SerializableModel {
     required this.contacts,
     required this.email,
     required this.password,
+    required this.authlevel,
+    required this.country,
   });
 
   factory User({
@@ -28,6 +32,8 @@ abstract class User implements _i1.SerializableModel {
     required int contacts,
     required String email,
     required String password,
+    required _i2.AuthLevel authlevel,
+    required _i3.Country country,
   }) = _UserImpl;
 
   factory User.fromJson(Map<String, dynamic> jsonSerialization) {
@@ -38,6 +44,9 @@ abstract class User implements _i1.SerializableModel {
       contacts: jsonSerialization['contacts'] as int,
       email: jsonSerialization['email'] as String,
       password: jsonSerialization['password'] as String,
+      authlevel:
+          _i2.AuthLevel.fromJson((jsonSerialization['authlevel'] as int)),
+      country: _i3.Country.fromJson((jsonSerialization['country'] as int)),
     );
   }
 
@@ -56,6 +65,10 @@ abstract class User implements _i1.SerializableModel {
 
   String password;
 
+  _i2.AuthLevel authlevel;
+
+  _i3.Country country;
+
   /// Returns a shallow copy of this [User]
   /// with some or all fields replaced by the given arguments.
   @_i1.useResult
@@ -66,6 +79,8 @@ abstract class User implements _i1.SerializableModel {
     int? contacts,
     String? email,
     String? password,
+    _i2.AuthLevel? authlevel,
+    _i3.Country? country,
   });
   @override
   Map<String, dynamic> toJson() {
@@ -76,6 +91,8 @@ abstract class User implements _i1.SerializableModel {
       'contacts': contacts,
       'email': email,
       'password': password,
+      'authlevel': authlevel.toJson(),
+      'country': country.toJson(),
     };
   }
 
@@ -95,6 +112,8 @@ class _UserImpl extends User {
     required int contacts,
     required String email,
     required String password,
+    required _i2.AuthLevel authlevel,
+    required _i3.Country country,
   }) : super._(
           id: id,
           firstName: firstName,
@@ -102,6 +121,8 @@ class _UserImpl extends User {
           contacts: contacts,
           email: email,
           password: password,
+          authlevel: authlevel,
+          country: country,
         );
 
   /// Returns a shallow copy of this [User]
@@ -115,6 +136,8 @@ class _UserImpl extends User {
     int? contacts,
     String? email,
     String? password,
+    _i2.AuthLevel? authlevel,
+    _i3.Country? country,
   }) {
     return User(
       id: id is int? ? id : this.id,
@@ -123,6 +146,8 @@ class _UserImpl extends User {
       contacts: contacts ?? this.contacts,
       email: email ?? this.email,
       password: password ?? this.password,
+      authlevel: authlevel ?? this.authlevel,
+      country: country ?? this.country,
     );
   }
 }
