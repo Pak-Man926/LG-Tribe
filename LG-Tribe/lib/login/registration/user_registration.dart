@@ -8,7 +8,6 @@ import "package:get/get.dart";
 //import 'dart:convert';
 import 'package:lg_tribe/Controller/controller_class.dart';
 
-
 final userState = Get.put(UserStateController());
 
 class UserRegistration extends StatefulWidget {
@@ -66,7 +65,7 @@ class _UserRegistrationState extends State<UserRegistration> {
         password,
         authlevel,
         country,
-       // authlevel,
+        // authlevel,
         //country,
       );
 
@@ -145,7 +144,10 @@ class _UserRegistrationState extends State<UserRegistration> {
                     padding: const EdgeInsets.only(left: 10),
                     child: Text(
                       "First Name:",
-                      style: TextStyle(fontSize: 12, fontWeight: FontWeight.w500),
+                      style: TextStyle(
+                        fontSize: 12,
+                        fontWeight: FontWeight.w500,
+                      ),
                     ),
                   ),
                   SizedBox(height: 5),
@@ -164,7 +166,10 @@ class _UserRegistrationState extends State<UserRegistration> {
                     padding: const EdgeInsets.only(left: 10),
                     child: Text(
                       "Last Name:",
-                      style: TextStyle(fontSize: 12, fontWeight: FontWeight.w500),
+                      style: TextStyle(
+                        fontSize: 12,
+                        fontWeight: FontWeight.w500,
+                      ),
                     ),
                   ),
                   SizedBox(height: 5),
@@ -183,7 +188,10 @@ class _UserRegistrationState extends State<UserRegistration> {
                     padding: const EdgeInsets.only(left: 10),
                     child: Text(
                       "Email:",
-                      style: TextStyle(fontSize: 12, fontWeight: FontWeight.w500),
+                      style: TextStyle(
+                        fontSize: 12,
+                        fontWeight: FontWeight.w500,
+                      ),
                     ),
                   ),
                   SizedBox(height: 5),
@@ -202,7 +210,10 @@ class _UserRegistrationState extends State<UserRegistration> {
                     padding: const EdgeInsets.only(left: 10),
                     child: Text(
                       "Phone Number:",
-                      style: TextStyle(fontSize: 12, fontWeight: FontWeight.w500),
+                      style: TextStyle(
+                        fontSize: 12,
+                        fontWeight: FontWeight.w500,
+                      ),
                     ),
                   ),
                   SizedBox(height: 5),
@@ -225,26 +236,70 @@ class _UserRegistrationState extends State<UserRegistration> {
                   SizedBox(height: 5),
                   //Enter country of origin
                   DropdownButton(
-                    items: const[
-                      DropdownMenuItem(value: CountryLocated.kenya, child: Text("Kenya"),),
-                      DropdownMenuItem(value: CountryLocated.ethopia, child: Text("Ethiopia"),),
-                      DropdownMenuItem(value: CountryLocated.tanzania, child: Text("Tanzania"),),
-                      DropdownMenuItem(value: CountryLocated.sudan, child: Text("Sudan"),),
-                      DropdownMenuItem(value: CountryLocated.uganda, child: Text("Uganda"),),
-                      DropdownMenuItem(value: CountryLocated.zambia, child: Text("Zambia"),),
-                    ], 
+                    items: const [
+                      DropdownMenuItem(
+                        value: CountryLocated.kenya,
+                        child: Text("Kenya"),
+                      ),
+                      DropdownMenuItem(
+                        value: CountryLocated.ethopia,
+                        child: Text("Ethiopia"),
+                      ),
+                      DropdownMenuItem(
+                        value: CountryLocated.tanzania,
+                        child: Text("Tanzania"),
+                      ),
+                      DropdownMenuItem(
+                        value: CountryLocated.sudan,
+                        child: Text("Sudan"),
+                      ),
+                      DropdownMenuItem(
+                        value: CountryLocated.uganda,
+                        child: Text("Uganda"),
+                      ),
+                      DropdownMenuItem(
+                        value: CountryLocated.zambia,
+                        child: Text("Zambia"),
+                      ),
+                    ],
                     onChanged: (CountryLocated? newValue) {
                       userState.setCountry(newValue);
                     },
-                    iconEnabledColor:  Color(0xFFA50034),
+                    iconEnabledColor: Color(0xFFA50034),
                     isExpanded: true,
-                    ),
-                    SizedBox(height: 10),
+                  ),
+                  SizedBox(height: 10),
+                  //Enter user auth level
+                  DropdownButton(
+                    items: const [
+                      DropdownMenuItem(
+                        value: AuthLevel.merchandiser,
+                        child: Text("Merchandiser"),
+                      ),
+                      DropdownMenuItem(
+                        value: AuthLevel.promoter,
+                        child: Text("Promoter"),
+                      ),
+                      DropdownMenuItem(
+                        value: AuthLevel.floorServiceprovider,
+                        child: Text("Floor Service Provider"),
+                      ),
+                    ],
+                    onChanged: (AuthLevel? newValue) {
+                      userState.setAuthLevel(newValue);
+                    },
+                    iconEnabledColor: Color(0xFFA50034),
+                    isExpanded: true,
+                  ),
+                  SizedBox(height: 10),
                   Padding(
                     padding: const EdgeInsets.only(left: 10),
                     child: Text(
                       "Password:",
-                      style: TextStyle(fontSize: 12, fontWeight: FontWeight.w500),
+                      style: TextStyle(
+                        fontSize: 12,
+                        fontWeight: FontWeight.w500,
+                      ),
                     ),
                   ),
                   SizedBox(height: 5),
