@@ -213,18 +213,19 @@ class UserRegistration extends StatelessWidget
                   Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: IntlPhoneField(
-                      controller: contactNumberController,
-                      decoration: const InputDecoration(
-                        hintText: "Enter your phone number",
-                        border: OutlineInputBorder(),
-                      ),
-                      initialCountryCode: 'KE',
-                      onChanged: (phone) {
-                        setState(() {
-                          phoneNumber = phone.completeNumber;
-                        });
-                      },
-                    ),
+                          controller: contactNumberController,
+                          decoration: const InputDecoration(
+                            hintText: "Enter your phone number",
+                            border: OutlineInputBorder(),
+                          ),
+                          initialCountryCode: initialCountryCode,
+                          onChanged: (PhoneNumber) {
+                            // setState(() {
+                            //   phoneNumber = phone.completeNumber;
+                            // });
+                            PhoneNumber.number = PhoneNumber.completeNumber;
+                          },
+                        ),
                   ),
                   SizedBox(height: 5),
                   //Enter country of origin
