@@ -2,4 +2,4 @@ enum: AuthLevel
 values:
     - merchandiser
     - promoter
-    - floor service provider
+    - floorServiceprovider
