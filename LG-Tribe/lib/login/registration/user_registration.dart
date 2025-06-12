@@ -7,12 +7,10 @@ import "package:get/get.dart";
 import 'package:lg_tribe/Controller/controller_class.dart';
 import "package:lg_tribe/main.dart";
 
-class UserRegistration extends StatelessWidget
-{
+class UserRegistration extends StatelessWidget {
   final userState = Get.put(UserStateController());
   UserStateController controller = Get.find();
   //UserRegistration({super.key});
-
 
   String phoneNumber = '';
   String password = '';
@@ -50,11 +48,13 @@ class UserRegistration extends StatelessWidget
         lastName.isEmpty ||
         email.isEmpty ||
         contactNumber == null ||
-        password.isEmpty) 
-      {
-        //Show error message if any field is empty
-        Get.snackbar("Error", "Please fill in all fields",
-          snackPosition: SnackPosition.BOTTOM);
+        password.isEmpty) {
+      //Show error message if any field is empty
+      Get.snackbar(
+        "Error",
+        "Please fill in all fields",
+        snackPosition: SnackPosition.BOTTOM,
+      );
       return;
     }
 
@@ -73,21 +73,26 @@ class UserRegistration extends StatelessWidget
         // Registration successful
         //print('User registered successfully');
 
-        Get.snackbar("Success", "User registered successfully",
-          snackPosition: SnackPosition.BOTTOM);
+        Get.snackbar(
+          "Success",
+          "User registered successfully",
+          snackPosition: SnackPosition.BOTTOM,
+        );
 
         // Navigate to the login page
-        Get.offAllNamed("/userlogin"); // Clear all previous routes and navigate to the login page
-      } 
-      else 
-      {
+        Get.offAllNamed(
+          "/userlogin",
+        ); // Clear all previous routes and navigate to the login page
+      } else {
         // Registration failed
         //print("User registration failed!")
-        Get.snackbar("Error", "User registration failed",
-          snackPosition: SnackPosition.BOTTOM);
+        Get.snackbar(
+          "Error",
+          "User registration failed",
+          snackPosition: SnackPosition.BOTTOM,
+        );
       }
-    } catch (e) 
-    {
+    } catch (e) {
       // Handle error
       print('Error: $e');
     }
@@ -213,19 +218,19 @@ class UserRegistration extends StatelessWidget
                   Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: IntlPhoneField(
-                          controller: contactNumberController,
-                          decoration: const InputDecoration(
-                            hintText: "Enter your phone number",
-                            border: OutlineInputBorder(),
-                          ),
-                          initialCountryCode: initialCountryCode,
-                          onChanged: (PhoneNumber) {
-                            // setState(() {
-                            //   phoneNumber = phone.completeNumber;
-                            // });
-                            PhoneNumber.number = PhoneNumber.completeNumber;
-                          },
-                        ),
+                      controller: contactNumberController,
+                      decoration: const InputDecoration(
+                        hintText: "Enter your phone number",
+                        border: OutlineInputBorder(),
+                      ),
+                      initialCountryCode: initialCountryCode,
+                      onChanged: (PhoneNumber) {
+                        // setState(() {
+                        //   phoneNumber = phone.completeNumber;
+                        // });
+                        PhoneNumber.number = PhoneNumber.completeNumber;
+                      },
+                    ),
                   ),
                   SizedBox(height: 5),
                   //Enter country of origin
