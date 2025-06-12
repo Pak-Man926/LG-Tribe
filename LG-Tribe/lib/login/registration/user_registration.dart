@@ -7,6 +7,7 @@ import "package:get/get.dart";
 //import 'package:http/http.dart' as http;
 //import 'dart:convert';
 import 'package:lg_tribe/Controller/controller_class.dart';
+import "package:lg_tribe/main.dart";
 
 final userState = Get.put(UserStateController());
 
@@ -51,8 +52,11 @@ class _UserRegistrationState extends State<UserRegistration> {
         lastName.isEmpty ||
         email.isEmpty ||
         contactNumber == null ||
-        password.isEmpty) {
-      // Show error message
+        password.isEmpty) 
+      {
+        //Show error message if any field is empty
+        Get.snackbar("Error", "Please fill in all fields",
+          snackPosition: SnackPosition.BOTTOM);
       return;
     }
 
@@ -63,7 +67,7 @@ class _UserRegistrationState extends State<UserRegistration> {
         contactNumber,
         email,
         password,
-        authlevel,
+        authenticationlevel,
         country,
         // authlevel,
         //country,
@@ -73,26 +77,18 @@ class _UserRegistrationState extends State<UserRegistration> {
         // Registration successful
         //print('User registered successfully');
 
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(
-            content: Text('User registered successfully'),
-            duration: Duration(seconds: 2),
-          ),
-        );
+        Get.snackbar("Success", "User registered successfully",
+          snackPosition: SnackPosition.BOTTOM);
 
-        Navigator.push(
-          context,
-          MaterialPageRoute(builder: (context) => Login()),
-        );
-      } else {
+        // Navigate to the login page
+        Get.offAllNamed("/userlogin"); // Clear all previous routes and navigate to the login page
+      } 
+      else 
+      {
         // Registration failed
         //print("User registration failed!")
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(
-            content: Text('User registration failed!'),
-            duration: Duration(seconds: 2),
-          ),
-        );
+        Get.snackbar("Error", "User registration failed",
+          snackPosition: SnackPosition.BOTTOM);
       }
     } catch (e) {
       // Handle error
