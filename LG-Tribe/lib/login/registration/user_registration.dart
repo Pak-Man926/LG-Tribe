@@ -16,9 +16,9 @@ class UserRegistration extends StatelessWidget
 
   String phoneNumber = '';
   String password = '';
-  
+
   AuthLevel? authenticationlevel;
-  CountryLocated? selectedCountry;
+  CountryLocated? country;
 
   final firstNameController = TextEditingController();
   final lastNameController = TextEditingController();
@@ -65,8 +65,8 @@ class UserRegistration extends StatelessWidget
         contactNumber,
         email,
         password,
-        authenticationlevel,
-        selectedCountry,
+        authenticationlevel as AuthenticationLevel,
+        country as Country,
       );
 
       if (result == true) {
@@ -86,7 +86,8 @@ class UserRegistration extends StatelessWidget
         Get.snackbar("Error", "User registration failed",
           snackPosition: SnackPosition.BOTTOM);
       }
-    } catch (e) {
+    } catch (e) 
+    {
       // Handle error
       print('Error: $e');
     }
