@@ -99,7 +99,10 @@ class UserRegistration extends StatelessWidget {
   }
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context)
+  {
+    String initialCountryCode = getInitialCountryCode(userState.selectedCountry.value ?? CountryLocated.kenya);
+    
     return Scaffold(
       body: Column(
         children: [
