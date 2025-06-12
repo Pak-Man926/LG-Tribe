@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:intl_phone_field/intl_phone_field.dart';
-import "package:intl_phone_field/phone_number.dart";
+//import "package:intl_phone_field/phone_number.dart";
 //import 'package:lg_tribe/Forgot%20Password/forgot_password.dart';
 //import 'package:lg_tribe/Homepage/homepage.dart';
 //import "package:lg_tribe/login/registration/user_registration.dart";
