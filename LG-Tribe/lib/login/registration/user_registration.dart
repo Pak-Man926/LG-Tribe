@@ -306,11 +306,6 @@ class UserRegistration extends StatelessWidget
                         border: OutlineInputBorder(),
                         hintText: 'Enter your password',
                       ),
-                      onChanged: (value) {
-                        setState(() {
-                          password = value;
-                        });
-                      },
                     ),
                   ),
                   SizedBox(height: 10),
