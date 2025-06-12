@@ -231,7 +231,11 @@ class _UserRegistrationState extends State<UserRegistration> {
                       DropdownMenuItem(child: Text("Uganda"), value: CountryLocated.uganda),
                       DropdownMenuItem(child: Text("Zambia"), value: CountryLocated.zambia),
                     ], 
-                    onChanged: onChanged),
+                    onChanged: (CountryLocated? newValue) {
+                      userState.setCountry(newValue);
+                    },
+                    ),
+                    SizedBox(height: 10),
                   Padding(
                     padding: const EdgeInsets.only(left: 10),
                     child: Text(
