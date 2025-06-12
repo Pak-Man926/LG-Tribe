@@ -1,3 +1,4 @@
 enum: AuthLevel
 values:
+    - merchandiser
     - 
