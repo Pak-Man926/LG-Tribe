@@ -7,7 +7,7 @@ import "package:bcrypt/bcrypt.dart";
 
 class UserEndpoints extends Endpoint 
 {
-  Future<bool> registerUser(Session session, String firstName, String lastName, int contacts, String email, String password, AuthenticationLevel authlevel, Country country) async
+  Future<bool> registerUser(Session session, String firstName, String lastName, int contacts, String email, String password, AuthenticationLevel authenticationlevel, Country country) async
   {
     var existingUser = await User.db.findFirstRow(
       session,
@@ -27,7 +27,7 @@ class UserEndpoints extends Endpoint
       contacts: contacts,
       email: email,
       password: hashedPassword, 
-      authlevel: authlevel,
+      authlevel: authenticationlevel,
       country: country
     );
 

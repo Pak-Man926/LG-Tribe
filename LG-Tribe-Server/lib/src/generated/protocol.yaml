@@ -1,2 +1,5 @@
+userEndpoints:
+  - registerUser:
+  - loginUser:
 greeting:
   - hello:
