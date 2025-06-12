@@ -9,6 +9,7 @@ import "package:get/get.dart";
 import 'package:lg_tribe/Controller/controller_class.dart';
 
 
+final userState = Get.put(UserStateController());
 
 class UserRegistration extends StatefulWidget {
   const UserRegistration({super.key});
