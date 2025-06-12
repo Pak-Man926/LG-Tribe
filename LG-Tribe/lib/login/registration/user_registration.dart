@@ -63,9 +63,9 @@ class _UserRegistrationState extends State<UserRegistration> {
         lastName,
         contactNumber,
         email,
-        password,
-        authlevel,
-        country,
+        password
+       // authlevel,
+        //country,
       );
 
       if (result == true) {
