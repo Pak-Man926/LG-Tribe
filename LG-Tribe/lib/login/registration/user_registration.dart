@@ -225,6 +225,11 @@ class _UserRegistrationState extends State<UserRegistration> {
                   DropdownButton(
                     items: const[
                       DropdownMenuItem(child: Text("Kenya"), value: CountryLocated.kenya),
+                      DropdownMenuItem(child: Text("Ethiopia"), value: CountryLocated.ethopia),
+                      DropdownMenuItem(child: Text("Tanzania"), value: CountryLocated.tanzania),
+                      DropdownMenuItem(child: Text("Sudan"), value: CountryLocated.sudan),
+                      DropdownMenuItem(child: Text("Uganda"), value: CountryLocated.uganda),
+                      DropdownMenuItem(child: Text("Zambia"), value: CountryLocated.zambia),
                     ], 
                     onChanged: onChanged),
                   Padding(
