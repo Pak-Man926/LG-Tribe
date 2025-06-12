@@ -263,7 +263,7 @@ class UserRegistration extends StatelessWidget {
                         child: Text("Zambia"),
                       ),
                     ],
-                    onChanged: (CountryLocated? newValue) {
+                    onChanged: (CountryLocated? ) {
                       userState.setCountry(newValue);
                     },
                     iconEnabledColor: Color(0xFFA50034),
