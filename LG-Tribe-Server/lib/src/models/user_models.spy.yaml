@@ -6,5 +6,5 @@ fields:
     contacts: int
     email: String
     password: String
-    authlevel: AuthLevel
+    authlevel: AuthenticationLevel
     country: Country
