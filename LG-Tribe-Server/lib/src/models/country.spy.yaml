@@ -1,4 +1,8 @@
 enum: Country
 values:
     - kenya
-    
+    - ethiopia
+    - tanzania
+    - sudan
+    - uganda
+    - zambia
