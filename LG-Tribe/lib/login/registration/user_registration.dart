@@ -218,6 +218,9 @@ class _UserRegistrationState extends State<UserRegistration> {
                   ),
                   SizedBox(height: 5),
                   //Enter country of origin
+                  DropdownButton(
+                    items: items, 
+                    onChanged: onChanged),
                   Padding(
                     padding: const EdgeInsets.only(left: 10),
                     child: Text(
