@@ -27,14 +27,12 @@ class UserRegistration extends StatelessWidget {
   var client = Client('http://localhost:8080/')
     ..connectivityMonitor = FlutterConnectivityMonitor();
 
-  @override
-  void dispose() {
+  void disposeControllers() {
     firstNameController.dispose();
     lastNameController.dispose();
     emailController.dispose();
     contactNumberController.dispose();
     passwordController.dispose();
-    super.dispose();
   }
 
   Future<void> _register() async {
@@ -99,9 +97,10 @@ class UserRegistration extends StatelessWidget {
   }
 
   @override
-  Widget build(BuildContext context)
-  {
-    String initialCountryCode = getInitialCountryCode(userState.selectedCountry.value ?? CountryLocated.kenya);
+  Widget build(BuildContext context) {
+    String initialCountryCode = getInitialCountryCode(
+      userState.selectedCountry.value ?? CountryLocated.kenya,
+    );
 
     return Scaffold(
       body: Column(
@@ -340,8 +339,7 @@ class UserRegistration extends StatelessWidget {
   }
 }
 
-String getInitialCountryCode(CountryLocated country)
-{
+String getInitialCountryCode(CountryLocated country) {
   switch (country) {
     case CountryLocated.kenya:
       return 'KE';
@@ -350,7 +348,7 @@ String getInitialCountryCode(CountryLocated country)
     case CountryLocated.tanzania:
       return 'TZ';
     case CountryLocated.sudan:
-      return 'SD';  
+      return 'SD';
     case CountryLocated.uganda:
       return 'UG';
     case CountryLocated.zambia:
