@@ -3,6 +3,7 @@ import 'package:intl_phone_field/intl_phone_field.dart';
 import "package:lg_tribe_client/lg_tribe_client.dart";
 import "package:serverpod_flutter/serverpod_flutter.dart";
 import "package:lg_tribe/login/user_login.dart";
+import "package:get/get.dart";
 //import 'package:http/http.dart' as http;
 //import 'dart:convert';
 
@@ -216,6 +217,7 @@ class _UserRegistrationState extends State<UserRegistration> {
                     ),
                   ),
                   SizedBox(height: 5),
+                  
                   Padding(
                     padding: const EdgeInsets.only(left: 10),
                     child: Text(
