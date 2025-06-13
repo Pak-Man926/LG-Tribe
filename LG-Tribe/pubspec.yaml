@@ -42,7 +42,7 @@ dependencies:
   camera: ^0.11.1
   gal: ^2.3.1
   http: ^1.4.0
-  serverpod_flutter: 2.6.0
+  serverpod_flutter: 2.8.0
   lg_tribe_client:
     path: ../LG-Tribe-Client 
   get: ^4.7.2
