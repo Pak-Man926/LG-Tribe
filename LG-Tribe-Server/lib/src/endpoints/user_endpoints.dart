@@ -42,10 +42,10 @@ class UserEndpoints extends Endpoint
       return null; // Invalid credentials
     }
 
-    if(!BCrypt.checkpw(password, password))
-    {
-      return null; // Invalid credentials
-    }
+    // if(user == null || !BCrypt.checkpw(password, user.password))
+    // {
+    //   return null; // Invalid credentials
+    // }
     
     // Find the user with the given contacts and password
     var user = await User.db.findFirstRow(
@@ -55,7 +55,7 @@ class UserEndpoints extends Endpoint
                    t.country.equals(country),
     );
 
-    if (user == null) 
+    if (user == null || !BCrypt.checkpw(password, user.password)) 
     {
       return null; // Invalid credentials
     }
