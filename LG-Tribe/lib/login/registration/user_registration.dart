@@ -241,6 +241,7 @@ class UserRegistration extends StatelessWidget
                     SizedBox(height: 5),
                     //Enter country of origin
                     DropdownButton(
+                      //controller: 
                       items: const [
                         DropdownMenuItem(
                           value: CountryLocated.kenya,
