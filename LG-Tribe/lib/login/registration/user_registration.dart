@@ -252,14 +252,35 @@ class UserRegistration extends StatelessWidget
                     //Enter country of origin
                     DropdownButton(
                       //controller: 
-                      items: CountryLocated.values.map((CountryLocated country) {
+                      value: dropDownvalueItems,
+                      items: items.map((String item) {
                         return DropdownMenuItem(
-                          value: country,
-                          child: Text(country.name),
+                          value: item,
+                          child: Text(item),
                         );
                       }).toList(),
                       onChanged: (String? newValue) {
-                        
+                        dropDownvalueItems = newValue!;
+                        switch (newValue) {
+                          case "Kenya":
+                            userState.setCountry(CountryLocated.kenya);
+                            break;
+                          case "Ethiopia":
+                            userState.setCountry(CountryLocated.ethopia);
+                            break;
+                          case "Tanzania":
+                            userState.setCountry(CountryLocated.tanzania);
+                            break;
+                          case "Sudan":
+                            userState.setCountry(CountryLocated.sudan);
+                            break;
+                          case "Uganda":
+                            userState.setCountry(CountryLocated.uganda);
+                            break;
+                          case "Zambia":
+                            userState.setCountry(CountryLocated.zambia);
+                            break;
+                        }
                       },
                       iconEnabledColor: Color(0xFFA50034),
                       isExpanded: true,
