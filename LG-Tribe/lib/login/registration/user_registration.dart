@@ -261,26 +261,26 @@ class UserRegistration extends StatelessWidget
                       }).toList(),
                       onChanged: (String? newValue) {
                         dropDownvalueItems = newValue!;
-                        switch (newValue) {
-                          case "Kenya":
-                            userState.setCountry(CountryLocated.kenya);
-                            break;
-                          case "Ethiopia":
-                            userState.setCountry(CountryLocated.ethopia);
-                            break;
-                          case "Tanzania":
-                            userState.setCountry(CountryLocated.tanzania);
-                            break;
-                          case "Sudan":
-                            userState.setCountry(CountryLocated.sudan);
-                            break;
-                          case "Uganda":
-                            userState.setCountry(CountryLocated.uganda);
-                            break;
-                          case "Zambia":
-                            userState.setCountry(CountryLocated.zambia);
-                            break;
-                        }
+                        // switch (newValue) {
+                        //   case "Kenya":
+                        //     userState.setCountry(CountryLocated.kenya);
+                        //     break;
+                        //   case "Ethiopia":
+                        //     userState.setCountry(CountryLocated.ethopia);
+                        //     break;
+                        //   case "Tanzania":
+                        //     userState.setCountry(CountryLocated.tanzania);
+                        //     break;
+                        //   case "Sudan":
+                        //     userState.setCountry(CountryLocated.sudan);
+                        //     break;
+                        //   case "Uganda":
+                        //     userState.setCountry(CountryLocated.uganda);
+                        //     break;
+                        //   case "Zambia":
+                        //     userState.setCountry(CountryLocated.zambia);
+                        //     break;
+                        // }
                       },
                       iconEnabledColor: Color(0xFFA50034),
                       isExpanded: true,
