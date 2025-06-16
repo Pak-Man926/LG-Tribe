@@ -141,10 +141,9 @@ class Login extends StatelessWidget
                             border: OutlineInputBorder(),
                           ),
                           initialCountryCode: initialCountryCode,
-                          onChanged: (PhoneNumber) {
-                            //   phoneNumber = phone.completeNumber;
-                            // });
-                            PhoneNumber.number = PhoneNumber.completeNumber;
+                          onChanged: (phoneNumber) {
+                            // Update the phone number in the controller
+                            phoneNumber.number = phoneNumber.completeNumber;
                           },
                         ),
                         SizedBox(height: 5),
@@ -192,11 +191,8 @@ class Login extends StatelessWidget
                           width: double.infinity,
                           child: MaterialButton(
                             onPressed: () async {
+                              //Attempt to login
                               await _login();
-
-                              // Navigator.push(
-                              //   context,
-                              //   MaterialPageRoute(builder: (context) => Homepage()));
                             },
                             color: Color(0xFFA50034),
                             shape: RoundedRectangleBorder(
@@ -227,7 +223,7 @@ class Login extends StatelessWidget
                         GestureDetector(
                           onTap: () => Get.toNamed("/userregistration"),
                           child: Text(
-                            "Don't have an account? Sign up",
+                            "Don't have an account?   Sign up",
                             style: TextStyle(color: Color(0xFFA50034)),
                           ),
                         ),
