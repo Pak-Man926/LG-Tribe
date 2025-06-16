@@ -36,7 +36,7 @@ class UserEndpoints extends Endpoint
     return true;
   }
 
-  Future<User?> loginUser(Session session, int contacts, String password) async
+  Future<User?> loginUser(Session session, int contacts, String password, AuthenticationLevel authenticationlevel, Country country) async
   {
     if (password.isEmpty || contacts.toString().length == 0 || contacts.toString().length < 10){
       return null; // Invalid credentials
