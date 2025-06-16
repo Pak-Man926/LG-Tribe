@@ -258,7 +258,8 @@ class UserRegistration extends StatelessWidget
                           child: Text(country.name),
                         );
                       }).toList(),
-                      onChanged: (String? newValue) 
+                      onChanged: (String? newValue) {
+                        
                       },
                       iconEnabledColor: Color(0xFFA50034),
                       isExpanded: true,
