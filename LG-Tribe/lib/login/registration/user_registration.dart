@@ -17,6 +17,7 @@ class UserRegistration extends StatelessWidget
 
   String phoneNumber = '';
   String password = '';
+  String dropDownvalue = "";
 
   AuthLevel? authenticationlevel;
   CountryLocated? country;
