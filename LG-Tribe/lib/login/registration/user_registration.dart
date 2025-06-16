@@ -11,7 +11,7 @@ class UserRegistration extends StatelessWidget
 {
 
   final userState = Get.put(UserStateController());
-  
+
   UserStateController controller = Get.find();
   //UserRegistration({super.key});
 
@@ -26,6 +26,7 @@ class UserRegistration extends StatelessWidget
   final emailController = TextEditingController();
   final contactNumberController = TextEditingController();
   final passwordController = TextEditingController();
+  
 
   var client = Client('http://localhost:8080/')
     ..connectivityMonitor = FlutterConnectivityMonitor();
