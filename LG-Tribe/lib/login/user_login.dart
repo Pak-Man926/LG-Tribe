@@ -259,7 +259,7 @@ String getInitialCountryCode(CountryLocated country)
       return 'UG';
     case CountryLocated.zambia:
       return 'ZM';
-    default:
-      return 'KE'; // Default to Kenya if no country is selected
+    // default:
+    //   return 'KE'; // Default to Kenya if no country is selected
   }
 }
