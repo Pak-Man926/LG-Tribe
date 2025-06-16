@@ -26,7 +26,7 @@ class UserRegistration extends StatelessWidget
   final emailController = TextEditingController();
   final contactNumberController = TextEditingController();
   final passwordController = TextEditingController();
-  
+
 
   var client = Client('http://localhost:8080/')
     ..connectivityMonitor = FlutterConnectivityMonitor();
@@ -230,11 +230,11 @@ class UserRegistration extends StatelessWidget
                           border: OutlineInputBorder(),
                         ),
                         initialCountryCode: initialCountryCode,
-                        onChanged: (PhoneNumber) {
+                        onChanged: (contactNumber) {
                           // setState(() {
                           //   phoneNumber = phone.completeNumber;
                           // });
-                          PhoneNumber.number = PhoneNumber.completeNumber;
+                          contactNumber.number = contactNumber.completeNumber;
                         },
                       ),
                     ),
