@@ -50,10 +50,13 @@ class UserEndpoints extends Endpoint
     // Find the user with the given contacts and password
     var user = await User.db.findFirstRow(
       session,
-      where: (t) => t.contacts.equals(contacts) & t.password.equals(password),
+      where: (t) => t.contacts.equals(contacts) & t.password.equals(password) &
+                   t.authlevel.equals(authenticationlevel) &
+                   t.country.equals(country),
     );
 
-    if (user == null) {
+    if (user == null) 
+    {
       return null; // Invalid credentials
     }
 
