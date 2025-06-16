@@ -17,7 +17,7 @@ class UserRegistration extends StatelessWidget
 
   String phoneNumber = '';
   String password = '';
-  String dropDownvalueItems = "Kenya";
+  String dropDownvalueItems = "".RxString;
 
   var items = [
     "Kenya",
