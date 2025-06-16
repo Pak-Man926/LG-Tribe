@@ -17,7 +17,16 @@ class UserRegistration extends StatelessWidget
 
   String phoneNumber = '';
   String password = '';
-  String dropDownvalue = "";
+  String dropDownvalueItems = "Kenya";
+
+  var items = [
+    "Kenya",
+    "Ethiopia",
+    "Tanzania",
+    "Sudan",
+    "Uganda",
+    "Zambia",
+  ];
 
   AuthLevel? authenticationlevel;
   CountryLocated? country;
@@ -243,34 +252,13 @@ class UserRegistration extends StatelessWidget
                     //Enter country of origin
                     DropdownButton(
                       //controller: 
-                      items: const [
-                        DropdownMenuItem(
-                          value: CountryLocated.kenya,
-                          child: Text("Kenya"),
-                        ),
-                        DropdownMenuItem(
-                          value: CountryLocated.ethopia,
-                          child: Text("Ethiopia"),
-                        ),
-                        DropdownMenuItem(
-                          value: CountryLocated.tanzania,
-                          child: Text("Tanzania"),
-                        ),
-                        DropdownMenuItem(
-                          value: CountryLocated.sudan,
-                          child: Text("Sudan"),
-                        ),
-                        DropdownMenuItem(
-                          value: CountryLocated.uganda,
-                          child: Text("Uganda"),
-                        ),
-                        DropdownMenuItem(
-                          value: CountryLocated.zambia,
-                          child: Text("Zambia"),
-                        ),
-                      ],
-                      onChanged: (CountryLocated? selectedCountry) {
-                        userState.setCountry(selectedCountry);
+                      items: CountryLocated.values.map((CountryLocated country) {
+                        return DropdownMenuItem(
+                          value: country,
+                          child: Text(country.name),
+                        );
+                      }).toList(),
+                      onChanged: (String? newValue) 
                       },
                       iconEnabledColor: Color(0xFFA50034),
                       isExpanded: true,
