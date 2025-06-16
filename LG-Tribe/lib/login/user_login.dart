@@ -142,9 +142,6 @@ class Login extends StatelessWidget
                           ),
                           initialCountryCode: initialCountryCode,
                           onChanged: (PhoneNumber) {
-                            // setStat
-                            Search Google or type a URL
-                            e(() {
                             //   phoneNumber = phone.completeNumber;
                             // });
                             PhoneNumber.number = PhoneNumber.completeNumber;
