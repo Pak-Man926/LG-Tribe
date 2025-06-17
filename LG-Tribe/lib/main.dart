@@ -20,7 +20,10 @@ void main() async
   await SharedPreferences.getInstance(); // Initialize SharedPreferences if needed
 
 
-  Get.put(UserStateController()); // Initialize the UserStateController
+  Get.put(UserStateController());
+  //Get.put() // Initialize the UserStateController
+
+  
   runApp(
     GetMaterialApp(
       debugShowCheckedModeBanner: false,  
