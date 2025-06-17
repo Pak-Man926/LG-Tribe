@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:lg_tribe/Start_Page/startpage.dart';
 
 //Splash screen
@@ -17,7 +18,7 @@ class _SplashScreenState extends State<SplashScreen> {
     Timer(
       //Splash screen duration
       Duration(seconds: 3),
-       () 
+       () => Get.offAllNamed("/startpage"), // Navigate to Startpage after 3 seconds
       //=> Navigator.of(
       //   context,
       // ).pushReplacement(MaterialPageRoute(builder: (context) => Startpage())),
