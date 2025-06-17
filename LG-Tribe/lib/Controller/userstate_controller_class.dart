@@ -4,17 +4,17 @@ enum AuthLevel
 {
   Merchandiser,
   Promoter,
-  FloorServiceprovider,
+  Floor Service Provider,
 }
 
 enum CountryLocated
 {
-  kenya,
-  ethopia,
-  tanzania,
-  sudan,
-  uganda,
-  zambia,
+  Kenya,
+  Ethopia,
+  Tanzania,
+  Sudan,
+  Uganda,
+  Zambia,
 }
 
 class UserStateController extends GetxController
