@@ -11,6 +11,7 @@ import "package:lg_tribe/Homepage/homepage.dart";
 import "package:lg_tribe/login/registration/user_registration.dart";
 import "package:lg_tribe/login/Forgot Password/forgot_password.dart";
 import "package:lg_tribe/Controller/userstate_controller_class.dart";
+import 'package:shared_preferences/shared_preferences.dart';
 
 
 void main() async
@@ -18,7 +19,7 @@ void main() async
   WidgetsFlutterBinding.ensureInitialized(); // Ensure Flutter bindings are initialized
   await SharedPreferences.getInstance(); // Initialize SharedPreferences if needed
 
-  
+
   Get.put(UserStateController()); // Initialize the UserStateController
   runApp(
     GetMaterialApp(
