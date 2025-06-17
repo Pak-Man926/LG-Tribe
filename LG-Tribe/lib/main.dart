@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import "package:lg_tribe/Controller/login_controller_class.dart";
 import "package:lg_tribe/Homepage/Screens/Profile%20Page/Screens/about.dart";
 import "package:lg_tribe/Homepage/Screens/Profile%20Page/profile.dart";
 import "package:lg_tribe/Homepage/Screens/profilescreen.dart";
@@ -21,7 +22,8 @@ void main() async
 
 
   Get.put(UserStateController());
-  Get.put() // Initialize the UserStateController
+  Get.put(LoginController()); 
+  Get.put(RegistrationController());
 
 
   runApp(
