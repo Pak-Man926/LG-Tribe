@@ -21,9 +21,9 @@ void main() async
 
 
   Get.put(UserStateController());
-  //Get.put() // Initialize the UserStateController
+  Get.put() // Initialize the UserStateController
 
-  
+
   runApp(
     GetMaterialApp(
       debugShowCheckedModeBanner: false,  
