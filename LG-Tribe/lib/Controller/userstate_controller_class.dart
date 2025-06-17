@@ -55,31 +55,4 @@ class UserStateController extends GetxController
   {
     this.email.value = email;
   }
-
-  void login(String username, int phoneNumber)
-  {
-    isLoggedIn.value = true;
-    firstName.value = username;
-    this.phoneNumber.value = phoneNumber.toString();
-    selectedAuthLevel.value = null;
-    selectedCountry.value = null;
-    //this.email.value = email;
-  }
-  // {
-  //   isLoggedIn.value = true;
-  //   firstName.value = user;
-  // }
-
-  void logout()
-  {
-    isLoggedIn.value = false;
-    firstName.value = "";
-    selectedAuthLevel.value = null;
-    selectedCountry.value = null;
-  }
-}
-
-// Future<void> readData() async
-// {
-//   final sharedPreferences prefs = await Get.find<SharedPreferences>();
-// }
+}  
