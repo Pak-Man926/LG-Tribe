@@ -13,8 +13,12 @@ import "package:lg_tribe/login/Forgot Password/forgot_password.dart";
 import "package:lg_tribe/Controller/userstate_controller_class.dart";
 
 
-void main()
+void main() async
 {
+  WidgetsFlutterBinding.ensureInitialized(); // Ensure Flutter bindings are initialized
+  await SharedPreferences.getInstance(); // Initialize SharedPreferences if needed
+
+  
   Get.put(UserStateController()); // Initialize the UserStateController
   runApp(
     GetMaterialApp(
