@@ -19,6 +19,7 @@ void main()
   runApp(
     GetMaterialApp(
       debugShowCheckedModeBanner: false,  
+      //Route controller
       initialRoute: "/",
       getPages: [
         GetPage(name: "/", page: () => SplashScreen()), // Initial route 
@@ -27,10 +28,10 @@ void main()
         GetPage(name: "/userlogin", page: () => Login() ),// Fourth route
         GetPage(name: "/userregistration", page: () => UserRegistration()), // Fifth route
         GetPage(name: "/forgotpassword", page: () => Password()), // Sixth route
-        GetPage(name: "/homepage", page: () => Homepage()),
-        GetPage(name: "/profilescreen", page: () => ProfileScreen()),
-        GetPage(name: "/profilepage", page: () => Profile()),
-        GetPage(name: "/aboutapp", page: () => About()), 
+        GetPage(name: "/homepage", page: () => Homepage()), // Seventh route
+        GetPage(name: "/profilescreen", page: () => ProfileScreen()), // Eighth route
+        GetPage(name: "/profilepage", page: () => Profile()), // Ninth route
+        GetPage(name: "/aboutapp", page: () => About()), // Tenth route
 
       ],
     )
