@@ -2,9 +2,9 @@ import "package:get/get.dart";
 
 enum AuthLevel
 {
-  merchandiser,
-  promoter,
-  floorServiceprovider,
+  Merchandiser,
+  Promoter,
+  FloorServiceprovider,
 }
 
 enum CountryLocated
