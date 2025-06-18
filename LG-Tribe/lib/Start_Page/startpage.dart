@@ -1,6 +1,7 @@
 import "package:flutter/material.dart";
 //import "package:lg_tribe/Country/country.dart";
 import "package:get/get.dart";
+import "package:lg_tribe/Controller/classes/authlevel_class.dart";
 import "package:lg_tribe/Controller/userstate_controller_class.dart";
 
 //Startpage. User chooses a role to proceed with the app.
@@ -56,7 +57,7 @@ class Startpage extends StatelessWidget {
                 child: OutlinedButton(
                   //Merchandiser route
                   onPressed: () {
-                    userState.setAuthLevel(AuthLevel merchandiser);
+                    userState.setAuthLevel(AuthLevel.merchandiser);
                     Get.toNamed("/country");
                   },
                   child: Text("Merchandiser"),
