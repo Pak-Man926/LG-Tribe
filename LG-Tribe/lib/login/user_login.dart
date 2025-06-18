@@ -11,19 +11,13 @@ import "package:get/get.dart";
 
 class Login extends StatelessWidget 
 {
-  
-
-  
-
 
   @override
   Widget build(BuildContext context) 
   {
     String initialCountryCode = getInitialCountryCode(userState.selectedCountry.value ?? CountryLocated.kenya);
 
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(
+    return Scaffold(
         body: SafeArea(
           child: Stack(
             children: [
@@ -177,8 +171,7 @@ class Login extends StatelessWidget
             ],
           ),
         ),
-      ),
-    );
+      );
   }
 }
 
