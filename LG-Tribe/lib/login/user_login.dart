@@ -181,21 +181,4 @@ class Login extends StatelessWidget {
   }
 }
 
-String getInitialCountryCode(CountryLocated country) {
-    switch (country) {
-      case CountryLocated.kenya:
-        return 'KE';
-      case CountryLocated.ethopia:
-        return 'ET';
-      case CountryLocated.tanzania:
-        return 'TZ';
-      case CountryLocated.sudan:
-        return 'SD';
-      case CountryLocated.uganda:
-        return 'UG';
-      case CountryLocated.zambia:
-        return 'ZM';
-      default:
-        return 'KE'; // Default to Kenya if no country is selected
-    }
-  }
+
