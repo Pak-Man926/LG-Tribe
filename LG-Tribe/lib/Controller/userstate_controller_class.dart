@@ -8,22 +8,28 @@ class UserStateController extends GetxController
   var selectedCountry = CountryLocated.kenya.obs;
   var isLoggedIn = false.obs;
   
-  void setAuthLevel(AuthLevel value)
-  {
-    selectedAuthLevel.value = value;
-  }
+  //Auth level getter
   AuthLevel getAuthLevel()
   {
     return selectedAuthLevel.value;
   }
+  //Auth level setter
+  void setAuthLevel(AuthLevel value)
+  {
+    selectedAuthLevel.value = value;
+  }
+  
+  //Country getter
+  CountryLocated getCountry()
+  {
+    return selectedCountry.value;
+  }
+  //Country setter
   void setCountry(CountryLocated country)
   {
     selectedCountry.value = country;
   }
   
-  CountryLocated getCountry()
-  {
-    return selectedCountry.value;
-  }
+  
 }   
     
