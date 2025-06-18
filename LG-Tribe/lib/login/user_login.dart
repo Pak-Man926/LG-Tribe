@@ -79,7 +79,7 @@ class Login extends StatelessWidget {
                             hintText: "Enter your phone number",
                             border: OutlineInputBorder(),
                           ),
-                          initialCountryCode: getInitialCountryCode(
+                          initialCountryCode: userState.getInitialCountryCode(
                             userState.selectedCountry.value,
                           ),
                           onChanged: (phoneNumber) {
