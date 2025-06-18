@@ -1,7 +1,5 @@
 import "package:country_flags/country_flags.dart";
 import "package:flutter/material.dart";
-//import "package:get/instance_manager.dart";
-//import 'package:lg_tribe/Login/user_login.dart';
 import "package:get/get.dart";
 import "package:lg_tribe/Controller/userstate_controller_class.dart";
 
