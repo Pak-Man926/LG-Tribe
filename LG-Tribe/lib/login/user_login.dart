@@ -7,77 +7,15 @@ import 'package:intl_phone_field/intl_phone_field.dart';
 import "package:lg_tribe_client/lg_tribe_client.dart";
 import "package:serverpod_flutter/serverpod_flutter.dart";
 import "package:get/get.dart";
-import "package:lg_tribe/Controller/controller_class.dart";
+//import "package:lg_tribe/Controller/controller_class.dart";
 
 class Login extends StatelessWidget 
 {
-  final userState = Get.put(UserStateController());
-
-  final contactNumberController = TextEditingController();
-  final passwordController = TextEditingController();
-
-  var client = Client('http://localhost:8080/')
-    ..connectivityMonitor = FlutterConnectivityMonitor();
-
-  @override
-  void dispose()
-  {
-    contactNumberController.dispose();
-    passwordController.dispose();
-  }
-
-  // void attemptLogin() async
-  // {
-  //   final phoneNumber = contactNumberController.text;
-  //   final password = passwordController.text;
-
-  //   if (phoneNumber.isEmpty || password.isEmpty)
-  //   {
-  //     Get.snackbar("Error", "Please fill in all fields",
-  //         snackPosition: SnackPosition.BOTTOM);
-  //   }
-
-  //   return;
-  // }
-
-  Future<void> _login() async {
-    final phoneNumber = int.tryParse(contactNumberController.text);
-    final password = passwordController.text;
-
-    if (phoneNumber == null || password.isEmpty)
-    {
-      Get.snackbar("Error", "Please fill in all fields",
-          snackPosition: SnackPosition.BOTTOM);
-      return;
-    }
-
-    try
-    {
-      final result = await client.userEndpoints.loginUser(phoneNumber, password);
-
-      if (result != null)
-      {
-        userState.userName.value = result.firstName + " " + result.lastName;
-        Get.toNamed("/homepage");
-      }
-      else 
-      {
-        Get.snackbar("Error", "Invalid phone number or password",
-            snackPosition: SnackPosition.BOTTOM);
-      }
-    }
-    catch (e)
-    {
-      Get.snackbar("Error", "An error occurred while logging in",
-          snackPosition: SnackPosition.BOTTOM);
-    }
-  }
-
-
+  
   @override
   Widget build(BuildContext context) 
   {
-    String initialCountryCode = getInitialCountryCode(userState.selectedCountry.value ?? CountryLocated.kenya);
+    //String initialCountryCode = getInitialCountryCode(userState.selectedCountry.value ?? CountryLocated.kenya);
 
     return MaterialApp(
       debugShowCheckedModeBanner: false,
@@ -109,11 +47,13 @@ class Login extends StatelessWidget
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text("${userState.selectedAuthLevel.value}",
-                        style: TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold,
-                        )),
+                    //Text("${userState.selectedAuthLevel.value}",
+
+                        // style: TextStyle(
+                        //   fontSize: 20,
+                        //   fontWeight: FontWeight.bold,
+                        // )),
+                        Obx(() => Text("${controller.selected}"))
                     SizedBox(height: 10),
                     Text(
                       "Welcome back! Please enter your details",
