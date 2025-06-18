@@ -8,6 +8,7 @@ import "package:lg_tribe_client/lg_tribe_client.dart";
 import "package:serverpod_flutter/serverpod_flutter.dart";
 import "package:get/get.dart";
 //import "package:lg_tribe/Controller/controller_class.dart";
+import "package:lg_tribe/Controller/userstate_controller_class.dart";
 
 class Login extends StatelessWidget 
 {
