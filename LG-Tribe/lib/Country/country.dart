@@ -9,7 +9,7 @@ import "package:lg_tribe/Controller/userstate_controller_class.dart";
 class Country extends StatelessWidget {
   //const Country({super.key});
 
-  final userState = Get.put(UserStateController());
+  //final userState = Get.put(UserStateController());
 
 
   @override
