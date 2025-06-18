@@ -84,7 +84,7 @@ class Login extends StatelessWidget {
   initialCountryCode: getInitialCountryCode(userState.selectedCountry.value),
   onChanged: (phoneNumber) {
     // Optional: store this in state
-    print("Phone: ${phoneNumber.completeNumber}");
+   // print("Phone: ${phoneNumber.completeNumber}");
   },
 )),
 
