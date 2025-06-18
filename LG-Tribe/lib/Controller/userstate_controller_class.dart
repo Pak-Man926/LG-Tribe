@@ -41,8 +41,8 @@ class UserStateController extends GetxController {
         return 'UG';
       case CountryLocated.zambia:
         return 'ZM';
-      // default:
-      //   return 'KE'; // Default to Kenya if no country is selected
+      default:
+        return 'KE'; // Default to Kenya if no country is selected
     }
   }
 }
