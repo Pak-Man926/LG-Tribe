@@ -14,9 +14,9 @@ class Login extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    String initialCountryCode = getInitialCountryCode(
-      userState.selectedCountry.value ?? CountryLocated.kenya,
-    );
+    // String initialCountryCode = getInitialCountryCode(
+    //   userState.selectedCountry.value ?? CountryLocated.kenya,
+    // );
 
     return Scaffold(
       body: SafeArea(
