@@ -76,18 +76,18 @@ class Login extends StatelessWidget {
                         ),
                       ),
                       SizedBox(height: 5),
-                      IntlPhoneField(
-                        //controller: contactNumberController,
-                        decoration: const InputDecoration(
-                          hintText: "Enter your phone number",
-                          border: OutlineInputBorder(),
-                        ),
-                        //  initialCountryCode: initialCountryCode,
-                        onChanged: (phoneNumber) {
-                          // Update the phone number in the controller
-                          phoneNumber.number = phoneNumber.completeNumber;
-                        },
-                      ),
+                      Obx(() => IntlPhoneField(
+  decoration: const InputDecoration(
+    hintText: "Enter your phone number",
+    border: OutlineInputBorder(),
+  ),
+  initialCountryCode: getCountryCode(userState.selectedCountry.value),
+  onChanged: (phoneNumber) {
+    // Optional: store this in state
+    print("Phone: ${phoneNumber.completeNumber}");
+  },
+))
+
                       SizedBox(height: 5),
                       Text(
                         "Password:",
