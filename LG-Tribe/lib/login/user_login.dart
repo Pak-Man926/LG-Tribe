@@ -14,9 +14,9 @@ class Login extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // String initialCountryCode = getInitialCountryCode(
-    //   userState.selectedCountry.value ?? CountryLocated.kenya,
-    // );
+    String initialCountryCode = getInitialCountryCode(
+      userState.selectedCountry.value ?? CountryLocated.kenya,
+    );
 
     return Scaffold(
       body: SafeArea(
@@ -48,10 +48,7 @@ class Login extends StatelessWidget {
                 children: [
                   Obx(
                     () => Text(
-                      userState
-                          .selectedAuthLevel
-                          .value
-                          .value, 
+                      userState.selectedAuthLevel.value.value,
                       style: TextStyle(
                         fontSize: 20,
                         fontWeight: FontWeight.bold,
@@ -76,17 +73,21 @@ class Login extends StatelessWidget {
                         ),
                       ),
                       SizedBox(height: 5),
-                      Obx(() => IntlPhoneField(
-  decoration: const InputDecoration(
-    hintText: "Enter your phone number",
-    border: OutlineInputBorder(),
-  ),
-  initialCountryCode: getInitialCountryCode(userState.selectedCountry.value),
-  onChanged: (phoneNumber) {
-    // Optional: store this in state
-   // print("Phone: ${phoneNumber.completeNumber}");
-  },
-)),
+                      Obx(
+                        () => IntlPhoneField(
+                          decoration: const InputDecoration(
+                            hintText: "Enter your phone number",
+                            border: OutlineInputBorder(),
+                          ),
+                          initialCountryCode: getInitialCountryCode(
+                            userState.selectedCountry.value,
+                          ),
+                          onChanged: (phoneNumber) {
+                            // Optional: store this in state
+                            // print("Phone: ${phoneNumber.completeNumber}");
+                          },
+                        ),
+                      ),
 
                       SizedBox(height: 5),
                       Text(
@@ -180,5 +181,3 @@ class Login extends StatelessWidget {
     );
   }
 }
-
-
