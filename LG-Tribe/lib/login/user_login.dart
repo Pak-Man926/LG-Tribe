@@ -10,6 +10,9 @@ import "package:get/get.dart";
 //import "package:lg_tribe/Controller/controller_class.dart";
 
 class Login extends StatelessWidget {
+  
+  final userState = Get.find<UserStateController>();
+
   @override
   Widget build(BuildContext context) {
     String initialCountryCode = getInitialCountryCode(
@@ -44,10 +47,7 @@ class Login extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
-                    "${userState.selectedAuthLevel.value}",
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-                  ),
+                  Obx(() => Text("${userState.selectedAuthLevel.value}")),
                   SizedBox(height: 10),
                   Text(
                     "Welcome back! Please enter your details",
