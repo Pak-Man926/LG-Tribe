@@ -10,12 +10,10 @@ import "package:get/get.dart";
 import "package:lg_tribe/Controller/userstate_controller_class.dart";
 
 class Login extends StatelessWidget {
-
   final userState = Get.find<UserStateController>();
 
   @override
   Widget build(BuildContext context) {
-
     // String initialCountryCode = getInitialCountryCode(
     //   userState.selectedCountry.value ?? CountryLocated.kenya,
     // );
@@ -48,13 +46,18 @@ class Login extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Obx(() => Text(
-  userState.selectedAuthLevel.value.value, // <--- correct usage
-  style: TextStyle(
-    fontSize: 20,
-    fontWeight: FontWeight.bold,
-  ),
-)),
+                  Obx(
+                    () => Text(
+                      userState
+                          .selectedAuthLevel
+                          .value
+                          .value, // <--- correct usage
+                      style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
 
                   SizedBox(height: 10),
                   Text(
@@ -79,7 +82,7 @@ class Login extends StatelessWidget {
                           hintText: "Enter your phone number",
                           border: OutlineInputBorder(),
                         ),
-                      //  initialCountryCode: initialCountryCode,
+                        //  initialCountryCode: initialCountryCode,
                         onChanged: (phoneNumber) {
                           // Update the phone number in the controller
                           phoneNumber.number = phoneNumber.completeNumber;
@@ -131,7 +134,7 @@ class Login extends StatelessWidget {
                         child: MaterialButton(
                           onPressed: () async {
                             //Attempt to login
-                           // await _login();
+                            // await _login();
                           },
                           color: Color(0xFFA50034),
                           shape: RoundedRectangleBorder(
