@@ -1,6 +1,7 @@
 import "package:country_flags/country_flags.dart";
 import "package:flutter/material.dart";
 import "package:get/get.dart";
+import "package:lg_tribe/Controller/classes/country_located_class.dart";
 import "package:lg_tribe/Controller/userstate_controller_class.dart";
 
 //User selects the country they are in before proceeding to login.
