@@ -53,7 +53,11 @@ class Login extends StatelessWidget
                         //   fontSize: 20,
                         //   fontWeight: FontWeight.bold,
                         // )),
-                        Obx(() => Text("${controller.selected}"))
+                        Obx(() => Text("${controller.selectedAuthLevel.value.value}",
+                        style: TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                        ))),
                     SizedBox(height: 10),
                     Text(
                       "Welcome back! Please enter your details",
