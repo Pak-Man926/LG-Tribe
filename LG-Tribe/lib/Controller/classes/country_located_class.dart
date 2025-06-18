@@ -1,4 +1,25 @@
-class CountryLocatedClass 
+class CountryLocated 
 {
-  final String n
+  final String name;
+
+  const CountryLocated._(this.name);
+
+  static const kenya = CountryLocated._("Kenya");
+  static const ethopia = CountryLocated._("Ethiopia");
+  static const tanzania = CountryLocated._("Tanzania");
+  static const sudan = CountryLocated._("Sudan");
+  static const uganda = CountryLocated._("Uganda");
+  static const zambia = CountryLocated._("Zambia");
+
+  static const values = [
+    kenya,
+    ethopia,
+    tanzania,
+    sudan,
+    uganda,
+    zambia
+  ];
+
+  static CountryLocated fromString(String val) =>
+    values.firstWhere((e) => e.name == val, orElse: () => throw ArgumentError("Invalid CountryLocated value: $val"));
 }
