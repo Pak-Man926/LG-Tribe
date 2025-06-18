@@ -86,7 +86,7 @@ class Login extends StatelessWidget {
     // Optional: store this in state
     print("Phone: ${phoneNumber.completeNumber}");
   },
-))
+)),
 
                       SizedBox(height: 5),
                       Text(
