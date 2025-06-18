@@ -9,7 +9,6 @@ class Startpage extends StatelessWidget {
 
   final userState = Get.put(UserStateController());
 
-
   @override
     Widget build(BuildContext context) {
     return Scaffold(
