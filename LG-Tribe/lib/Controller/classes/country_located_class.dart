@@ -21,5 +21,7 @@ class CountryLocated
   ];
 
   static CountryLocated fromString(String val) =>
-    values.firstWhere((e) => e.name == val, orElse: () => throw ArgumentError("Invalid CountryLocated value: $val"));
+    values.firstWhere((e) => e.name == val, orElse: () => kenya); 
+    
+    //throw ArgumentError("Invalid CountryLocated value: $val"));
 }
