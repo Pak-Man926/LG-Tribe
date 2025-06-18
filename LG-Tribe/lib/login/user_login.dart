@@ -46,8 +46,7 @@ class Login extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Obx(
-                    () => Text(
+                  Obx(() => Text(
                       userState
                           .selectedAuthLevel
                           .value
