@@ -8,17 +8,22 @@ import "package:lg_tribe_client/lg_tribe_client.dart";
 import "package:serverpod_flutter/serverpod_flutter.dart";
 import "package:get/get.dart";
 //import "package:lg_tribe/Controller/controller_class.dart";
-import "package:lg_tribe/Controller/userstate_controller_class.dart";
 
 class Login extends StatelessWidget 
 {
   
+
+  
+
+
   @override
   Widget build(BuildContext context) 
   {
-    //String initialCountryCode = getInitialCountryCode(userState.selectedCountry.value ?? CountryLocated.kenya);
+    String initialCountryCode = getInitialCountryCode(userState.selectedCountry.value ?? CountryLocated.kenya);
 
-    return Scaffold(
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
         body: SafeArea(
           child: Stack(
             children: [
@@ -46,17 +51,11 @@ class Login extends StatelessWidget
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    //Text("${userState.selectedAuthLevel.value}",
-
-                        // style: TextStyle(
-                        //   fontSize: 20,
-                        //   fontWeight: FontWeight.bold,
-                        // )),
-                        Obx(() => Text("${controller.selectedAuthLevel.value.value}",
+                    Text("${userState.selectedAuthLevel.value}",
                         style: TextStyle(
                           fontSize: 20,
                           fontWeight: FontWeight.bold,
-                        ))),
+                        )),
                     SizedBox(height: 10),
                     Text(
                       "Welcome back! Please enter your details",
@@ -78,7 +77,7 @@ class Login extends StatelessWidget
                         ),
                         SizedBox(height: 5),
                         IntlPhoneField(
-                          //controller: contactNumberController,
+                          controller: contactNumberController,
                           decoration: const InputDecoration(
                             hintText: "Enter your phone number",
                             border: OutlineInputBorder(),
@@ -99,7 +98,7 @@ class Login extends StatelessWidget
                         ),
                         SizedBox(height: 5),
                         TextField(
-                          //controller: passwordController,
+                          controller: passwordController,
                           keyboardType: TextInputType.visiblePassword,
                           obscureText: true,
                           decoration: InputDecoration(
@@ -135,7 +134,7 @@ class Login extends StatelessWidget
                           child: MaterialButton(
                             onPressed: () async {
                               //Attempt to login
-                              //await _login();
+                              await _login();
                             },
                             color: Color(0xFFA50034),
                             shape: RoundedRectangleBorder(
@@ -178,26 +177,27 @@ class Login extends StatelessWidget
             ],
           ),
         ),
-      );
+      ),
+    );
   }
 }
 
-// String getInitialCountryCode(CountryLocated country)
-// {
-//   switch (country) {
-//     case CountryLocated.kenya:
-//       return 'KE';
-//     case CountryLocated.ethopia:
-//       return 'ET';
-//     case CountryLocated.tanzania:
-//       return 'TZ';
-//     case CountryLocated.sudan:
-//       return 'SD';  
-//     case CountryLocated.uganda:
-//       return 'UG';
-//     case CountryLocated.zambia:
-//       return 'ZM';
-//     // default:
-//     //   return 'KE'; // Default to Kenya if no country is selected
-//   }
-// }
+String getInitialCountryCode(CountryLocated country)
+{
+  switch (country) {
+    case CountryLocated.kenya:
+      return 'KE';
+    case CountryLocated.ethopia:
+      return 'ET';
+    case CountryLocated.tanzania:
+      return 'TZ';
+    case CountryLocated.sudan:
+      return 'SD';  
+    case CountryLocated.uganda:
+      return 'UG';
+    case CountryLocated.zambia:
+      return 'ZM';
+    // default:
+    //   return 'KE'; // Default to Kenya if no country is selected
+  }
+}
