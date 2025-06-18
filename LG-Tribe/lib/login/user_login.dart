@@ -48,7 +48,12 @@ class Login extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Obx(() => Text("${userState.selectedAuthLevel.value}")),
+                  Obx(() => Text("${userState.selectedAuthLevel.value}",
+                    style: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  )),
                   SizedBox(height: 10),
                   Text(
                     "Welcome back! Please enter your details",
