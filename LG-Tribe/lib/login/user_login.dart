@@ -79,7 +79,7 @@ class Login extends StatelessWidget
                         ),
                         SizedBox(height: 5),
                         IntlPhoneField(
-                          controller: contactNumberController,
+                          //controller: contactNumberController,
                           decoration: const InputDecoration(
                             hintText: "Enter your phone number",
                             border: OutlineInputBorder(),
@@ -100,7 +100,7 @@ class Login extends StatelessWidget
                         ),
                         SizedBox(height: 5),
                         TextField(
-                          controller: passwordController,
+                          //controller: passwordController,
                           keyboardType: TextInputType.visiblePassword,
                           obscureText: true,
                           decoration: InputDecoration(
@@ -136,7 +136,7 @@ class Login extends StatelessWidget
                           child: MaterialButton(
                             onPressed: () async {
                               //Attempt to login
-                              await _login();
+                              //await _login();
                             },
                             color: Color(0xFFA50034),
                             shape: RoundedRectangleBorder(
@@ -184,22 +184,22 @@ class Login extends StatelessWidget
   }
 }
 
-String getInitialCountryCode(CountryLocated country)
-{
-  switch (country) {
-    case CountryLocated.kenya:
-      return 'KE';
-    case CountryLocated.ethopia:
-      return 'ET';
-    case CountryLocated.tanzania:
-      return 'TZ';
-    case CountryLocated.sudan:
-      return 'SD';  
-    case CountryLocated.uganda:
-      return 'UG';
-    case CountryLocated.zambia:
-      return 'ZM';
-    // default:
-    //   return 'KE'; // Default to Kenya if no country is selected
-  }
-}
+// String getInitialCountryCode(CountryLocated country)
+// {
+//   switch (country) {
+//     case CountryLocated.kenya:
+//       return 'KE';
+//     case CountryLocated.ethopia:
+//       return 'ET';
+//     case CountryLocated.tanzania:
+//       return 'TZ';
+//     case CountryLocated.sudan:
+//       return 'SD';  
+//     case CountryLocated.uganda:
+//       return 'UG';
+//     case CountryLocated.zambia:
+//       return 'ZM';
+//     // default:
+//     //   return 'KE'; // Default to Kenya if no country is selected
+//   }
+// }
