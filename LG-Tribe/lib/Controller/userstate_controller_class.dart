@@ -1,6 +1,7 @@
 import "package:get/get.dart";
 import "package:lg_tribe/Controller/classes/authlevel_class.dart";
 import "package:lg_tribe/Controller/classes/country_located_class.dart";
+import "package:lg_tribe/Country/country.dart";
 
 class UserStateController extends GetxController
 {
@@ -8,12 +9,21 @@ class UserStateController extends GetxController
   var selectedCountry = CountryLocated.kenya.obs;
   var isLoggedIn = false.obs;
   
-  void updateAuth(AuthLevel level)
+  void setAuth(AuthLevel level)
   {
     selectedAuthLevel.value = level;
+  }
+  AuthLevel getAuth()
+  {
+    return selectedAuthLevel.value;
   }
   void setCountry(CountryLocated country)
   {
     selectedCountry.value = country;
+  }
+  
+  CountryLocated getCountry()
+  {
+    return selectedCountry.value;
   }
 }  
