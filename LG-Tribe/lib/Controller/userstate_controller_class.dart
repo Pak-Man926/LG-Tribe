@@ -12,7 +12,7 @@ class UserStateController extends GetxController
   {
     selectedAuthLevel.value = level;
   }
-  void updateCountry(CountryLocated country)
+  void setCountry(CountryLocated country)
   {
     selectedCountry.value = country;
   }
