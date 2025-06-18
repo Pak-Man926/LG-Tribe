@@ -37,7 +37,7 @@ void main() async
         GetPage(name: "/startpage", page: () => Startpage()), //Second route
         GetPage(name: "/country", page: () => Country()), // Third route
         GetPage(name: "/userlogin", page: () => Login() ),// Fourth route
-        GetPage(name: "/userregistration", page: () => UserRegistration()), // Fifth route
+        //GetPage(name: "/userregistration", page: () => UserRegistration()), // Fifth route
         GetPage(name: "/forgotpassword", page: () => Password()), // Sixth route
         GetPage(name: "/homepage", page: () => Homepage()), // Seventh route
         GetPage(name: "/profilescreen", page: () => ProfileScreen()), // Eighth route
