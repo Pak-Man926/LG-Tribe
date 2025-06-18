@@ -1,22 +1,5 @@
 import "package:get/get.dart";
 
-enum AuthLevel
-{
-  Merchandiser,
-  Promoter,
-  Floor Service Provider,
-}
-
-enum CountryLocated
-{
-  Kenya,
-  Ethopia,
-  Tanzania,
-  Sudan,
-  Uganda,
-  Zambia,
-}
-
 class UserStateController extends GetxController
 {
   var selectedAuthLevel = Rx<AuthLevel?>(null);
