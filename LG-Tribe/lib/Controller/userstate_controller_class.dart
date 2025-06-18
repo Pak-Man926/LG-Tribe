@@ -27,7 +27,7 @@ class UserStateController extends GetxController {
     selectedCountry.value = country;
   }
 
-  String getCountryCode(CountryLocated country) {
+  String getInitialCountryCode(CountryLocated country) {
     switch (country) {
       case CountryLocated.kenya:
         return 'KE';
