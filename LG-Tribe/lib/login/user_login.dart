@@ -51,7 +51,7 @@ class Login extends StatelessWidget {
                       userState
                           .selectedAuthLevel
                           .value
-                          .value, // <--- correct usage
+                          .value, 
                       style: TextStyle(
                         fontSize: 20,
                         fontWeight: FontWeight.bold,
