@@ -7,17 +7,18 @@ import 'package:intl_phone_field/intl_phone_field.dart';
 import "package:lg_tribe_client/lg_tribe_client.dart";
 import "package:serverpod_flutter/serverpod_flutter.dart";
 import "package:get/get.dart";
-//import "package:lg_tribe/Controller/controller_class.dart";
+import "package:lg_tribe/Controller/userstate_controller_class.dart";
 
 class Login extends StatelessWidget {
-  
+
   final userState = Get.find<UserStateController>();
 
   @override
   Widget build(BuildContext context) {
-    String initialCountryCode = getInitialCountryCode(
-      userState.selectedCountry.value ?? CountryLocated.kenya,
-    );
+
+    // String initialCountryCode = getInitialCountryCode(
+    //   userState.selectedCountry.value ?? CountryLocated.kenya,
+    // );
 
     return Scaffold(
       body: SafeArea(
@@ -66,12 +67,12 @@ class Login extends StatelessWidget {
                       ),
                       SizedBox(height: 5),
                       IntlPhoneField(
-                        controller: contactNumberController,
+                        //controller: contactNumberController,
                         decoration: const InputDecoration(
                           hintText: "Enter your phone number",
                           border: OutlineInputBorder(),
                         ),
-                        initialCountryCode: initialCountryCode,
+                      //  initialCountryCode: initialCountryCode,
                         onChanged: (phoneNumber) {
                           // Update the phone number in the controller
                           phoneNumber.number = phoneNumber.completeNumber;
@@ -87,7 +88,7 @@ class Login extends StatelessWidget {
                       ),
                       SizedBox(height: 5),
                       TextField(
-                        controller: passwordController,
+                        //controller: passwordController,
                         keyboardType: TextInputType.visiblePassword,
                         obscureText: true,
                         decoration: InputDecoration(
@@ -123,7 +124,7 @@ class Login extends StatelessWidget {
                         child: MaterialButton(
                           onPressed: () async {
                             //Attempt to login
-                            await _login();
+                           // await _login();
                           },
                           color: Color(0xFFA50034),
                           shape: RoundedRectangleBorder(
