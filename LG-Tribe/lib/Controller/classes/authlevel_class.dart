@@ -1,5 +1,3 @@
-import 'dart:math';
-
 class AuthLevel 
 {
   final String value;
