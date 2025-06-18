@@ -17,6 +17,8 @@ class AuthLevel
   ];
 
   static AuthLevel fromString(String val) =>
-    values.firstWhere((e) => e.value == val, orElse: () => throw ArgumentError("Invalid AuthLevel value: $val"));
+    values.firstWhere((e) => e.value == val, orElse: () => merchandiser);
+    
+    // () => throw ArgumentError("Invalid AuthLevel value: $val"));
   
 }
