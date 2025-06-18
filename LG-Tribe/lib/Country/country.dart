@@ -9,18 +9,11 @@ import "package:lg_tribe/Controller/userstate_controller_class.dart";
 class Country extends StatelessWidget {
   //const Country({super.key});
 
-  //final userState = Get.find(UserStateController());
+  final userState = Get.find(UserStateController());
 
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: country(context),
-    );
-  }
-
-  Scaffold country(BuildContext context) {
     return Scaffold(
       body: SafeArea(
         top: true,
