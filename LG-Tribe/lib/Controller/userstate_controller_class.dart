@@ -1,7 +1,6 @@
 import "package:get/get.dart";
 import "package:lg_tribe/Controller/classes/authlevel_class.dart";
 import "package:lg_tribe/Controller/classes/country_located_class.dart";
-import "package:lg_tribe/Country/country.dart";
 
 class UserStateController extends GetxController
 {
