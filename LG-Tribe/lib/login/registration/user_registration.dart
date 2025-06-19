@@ -146,7 +146,9 @@ class UserRegistration extends StatelessWidget
                           hintText: "Enter your phone number",
                           border: OutlineInputBorder(),
                         ),
-                        initialCountryCode: userState.getInitialCountryCode,
+                        initialCountryCode: userState.getInitialCountryCode(
+                            userState.selectedCountry.value,
+                          ),
                         onChanged: (contactNumber) {
                           // setState(() {
                           //   phoneNumber = phone.completeNumber;
