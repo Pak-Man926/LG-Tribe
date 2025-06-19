@@ -226,7 +226,7 @@ class UserRegistration extends StatelessWidget
                         alignment: Alignment.bottomCenter,
                         child: FilledButton(
                           onPressed: () async {
-                            //await _register();
+                            await _register();
                           },
                           child: Text("Create Account"),
                         ),
