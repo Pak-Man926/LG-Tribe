@@ -1,4 +1,7 @@
 import "package:get/get.dart";
+import "package:lg_tribe_client/lg_tribe_client.dart";
+import "package:serverpod_flutter/serverpod_flutter.dart";
+i
 
 class RegistrationController extends GetxController {
   // Define the form fields
