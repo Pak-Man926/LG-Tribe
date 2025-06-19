@@ -226,7 +226,21 @@ class UserRegistration extends StatelessWidget
                         alignment: Alignment.bottomCenter,
                         child: FilledButton(
                           onPressed: () async {
-                            await _register();
+                            final fName = firstNameController.text;
+                            final lName = lastNameController.text;
+                            final email = emailController.text;
+                            final contactNumber = int.tryParse(contactNumberController.text) ?? 0;
+                            final password = passwordController.text;
+
+                            await registrationState.registerUser(
+                              firstName: fName,
+                              lastName: lName,
+                              contactNumber: contactNumber,
+                              email: email,
+                              password: password,
+                              authenticationlevel: userState.getAuthLevel(),
+                              country: userState.getCountry(),
+                            );
                           },
                           child: Text("Create Account"),
                         ),
