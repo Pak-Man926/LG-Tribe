@@ -238,8 +238,8 @@ class UserRegistration extends StatelessWidget
                               contactNumber: contactNumber,
                               email: email,
                               password: password,
-                              authenticationlevel: userState.getAuthLevel(),
-                              country: userState.getCountry(),
+                              authenticationlevel: userState.getAuthLevel().toServerModel(),
+                              country: userState.getCountry().toServerModel(),
                             );
                           },
                           child: Text("Create Account"),
