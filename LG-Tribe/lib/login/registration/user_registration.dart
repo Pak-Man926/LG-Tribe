@@ -9,7 +9,7 @@ import "package:lg_tribe/main.dart";
 
 class UserRegistration extends StatelessWidget 
 {
-  final userState = Get.put(UserStateController());
+  //final userState = Get.put(UserStateController());
 
   UserStateController controller = Get.find();
 
