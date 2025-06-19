@@ -8,6 +8,13 @@ class RegistrationController extends GetxController {
   var email = ''.obs;
   var password = ''.obs;
 
+  @override
+  void onInit()
+  {
+    super.onInit();
+
+    
+  }
   // Method to register a user
   void registerUser() {
     // Here you would typically call your backend API to register the user
