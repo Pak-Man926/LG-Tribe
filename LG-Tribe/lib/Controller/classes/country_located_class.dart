@@ -24,4 +24,22 @@ class CountryLocated
     values.firstWhere((e) => e.name == val, orElse: () => kenya); 
     
     //throw ArgumentError("Invalid CountryLocated value: $val"));
+
+    Country toServerModel() {
+  switch (this) {
+    case CountryLocated.kenya:
+      return Country.kenya;
+    case CountryLocated.ethopia:
+      return Country.ethopia;
+    case CountryLocated.tanzania:
+      return Country.tanzania;
+    case CountryLocated.sudan:
+      return Country.sudan;
+    case CountryLocated.uganda:
+      return Country.uganda;
+    case CountryLocated.zambia:
+      return Country.zambia;
+  }
+}
+
 }
