@@ -4,7 +4,7 @@ import "package:lg_tribe_client/lg_tribe_client.dart";
 import "package:serverpod_flutter/serverpod_flutter.dart";
 import "package:lg_tribe/login/user_login.dart";
 import "package:get/get.dart";
-import 'package:lg_tribe/Controller/controller_class.dart';
+import 'package:lg_tribe/Controller/userstate_controller_class.dart';
 import "package:lg_tribe/main.dart";
 
 class UserRegistration extends StatelessWidget 
@@ -15,101 +15,7 @@ class UserRegistration extends StatelessWidget
   UserStateController controller = Get.find();
   //UserRegistration({super.key});
 
-  String phoneNumber = '';
-  String password = '';
-  var dropDownvalueItems = "".obs;
-
-  var items = [
-    "Kenya",
-    "Ethiopia",
-    "Tanzania",
-    "Sudan",
-    "Uganda",
-    "Zambia",
-  ];
-
-  AuthLevel? authenticationlevel;
-  CountryLocated? country;
-
-  final firstNameController = TextEditingController();
-  final lastNameController = TextEditingController();
-  final emailController = TextEditingController();
-  final contactNumberController = TextEditingController();
-  final passwordController = TextEditingController();
-
-
-  var client = Client('http://localhost:8080/')
-    ..connectivityMonitor = FlutterConnectivityMonitor();
-
-  void disposeControllers() {
-    firstNameController.dispose();
-    lastNameController.dispose();
-    emailController.dispose();
-    contactNumberController.dispose();
-    passwordController.dispose();
-  }
-
-  Future<void> _register() async {
-    final firstName = firstNameController.text;
-    final lastName = lastNameController.text;
-    final email = emailController.text;
-    final contactNumber = int.tryParse(contactNumberController.text);
-    final password = passwordController.text;
-
-    if (firstName.isEmpty ||
-        lastName.isEmpty ||
-        email.isEmpty ||
-        contactNumber == null ||
-        password.isEmpty) {
-      //Show error message if any field is empty
-      Get.snackbar(
-        "Error",
-        "Please fill in all fields",
-        snackPosition: SnackPosition.BOTTOM,
-      );
-      return;
-    }
-
-    try {
-      final result = await client.userEndpoints.registerUser(
-        firstName,
-        lastName,
-        contactNumber,
-        email,
-        password,
-        authenticationlevel as AuthenticationLevel,
-        country as Country,
-      );
-
-      if (result == true) {
-        // Registration successful
-        //print('User registered successfully');
-
-        Get.snackbar(
-          "Success",
-          "User registered successfully",
-          snackPosition: SnackPosition.BOTTOM,
-        );
-
-        // Navigate to the login page
-        Get.offAllNamed(
-          "/userlogin",
-        ); // Clear all previous routes and navigate to the login page
-      } else {
-        // Registration failed
-        //print("User registration failed!")
-        Get.snackbar(
-          "Error",
-          "User registration failed",
-          snackPosition: SnackPosition.BOTTOM,
-        );
-      }
-    } catch (e) {
-      // Handle error
-      print('Error: $e');
-    }
-  }
-
+  
   @override
   Widget build(BuildContext context) {
     String initialCountryCode = getInitialCountryCode(
