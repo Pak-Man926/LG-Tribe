@@ -8,8 +8,7 @@ import "package:get/get.dart";
 import 'package:lg_tribe/Controller/userstate_controller_class.dart';
 import "package:lg_tribe/main.dart";
 
-class UserRegistration extends StatelessWidget 
-{
+class UserRegistration extends StatelessWidget {
   final userState = Get.find<UserStateController>();
   final registrationState = Get.find<RegistrationController>();
 
@@ -18,9 +17,7 @@ class UserRegistration extends StatelessWidget
   final emailController = TextEditingController();
   final contactNumberController = TextEditingController();
   final passwordController = TextEditingController();
-  
 
-  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -57,200 +54,202 @@ class UserRegistration extends StatelessWidget
               ],
             ),
             SizedBox(height: 10),
-               Form(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.only(left: 10),
-                      child: Text(
-                        "First Name:",
-                        style: TextStyle(
-                          fontSize: 12,
-                          fontWeight: FontWeight.w500,
-                        ),
+            Form(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(left: 10),
+                    child: Text(
+                      "First Name:",
+                      style: TextStyle(
+                        fontSize: 12,
+                        fontWeight: FontWeight.w500,
                       ),
                     ),
-                    SizedBox(height: 5),
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: TextFormField(
-                        controller: firstNameController,
-                        decoration: InputDecoration(
-                          border: OutlineInputBorder(),
-                          hintText: 'Enter your first name',
-                        ),
+                  ),
+                  SizedBox(height: 5),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: TextFormField(
+                      controller: firstNameController,
+                      decoration: InputDecoration(
+                        border: OutlineInputBorder(),
+                        hintText: 'Enter your first name',
                       ),
                     ),
-                    SizedBox(height: 10),
-                    Padding(
-                      padding: const EdgeInsets.only(left: 10),
-                      child: Text(
-                        "Last Name:",
-                        style: TextStyle(
-                          fontSize: 12,
-                          fontWeight: FontWeight.w500,
-                        ),
+                  ),
+                  SizedBox(height: 10),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 10),
+                    child: Text(
+                      "Last Name:",
+                      style: TextStyle(
+                        fontSize: 12,
+                        fontWeight: FontWeight.w500,
                       ),
                     ),
-                    SizedBox(height: 5),
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: TextFormField(
-                        controller: lastNameController,
-                        decoration: InputDecoration(
-                          border: OutlineInputBorder(),
-                          hintText: 'Enter your last name',
-                        ),
+                  ),
+                  SizedBox(height: 5),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: TextFormField(
+                      controller: lastNameController,
+                      decoration: InputDecoration(
+                        border: OutlineInputBorder(),
+                        hintText: 'Enter your last name',
                       ),
                     ),
-                    SizedBox(height: 10),
-                    Padding(
-                      padding: const EdgeInsets.only(left: 10),
-                      child: Text(
-                        "Email:",
-                        style: TextStyle(
-                          fontSize: 12,
-                          fontWeight: FontWeight.w500,
-                        ),
+                  ),
+                  SizedBox(height: 10),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 10),
+                    child: Text(
+                      "Email:",
+                      style: TextStyle(
+                        fontSize: 12,
+                        fontWeight: FontWeight.w500,
                       ),
                     ),
-                    SizedBox(height: 5),
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: TextFormField(
-                        controller: emailController,
-                        decoration: InputDecoration(
-                          border: OutlineInputBorder(),
-                          hintText: 'Enter your email address',
-                        ),
+                  ),
+                  SizedBox(height: 5),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: TextFormField(
+                      controller: emailController,
+                      decoration: InputDecoration(
+                        border: OutlineInputBorder(),
+                        hintText: 'Enter your email address',
                       ),
                     ),
-                    SizedBox(height: 10),
-                    Padding(
-                      padding: const EdgeInsets.only(left: 10),
-                      child: Text(
-                        "Phone Number:",
-                        style: TextStyle(
-                          fontSize: 12,
-                          fontWeight: FontWeight.w500,
-                        ),
+                  ),
+                  SizedBox(height: 10),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 10),
+                    child: Text(
+                      "Phone Number:",
+                      style: TextStyle(
+                        fontSize: 12,
+                        fontWeight: FontWeight.w500,
                       ),
                     ),
-                    SizedBox(height: 5),
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: IntlPhoneField(
-                        controller: contactNumberController,
-                        decoration: const InputDecoration(
-                          hintText: "Enter your phone number",
-                          border: OutlineInputBorder(),
-                        ),
-                        initialCountryCode: userState.getInitialCountryCode(
-                            userState.selectedCountry.value,
-                          ),
-                        onChanged: (contactNumber) {
-                          // setState(() {
-                          //   phoneNumber = phone.completeNumber;
-                          // });
-                          contactNumber.number = contactNumber.completeNumber;
-                        },
+                  ),
+                  SizedBox(height: 5),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: IntlPhoneField(
+                      controller: contactNumberController,
+                      decoration: const InputDecoration(
+                        hintText: "Enter your phone number",
+                        border: OutlineInputBorder(),
+                      ),
+                      initialCountryCode: userState.getInitialCountryCode(
+                        userState.selectedCountry.value,
+                      ),
+                      onChanged: (contactNumber) {
+                        // setState(() {
+                        //   phoneNumber = phone.completeNumber;
+                        // });
+                        contactNumber.number = contactNumber.completeNumber;
+                      },
+                    ),
+                  ),
+                  SizedBox(height: 5),
+                  //Enter country of origin
+                  // DropdownButton(
+                  //   //controller:
+                  //   value: dropDownvalueItems,
+                  //   items: items.map((String item) {
+                  //     return DropdownMenuItem(
+                  //       value: item,
+                  //       child: Text(item),
+                  //     );
+                  //   }).toList(),
+                  //   onChanged: (var newValue) {
+                  //     dropDownvalueItems = newValue.obs;
+                  //   },
+                  //   iconEnabledColor: Color(0xFFA50034),
+                  //   isExpanded: true,
+                  // ),
+                  SizedBox(height: 10),
+                  //Enter user auth level
+                  // DropdownButton(
+                  //   items: const [
+                  //     DropdownMenuItem(
+                  //       value: AuthLevel.merchandiser,
+                  //       child: Text("Merchandiser"),
+                  //     ),
+                  //     DropdownMenuItem(
+                  //       value: AuthLevel.promoter,
+                  //       child: Text("Promoter"),
+                  //     ),
+                  //     DropdownMenuItem(
+                  //       value: AuthLevel.floorServiceprovider,
+                  //       child: Text("Floor Service Provider"),
+                  //     ),
+                  //   ],
+                  //   onChanged: (AuthLevel? newValue) {
+                  //     userState.setAuthLevel(newValue);
+                  //   },
+                  //   iconEnabledColor: Color(0xFFA50034),
+                  //   isExpanded: true,
+                  // ),
+                  SizedBox(height: 10),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 10),
+                    child: Text(
+                      "Password:",
+                      style: TextStyle(
+                        fontSize: 12,
+                        fontWeight: FontWeight.w500,
                       ),
                     ),
-                    SizedBox(height: 5),
-                    //Enter country of origin
-                    // DropdownButton(
-                    //   //controller: 
-                    //   value: dropDownvalueItems,
-                    //   items: items.map((String item) {
-                    //     return DropdownMenuItem(
-                    //       value: item,
-                    //       child: Text(item),
-                    //     );
-                    //   }).toList(),
-                    //   onChanged: (var newValue) {
-                    //     dropDownvalueItems = newValue.obs;
-                    //   },
-                    //   iconEnabledColor: Color(0xFFA50034),
-                    //   isExpanded: true,
-                    // ),
-                    SizedBox(height: 10),
-                    //Enter user auth level
-                    // DropdownButton(
-                    //   items: const [
-                    //     DropdownMenuItem(
-                    //       value: AuthLevel.merchandiser,
-                    //       child: Text("Merchandiser"),
-                    //     ),
-                    //     DropdownMenuItem(
-                    //       value: AuthLevel.promoter,
-                    //       child: Text("Promoter"),
-                    //     ),
-                    //     DropdownMenuItem(
-                    //       value: AuthLevel.floorServiceprovider,
-                    //       child: Text("Floor Service Provider"),
-                    //     ),
-                    //   ],
-                    //   onChanged: (AuthLevel? newValue) {
-                    //     userState.setAuthLevel(newValue);
-                    //   },
-                    //   iconEnabledColor: Color(0xFFA50034),
-                    //   isExpanded: true,
-                    // ),
-                    SizedBox(height: 10),
-                    Padding(
-                      padding: const EdgeInsets.only(left: 10),
-                      child: Text(
-                        "Password:",
-                        style: TextStyle(
-                          fontSize: 12,
-                          fontWeight: FontWeight.w500,
-                        ),
+                  ),
+                  SizedBox(height: 5),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: TextFormField(
+                      controller: passwordController,
+                      keyboardType: TextInputType.visiblePassword,
+                      obscureText: true,
+                      decoration: InputDecoration(
+                        border: OutlineInputBorder(),
+                        hintText: 'Enter your password',
                       ),
                     ),
-                    SizedBox(height: 5),
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: TextFormField(
-                        controller: passwordController,
-                        keyboardType: TextInputType.visiblePassword,
-                        obscureText: true,
-                        decoration: InputDecoration(
-                          border: OutlineInputBorder(),
-                          hintText: 'Enter your password',
-                        ),
-                      ),
-                    ),
-                    SizedBox(height: 10),
-                    Padding(
-                      padding: const EdgeInsets.only(left: 120),
-                      child: Align(
-                        alignment: Alignment.bottomCenter,
-                        child: FilledButton(
-                          onPressed: () async {
-                            final fName = firstNameController.text;
-                            final lName = lastNameController.text;
-                            final email = emailController.text;
-                            final contactNumber = int.tryParse(contactNumberController.text) ?? 0;
-                            final password = passwordController.text;
+                  ),
+                  SizedBox(height: 10),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 120),
+                    child: Align(
+                      alignment: Alignment.bottomCenter,
+                      child: FilledButton(
+                        onPressed: () async {
+                          final fName = firstNameController.text;
+                          final lName = lastNameController.text;
+                          final email = emailController.text;
+                          final contactNumber =
+                              int.tryParse(contactNumberController.text) ?? 0;
+                          final password = passwordController.text;
 
-                            await registrationState.registerUser(
-                              firstName: fName,
-                              lastName: lName,
-                              contactNumber: contactNumber,
-                              email: email,
-                              password: password,
-                              authenticationlevel: userState.getAuthLevel().toServerModel(),
-                              country: userState.getCountry().toServerModel(),
-                            );
-                          },
-                          child: Text("Create Account"),
-                        ),
+                          await registrationState.registerUser(
+                            firstName: fName,
+                            lastName: lName,
+                            contactNumber: contactNumber,
+                            email: email,
+                            password: password,
+                            authenticationlevel:
+                                userState.getAuthLevel().toServerModel(),
+                            country: userState.getCountry().toServerModel(),
+                          );
+                        },
+                        child: Text("Create Account"),
                       ),
                     ),
-                  ],
-                ),
+                  ),
+                ],
               ),
+            ),
           ],
         ),
       ),
