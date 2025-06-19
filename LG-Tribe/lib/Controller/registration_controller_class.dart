@@ -3,7 +3,7 @@ import "package:lg_tribe_client/lg_tribe_client.dart";
 import "package:serverpod_flutter/serverpod_flutter.dart";
 import "package:lg_tribe/login/registration/user_registration.dart";
 
-
+late final client client;
 class RegistrationController extends GetxController {
   // Define the form fields
   var firstName = ''.obs;
@@ -17,16 +17,19 @@ class RegistrationController extends GetxController {
   {
     super.onInit();
 
-    var client = Client('http://localhost:8080/')
+    client = Client('http://localhost:8080/')
     ..connectivityMonitor = FlutterConnectivityMonitor();
   }
   // Method to register a user
-  Future<void> _registerUser() async {
-    final firstName = firstNameController.text;
-    final lastName = lastNameController.text;
-    final email = emailController.text;
-    final contactNumber = int.tryParse(contactNumberController.text);
-    final password = passwordController.text;
+  Future<void> registerUser({
+    required String firstName,
+    required String lastName,
+    required int contactNumber,
+    required String email,
+    required String password,
+    required AuthenticationLevel authenticationlevel,
+    required Country country,
+  }) async {
 
     if (firstName.isEmpty ||
         lastName.isEmpty ||
@@ -78,7 +81,12 @@ class RegistrationController extends GetxController {
       }
     } catch (e) {
       // Handle error
-      print('Error: $e');
+      print('Error during registration: $e');
+      Get.snackbar(
+        "Error",
+        "An error occurred during registration",
+        snackPosition: SnackPosition.BOTTOM,
+      );
     }
   }
 
