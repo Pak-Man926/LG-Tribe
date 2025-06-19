@@ -19,8 +19,6 @@ class RegistrationController extends GetxController {
 
     var client = Client('http://localhost:8080/')
     ..connectivityMonitor = FlutterConnectivityMonitor();
-
-    _registerUser();
   }
   // Method to register a user
   Future<void> _registerUser() async {
