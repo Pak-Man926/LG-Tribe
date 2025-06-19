@@ -17,20 +17,20 @@ class CountryLocated {
 
   //throw ArgumentError("Invalid CountryLocated value: $val"));
 
-  Country toServerModel() {
+  CountryLocated toServerModel() {
     switch (this) {
       case CountryLocated.kenya:
-        return Country.kenya;
+        return CountryLocated.kenya;
       case CountryLocated.ethopia:
-        return Country.ethopia;
+        return CountryLocated.ethopia;
       case CountryLocated.tanzania:
-        return Country.tanzania;
+        return CountryLocated.tanzania;
       case CountryLocated.sudan:
-        return Country.sudan;
+        return CountryLocated.sudan;
       case CountryLocated.uganda:
-        return Country.uganda;
+        return CountryLocated.uganda;
       case CountryLocated.zambia:
-        return Country.zambia;
+        return CountryLocated.zambia;
     }
   }
 }
