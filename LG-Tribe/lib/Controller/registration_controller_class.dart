@@ -13,7 +13,8 @@ class RegistrationController extends GetxController {
   {
     super.onInit();
 
-    
+    var client = Client('http://localhost:8080/')
+    ..connectivityMonitor = FlutterConnectivityMonitor();
   }
   // Method to register a user
   void registerUser() {
