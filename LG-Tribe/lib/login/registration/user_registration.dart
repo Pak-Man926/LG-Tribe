@@ -11,7 +11,7 @@ import "package:lg_tribe/main.dart";
 class UserRegistration extends StatelessWidget 
 {
   final userState = Get.find<UserStateController>();
-  final userState = Get.find<RegistrationController>();
+  final registrationState = Get.find<RegistrationController>();
 
   final firstNameController = TextEditingController();
   final lastNameController = TextEditingController();
