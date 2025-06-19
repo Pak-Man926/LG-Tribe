@@ -15,14 +15,14 @@ class AuthLevel {
   // () => throw ArgumentError("Invalid AuthLevel value: $val"));
 
   // Inside AuthLevel class
-  AuthenticationLevel toServerModel() {
+  AuthLevel toServerModel() {
     switch (this) {
       case AuthLevel.merchandiser:
-        return AuthenticationLevel.merchandiser;
+        return AuthLevel.merchandiser;
       case AuthLevel.promoter:
-        return AuthenticationLevel.promoter;
+        return AuthLevel.promoter;
       case AuthLevel.floorServiceprovider:
-        return AuthenticationLevel.floorServiceprovider;
+        return AuthLevel.floorServiceprovider;
     }
   }
 }
