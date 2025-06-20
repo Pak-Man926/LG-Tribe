@@ -11,7 +11,6 @@
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:serverpod/serverpod.dart' as _i1;
 import '../endpoints/user_endpoints.dart' as _i2;
-import '../greeting_endpoint.dart' as _i3;
 import 'package:lg_tribe_server/src/generated/auth_level.dart' as _i4;
 import 'package:lg_tribe_server/src/generated/country.dart' as _i5;
 
