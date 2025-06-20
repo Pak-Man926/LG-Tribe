@@ -142,9 +142,6 @@ class Protocol extends _i1.SerializationManagerServer {
   String? getClassNameForObject(Object? data) {
     String? className = super.getClassNameForObject(data);
     if (className != null) return className;
-    if (data is _i3.Greeting) {
-      return 'Greeting';
-    }
     if (data is _i4.AuthenticationLevel) {
       return 'AuthenticationLevel';
     }
