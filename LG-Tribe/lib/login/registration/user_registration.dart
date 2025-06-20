@@ -17,6 +17,7 @@ class UserRegistration extends StatelessWidget {
   final emailController = TextEditingController();
   final contactNumberController = TextEditingController();
   final passwordController = TextEditingController();
+  final countryController = 
 
   @override
   Widget build(BuildContext context) {
@@ -157,30 +158,31 @@ class UserRegistration extends StatelessWidget {
                   SizedBox(height: 5),
                   //Enter country of origin
                   DropdownButton(
-                    controller:
+                    //controller:
                     items: const[
+                      controller: 
                       DropdownMenuItem(
-                        value: userState.getCountry().kenya,
+                        value: CountryLocated.kenya,
                         child: Text("Kenya"),
                       ),
                       DropdownMenuItem(
-                        value: userState.getCountry().ethopia,
+                        value: CountryLocated.ethopia,
                         child: Text("Ethopia"),
                       ),
                       DropdownMenuItem(
-                        value: userState.getCountry().tanzania,
+                        value: CountryLocated.tanzania,
                         child: Text("Tanzania"),
                       ),
                       DropdownMenuItem(
-                        value: userState.getCountry().sudan,
+                        value: CountryLocated.sudan,
                         child: Text("Sudan"),
                       ),
                       DropdownMenuItem(
-                        value: userState.getCountry().uganda,
+                        value: CountryLocated.uganda,
                         child: Text("Uganda"),
                       ),
                       DropdownMenuItem(
-                        value: userState.getCountry().zambia,
+                        value: CountryLocated.zambia,
                         child: Text("Zambia"),
                       )
                     ],
