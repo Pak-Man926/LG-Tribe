@@ -118,9 +118,6 @@ class Protocol extends _i1.SerializationManagerServer {
     if (t == _i6.User) {
       return _i6.User.fromJson(data) as T;
     }
-    if (t == _i1.getType<_i3.Greeting?>()) {
-      return (data != null ? _i3.Greeting.fromJson(data) : null) as T;
-    }
     if (t == _i1.getType<_i4.AuthenticationLevel?>()) {
       return (data != null ? _i4.AuthenticationLevel.fromJson(data) : null)
           as T;
