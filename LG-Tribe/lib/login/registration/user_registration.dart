@@ -18,6 +18,7 @@ class UserRegistration extends StatelessWidget {
   final contactNumberController = TextEditingController();
   final passwordController = TextEditingController();
   final countryController = 
+  final authController = 
 
   @override
   Widget build(BuildContext context) {
@@ -160,7 +161,7 @@ class UserRegistration extends StatelessWidget {
                   DropdownButton(
                     //controller:
                     items: const[
-                      controller: 
+                      controller: countryController,
                       DropdownMenuItem(
                         value: CountryLocated.kenya,
                         child: Text("Kenya"),
