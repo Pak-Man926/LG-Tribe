@@ -11,7 +11,6 @@
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:serverpod/serverpod.dart' as _i1;
 import 'package:serverpod/protocol.dart' as _i2;
-import 'greeting.dart' as _i3;
 import 'auth_level.dart' as _i4;
 import 'country.dart' as _i5;
 import 'user_models.dart' as _i6;
