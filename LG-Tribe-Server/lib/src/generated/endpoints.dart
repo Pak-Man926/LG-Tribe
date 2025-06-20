@@ -24,12 +24,6 @@ class Endpoints extends _i1.EndpointDispatch {
           'userEndpoints',
           null,
         ),
-      'greeting': _i3.GreetingEndpoint()
-        ..initialize(
-          server,
-          'greeting',
-          null,
-        ),
     };
     connectors['userEndpoints'] = _i1.EndpointConnector(
       name: 'userEndpoints',
