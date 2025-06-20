@@ -241,7 +241,7 @@ class UserRegistration extends StatelessWidget {
                             email: email,
                             password: password,
                             authenticationlevel:
-                                userState.getAuthLevel().toServerModel(),
+                              userState.getAuthLevel().toServerModel(),
                             country: userState.getCountry().toServerModel(),
                           );
                         },
