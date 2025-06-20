@@ -158,13 +158,32 @@ class UserRegistration extends StatelessWidget {
                   //Enter country of origin
                   DropdownButton(
                     controller:
-                    value: dropDownvalueItems,
-                    items: items.map((String item) {
-                      return DropdownMenuItem(
-                        value: item,
-                        child: Text(item),
-                      );
-                    }).toList(),
+                    items: const[
+                      DropdownMenuItem(
+                        value: userState.getCountry().kenya,
+                        child: Text("Kenya"),
+                      ),
+                      DropdownMenuItem(
+                        value: userState.getCountry().ethopia,
+                        child: Text("Ethopia"),
+                      ),
+                      DropdownMenuItem(
+                        value: userState.getCountry().tanzania,
+                        child: Text("Tanzania"),
+                      ),
+                      DropdownMenuItem(
+                        value: userState.getCountry().sudan,
+                        child: Text("Sudan"),
+                      ),
+                      DropdownMenuItem(
+                        value: userState.getCountry().uganda,
+                        child: Text("Uganda"),
+                      ),
+                      DropdownMenuItem(
+                        value: userState.getCountry().zambia,
+                        child: Text("Zambia"),
+                      )
+                    ],
                     onChanged: (var newValue) {
                       dropDownvalueItems = newValue.obs;
                     },
@@ -174,6 +193,7 @@ class UserRegistration extends StatelessWidget {
                   SizedBox(height: 10),
                   //Enter user auth level
                   DropdownButton(
+                    controller: value: userState.getAuthLevel(),
                     items: const [
                       DropdownMenuItem(
                         value: AuthLevel.merchandiser,
