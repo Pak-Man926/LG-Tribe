@@ -158,7 +158,7 @@ class UserRegistration extends StatelessWidget {
                   ),
                   SizedBox(height: 5),
                   //Enter country of origin
-                  DropdownButton<CountryLocated>(
+                  Obx(() => DropdownButton<CountryLocated>(
                     value: userState.getCountry(),
                     items:
                         CountryLocated.values.map((country) {
@@ -174,11 +174,11 @@ class UserRegistration extends StatelessWidget {
                     },
                     iconEnabledColor: Color(0xFFA50034),
                     isExpanded: true,
-                  ),
+                  ),)
 
                   SizedBox(height: 10),
                   //Enter user auth level
-                  DropdownButton<AuthLevel>(
+                  Obx(() => DropdownButton<AuthLevel>(
                     value: userState.getAuthLevel(),
                     items:
                         AuthLevel.values.map((authLevel) {
@@ -194,7 +194,7 @@ class UserRegistration extends StatelessWidget {
                     },
                     iconEnabledColor: Color(0xFFA50034),
                     isExpanded: true,
-                  ),
+                  ),),
 
                   SizedBox(height: 10),
                   Padding(
