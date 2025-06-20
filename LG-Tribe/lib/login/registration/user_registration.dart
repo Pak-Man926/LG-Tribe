@@ -177,28 +177,23 @@ class UserRegistration extends StatelessWidget {
 
                   SizedBox(height: 10),
                   //Enter user auth level
-                  DropdownButton(
-                    controller: value: userState.getAuthLevel(),
-                    items: const [
-                      DropdownMenuItem(
-                        value: AuthLevel.merchandiser,
-                        child: Text("Merchandiser"),
-                      ),
-                      DropdownMenuItem(
-                        value: AuthLevel.promoter,
-                        child: Text("Promoter"),
-                      ),
-                      DropdownMenuItem(
-                        value: AuthLevel.floorServiceprovider,
-                        child: Text("Floor Service Provider"),
-                      ),
-                    ],
-                    onChanged: (AuthLevel? newValue) {
-                      userState.setAuthLevel(newValue);
-                    },
-                    iconEnabledColor: Color(0xFFA50034),
-                    isExpanded: true,
-                  ),
+                  DropdownButton<AuthLevel>(
+  value: userState.getAuthLevel(),
+  items: AuthLevel.values.map((authLevel) {
+    return DropdownMenuItem(
+      value: authLevel,
+      child: Text(authLevel.value),
+    );
+  }).toList(),
+  onChanged: (newAuth) {
+    if (newAuth != null) {
+      userState.setAuthLevel(newAuth);
+    }
+  },
+  iconEnabledColor: Color(0xFFA50034),
+  isExpanded: true,
+),
+
                   SizedBox(height: 10),
                   Padding(
                     padding: const EdgeInsets.only(left: 10),
