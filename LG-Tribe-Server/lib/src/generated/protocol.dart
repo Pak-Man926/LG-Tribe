@@ -167,9 +167,6 @@ class Protocol extends _i1.SerializationManagerServer {
     if (dataClassName is! String) {
       return super.deserializeByClassName(data);
     }
-    if (dataClassName == 'Greeting') {
-      return deserialize<_i3.Greeting>(data['data']);
-    }
     if (dataClassName == 'AuthenticationLevel') {
       return deserialize<_i4.AuthenticationLevel>(data['data']);
     }
