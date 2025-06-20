@@ -158,41 +158,23 @@ class UserRegistration extends StatelessWidget {
                   ),
                   SizedBox(height: 5),
                   //Enter country of origin
-                  DropdownButton(
-                    //controller:
-                    items: const[
-                      controller: countryController,
-                      DropdownMenuItem(
-                        value: CountryLocated.kenya,
-                        child: Text("Kenya"),
-                      ),
-                      DropdownMenuItem(
-                        value: CountryLocated.ethopia,
-                        child: Text("Ethopia"),
-                      ),
-                      DropdownMenuItem(
-                        value: CountryLocated.tanzania,
-                        child: Text("Tanzania"),
-                      ),
-                      DropdownMenuItem(
-                        value: CountryLocated.sudan,
-                        child: Text("Sudan"),
-                      ),
-                      DropdownMenuItem(
-                        value: CountryLocated.uganda,
-                        child: Text("Uganda"),
-                      ),
-                      DropdownMenuItem(
-                        value: CountryLocated.zambia,
-                        child: Text("Zambia"),
-                      )
-                    ],
-                    onChanged: (var newValue) {
-                      dropDownvalueItems = newValue.obs;
-                    },
-                    iconEnabledColor: Color(0xFFA50034),
-                    isExpanded: true,
-                  ),
+                  DropdownButton<CountryLocated>(
+  value: userState.getCountry(),
+  items: CountryLocated.values.map((country) {
+    return DropdownMenuItem(
+      value: country,
+      child: Text(country.name),
+    );
+  }).toList(),
+  onChanged: (newCountry) {
+    if (newCountry != null) {
+      userState.setCountry(newCountry);
+    }
+  },
+  iconEnabledColor: Color(0xFFA50034),
+  isExpanded: true,
+),
+
                   SizedBox(height: 10),
                   //Enter user auth level
                   DropdownButton(
