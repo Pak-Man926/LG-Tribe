@@ -174,7 +174,7 @@ class UserRegistration extends StatelessWidget {
                     },
                     iconEnabledColor: Color(0xFFA50034),
                     isExpanded: true,
-                  ),)
+                  ),),
 
                   SizedBox(height: 10),
                   //Enter user auth level
