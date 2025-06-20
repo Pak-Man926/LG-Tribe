@@ -7,6 +7,8 @@ import "package:lg_tribe/login/user_login.dart";
 import "package:get/get.dart";
 import 'package:lg_tribe/Controller/userstate_controller_class.dart';
 import "package:lg_tribe/main.dart";
+import "package:lg_tribe/Controller/classes/authlevel_class.dart";
+import "package:lg_tribe/Controller/classes/country_located_class.dart";
 
 class UserRegistration extends StatelessWidget {
   final userState = Get.find<UserStateController>();
