@@ -14,8 +14,7 @@ import 'dart:async' as _i2;
 import 'package:lg_tribe_client/src/protocol/auth_level.dart' as _i3;
 import 'package:lg_tribe_client/src/protocol/country.dart' as _i4;
 import 'package:lg_tribe_client/src/protocol/user_models.dart' as _i5;
-import 'package:lg_tribe_client/src/protocol/greeting.dart' as _i6;
-import 'protocol.dart' as _i7;
+import 'protocol.dart' as _i6;
 
 /// {@category Endpoint}
 class EndpointUserEndpoints extends _i1.EndpointRef {
@@ -30,7 +29,7 @@ class EndpointUserEndpoints extends _i1.EndpointRef {
     int contacts,
     String email,
     String password,
-    _i3.AuthenticationLevel authlevel,
+    _i3.AuthenticationLevel authenticationlevel,
     _i4.Country country,
   ) =>
       caller.callServerEndpoint<bool>(
@@ -42,7 +41,7 @@ class EndpointUserEndpoints extends _i1.EndpointRef {
           'contacts': contacts,
           'email': email,
           'password': password,
-          'authlevel': authlevel,
+          'authenticationlevel': authenticationlevel,
           'country': country,
         },
       );
@@ -50,6 +49,8 @@ class EndpointUserEndpoints extends _i1.EndpointRef {
   _i2.Future<_i5.User?> loginUser(
     int contacts,
     String password,
+    _i3.AuthenticationLevel authenticationlevel,
+    _i4.Country country,
   ) =>
       caller.callServerEndpoint<_i5.User?>(
         'userEndpoints',
@@ -57,24 +58,9 @@ class EndpointUserEndpoints extends _i1.EndpointRef {
         {
           'contacts': contacts,
           'password': password,
+          'authenticationlevel': authenticationlevel,
+          'country': country,
         },
-      );
-}
-
-/// This is an example endpoint that returns a greeting message through its [hello] method.
-/// {@category Endpoint}
-class EndpointGreeting extends _i1.EndpointRef {
-  EndpointGreeting(_i1.EndpointCaller caller) : super(caller);
-
-  @override
-  String get name => 'greeting';
-
-  /// Returns a personalized greeting message: "Hello {name}".
-  _i2.Future<_i6.Greeting> hello(String name) =>
-      caller.callServerEndpoint<_i6.Greeting>(
-        'greeting',
-        'hello',
-        {'name': name},
       );
 }
 
@@ -94,7 +80,7 @@ class Client extends _i1.ServerpodClientShared {
     bool? disconnectStreamsOnLostInternetConnection,
   }) : super(
           host,
-          _i7.Protocol(),
+          _i6.Protocol(),
           securityContext: securityContext,
           authenticationKeyManager: authenticationKeyManager,
           streamingConnectionTimeout: streamingConnectionTimeout,
@@ -105,18 +91,13 @@ class Client extends _i1.ServerpodClientShared {
               disconnectStreamsOnLostInternetConnection,
         ) {
     userEndpoints = EndpointUserEndpoints(this);
-    greeting = EndpointGreeting(this);
   }
 
   late final EndpointUserEndpoints userEndpoints;
 
-  late final EndpointGreeting greeting;
-
   @override
-  Map<String, _i1.EndpointRef> get endpointRefLookup => {
-        'userEndpoints': userEndpoints,
-        'greeting': greeting,
-      };
+  Map<String, _i1.EndpointRef> get endpointRefLookup =>
+      {'userEndpoints': userEndpoints};
 
   @override
   Map<String, _i1.ModuleEndpointCaller> get moduleLookup => {};

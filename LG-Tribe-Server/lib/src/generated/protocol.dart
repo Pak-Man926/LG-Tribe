@@ -11,9 +11,9 @@
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:serverpod/serverpod.dart' as _i1;
 import 'package:serverpod/protocol.dart' as _i2;
-import 'auth_level.dart' as _i4;
-import 'country.dart' as _i5;
-import 'user_models.dart' as _i6;
+import 'auth_level.dart' as _i3;
+import 'country.dart' as _i4;
+import 'user_models.dart' as _i5;
 export 'auth_level.dart';
 export 'country.dart';
 export 'user_models.dart';
@@ -109,24 +109,24 @@ class Protocol extends _i1.SerializationManagerServer {
     Type? t,
   ]) {
     t ??= T;
-    if (t == _i4.AuthenticationLevel) {
-      return _i4.AuthenticationLevel.fromJson(data) as T;
+    if (t == _i3.AuthenticationLevel) {
+      return _i3.AuthenticationLevel.fromJson(data) as T;
     }
-    if (t == _i5.Country) {
-      return _i5.Country.fromJson(data) as T;
+    if (t == _i4.Country) {
+      return _i4.Country.fromJson(data) as T;
     }
-    if (t == _i6.User) {
-      return _i6.User.fromJson(data) as T;
+    if (t == _i5.User) {
+      return _i5.User.fromJson(data) as T;
     }
-    if (t == _i1.getType<_i4.AuthenticationLevel?>()) {
-      return (data != null ? _i4.AuthenticationLevel.fromJson(data) : null)
+    if (t == _i1.getType<_i3.AuthenticationLevel?>()) {
+      return (data != null ? _i3.AuthenticationLevel.fromJson(data) : null)
           as T;
     }
-    if (t == _i1.getType<_i5.Country?>()) {
-      return (data != null ? _i5.Country.fromJson(data) : null) as T;
+    if (t == _i1.getType<_i4.Country?>()) {
+      return (data != null ? _i4.Country.fromJson(data) : null) as T;
     }
-    if (t == _i1.getType<_i6.User?>()) {
-      return (data != null ? _i6.User.fromJson(data) : null) as T;
+    if (t == _i1.getType<_i5.User?>()) {
+      return (data != null ? _i5.User.fromJson(data) : null) as T;
     }
     try {
       return _i2.Protocol().deserialize<T>(data, t);
@@ -138,13 +138,13 @@ class Protocol extends _i1.SerializationManagerServer {
   String? getClassNameForObject(Object? data) {
     String? className = super.getClassNameForObject(data);
     if (className != null) return className;
-    if (data is _i4.AuthenticationLevel) {
+    if (data is _i3.AuthenticationLevel) {
       return 'AuthenticationLevel';
     }
-    if (data is _i5.Country) {
+    if (data is _i4.Country) {
       return 'Country';
     }
-    if (data is _i6.User) {
+    if (data is _i5.User) {
       return 'User';
     }
     className = _i2.Protocol().getClassNameForObject(data);
@@ -161,13 +161,13 @@ class Protocol extends _i1.SerializationManagerServer {
       return super.deserializeByClassName(data);
     }
     if (dataClassName == 'AuthenticationLevel') {
-      return deserialize<_i4.AuthenticationLevel>(data['data']);
+      return deserialize<_i3.AuthenticationLevel>(data['data']);
     }
     if (dataClassName == 'Country') {
-      return deserialize<_i5.Country>(data['data']);
+      return deserialize<_i4.Country>(data['data']);
     }
     if (dataClassName == 'User') {
-      return deserialize<_i6.User>(data['data']);
+      return deserialize<_i5.User>(data['data']);
     }
     if (dataClassName.startsWith('serverpod.')) {
       data['className'] = dataClassName.substring(10);
@@ -185,8 +185,8 @@ class Protocol extends _i1.SerializationManagerServer {
       }
     }
     switch (t) {
-      case _i6.User:
-        return _i6.User.t;
+      case _i5.User:
+        return _i5.User.t;
     }
     return null;
   }

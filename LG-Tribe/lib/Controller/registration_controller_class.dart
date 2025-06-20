@@ -52,8 +52,8 @@ class RegistrationController extends GetxController {
         contactNumber,
         email,
         password,
-        authenticationlevel as AuthenticationLevel,
-        country as Country,
+        authenticationlevel,
+        country,
       );
 
       if (result == true) {

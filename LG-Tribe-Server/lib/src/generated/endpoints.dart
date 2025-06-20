@@ -11,8 +11,8 @@
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:serverpod/serverpod.dart' as _i1;
 import '../endpoints/user_endpoints.dart' as _i2;
-import 'package:lg_tribe_server/src/generated/auth_level.dart' as _i4;
-import 'package:lg_tribe_server/src/generated/country.dart' as _i5;
+import 'package:lg_tribe_server/src/generated/auth_level.dart' as _i3;
+import 'package:lg_tribe_server/src/generated/country.dart' as _i4;
 
 class Endpoints extends _i1.EndpointDispatch {
   @override
@@ -23,7 +23,7 @@ class Endpoints extends _i1.EndpointDispatch {
           server,
           'userEndpoints',
           null,
-        ),
+        )
     };
     connectors['userEndpoints'] = _i1.EndpointConnector(
       name: 'userEndpoints',
@@ -57,14 +57,14 @@ class Endpoints extends _i1.EndpointDispatch {
               type: _i1.getType<String>(),
               nullable: false,
             ),
-            'authlevel': _i1.ParameterDescription(
-              name: 'authlevel',
-              type: _i1.getType<_i4.AuthenticationLevel>(),
+            'authenticationlevel': _i1.ParameterDescription(
+              name: 'authenticationlevel',
+              type: _i1.getType<_i3.AuthenticationLevel>(),
               nullable: false,
             ),
             'country': _i1.ParameterDescription(
               name: 'country',
-              type: _i1.getType<_i5.Country>(),
+              type: _i1.getType<_i4.Country>(),
               nullable: false,
             ),
           },
@@ -79,7 +79,7 @@ class Endpoints extends _i1.EndpointDispatch {
             params['contacts'],
             params['email'],
             params['password'],
-            params['authlevel'],
+            params['authenticationlevel'],
             params['country'],
           ),
         ),
@@ -96,6 +96,16 @@ class Endpoints extends _i1.EndpointDispatch {
               type: _i1.getType<String>(),
               nullable: false,
             ),
+            'authenticationlevel': _i1.ParameterDescription(
+              name: 'authenticationlevel',
+              type: _i1.getType<_i3.AuthenticationLevel>(),
+              nullable: false,
+            ),
+            'country': _i1.ParameterDescription(
+              name: 'country',
+              type: _i1.getType<_i4.Country>(),
+              nullable: false,
+            ),
           },
           call: (
             _i1.Session session,
@@ -105,6 +115,8 @@ class Endpoints extends _i1.EndpointDispatch {
             session,
             params['contacts'],
             params['password'],
+            params['authenticationlevel'],
+            params['country'],
           ),
         ),
       },
