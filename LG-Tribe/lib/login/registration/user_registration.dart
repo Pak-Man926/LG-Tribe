@@ -158,43 +158,47 @@ class UserRegistration extends StatelessWidget {
                   ),
                   SizedBox(height: 5),
                   //Enter country of origin
-                  Obx(() => DropdownButton<CountryLocated>(
-                    value: userState.getCountry(),
-                    items:
-                        CountryLocated.values.map((country) {
-                          return DropdownMenuItem(
-                            value: country,
-                            child: Text(country.name),
-                          );
-                        }).toList(),
-                    onChanged: (newCountry) {
-                      if (newCountry != null) {
-                        userState.setCountry(newCountry);
-                      }
-                    },
-                    iconEnabledColor: Color(0xFFA50034),
-                    isExpanded: true,
-                  ),),
+                  Obx(
+                    () => DropdownButton<CountryLocated>(
+                      value: userState.getCountry(),
+                      items:
+                          CountryLocated.values.map((country) {
+                            return DropdownMenuItem(
+                              value: country,
+                              child: Text(country.name),
+                            );
+                          }).toList(),
+                      onChanged: (newCountry) {
+                        if (newCountry != null) {
+                          userState.setCountry(newCountry);
+                        }
+                      },
+                      iconEnabledColor: Color(0xFFA50034),
+                      isExpanded: true,
+                    ),
+                  ),
 
                   SizedBox(height: 10),
                   //Enter user auth level
-                  Obx(() => DropdownButton<AuthLevel>(
-                    value: userState.getAuthLevel(),
-                    items:
-                        AuthLevel.values.map((authLevel) {
-                          return DropdownMenuItem(
-                            value: authLevel,
-                            child: Text(authLevel.value),
-                          );
-                        }).toList(),
-                    onChanged: (newAuth) {
-                      if (newAuth != null) {
-                        userState.setAuthLevel(newAuth);
-                      }
-                    },
-                    iconEnabledColor: Color(0xFFA50034),
-                    isExpanded: true,
-                  ),),
+                  Obx(
+                    () => DropdownButton<AuthLevel>(
+                      value: userState.getAuthLevel(),
+                      items:
+                          AuthLevel.values.map((authLevel) {
+                            return DropdownMenuItem(
+                              value: authLevel,
+                              child: Text(authLevel.value),
+                            );
+                          }).toList(),
+                      onChanged: (newAuth) {
+                        if (newAuth != null) {
+                          userState.setAuthLevel(newAuth);
+                        }
+                      },
+                      iconEnabledColor: Color(0xFFA50034),
+                      isExpanded: true,
+                    ),
+                  ),
 
                   SizedBox(height: 10),
                   Padding(
