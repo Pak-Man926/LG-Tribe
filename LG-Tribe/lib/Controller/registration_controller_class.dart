@@ -3,7 +3,7 @@ import "package:lg_tribe_client/lg_tribe_client.dart";
 import "package:serverpod_flutter/serverpod_flutter.dart";
 import "package:lg_tribe/login/registration/user_registration.dart";
 
-late final client client;
+late final Client client;
 class RegistrationController extends GetxController {
   // Define the form fields
   var firstName = ''.obs;

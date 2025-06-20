@@ -1,3 +1,5 @@
+import 'package:lg_tribe_client/src/protocol/auth_level.dart';
+
 class AuthLevel {
   final String value;
 
@@ -15,14 +17,15 @@ class AuthLevel {
   // () => throw ArgumentError("Invalid AuthLevel value: $val"));
 
   // Inside AuthLevel class
-  AuthLevel toServerModel() {
+  AuthenticationLevel toServerModel() {
     switch (this) {
       case AuthLevel.merchandiser:
-        return AuthLevel.merchandiser;
+        return AuthenticationLevel.merchandiser;
       case AuthLevel.promoter:
-        return AuthLevel.promoter;
+        return AuthenticationLevel.promoter;
       case AuthLevel.floorServiceprovider:
-        return AuthLevel.floorServiceprovider;
+        return AuthenticationLevel.floorServiceprovider;
     }
+    throw Exception('Invalid AuthLevel: $this');
   }
 }

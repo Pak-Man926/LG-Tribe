@@ -1,3 +1,5 @@
+import 'package:lg_tribe_client/src/protocol/country.dart';
+
 class CountryLocated {
   final String name;
 
@@ -17,20 +19,21 @@ class CountryLocated {
 
   //throw ArgumentError("Invalid CountryLocated value: $val"));
 
-  CountryLocated toServerModel() {
-    switch (this) {
-      case CountryLocated.kenya:
-        return CountryLocated.kenya;
-      case CountryLocated.ethopia:
-        return CountryLocated.ethopia;
-      case CountryLocated.tanzania:
-        return CountryLocated.tanzania;
-      case CountryLocated.sudan:
-        return CountryLocated.sudan;
-      case CountryLocated.uganda:
-        return CountryLocated.uganda;
-      case CountryLocated.zambia:
-        return CountryLocated.zambia;
-    }
+Country toServerModel() {
+  switch (this) {
+    case CountryLocated.kenya:
+      return Country.kenya;
+    case CountryLocated.ethopia:
+      return Country.ethiopia;
+    case CountryLocated.tanzania:
+      return Country.tanzania;
+    case CountryLocated.sudan:
+      return Country.sudan;
+    case CountryLocated.uganda:
+      return Country.uganda;
+    case CountryLocated.zambia:
+      return Country.zambia;
   }
+  throw Exception('Invalid CountryLocated: $this');
+}
 }
