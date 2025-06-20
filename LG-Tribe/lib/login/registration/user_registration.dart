@@ -177,7 +177,6 @@ class UserRegistration extends StatelessWidget {
                       isExpanded: true,
                     ),
                   ),
-
                   SizedBox(height: 10),
                   //Enter user auth level
                   Obx(
@@ -199,7 +198,6 @@ class UserRegistration extends StatelessWidget {
                       isExpanded: true,
                     ),
                   ),
-
                   SizedBox(height: 10),
                   Padding(
                     padding: const EdgeInsets.only(left: 10),
