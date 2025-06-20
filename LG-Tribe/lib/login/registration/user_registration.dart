@@ -19,8 +19,6 @@ class UserRegistration extends StatelessWidget {
   final emailController = TextEditingController();
   final contactNumberController = TextEditingController();
   final passwordController = TextEditingController();
-  final countryController = 
-  final authController = 
 
   @override
   Widget build(BuildContext context) {
