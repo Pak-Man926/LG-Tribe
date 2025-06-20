@@ -156,44 +156,44 @@ class UserRegistration extends StatelessWidget {
                   ),
                   SizedBox(height: 5),
                   //Enter country of origin
-                  // DropdownButton(
-                  //   //controller:
-                  //   value: dropDownvalueItems,
-                  //   items: items.map((String item) {
-                  //     return DropdownMenuItem(
-                  //       value: item,
-                  //       child: Text(item),
-                  //     );
-                  //   }).toList(),
-                  //   onChanged: (var newValue) {
-                  //     dropDownvalueItems = newValue.obs;
-                  //   },
-                  //   iconEnabledColor: Color(0xFFA50034),
-                  //   isExpanded: true,
-                  // ),
+                  DropdownButton(
+                    controller:
+                    value: dropDownvalueItems,
+                    items: items.map((String item) {
+                      return DropdownMenuItem(
+                        value: item,
+                        child: Text(item),
+                      );
+                    }).toList(),
+                    onChanged: (var newValue) {
+                      dropDownvalueItems = newValue.obs;
+                    },
+                    iconEnabledColor: Color(0xFFA50034),
+                    isExpanded: true,
+                  ),
                   SizedBox(height: 10),
                   //Enter user auth level
-                  // DropdownButton(
-                  //   items: const [
-                  //     DropdownMenuItem(
-                  //       value: AuthLevel.merchandiser,
-                  //       child: Text("Merchandiser"),
-                  //     ),
-                  //     DropdownMenuItem(
-                  //       value: AuthLevel.promoter,
-                  //       child: Text("Promoter"),
-                  //     ),
-                  //     DropdownMenuItem(
-                  //       value: AuthLevel.floorServiceprovider,
-                  //       child: Text("Floor Service Provider"),
-                  //     ),
-                  //   ],
-                  //   onChanged: (AuthLevel? newValue) {
-                  //     userState.setAuthLevel(newValue);
-                  //   },
-                  //   iconEnabledColor: Color(0xFFA50034),
-                  //   isExpanded: true,
-                  // ),
+                  DropdownButton(
+                    items: const [
+                      DropdownMenuItem(
+                        value: AuthLevel.merchandiser,
+                        child: Text("Merchandiser"),
+                      ),
+                      DropdownMenuItem(
+                        value: AuthLevel.promoter,
+                        child: Text("Promoter"),
+                      ),
+                      DropdownMenuItem(
+                        value: AuthLevel.floorServiceprovider,
+                        child: Text("Floor Service Provider"),
+                      ),
+                    ],
+                    onChanged: (AuthLevel? newValue) {
+                      userState.setAuthLevel(newValue);
+                    },
+                    iconEnabledColor: Color(0xFFA50034),
+                    isExpanded: true,
+                  ),
                   SizedBox(height: 10),
                   Padding(
                     padding: const EdgeInsets.only(left: 10),
