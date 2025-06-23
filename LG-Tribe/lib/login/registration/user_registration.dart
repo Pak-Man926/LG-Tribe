@@ -278,6 +278,7 @@ class UserRegistration extends StatelessWidget {
                           );
                         },
                         child: Text("Create Account"),
+                        style: FilledButton.
                       ),
                     ),
                   ),
@@ -290,3 +291,4 @@ class UserRegistration extends StatelessWidget {
     );
   }
 }
+ 
