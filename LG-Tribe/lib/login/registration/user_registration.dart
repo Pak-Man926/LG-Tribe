@@ -252,7 +252,7 @@ class UserRegistration extends StatelessWidget {
                   ),
                   SizedBox(height: 10),
                   Padding(
-                    padding: const EdgeInsets.only(left: 140),
+                    padding: const EdgeInsets.only(left: 150),
                     child: Align(
                       alignment: Alignment.bottomCenter,
                       child: FilledButton(
