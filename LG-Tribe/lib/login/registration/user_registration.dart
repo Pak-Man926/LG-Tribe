@@ -188,7 +188,7 @@ class UserRegistration extends StatelessWidget {
                         },
                         iconEnabledColor: Color(0xFFA50034),
                         isExpanded: true,
-                        iconSize: 24.0,
+                        iconSize: 30.0,
                       ),
                     ),
                   ),
@@ -224,7 +224,7 @@ class UserRegistration extends StatelessWidget {
                         },
                         iconEnabledColor: Color(0xFFA50034),
                         isExpanded: true,
-                        iconSize: 24.0,
+                        iconSize: 30.0,
                       ),
                     ),
                   ),
@@ -278,7 +278,6 @@ class UserRegistration extends StatelessWidget {
                           );
                         },
                         child: Text("Create Account"),
-                        style: FilledButton.
                       ),
                     ),
                   ),
