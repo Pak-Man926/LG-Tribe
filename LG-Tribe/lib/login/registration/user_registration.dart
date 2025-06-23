@@ -208,6 +208,9 @@ class UserRegistration extends StatelessWidget {
                     padding: const EdgeInsets.all(8.0),
                     child: Obx(
                       () => DropdownButton<AuthLevel>(
+                        BoxDecoration(
+                          borderRadius: BorderRadius.circular(5),
+                        ),
                         value: userState.getAuthLevel(),
                         items:
                             AuthLevel.values.map((authLevel) {
