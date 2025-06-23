@@ -257,7 +257,15 @@ class UserRegistration extends StatelessWidget {
                     padding: const EdgeInsets.only(left: 150),
                     child: Align(
                       alignment: Alignment.bottomCenter,
-                      child: FilledButton(
+                      child: OutlinedButton(
+                        style: OutlinedButton.styleFrom(
+                          backgroundColor: Color(0xFFA50034),
+                          foregroundColor: Colors.white,
+                          padding: EdgeInsets.symmetric(
+                            horizontal: 50,
+                            vertical: 15,
+                          ),
+                        ),
                         onPressed: () async {
                           final fName = firstNameController.text;
                           final lName = lastNameController.text;
