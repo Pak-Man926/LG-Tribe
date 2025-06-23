@@ -156,6 +156,17 @@ class UserRegistration extends StatelessWidget {
                       },
                     ),
                   ),
+                  SizedBox(height: 10),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 10),
+                    child: Text(
+                      "Last Name:",
+                      style: TextStyle(
+                        fontSize: 12,
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
+                  ),
                   SizedBox(height: 5),
                   //Enter country of origin
                   Padding(
@@ -181,24 +192,38 @@ class UserRegistration extends StatelessWidget {
                     ),
                   ),
                   SizedBox(height: 10),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 10),
+                    child: Text(
+                      "Last Name:",
+                      style: TextStyle(
+                        fontSize: 12,
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
+                  ),
+                  SizedBox(height: 5),
                   //Enter user auth level
-                  Obx(
-                    () => DropdownButton<AuthLevel>(
-                      value: userState.getAuthLevel(),
-                      items:
-                          AuthLevel.values.map((authLevel) {
-                            return DropdownMenuItem(
-                              value: authLevel,
-                              child: Text(authLevel.value),
-                            );
-                          }).toList(),
-                      onChanged: (newAuth) {
-                        if (newAuth != null) {
-                          userState.setAuthLevel(newAuth);
-                        }
-                      },
-                      iconEnabledColor: Color(0xFFA50034),
-                      isExpanded: true,
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Obx(
+                      () => DropdownButton<AuthLevel>(
+                        value: userState.getAuthLevel(),
+                        items:
+                            AuthLevel.values.map((authLevel) {
+                              return DropdownMenuItem(
+                                value: authLevel,
+                                child: Text(authLevel.value),
+                              );
+                            }).toList(),
+                        onChanged: (newAuth) {
+                          if (newAuth != null) {
+                            userState.setAuthLevel(newAuth);
+                          }
+                        },
+                        iconEnabledColor: Color(0xFFA50034),
+                        isExpanded: true,
+                      ),
                     ),
                   ),
                   SizedBox(height: 10),
