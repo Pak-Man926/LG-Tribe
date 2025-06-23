@@ -160,7 +160,7 @@ class UserRegistration extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsets.only(left: 10),
                     child: Text(
-                      "Last Name:",
+                      "Choose your country:",
                       style: TextStyle(
                         fontSize: 12,
                         fontWeight: FontWeight.w500,
@@ -195,7 +195,7 @@ class UserRegistration extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsets.only(left: 10),
                     child: Text(
-                      "Last Name:",
+                      "Choose your authentication level:",
                       style: TextStyle(
                         fontSize: 12,
                         fontWeight: FontWeight.w500,
@@ -252,7 +252,7 @@ class UserRegistration extends StatelessWidget {
                   ),
                   SizedBox(height: 10),
                   Padding(
-                    padding: const EdgeInsets.only(left: 120),
+                    padding: const EdgeInsets.only(left: 140),
                     child: Align(
                       alignment: Alignment.bottomCenter,
                       child: FilledButton(
