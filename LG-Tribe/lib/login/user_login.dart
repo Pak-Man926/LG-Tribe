@@ -141,8 +141,8 @@ class Login extends StatelessWidget {
                             await loginState.loginUser(
                               contacts: contactNumber,
                               password: password,
-                              authLevel: userState.selectedAuthLevel.value,
-                              country: userState.selectedCountry.value,
+                              authLevel: userState.getAuthLevel().toServerModel(),
+                              country: userState.getCountry().toServerModel(),
                             );
                           },
                           color: Color(0xFFA50034),
