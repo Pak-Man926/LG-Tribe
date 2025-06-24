@@ -11,7 +11,7 @@ import "package:lg_tribe/Controller/userstate_controller_class.dart";
 
 class Login extends StatelessWidget {
   final userState = Get.find<UserStateController>();
-  
+  final 
 
   @override
   Widget build(BuildContext context) { 
