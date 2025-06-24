@@ -19,7 +19,6 @@ class LoginController extends GetxController
   void onInit() {
     super.onInit();
     client = Client('http://localhost:8080/')..connectivityMonitor = FlutterConnectivityMonitor();
-    _loadSavedLogin(); // try auto-login
   }
 
   Future<void> _loadSavedLogin() async {
