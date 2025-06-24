@@ -1,6 +1,7 @@
 import "package:get/get.dart";
 import "package:lg_tribe_client/lg_tribe_client.dart";
 import "package:serverpod_flutter/serverpod_flutter.dart";
+import 'package:shared_preferences/shared_preferences.dart';
 
 class LoginController extends GetxController
 {
