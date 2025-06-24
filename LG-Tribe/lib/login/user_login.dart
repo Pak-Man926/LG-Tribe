@@ -11,6 +11,7 @@ import "package:lg_tribe/Controller/userstate_controller_class.dart";
 
 class Login extends StatelessWidget {
   final userState = Get.find<UserStateController>();
+  
 
   @override
   Widget build(BuildContext context) { 
@@ -134,7 +135,7 @@ class Login extends StatelessWidget {
                             final contactNumber =
                               int.tryParse(contactNumberController.text) ?? 0;
                           final password = passwordController.text;
-                          
+
                            await _login();
                           },
                           color: Color(0xFFA50034),
