@@ -15,9 +15,8 @@ class Login extends StatelessWidget {
   final contactNumberController = TextEditingController();
   final passwordController = TextEditingController();
 
-
   @override
-  Widget build(BuildContext context) { 
+  Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
         child: Stack(
@@ -136,15 +135,15 @@ class Login extends StatelessWidget {
                           onPressed: () async {
                             //Attempt to login
                             final contactNumber =
-                              int.tryParse(contactNumberController.text) ?? 0;
-                          final password = passwordController.text;
+                                int.tryParse(contactNumberController.text) ?? 0;
+                            final password = passwordController.text;
 
-                           await loginState.loginUser(
-                            contacts: contactNumber,
-                            password: password,
-                            authLevel: userState.selectedAuthLevel.value,
-                            country: userState.selectedCountry.value,
-                           );
+                            await loginState.loginUser(
+                              contacts: contactNumber,
+                              password: password,
+                              authLevel: userState.selectedAuthLevel.value,
+                              country: userState.selectedCountry.value,
+                            );
                           },
                           color: Color(0xFFA50034),
                           shape: RoundedRectangleBorder(
