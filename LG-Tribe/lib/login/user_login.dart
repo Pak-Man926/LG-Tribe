@@ -144,7 +144,7 @@ class Login extends StatelessWidget {
                            await loginState.loginUser(
                             contacts: contactNumber,
                             password: password,
-                            authLevel: userState.selectedAuthLevel.value,
+                            authenticationLevel: userState.selectedAuthLevel.value,
                             country: userState.selectedCountry.value,
                            );
                           },
