@@ -8,10 +8,11 @@ import "package:lg_tribe_client/lg_tribe_client.dart";
 import "package:serverpod_flutter/serverpod_flutter.dart";
 import "package:get/get.dart";
 import "package:lg_tribe/Controller/userstate_controller_class.dart";
+import "package:lg_tribe/Controller/login_controller_class.dart";
 
 class Login extends StatelessWidget {
   final userState = Get.find<UserStateController>();
-  final 
+  final loginState = Get.find<LoginController>();
 
   @override
   Widget build(BuildContext context) { 
