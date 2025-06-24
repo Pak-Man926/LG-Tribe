@@ -8,6 +8,10 @@ class LoginController extends GetxController
   // Form fields for login
   var phoneNumber = " ".obs;
   var password = " ".obs;
+  var isLoading = false.obs;
+  var loggedInUser = Rxn<User>();
+  var errorMessage = " ".obs;
+  var registrationSuccess = false.obs;
 
   late Client client;
 
