@@ -1,14 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:intl_phone_field/intl_phone_field.dart';
-//import "package:intl_phone_field/phone_number.dart";
-//import 'package:lg_tribe/Forgot%20Password/forgot_password.dart';
-//import 'package:lg_tribe/Homepage/homepage.dart';
-//import "package:lg_tribe/login/registration/user_registration.dart";
 import "package:lg_tribe_client/lg_tribe_client.dart";
 import "package:serverpod_flutter/serverpod_flutter.dart";
 import "package:get/get.dart";
 import "package:lg_tribe/Controller/userstate_controller_class.dart";
 import "package:lg_tribe/Controller/login_controller_class.dart";
+import "package:lg_tribe/Controller/classes/authlevel_class.dart";
+import "package:lg_tribe/Controller/classes/country_located_class.dart";
 
 class Login extends StatelessWidget {
   final userState = Get.find<UserStateController>();
