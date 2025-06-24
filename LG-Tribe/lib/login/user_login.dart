@@ -131,6 +131,10 @@ class Login extends StatelessWidget {
                         child: MaterialButton(
                           onPressed: () async {
                             //Attempt to login
+                            final phoneNumber = contactNumberController.text;
+                            final password = passwordController.text;
+
+                            
                             // await _login();
                           },
                           color: Color(0xFFA50034),
