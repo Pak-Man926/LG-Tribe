@@ -28,7 +28,8 @@ class LoginController extends GetxController
     final authLevelName = prefs.getString('authLevel');
     final countryName = prefs.getString('country');
 
-    if (contacts != null && password != null && authLevelName != null && countryName != null) {
+    if (contacts != null && password != null && authLevelName != null && countryName != null) 
+    {
       loginUser(
         contacts: contacts,
         password: password,
