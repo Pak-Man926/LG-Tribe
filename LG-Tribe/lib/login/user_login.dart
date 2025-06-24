@@ -14,6 +14,7 @@ class Login extends StatelessWidget {
   final userState = Get.find<UserStateController>();
   final loginState = Get.find<LoginController>();
 
+  final 
   @override
   Widget build(BuildContext context) { 
     return Scaffold(
