@@ -50,7 +50,7 @@ class LoginController extends GetxController
     if (!autoLogin) isLoading.value = true;
 
     try {
-      User? user = await client.user.loginUser(contacts, password, authLevel, country);
+      User? user = await client.userEndpoints.loginUser(contacts, password, authLevel, country);
       if (user != null) {
         loggedInUser.value = user;
 
