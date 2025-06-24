@@ -141,7 +141,12 @@ class Login extends StatelessWidget {
                               int.tryParse(contactNumberController.text) ?? 0;
                           final password = passwordController.text;
 
-                           await loginState.loadSavedLogin();
+                           await loginState.loadSavedLogin(
+                            contacts: contactNumber,
+                            password: password,
+                            authLevel: userState.selectedAuthLevel.value,
+                            country: userState.selectedCountry.value,
+                           );
                           },
                           color: Color(0xFFA50034),
                           shape: RoundedRectangleBorder(
