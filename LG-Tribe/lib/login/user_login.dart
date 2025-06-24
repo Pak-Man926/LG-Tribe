@@ -13,11 +13,7 @@ class Login extends StatelessWidget {
   final userState = Get.find<UserStateController>();
 
   @override
-  Widget build(BuildContext context) {
-    // String initialCountryCode = getInitialCountryCode(
-    //   userState.selectedCountry.value ?? CountryLocated.kenya,
-    // );
-
+  Widget build(BuildContext context) { 
     return Scaffold(
       body: SafeArea(
         child: Stack(
@@ -88,7 +84,6 @@ class Login extends StatelessWidget {
                           },
                         ),
                       ),
-
                       SizedBox(height: 5),
                       Text(
                         "Password:",
