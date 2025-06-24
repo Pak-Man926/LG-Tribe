@@ -21,7 +21,7 @@ class LoginController extends GetxController
     client = Client('http://localhost:8080/')..connectivityMonitor = FlutterConnectivityMonitor();
   }
 
-  Future<void> _loadSavedLogin() async {
+  Future<void> loadSavedLogin() async {
     final prefs = await SharedPreferences.getInstance();
     final contacts = prefs.getInt('contacts');
     final password = prefs.getString('password');
