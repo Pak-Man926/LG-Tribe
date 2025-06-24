@@ -71,6 +71,7 @@ class Login extends StatelessWidget {
                       SizedBox(height: 5),
                       Obx(
                         () => IntlPhoneField(
+                          controller: contactNumberController,
                           decoration: const InputDecoration(
                             hintText: "Enter your phone number",
                             border: OutlineInputBorder(),
@@ -94,7 +95,7 @@ class Login extends StatelessWidget {
                       ),
                       SizedBox(height: 5),
                       TextField(
-                        //controller: passwordController,
+                        controller: passwordController,
                         keyboardType: TextInputType.visiblePassword,
                         obscureText: true,
                         decoration: InputDecoration(
