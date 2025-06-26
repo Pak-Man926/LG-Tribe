@@ -50,6 +50,7 @@ class LoginController extends GetxController
       if(result == true)
       {
         //Login Successful
+        
       }
     }
   }
