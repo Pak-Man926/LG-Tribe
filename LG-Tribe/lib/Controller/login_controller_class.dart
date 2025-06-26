@@ -37,6 +37,11 @@ class LoginController extends GetxController
       );
       return;
     }
+
+    try
+    {
+      
+    }
   }
 
   Future<void> logout() async {
