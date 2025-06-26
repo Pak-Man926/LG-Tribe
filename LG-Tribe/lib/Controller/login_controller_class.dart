@@ -50,6 +50,12 @@ class LoginController extends GetxController
       if(result == true)
       {
         //Login Successful
+        final prefs = await SharedPreferences.getInstance();
+        await prefs.setInt('contacts', contacts);
+        await prefs.setString('password', password);
+        await prefs.setString('authLevel', authLevel.name);
+        await prefs.setString('country', country.name);
+
         
       }
     }
