@@ -62,6 +62,8 @@ class LoginController extends GetxController
           snackPosition: SnackPosition.BOTTOM,
         ).show();
         
+        //Redirect to the homepage
+        Get.offAllNamed('/home');
       }
     }
   }
