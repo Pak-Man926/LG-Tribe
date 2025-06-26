@@ -64,7 +64,18 @@ class LoginController extends GetxController
         
         //Redirect to the homepage
         Get.offAllNamed("/homepage");
+      } else {
+        // Login failed
+        Get.snackbar(
+          "Error",
+          "Invalid Credentials",
+          snackPosition: SnackPosition.BOTTOM,
+        );
       }
+    }
+    catch(e)
+    {
+      
     }
   }
 
