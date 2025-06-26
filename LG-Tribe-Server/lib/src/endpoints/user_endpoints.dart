@@ -53,7 +53,7 @@ class UserEndpoints extends Endpoint {
       session,
       where: (t) =>
           t.contacts.equals(contacts) &
-          t.password.equals(password) &
+          // t.password.equals(password) &
           t.authlevel.equals(authenticationlevel) &
           t.country.equals(country),
     );
