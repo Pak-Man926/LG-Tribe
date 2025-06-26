@@ -33,7 +33,7 @@ class LoginController extends GetxController
     {
       Get.snackbar(
         "Error",
-        "Please fill in all the form fields",
+        "Please fill in all the fields",
         snackPosition: SnackPosition.BOTTOM,
       );
       //errorMessage.value = "Please enter valid credentials";
