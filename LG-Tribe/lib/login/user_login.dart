@@ -138,7 +138,7 @@ class Login extends StatelessWidget {
                                 int.tryParse(contactNumberController.text) ?? 0;
                             final password = passwordController.text;
 
-                            await loginState.loadSavedLogin(
+                            await loginState.loginUser(
                               contacts: contactNumber,
                               password: password,
                               authLevel: userState.getAuthLevel().toServerModel(),
