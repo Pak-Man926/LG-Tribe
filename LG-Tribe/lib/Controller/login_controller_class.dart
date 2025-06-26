@@ -29,7 +29,7 @@ class LoginController extends GetxController
     bool autoLogin = false,
   }) async
   {
-    if(password.isEmpty || contacts == null) {
+    if(password.isEmpty || contacts.toString().isEmpty) {
       Get.snackbar(
         "Error",
         "Please fill in all the fields!",
