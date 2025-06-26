@@ -56,7 +56,12 @@ class LoginController extends GetxController
         await prefs.setString('authLevel', authLevel.name);
         await prefs.setString('country', country.name);
 
-        GetSnackBar()
+        GetSnackBar(
+          title: "Login Successful",
+          message: "Welcome back!",
+          snackPosition: SnackPosition.BOTTOM,
+        ).show();
+        
       }
     }
   }
