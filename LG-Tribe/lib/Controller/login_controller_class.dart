@@ -63,7 +63,7 @@ class LoginController extends GetxController
         ).show();
         
         //Redirect to the homepage
-        Get.offAllNamed('/home');
+        Get.offAllNamed('/homepage');
       }
     }
   }
