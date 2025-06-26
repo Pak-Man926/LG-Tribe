@@ -40,7 +40,17 @@ class LoginController extends GetxController
 
     try
     {
-      
+      final result = await client.userEndpoints.loginUser(
+        contacts,
+        password,
+        authLevel,
+        country,
+      );
+
+      if(result == true)
+      {
+        //Login Successful
+      }
     }
   }
 
