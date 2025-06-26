@@ -41,11 +41,6 @@ class UserEndpoints extends Endpoint
     if (password.isEmpty || contacts.toString().isEmpty || contacts.toString().length < 10){
       return null; // Invalid credentials
     }
-
-    // if(user == null || !BCrypt.checkpw(password, user.password))
-    // {
-    //   return null; // Invalid credentials
-    // }
     
     // Find the user with the given contacts and password
     var user = await User.db.findFirstRow(
