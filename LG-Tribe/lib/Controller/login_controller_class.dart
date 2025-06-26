@@ -21,25 +21,6 @@ class LoginController extends GetxController
     client = Client('http://localhost:8080/')..connectivityMonitor = FlutterConnectivityMonitor();
   }
 
-  Future<void> loadSavedLogin() async {
-    final prefs = await SharedPreferences.getInstance();
-    final contacts = prefs.getInt('contacts');
-    final password = prefs.getString('password');
-    final authLevelName = prefs.getString('authLevel');
-    final countryName = prefs.getString('country');
-
-    if (contacts != null && password != null && authLevelName != null && countryName != null) 
-    {
-      loginUser(
-        contacts: contacts,
-        password: password,
-        authLevel: AuthenticationLevel.values.byName(authLevelName),
-        country: Country.values.byName(countryName),
-        autoLogin: true,
-      );
-    }
-  }
-
   Future<void> loginUser({
     required int contacts,
     required String password,
