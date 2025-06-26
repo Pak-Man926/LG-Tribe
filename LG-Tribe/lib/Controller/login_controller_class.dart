@@ -41,7 +41,7 @@ class LoginController extends GetxController {
       final result = await client.userEndpoints.loginUser(
         contacts,
         password,
-        authLevel,
+        authenticationlevel,
         country,
       );
 
