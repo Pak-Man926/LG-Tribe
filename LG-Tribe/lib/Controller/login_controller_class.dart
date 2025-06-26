@@ -28,30 +28,7 @@ class LoginController extends GetxController
     required Country country,
     bool autoLogin = false,
   }) async {
-    if (!autoLogin) isLoading.value = true;
-
-    try {
-      User? user = await client.userEndpoints.loginUser(contacts, password, authLevel, country);
-      if (user != null) {
-        loggedInUser.value = user;
-
-        final prefs = await SharedPreferences.getInstance();
-        await prefs.setInt('contacts', contacts);
-        await prefs.setString('password', password);
-        await prefs.setString('authLevel', authLevel.name);
-        await prefs.setString('country', country.name);
-
-        if (!autoLogin) {
-          Get.snackbar('Login Success', 'Welcome ${user.firstName}');
-        }
-      } else {
-        if (!autoLogin) errorMessage.value = 'Invalid login credentials';
-      }
-    } catch (e) {
-      if (!autoLogin) errorMessage.value = 'Login failed: $e';
-    } finally {
-      if (!autoLogin) isLoading.value = false;
-    }
+    
   }
 
   Future<void> logout() async {

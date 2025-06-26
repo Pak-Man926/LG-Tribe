@@ -11,7 +11,7 @@ class RegistrationController extends GetxController {
   var contacts = ''.obs;
   var email = ''.obs;
   var password = ''.obs;
-
+  
   @override
   void onInit()
   {
