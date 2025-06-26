@@ -3,8 +3,7 @@ import "package:lg_tribe_client/lg_tribe_client.dart";
 import "package:serverpod_flutter/serverpod_flutter.dart";
 import 'package:shared_preferences/shared_preferences.dart';
 
-class LoginController extends GetxController
-{
+class LoginController extends GetxController {
   // Form fields for login
   var phoneNumber = " ".obs;
   var password = " ".obs;
@@ -18,7 +17,8 @@ class LoginController extends GetxController
   @override
   void onInit() {
     super.onInit();
-    client = Client('http://localhost:8080/')..connectivityMonitor = FlutterConnectivityMonitor();
+    client = Client('http://localhost:8080/')
+      ..connectivityMonitor = FlutterConnectivityMonitor();
   }
 
   Future<void> loginUser({
@@ -26,10 +26,9 @@ class LoginController extends GetxController
     required String password,
     required AuthenticationLevel authLevel,
     required Country country,
-    bool autoLogin = false,
-  }) async
-  {
-    if(password.isEmpty || contacts.toString().isEmpty) {
+    //bool autoLogin = false,
+  }) async {
+    if (password.isEmpty || contacts.toString().isEmpty) {
       Get.snackbar(
         "Error",
         "Please fill in all the fields!",
@@ -38,8 +37,7 @@ class LoginController extends GetxController
       return;
     }
 
-    try
-    {
+    try {
       final result = await client.userEndpoints.loginUser(
         contacts,
         password,
@@ -47,8 +45,7 @@ class LoginController extends GetxController
         country,
       );
 
-      if(result == true)
-      {
+      if (result == true) {
         //Login Successful
         final prefs = await SharedPreferences.getInstance();
         await prefs.setInt('contacts', contacts);
@@ -61,7 +58,7 @@ class LoginController extends GetxController
           message: "Welcome back!",
           snackPosition: SnackPosition.BOTTOM,
         ).show();
-        
+
         //Redirect to the homepage
         Get.offAllNamed("/homepage");
       } else {
@@ -72,9 +69,7 @@ class LoginController extends GetxController
           snackPosition: SnackPosition.BOTTOM,
         );
       }
-    }
-    catch(e)
-    {
+    } catch (e) {
       print('Error during login: $e');
 
       Get.snackbar(
