@@ -27,8 +27,18 @@ class LoginController extends GetxController
     required AuthenticationLevel authLevel,
     required Country country,
     bool autoLogin = false,
-  }) async {
-    
+  }) async
+  {
+    if(contacts.toString().length < 10 || password.isEmpty)
+    {
+      Get.snackbar(
+        "Error",
+        "Please fill in all the form fields",
+        snackPosition: SnackPosition.BOTTOM,
+      );
+      //errorMessage.value = "Please enter valid credentials";
+      return;
+    }
   }
 
   Future<void> logout() async {
