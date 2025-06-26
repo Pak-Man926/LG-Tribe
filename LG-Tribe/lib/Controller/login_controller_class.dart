@@ -75,7 +75,13 @@ class LoginController extends GetxController
     }
     catch(e)
     {
-      
+      print('Error during login: $e');
+
+      Get.snackbar(
+        "Error",
+        "An error occurred during login",
+        snackPosition: SnackPosition.BOTTOM,
+      );
     }
   }
 
