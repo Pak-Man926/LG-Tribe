@@ -29,14 +29,12 @@ class LoginController extends GetxController
     bool autoLogin = false,
   }) async
   {
-    if(contacts.toString().length < 10 || password.isEmpty)
-    {
+    if(password.isEmpty || contacts.toString().length < 10 || contacts.toString().length > 10) {
       Get.snackbar(
         "Error",
-        "Please fill in all the fields",
+        "Please fill in all the fields!",
         snackPosition: SnackPosition.BOTTOM,
       );
-      //errorMessage.value = "Please enter valid credentials";
       return;
     }
   }
