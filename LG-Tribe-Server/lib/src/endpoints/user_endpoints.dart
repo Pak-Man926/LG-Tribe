@@ -42,32 +42,32 @@ class UserEndpoints extends Endpoint {
   }
 
   Future<User?> loginUser(
-  Session session,
-  int contacts,
-  String password,
-  AuthenticationLevel authenticationlevel,
-  Country country,
-) async {
-  if (password.isEmpty || contacts.toString().isEmpty) {
-    return null; // No input
+    Session session,
+    int contacts,
+    String password,
+    AuthenticationLevel authenticationlevel,
+    Country country,
+  ) async {
+    if (password.isEmpty || contacts.toString().isEmpty) {
+      return null; // No input
+    }
+
+    // Step 1: Find the user by contacts only
+    var user = await User.db.findFirstRow(
+      session,
+      where: (t) => t.contacts.equals(contacts),
+    );
+
+    // Step 2: Check password with bcrypt
+    if (user == null || !BCrypt.checkpw(password, user.password)) {
+      return null; // Invalid credentials
+    }
+
+    // Step 3: Continue with further validation
+    if (user.authlevel != authenticationlevel || user.country != country) {
+      return null; // Additional validation failed
+    }
+
+    return user; // All checks passed
   }
-
-  // Step 1: Find the user by contacts only
-  var user = await User.db.findFirstRow(
-    session,
-    where: (t) => t.contacts.equals(contacts),
-  );
-
-  // Step 2: Check password with bcrypt
-  if (user == null || !BCrypt.checkpw(password, user.password)) {
-    return null; // Invalid credentials
-  }
-
-  // Step 3: Continue with further validation
-  if (user.authlevel != authenticationlevel || user.country != country) {
-    return null; // Additional validation failed
-  }
-
-  return user; // All checks passed
-}
 }
