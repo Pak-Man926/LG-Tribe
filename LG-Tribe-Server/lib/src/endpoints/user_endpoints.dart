@@ -45,7 +45,7 @@ class UserEndpoints extends Endpoint {
       AuthenticationLevel authenticationlevel, Country country) async {
     if (password.isEmpty ||
         contacts.toString().isEmpty) {
-      return null; // Invalid credentials
+      return null; // No input
     }
 
     // Find the user with the given contacts and password
@@ -53,7 +53,7 @@ class UserEndpoints extends Endpoint {
       session,
       where: (t) =>
           t.contacts.equals(contacts) &
-          // t.password.equals(password) &
+           t.password.equals(password) &
           t.authlevel.equals(authenticationlevel) &
           t.country.equals(country),
     );
