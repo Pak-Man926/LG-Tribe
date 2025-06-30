@@ -41,6 +41,7 @@ class UserEndpoints extends Endpoint {
     return true;
   }
 
+
   Future<User?> loginUser(
     Session session,
     int contacts,
