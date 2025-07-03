@@ -25,14 +25,14 @@ class UserEndpoints extends Endpoint {
     }
     // Create a new user
 
-    final hashedPassword = BCrypt.hashpw(password, BCrypt.gensalt());
+    //final hashedPassword = BCrypt.hashpw(password, BCrypt.gensalt());
 
     final user = User(
         firstName: firstName,
         lastName: lastName,
         contacts: contacts,
         email: email,
-        password: hashedPassword,
+        password: password,
         authlevel: authenticationlevel,
         country: country);
 
@@ -57,6 +57,7 @@ class UserEndpoints extends Endpoint {
     var user = await User.db.findFirstRow(
       session,
       where: (t) => t.contacts.equals(contacts),
+                    t.password.equals        
     );
 
     // Step 2: Check password with bcrypt
