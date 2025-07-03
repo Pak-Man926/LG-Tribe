@@ -129,7 +129,8 @@ class Login extends StatelessWidget {
                       ),
                       SizedBox(height: 5),
                       Padding(padding: EdgeInsets.all(10)),
-                      SizedBox(                        width: double.infinity,
+                      SizedBox(                        
+                        width: double.infinity,
                         child: MaterialButton(
                           onPressed: () async {
                             //Attempt to login
