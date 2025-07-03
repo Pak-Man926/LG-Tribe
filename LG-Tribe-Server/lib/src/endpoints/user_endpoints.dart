@@ -48,10 +48,7 @@ class UserEndpoints extends Endpoint {
     AuthenticationLevel authenticationlevel,
     Country country,
   ) async {
-    if (password.isEmpty || contacts.toString().isEmpty) {
-      return false; // No input
-    }
-
+    
     // Step 1: Find the user by contacts only
     var registeredUser = await User.db.findFirstRow(
       session,
@@ -69,8 +66,6 @@ class UserEndpoints extends Endpoint {
     if (registeredUser.authlevel != authenticationlevel || registeredUser.country != country) {
       return false; // Additional validation failed
     }
-
-    if(registeredUser)
 
     return true; // All checks passed
   }
