@@ -32,7 +32,7 @@ class UserEndpoints extends Endpoint {
         lastName: lastName,
         contacts: contacts,
         email: email,
-        password: password,
+        password: hashedPassword,
         authlevel: authenticationlevel,
         country: country);
 
@@ -56,8 +56,9 @@ class UserEndpoints extends Endpoint {
     );
 
     // Step 2: Check password with bcrypt
-    if (registeredUser == null || registeredUser.password != password)
-    //!BCrypt.checkpw(password, user.password))
+    if (registeredUser == null || 
+    //registeredUser.password != password)
+    !BCrypt.checkpw(password, registeredUser.password))
     {
       return false; // Invalid credentials
     }
