@@ -23,13 +23,14 @@ class LoginController extends GetxController {
 
   //Metod to login a user
   Future<void> loginUser({
-    required int contacts,
+    required int contactNumber,
     required String password,
     required AuthenticationLevel authenticationLevel,
     required Country country,
     //bool autoLogin = false,
   }) async {
-    if (password.isEmpty || contacts.toString().isEmpty) {
+    if (password.isEmpty || contactNumber.toString().isEmpty) 
+    {
       // Show error message if any field is empty
       Get.snackbar(
         "Error",
@@ -41,7 +42,7 @@ class LoginController extends GetxController {
 
     try {
       final result = await client.userEndpoints.loginUser(
-        contacts,
+        contactNumber,
         password,
         authenticationLevel,
         country,
