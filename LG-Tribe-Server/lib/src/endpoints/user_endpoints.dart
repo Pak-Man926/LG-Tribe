@@ -14,7 +14,8 @@ class UserEndpoints extends Endpoint {
       String email,
       String password,
       AuthenticationLevel authenticationlevel,
-      Country country) async {
+      Country country) async
+       {
     var existingUser = await User.db.findFirstRow(
       session,
       where: (t) => t.contacts.equals(contacts),
@@ -42,7 +43,7 @@ class UserEndpoints extends Endpoint {
   }
 
 
-  Future<User?> loginUser(
+  Future<bool> loginUser(
     Session session,
     int contacts,
     String password,
