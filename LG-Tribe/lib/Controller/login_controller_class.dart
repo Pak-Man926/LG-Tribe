@@ -12,7 +12,7 @@ class LoginController extends GetxController {
   var errorMessage = " ".obs;
   var registrationSuccess = false.obs;
 
-  late Client client;
+  late final Client client;
 
   @override
   void onInit() {
@@ -21,6 +21,7 @@ class LoginController extends GetxController {
       ..connectivityMonitor = FlutterConnectivityMonitor();
   }
 
+  //Metod to login a user
   Future<void> loginUser({
     required int contacts,
     required String password,
