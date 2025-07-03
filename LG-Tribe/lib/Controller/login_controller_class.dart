@@ -47,11 +47,11 @@ class LoginController extends GetxController {
 
       if (result == true) {
         //Login Successful
-        final prefs = await SharedPreferences.getInstance();
-        await prefs.setInt('contacts', contacts);
-        await prefs.setString('password', password);
-        await prefs.setString('authLevel', authLevel.name);
-        await prefs.setString('country', country.name);
+        // final prefs = await SharedPreferences.getInstance();
+        // await prefs.setInt('contacts', contacts);
+        // await prefs.setString('password', password);
+        // await prefs.setString('authLevel', authLevel.name);
+        // await prefs.setString('country', country.name);
 
         GetSnackBar(
           title: "Login Successful",
@@ -63,6 +63,7 @@ class LoginController extends GetxController {
         Get.offAllNamed("/homepage");
       } else {
         // Login failed
+
         Get.snackbar(
           "Error",
           "Invalid Credentials",
