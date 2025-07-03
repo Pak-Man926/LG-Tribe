@@ -14,8 +14,7 @@ class UserEndpoints extends Endpoint {
       String email,
       String password,
       AuthenticationLevel authenticationlevel,
-      Country country) async
-       {
+      Country country) async {
     var existingUser = await User.db.findFirstRow(
       session,
       where: (t) => t.contacts.equals(contacts),
@@ -42,7 +41,6 @@ class UserEndpoints extends Endpoint {
     return true;
   }
 
-
   Future<bool> loginUser(
     Session session,
     int contacts,
@@ -51,28 +49,27 @@ class UserEndpoints extends Endpoint {
     Country country,
   ) async {
     if (password.isEmpty || contacts.toString().isEmpty) {
-      return null; // No input
+      return false; // No input
     }
 
     // Step 1: Find the user by contacts only
-    var user = await User.db.findFirstRow(
+    var registereduser = await User.db.findFirstRow(
       session,
-      where: (t) => t.contacts.equals(contacts) &
-                    t.password.equals(password),        
+      where: (t) => t.contacts.equals(contacts) & t.password.equals(password),
     );
 
     // Step 2: Check password with bcrypt
-    if (user == null || user.password != password)
-    //!BCrypt.checkpw(password, user.password)) 
+    if (registereduser == null || registereduser.password != password)
+    //!BCrypt.checkpw(password, user.password))
     {
-      return null; // Invalid credentials
+      return false; // Invalid credentials
     }
 
     // Step 3: Continue with further validation
-    if (user.authlevel != authenticationlevel || user.country != country) {
-      return null; // Additional validation failed
+    if (registereduser.authlevel != authenticationlevel || registereduser.country != country) {
+      return false; // Additional validation failed
     }
 
-    return user; // All checks passed
+    return true; // All checks passed
   }
 }
