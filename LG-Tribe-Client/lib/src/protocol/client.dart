@@ -13,8 +13,7 @@ import 'package:serverpod_client/serverpod_client.dart' as _i1;
 import 'dart:async' as _i2;
 import 'package:lg_tribe_client/src/protocol/auth_level.dart' as _i3;
 import 'package:lg_tribe_client/src/protocol/country.dart' as _i4;
-import 'package:lg_tribe_client/src/protocol/user_models.dart' as _i5;
-import 'protocol.dart' as _i6;
+import 'protocol.dart' as _i5;
 
 /// {@category Endpoint}
 class EndpointUserEndpoints extends _i1.EndpointRef {
@@ -46,13 +45,13 @@ class EndpointUserEndpoints extends _i1.EndpointRef {
         },
       );
 
-  _i2.Future<_i5.User?> loginUser(
+  _i2.Future<bool> loginUser(
     int contacts,
     String password,
     _i3.AuthenticationLevel authenticationlevel,
     _i4.Country country,
   ) =>
-      caller.callServerEndpoint<_i5.User?>(
+      caller.callServerEndpoint<bool>(
         'userEndpoints',
         'loginUser',
         {
@@ -80,7 +79,7 @@ class Client extends _i1.ServerpodClientShared {
     bool? disconnectStreamsOnLostInternetConnection,
   }) : super(
           host,
-          _i6.Protocol(),
+          _i5.Protocol(),
           securityContext: securityContext,
           authenticationKeyManager: authenticationKeyManager,
           streamingConnectionTimeout: streamingConnectionTimeout,

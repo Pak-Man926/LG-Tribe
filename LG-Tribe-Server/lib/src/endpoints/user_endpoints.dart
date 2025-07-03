@@ -25,7 +25,7 @@ class UserEndpoints extends Endpoint {
     }
     // Create a new user
 
-    //final hashedPassword = BCrypt.hashpw(password, BCrypt.gensalt());
+    final hashedPassword = BCrypt.hashpw(password, BCrypt.gensalt());
 
     final user = User(
         firstName: firstName,
