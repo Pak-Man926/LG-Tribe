@@ -56,11 +56,11 @@ class LoginController extends GetxController {
         // await prefs.setString('authLevel', authLevel.name);
         // await prefs.setString('country', country.name);
 
-        GetSnackBar(
-          title: "Login Successful",
-          message: "Welcome back!",
+        Get.snackbar(
+          "Login Successful",
+           "Welcome back!",
           snackPosition: SnackPosition.BOTTOM,
-        ).show();
+        );
 
         //Redirect to the homepage
         Get.offAllNamed("/homepage");
