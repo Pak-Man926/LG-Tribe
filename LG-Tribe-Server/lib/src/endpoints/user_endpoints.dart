@@ -56,12 +56,14 @@ class UserEndpoints extends Endpoint {
     // Step 1: Find the user by contacts only
     var user = await User.db.findFirstRow(
       session,
-      where: (t) => t.contacts.equals(contacts),
-                    t.password.equals        
+      where: (t) => t.contacts.equals(contacts) &
+                    t.password.equals(password),        
     );
 
     // Step 2: Check password with bcrypt
-    if (user == null || !BCrypt.checkpw(password, user.password)) {
+    if (user == null || user.password != password)
+    //!BCrypt.checkpw(password, user.password)) 
+    {
       return null; // Invalid credentials
     }
 
