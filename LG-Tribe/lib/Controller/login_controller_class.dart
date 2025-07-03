@@ -90,5 +90,6 @@ class LoginController extends GetxController {
     await prefs.clear();
   }
 
+  
   bool get isLoggedIn => loggedInUser.value != null;
 }
