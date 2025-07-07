@@ -58,7 +58,7 @@ class UserEndpoints extends Endpoint {
     // Step 2: Check password with bcrypt
     if (registeredUser == null || 
     //registeredUser.password != password)
-    !BCrypt.checkpw(password, registeredUser.password))
+    !BCrypt.checkpw(password, hashed))
     {
       return false; // Invalid credentials
     }
