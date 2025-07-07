@@ -26,24 +26,25 @@ class _HomepageState extends State<Homepage> {
     Homescreen(),
     UploadScreen(),
     NotificationsScreen(),
-    ProfileScreen()
+    ProfileScreen(),
   ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          leading: IconButton(
-            onPressed: () => Get.toNamed("/startpage"),
-            icon: Icon(Icons.arrow_back, color: Colors.blueGrey,)),
-          centerTitle: true,
-          title: Text(
-            "LG Tr!be",
-            style: TextStyle(fontSize: 20, fontWeight: FontWeight.w800),
-          ),
-          backgroundColor: const Color.fromARGB(255, 245, 244, 242),
+      appBar: AppBar(
+        leading: IconButton(
+          onPressed: () => Get.toNamed("/startpage"),
+          icon: Icon(Icons.arrow_back, color: Colors.blueGrey),
         ),
-        body: _children[_selectedIndex],
-        bottomNavigationBar: bottomNavigator(),
+        centerTitle: true,
+        title: Text(
+          "LG Tr!be",
+          style: TextStyle(fontSize: 20, fontWeight: FontWeight.w800),
+        ),
+        backgroundColor: const Color.fromARGB(255, 245, 244, 242),
+      ),
+      body: _children[_selectedIndex],
+      bottomNavigationBar: bottomNavigator(),
     );
   }
 
