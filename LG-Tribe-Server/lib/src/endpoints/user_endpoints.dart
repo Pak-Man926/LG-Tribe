@@ -49,22 +49,26 @@ class UserEndpoints extends Endpoint {
     Country country,
   ) async {
     
-    // Step 1: Find the user by contacts only
+    final bool checkPassword = BCrypt.checkpw(password, hashed);
+
+    // Step 1: Find the user by contacts and password
     var registeredUser = await User.db.findFirstRow(
       session,
       where: (t) => t.contacts.equals(contacts) & t.password.equals(password),
     );
 
+  
+
     // Step 2: Check password with bcrypt
-    if (registeredUser == null || 
+    if (registeredUser == null || checkPassword == false)
     //registeredUser.password != password)
-    !BCrypt.checkpw(password, hashed))
     {
       return false; // Invalid credentials
     }
 
     // Step 3: Continue with further validation
-    if (registeredUser.authlevel != authenticationlevel || registeredUser.country != country) {
+    if (registeredUser.authlevel != authenticationlevel || registeredUser.country != country) 
+    {
       return false; // Additional validation failed
     }
 
