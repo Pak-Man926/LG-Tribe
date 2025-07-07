@@ -49,7 +49,9 @@ class UserEndpoints extends Endpoint {
     Country country,
   ) async {
     
-    final bool checkPassword = BCrypt.checkpw(password, hashed);
+    final hashedPassword = BCrypt.hashpw(password, BCrypt.gensalt()); 
+    
+    final bool checkPassword = BCrypt.checkpw(password, hashedPassword);
 
     // Step 1: Find the user by contacts and password
     var registeredUser = await User.db.findFirstRow(
