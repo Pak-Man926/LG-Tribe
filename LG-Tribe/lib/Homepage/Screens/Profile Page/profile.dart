@@ -7,9 +7,7 @@ class Profile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(
+    return Scaffold(
         appBar: AppBar(
           leading: IconButton(
             onPressed: () => Get.toNamed("/profilescreen"),
@@ -243,7 +241,6 @@ class Profile extends StatelessWidget {
             ),
           ],
         ),
-      ),
     );
   }
 }
