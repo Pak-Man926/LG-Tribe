@@ -30,9 +30,7 @@ class _HomepageState extends State<Homepage> {
   ];
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(
+    return Scaffold(
         appBar: AppBar(
           leading: IconButton(
             onPressed: () => Get.toNamed("/startpage"),
@@ -46,7 +44,6 @@ class _HomepageState extends State<Homepage> {
         ),
         body: _children[_selectedIndex],
         bottomNavigationBar: bottomNavigator(),
-      ),
     );
   }
 
