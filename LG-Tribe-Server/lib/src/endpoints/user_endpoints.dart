@@ -50,17 +50,15 @@ class UserEndpoints extends Endpoint {
   ) async {
     
     final hashedPassword = BCrypt.hashpw(password, BCrypt.gensalt()); 
-    
-    final bool checkPassword = BCrypt.checkpw(password, hashedPassword);
 
     // Step 1: Find the user by contacts and password
     var registeredUser = await User.db.findFirstRow(
       session,
-      where: (t) => t.contacts.equals(contacts) & t.password.equals(password),
+      where: (t) => t.contacts.equals(contacts) & t.password.equals(hashedPassword),
     );
 
-  
-
+    final bool checkPassword = BCrypt.checkpw(password, hashedPassword);
+    
     // Step 2: Check password with bcrypt
     if (registeredUser == null || checkPassword == false)
     //registeredUser.password != password)
