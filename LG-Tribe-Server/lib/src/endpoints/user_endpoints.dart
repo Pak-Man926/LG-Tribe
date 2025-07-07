@@ -42,36 +42,36 @@ class UserEndpoints extends Endpoint {
   }
 
   Future<bool> loginUser(
-    Session session,
-    int contacts,
-    String password,
-    AuthenticationLevel authenticationlevel,
-    Country country,
-  ) async {
-    
-    final hashedPassword = BCrypt.hashpw(password, BCrypt.gensalt()); 
+  Session session,
+  int contacts,
+  String password,
+  AuthenticationLevel authenticationlevel,
+  Country country,
+) async {
+  // Step 1: Find user by contacts only
+  var registeredUser = await User.db.findFirstRow(
+    session,
+    where: (t) => t.contacts.equals(contacts),
+  );
 
-    // Step 1: Find the user by contacts and password
-    var registeredUser = await User.db.findFirstRow(
-      session,
-      where: (t) => t.contacts.equals(contacts) & t.password.equals(hashedPassword),
-    );
-
-    final bool checkPassword = BCrypt.checkpw(registeredUser!.password, hashedPassword);
-
-    // Step 2: Check password with bcrypt
-    if (registeredUser == null || checkPassword == false)
-    //registeredUser.password != password)
-    {
-      return false; // Invalid credentials
-    }
-
-    // Step 3: Continue with further validation
-    if (registeredUser.authlevel != authenticationlevel || registeredUser.country != country) 
-    {
-      return false; // Additional validation failed
-    }
-
-    return true; // All checks passed
+  // Step 2: Check if user exists
+  if (registeredUser == null) {
+    return false;
   }
+
+  // Step 3: Validate password with bcrypt
+  final bool checkPassword = BCrypt.checkpw(password, registeredUser.password);
+
+  if (!checkPassword) {
+    return false;
+  }
+
+  // Step 4: Additional checks
+  if (registeredUser.authlevel != authenticationlevel || registeredUser.country != country) {
+    return false;
+  }
+
+  return true;
+}
+
 }
