@@ -50,11 +50,11 @@ class LoginController extends GetxController {
 
       if (result == true) {
         //Login Successful
-        // final prefs = await SharedPreferences.getInstance();
-        // await prefs.setInt('contacts', contacts);
-        // await prefs.setString('password', password);
-        // await prefs.setString('authLevel', authLevel.name);
-        // await prefs.setString('country', country.name);
+        final prefs = await SharedPreferences.getInstance();
+        await prefs.setInt('contacts', contactNumber);
+        await prefs.setString('password', password);
+        await prefs.setString('authLevel', authenticationLevel.name);
+        await prefs.setString('country', country.name);
 
         Get.snackbar(
           "Login Successful",
@@ -88,6 +88,13 @@ class LoginController extends GetxController {
     loggedInUser.value = null;
     final prefs = await SharedPreferences.getInstance();
     await prefs.clear();
+
+    Get.snackbar(
+      "Thank you!",
+      "GoodBye!",
+      snackPosition: SnackPosition.BOTTOM);
+
+    Get.offAllNamed("/")
   }
 
   
