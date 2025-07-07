@@ -57,10 +57,10 @@ class UserEndpoints extends Endpoint {
       where: (t) => t.contacts.equals(contacts) & t.password.equals(hashedPassword),
     );
 
-    final bool checkPassword = BCrypt.checkpw(password, hashedPassword);
-    
+    final bool checkPassword = BCrypt.checkpw(registeredUser!.password, hashedPassword);
+
     // Step 2: Check password with bcrypt
-    if (registeredUser == null || checkPassword == false)
+    if (checkPassword == false)
     //registeredUser.password != password)
     {
       return false; // Invalid credentials
