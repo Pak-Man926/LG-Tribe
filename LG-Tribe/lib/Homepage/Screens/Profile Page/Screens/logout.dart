@@ -17,7 +17,9 @@ class Logout extends StatelessWidget
               ),
               SizedBox(height: 5),
               Text("Are you sure you want to log out of your account?",
-              style: TextStyle(fontWeight: FontWeight.w300))
+              style: TextStyle(fontWeight: FontWeight.w300)),
+              SizedBox(height: 10),
+              
             ]
           )
         )
