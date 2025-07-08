@@ -25,7 +25,7 @@ class Logout extends StatelessWidget {
                 child: MaterialButton(
                   onPressed: () {
                     //Attempt to logout
-                    Get.toNamed("/homepage"),
+                    Get.toNamed("/homepage");
                   },
                   color: Color(0xFFA50034),
                   shape: RoundedRectangleBorder(
@@ -36,20 +36,19 @@ class Logout extends StatelessWidget {
               ),
               SizedBox(height: 5),
               SizedBox(
-                        width: double.infinity,
-                        child: MaterialButton(
-                          onPressed: () => Get.toNamed("/profilepage),
-                          color: Colors.white,
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.vertical(),
-                          ),
-                          child: Text(
-                            "No, take me back",
-                            style: TextStyle(color: Colors.black),
-                          ),
-                        ),
-                      ),
-                    ),
+                width: double.infinity,
+                child: MaterialButton(
+                  onPressed: () {
+                    //Cancel logout
+                    Get.toNamed("/profilepage");
+                  },
+                  color: Colors.white,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.vertical(),
+                  ),
+                  child: Text("No, take me back", style: TextStyle(color: Colors.black)),
+                ),
+              ),
             ],
           ),
         ),
