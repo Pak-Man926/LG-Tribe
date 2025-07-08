@@ -1,5 +1,5 @@
 import "package:flutter/material.dart";
-
+import "package:get/get.dart";
 class Logout extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,6 +25,7 @@ class Logout extends StatelessWidget {
                 child: MaterialButton(
                   onPressed: () {
                     //Attempt to logout
+                    Get.toNamed("/homepage"),
                   },
                   color: Color(0xFFA50034),
                   shape: RoundedRectangleBorder(
@@ -37,7 +38,7 @@ class Logout extends StatelessWidget {
               SizedBox(
                         width: double.infinity,
                         child: MaterialButton(
-                          //onPressed: () => Get.toNamed("/startpage"),
+                          onPressed: () => Get.toNamed("/profilepage),
                           color: Colors.white,
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.vertical(),
@@ -48,6 +49,7 @@ class Logout extends StatelessWidget {
                           ),
                         ),
                       ),
+                    ),
             ],
           ),
         ),
