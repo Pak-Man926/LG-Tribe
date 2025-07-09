@@ -94,7 +94,7 @@ class LoginController extends GetxController {
       "GoodBye!",
       snackPosition: SnackPosition.BOTTOM);
 
-    Get.offAllNamed("/userlogin");
+    Get.offAllNamed("/");
   }
 
   
