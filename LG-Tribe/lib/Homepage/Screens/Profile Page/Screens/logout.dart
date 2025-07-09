@@ -43,7 +43,7 @@ class Logout extends StatelessWidget {
                 child: MaterialButton(
                   onPressed: () async{
                     //Cancel logout
-                    await loginState.logoutUser();
+                    await loginState.logout();
                   },
                   color: Colors.white,
                   shape: RoundedRectangleBorder(
