@@ -213,7 +213,7 @@ class Profile extends StatelessWidget {
                     // Navigator.of(
                     //   context,
                     // ).push(MaterialPageRoute(builder: (context) => Login()));
-                    Get.toNamed("/")
+                    Get.toNamed("/logout");
                   },
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10),
