@@ -26,9 +26,9 @@ class Logout extends StatelessWidget {
               SizedBox(
                 width: double.infinity,
                 child: MaterialButton(
-                  onPressed: () {
+                  onPressed: () async{
                     //Attempt to logout
-                    Get.toNamed("/homepage");
+                    await loginState.logout();
                   },
                   color: Color(0xFFA50034),
                   shape: RoundedRectangleBorder(
@@ -43,7 +43,7 @@ class Logout extends StatelessWidget {
                 child: MaterialButton(
                   onPressed: () async{
                     //Cancel logout
-                    await loginState.logout();
+                    Get.toNamed("/profilepage");
                   },
                   color: Colors.white,
                   shape: RoundedRectangleBorder(
