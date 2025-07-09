@@ -1,8 +1,9 @@
 import "package:flutter/material.dart";
 import "package:get/get.dart";
+import "package:lg_tribe/Controller/login_controller_class.dart";
 class Logout extends StatelessWidget {
   final loginState = Get.find<LoginController>();
-  
+
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
