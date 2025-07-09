@@ -37,7 +37,10 @@ class Logout extends StatelessWidget {
                       },
                       color: Color(0xFFA50034),
                       shape: RoundedRectangleBorder(),
-                      child: Text("Yes, logout", style: TextStyle(color: Colors.white)),
+                      child: Text(
+                        "Yes, logout",
+                        style: TextStyle(color: Colors.white),
+                      ),
                     ),
                   ),
                   SizedBox(height: 5),
@@ -49,7 +52,10 @@ class Logout extends StatelessWidget {
                       },
                       color: Colors.white,
                       shape: RoundedRectangleBorder(),
-                      child: Text("No, take me back", style: TextStyle(color: Colors.black)),
+                      child: Text(
+                        "No, take me back",
+                        style: TextStyle(color: Colors.black),
+                      ),
                     ),
                   ),
                 ],
