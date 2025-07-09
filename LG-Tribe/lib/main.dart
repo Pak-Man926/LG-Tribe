@@ -14,6 +14,7 @@ import "package:lg_tribe/login/registration/user_registration.dart";
 import "package:lg_tribe/login/Forgot Password/forgot_password.dart";
 import "package:lg_tribe/Controller/userstate_controller_class.dart";
 import 'package:shared_preferences/shared_preferences.dart';
+import "package:lg_tribe/Homepage/Screens/Profile Page/Screens/logout.dart";
 
 
 void main() async
@@ -43,6 +44,7 @@ void main() async
         GetPage(name: "/profilescreen", page: () => ProfileScreen()), // Eighth route
         GetPage(name: "/profilepage", page: () => Profile()), // Ninth route
         GetPage(name: "/aboutapp", page: () => About()), // Tenth route
+        GetPage(name: "/logout", page: () => Logout()), // Eleventh route
 
       ],
     )
