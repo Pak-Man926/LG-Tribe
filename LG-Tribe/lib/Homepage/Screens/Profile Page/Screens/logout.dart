@@ -38,8 +38,9 @@ class Logout extends StatelessWidget {
               SizedBox(
                 width: double.infinity,
                 child: MaterialButton(
-                  onPressed: () {
+                  onPressed: () async{
                     //Cancel logout
+                    
                   },
                   color: Colors.white,
                   shape: RoundedRectangleBorder(
