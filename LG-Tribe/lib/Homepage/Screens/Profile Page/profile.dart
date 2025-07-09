@@ -162,9 +162,7 @@ class Profile extends StatelessWidget {
                 //Change Password Button
                 MaterialButton(
                   onPressed: () {
-                    // Navigator.of(
-                    //   context,
-                    // ).push(MaterialPageRoute(builder: (context) => Login()));
+                    //Goto Password change screen
                   },
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10),
@@ -186,9 +184,7 @@ class Profile extends StatelessWidget {
                 //Call for Enquiries Button
                 MaterialButton(
                   onPressed: () {
-                    // Navigator.of(
-                    //   context,
-                    // ).push(MaterialPageRoute(builder: (context) => Login()));
+                    //Call hotline
                   },
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10),
@@ -210,9 +206,7 @@ class Profile extends StatelessWidget {
                 //Logout Button
                 MaterialButton(
                   onPressed: () {
-                    // Navigator.of(
-                    //   context,
-                    // ).push(MaterialPageRoute(builder: (context) => Login()));
+                    //Go to logout confirmation screen
                     Get.toNamed("/logout");
                   },
                   shape: RoundedRectangleBorder(
