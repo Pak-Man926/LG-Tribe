@@ -40,7 +40,6 @@ class Logout extends StatelessWidget {
                 child: MaterialButton(
                   onPressed: () {
                     //Cancel logout
-                    Get.toNamed("/profilepage");
                   },
                   color: Colors.white,
                   shape: RoundedRectangleBorder(
