@@ -56,13 +56,13 @@ class Logout extends StatelessWidget {
                     ),
                     child: MaterialButton(
                       onPressed: () async {
-                        await loginState.logout();
+                        Get.toNamed("/profilepage");
                       },
-                      color: Color(0xFFA50034),
+                      color: Colors.white,
                       shape: RoundedRectangleBorder(),
                       child: Text(
-                        "Yes, logout",
-                        style: TextStyle(color: Colors.white),
+                        "No, take me back",
+                        style: TextStyle(color: Colors.black),
                       ),
                     ),
                   ),
