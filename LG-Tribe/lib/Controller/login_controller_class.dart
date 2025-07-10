@@ -29,6 +29,11 @@ class LoginController extends GetxController {
     required Country country,
     //bool autoLogin = false,
   }) async {
+    final storedPrefs = await SharedPreferences.getInstance();
+    final storedContactNumber = storedPrefs.getInt('contacts');
+    final storedPassword = storedPrefs.getString('password');
+    final storedAuthLevel = storedPrefs.getString('authLevel');
+    final storedCountry = storedPrefs.getString('country');
     if (password.isEmpty || contactNumber.toString().isEmpty) 
     {
       // Show error message if any field is empty
