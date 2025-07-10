@@ -11,7 +11,7 @@ class Logout extends StatelessWidget {
       body: Align(
         alignment: Alignment.bottomCenter,
         child: Padding(
-          padding: const EdgeInsets.all(16.0), // Optional: some spacing
+          padding: const EdgeInsets.all(16.0), 
           child: Card(
             child: Padding(
               padding: const EdgeInsets.all(16.0),
@@ -29,8 +29,12 @@ class Logout extends StatelessWidget {
                     style: TextStyle(fontWeight: FontWeight.w300),
                   ),
                   SizedBox(height: 10),
-                  SizedBox(
+                  Container(
                     width: double.infinity,
+                    decoration: BoxDecoration(
+                      color: Color(0xFFA50034),
+                      borderRadius: BorderRadius.circular(10),
+                    ),
                     child: MaterialButton(
                       onPressed: () async {
                         await loginState.logout();
