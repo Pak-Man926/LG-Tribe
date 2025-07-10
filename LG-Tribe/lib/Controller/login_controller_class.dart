@@ -39,11 +39,32 @@ class LoginController extends GetxController {
         storedPassword != null ||
         storedAuthLevel != null ||
         storedCountry != null) {
-      // If user is already logged in, redirect to homepage
-      Get.offAllNamed("/homepage");
+      // Call the loginPrompt function
+      await loginPrompt(); 
       return;
-    } else {
-      if (password.isEmpty || contactNumber.toString().isEmpty) {
+    }
+     else 
+     {
+      
+    }
+  }
+
+  Future<void> logout() async {
+    loggedInUser.value = null;
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.clear();
+
+    Get.snackbar("Thank you!", "GoodBye!", snackPosition: SnackPosition.BOTTOM);
+
+    Get.offAllNamed("/userlogin");
+  }
+
+  bool get isLoggedIn => loggedInUser.value != null;
+}
+
+void loginPrompt() async
+      {
+        if (password.isEmpty || contactNumber.toString().isEmpty) {
         // Show error message if any field is empty
         Get.snackbar(
           "Error",
@@ -95,18 +116,4 @@ class LoginController extends GetxController {
           snackPosition: SnackPosition.BOTTOM,
         );
       }
-    }
-  }
-
-  Future<void> logout() async {
-    loggedInUser.value = null;
-    final prefs = await SharedPreferences.getInstance();
-    await prefs.clear();
-
-    Get.snackbar("Thank you!", "GoodBye!", snackPosition: SnackPosition.BOTTOM);
-
-    Get.offAllNamed("/userlogin");
-  }
-
-  bool get isLoggedIn => loggedInUser.value != null;
-}
+      }
