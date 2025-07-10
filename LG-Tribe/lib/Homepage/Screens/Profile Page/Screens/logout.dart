@@ -48,17 +48,21 @@ class Logout extends StatelessWidget {
                     ),
                   ),
                   SizedBox(height: 5),
-                  SizedBox(
+                  Container(
                     width: double.infinity,
+                    decoration: BoxDecoration(
+                      color: Color(0xFFA50034),
+                      borderRadius: BorderRadius.circular(10),
+                    ),
                     child: MaterialButton(
                       onPressed: () async {
-                        Get.toNamed("/profilepage");
+                        await loginState.logout();
                       },
-                      color: Colors.white,
+                      color: Color(0xFFA50034),
                       shape: RoundedRectangleBorder(),
                       child: Text(
-                        "No, take me back",
-                        style: TextStyle(color: Colors.black),
+                        "Yes, logout",
+                        style: TextStyle(color: Colors.white),
                       ),
                     ),
                   ),
