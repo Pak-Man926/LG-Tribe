@@ -35,17 +35,59 @@ class LoginController extends GetxController {
     final storedAuthLevel = storedPrefs.getString('authLevel');
     final storedCountry = storedPrefs.getString('country');
 
-    if (storedContactNumber != null ||
-        storedPassword != null ||
-        storedAuthLevel != null ||
-        storedCountry != null) {
-      // Call the loginPrompt function
-      await loginPrompt(); 
+    //Checks if all fields are filled
+    if (password.isEmpty || contactNumber.toString().isEmpty) 
+    {
+      // Show error message if any field is empty
+      Get.snackbar(
+        "Error",
+        "Please fill in all the fields!",
+        snackPosition: SnackPosition.BOTTOM,
+      );
       return;
     }
-     else 
-     {
-      
+
+    try {
+      final result = await client.userEndpoints.loginUser(
+        contactNumber,
+        password,
+        authenticationLevel,
+        country,
+      );
+
+      if (result == true) {
+        //Login Successful
+        final prefs = await SharedPreferences.getInstance();
+        await prefs.setInt('contacts', contactNumber);
+        await prefs.setString('password', password);
+        await prefs.setString('authLevel', authenticationLevel.name);
+        await prefs.setString('country', country.name);
+
+        Get.snackbar(
+          "Login Successful",
+           "Welcome back!",
+          snackPosition: SnackPosition.BOTTOM,
+        );
+
+        //Redirect to the homepage
+        Get.offAllNamed("/homepage");
+      } else {
+        // Login failed
+
+        Get.snackbar(
+          "Error",
+          "Invalid Credentials",
+          snackPosition: SnackPosition.BOTTOM,
+        );
+      }
+    } catch (e) {
+      print('Error during login: $e');
+
+      Get.snackbar(
+        "Error",
+        "An error occurred during login",
+        snackPosition: SnackPosition.BOTTOM,
+      );
     }
   }
 
@@ -54,66 +96,14 @@ class LoginController extends GetxController {
     final prefs = await SharedPreferences.getInstance();
     await prefs.clear();
 
-    Get.snackbar("Thank you!", "GoodBye!", snackPosition: SnackPosition.BOTTOM);
+    Get.snackbar(
+      "Thank you!",
+      "GoodBye!",
+      snackPosition: SnackPosition.BOTTOM);
 
     Get.offAllNamed("/userlogin");
   }
 
+  
   bool get isLoggedIn => loggedInUser.value != null;
 }
-
-void loginPrompt() async
-      {
-        if (password.isEmpty || contactNumber.toString().isEmpty) {
-        // Show error message if any field is empty
-        Get.snackbar(
-          "Error",
-          "Please fill in all the fields!",
-          snackPosition: SnackPosition.BOTTOM,
-        );
-        return;
-      }
-
-      try {
-        final result = await client.userEndpoints.loginUser(
-          contactNumber,
-          password,
-          authenticationLevel,
-          country,
-        );
-
-        if (result == true) {
-          //Login Successful
-          final prefs = await SharedPreferences.getInstance();
-          await prefs.setInt('contacts', contactNumber);
-          await prefs.setString('password', password);
-          await prefs.setString('authLevel', authenticationLevel.name);
-          await prefs.setString('country', country.name);
-
-          Get.snackbar(
-            "Login Successful",
-            "Welcome back!",
-            snackPosition: SnackPosition.BOTTOM,
-          );
-
-          //Redirect to the homepage
-          Get.offAllNamed("/homepage");
-        } else {
-          // Login failed
-
-          Get.snackbar(
-            "Error",
-            "Invalid Credentials",
-            snackPosition: SnackPosition.BOTTOM,
-          );
-        }
-      } catch (e) {
-        print('Error during login: $e');
-
-        Get.snackbar(
-          "Error",
-          "An error occurred during login",
-          snackPosition: SnackPosition.BOTTOM,
-        );
-      }
-      }
