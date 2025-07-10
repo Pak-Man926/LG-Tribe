@@ -34,6 +34,14 @@ class LoginController extends GetxController {
     final storedPassword = storedPrefs.getString('password');
     final storedAuthLevel = storedPrefs.getString('authLevel');
     final storedCountry = storedPrefs.getString('country');
+
+    if(storedContactNumber != null || storedPassword != null || storedAuthLevel != null || storedCountry != null) 
+    {
+      // If user is already logged in, redirect to homepage
+      Get.offAllNamed("/homepage");
+      return;
+    }
+    
     if (password.isEmpty || contactNumber.toString().isEmpty) 
     {
       // Show error message if any field is empty
