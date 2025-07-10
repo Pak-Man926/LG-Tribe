@@ -35,69 +35,67 @@ class LoginController extends GetxController {
     final storedAuthLevel = storedPrefs.getString('authLevel');
     final storedCountry = storedPrefs.getString('country');
 
-    if(storedContactNumber != null || storedPassword != null || storedAuthLevel != null || storedCountry != null) 
-    {
+    if (storedContactNumber != null ||
+        storedPassword != null ||
+        storedAuthLevel != null ||
+        storedCountry != null) {
       // If user is already logged in, redirect to homepage
       Get.offAllNamed("/homepage");
       return;
-    }
-    else{
-      if (password.isEmpty || contactNumber.toString().isEmpty) 
-    {
-      // Show error message if any field is empty
-      Get.snackbar(
-        "Error",
-        "Please fill in all the fields!",
-        snackPosition: SnackPosition.BOTTOM,
-      );
-      return;
-    }
-
-    try {
-      final result = await client.userEndpoints.loginUser(
-        contactNumber,
-        password,
-        authenticationLevel,
-        country,
-      );
-
-      if (result == true) {
-        //Login Successful
-        final prefs = await SharedPreferences.getInstance();
-        await prefs.setInt('contacts', contactNumber);
-        await prefs.setString('password', password);
-        await prefs.setString('authLevel', authenticationLevel.name);
-        await prefs.setString('country', country.name);
-
+    } else {
+      if (password.isEmpty || contactNumber.toString().isEmpty) {
+        // Show error message if any field is empty
         Get.snackbar(
-          "Login Successful",
-           "Welcome back!",
+          "Error",
+          "Please fill in all the fields!",
           snackPosition: SnackPosition.BOTTOM,
         );
+        return;
+      }
 
-        //Redirect to the homepage
-        Get.offAllNamed("/homepage");
-      } else {
-        // Login failed
+      try {
+        final result = await client.userEndpoints.loginUser(
+          contactNumber,
+          password,
+          authenticationLevel,
+          country,
+        );
+
+        if (result == true) {
+          //Login Successful
+          final prefs = await SharedPreferences.getInstance();
+          await prefs.setInt('contacts', contactNumber);
+          await prefs.setString('password', password);
+          await prefs.setString('authLevel', authenticationLevel.name);
+          await prefs.setString('country', country.name);
+
+          Get.snackbar(
+            "Login Successful",
+            "Welcome back!",
+            snackPosition: SnackPosition.BOTTOM,
+          );
+
+          //Redirect to the homepage
+          Get.offAllNamed("/homepage");
+        } else {
+          // Login failed
+
+          Get.snackbar(
+            "Error",
+            "Invalid Credentials",
+            snackPosition: SnackPosition.BOTTOM,
+          );
+        }
+      } catch (e) {
+        print('Error during login: $e');
 
         Get.snackbar(
           "Error",
-          "Invalid Credentials",
+          "An error occurred during login",
           snackPosition: SnackPosition.BOTTOM,
         );
       }
-    } catch (e) {
-      print('Error during login: $e');
-
-      Get.snackbar(
-        "Error",
-        "An error occurred during login",
-        snackPosition: SnackPosition.BOTTOM,
-      );
     }
-    }
-
-    
   }
 
   Future<void> logout() async {
@@ -105,14 +103,10 @@ class LoginController extends GetxController {
     final prefs = await SharedPreferences.getInstance();
     await prefs.clear();
 
-    Get.snackbar(
-      "Thank you!",
-      "GoodBye!",
-      snackPosition: SnackPosition.BOTTOM);
+    Get.snackbar("Thank you!", "GoodBye!", snackPosition: SnackPosition.BOTTOM);
 
     Get.offAllNamed("/userlogin");
   }
 
-  
   bool get isLoggedIn => loggedInUser.value != null;
 }
