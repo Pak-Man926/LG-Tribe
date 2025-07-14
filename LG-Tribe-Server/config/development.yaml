@@ -33,7 +33,6 @@ database:
   port: 8090
   name: lg_tribe
   user: postgres
-
   #requireSsl: true # defaults to false
   #isUnixSocket: true # defaults to false
 
