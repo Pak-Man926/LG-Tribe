@@ -33,7 +33,7 @@ database:
   port: 8090
   name: lg_tribe
   user: postgres
-  password: ""rQwVtZc4XySdngIwEdVpapgBFFx6P9CJ""
+  password: "rQwVtZc4XySdngIwEdVpapgBFFx6P9CJ"
   #requireSsl: true # defaults to false
   #isUnixSocket: true # defaults to false
 
