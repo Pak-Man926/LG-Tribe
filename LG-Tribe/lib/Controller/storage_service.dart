@@ -1,4 +1,4 @@
 class StorageService
 {
-    static Future<void> save
+    static Future<void> saveLiginData
 }
