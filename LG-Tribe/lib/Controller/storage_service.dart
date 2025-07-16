@@ -6,6 +6,6 @@ class StorageService
     {
         final prefs = await SharedPreferences.getInstance();
 
-        await prefs.setInt
+        await prefs.setInt()
     }
 }
