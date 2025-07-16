@@ -42,36 +42,37 @@ class UserEndpoints extends Endpoint {
   }
 
   Future<bool> loginUser(
-  Session session,
-  int contacts,
-  String password,
-  AuthenticationLevel authenticationlevel,
-  Country country,
-) async {
-  // Step 1: Find user by contacts only
-  var registeredUser = await User.db.findFirstRow(
-    session,
-    where: (t) => t.contacts.equals(contacts),
-  );
+    Session session,
+    int contacts,
+    String password,
+    AuthenticationLevel authenticationlevel,
+    Country country,
+  ) async {
+    // Step 1: Find user by contacts only
+    var registeredUser = await User.db.findFirstRow(
+      session,
+      where: (t) => t.contacts.equals(contacts),
+    );
 
-  // Step 2: Check if user exists
-  if (registeredUser == null) {
-    return false;
+    // Step 2: Check if user exists
+    if (registeredUser == null) {
+      return false;
+    }
+
+    // Step 3: Validate password with bcrypt
+    final bool checkPassword =
+        BCrypt.checkpw(password, registeredUser.password);
+
+    if (!checkPassword) {
+      return false;
+    }
+
+    // Step 4: Additional checks
+    if (registeredUser.authlevel != authenticationlevel ||
+        registeredUser.country != country) {
+      return false;
+    }
+
+    return true;
   }
-
-  // Step 3: Validate password with bcrypt
-  final bool checkPassword = BCrypt.checkpw(password, registeredUser.password);
-
-  if (!checkPassword) {
-    return false;
-  }
-
-  // Step 4: Additional checks
-  if (registeredUser.authlevel != authenticationlevel || registeredUser.country != country) {
-    return false;
-  }
-
-  return true;
-}
-
 }
