@@ -5,13 +5,8 @@ import "package:lg_tribe/login/registration/user_registration.dart";
 
 late final Client client;
 class RegistrationController extends GetxController {
-  // Define the form fields
-  var firstName = ''.obs;
-  var lastName = ''.obs;
-  var contacts = ''.obs;
-  var email = ''.obs;
-  var password = ''.obs;
-  
+  // Client instance for making API calls
+  // This will be initialized in the onInit method  
   @override
   void onInit()
   {
