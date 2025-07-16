@@ -1,4 +1,4 @@
 class StorageService
 {
-    static Future<
+    static Future<void
 }
