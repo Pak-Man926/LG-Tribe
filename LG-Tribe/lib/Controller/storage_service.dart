@@ -1,4 +1,4 @@
 class StorageService
 {
-    static Future<void> saveLiginData({required int contacts, required String auth})
+    static Future<void> saveLiginData({required int contacts, required String authLevel})
 }
