@@ -32,7 +32,7 @@ class LoginController extends GetxController {
     final storedPrefs = await SharedPreferences.getInstance();
     final storedContactNumber = storedPrefs.getInt('contacts');
     final storedPassword = storedPrefs.getString('password');
-    final storedAuthLevel = storedPrefs.getString('authLevel');
+    final storedAuthLevel = storedPrefs.getString('autheLevel');
     final storedCountry = storedPrefs.getString('country');
 
     //Checks if all fields are filled
