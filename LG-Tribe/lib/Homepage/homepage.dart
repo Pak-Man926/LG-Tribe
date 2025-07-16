@@ -33,7 +33,7 @@ class _HomepageState extends State<Homepage> {
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
-          onPressed: () => Get.toNamed("/startpage"),
+          onPressed: () => Get.offAllNamed("/startpage"),
           icon: Icon(Icons.arrow_back, color: Colors.blueGrey),
         ),
         centerTitle: true,
