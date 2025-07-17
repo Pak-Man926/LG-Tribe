@@ -122,4 +122,6 @@ class _UploadScreenState extends State<UploadScreen>
         cameraController!.setZoomLevel(1.0);
     }
   }
+
+  Future
 }
