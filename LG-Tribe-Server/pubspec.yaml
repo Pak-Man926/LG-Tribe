@@ -12,7 +12,7 @@ dependencies:
   serverpod_flutter: 2.9.1
 
 dev_dependencies:
-  lints: '>=3.0.0 <6.0.0'
+  lints: ^6.0.0
   test: '^1.24.2'
   serverpod_test: 2.9.1
 
