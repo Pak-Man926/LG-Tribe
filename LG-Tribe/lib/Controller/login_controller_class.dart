@@ -28,7 +28,19 @@ class LoginController extends GetxController {
   Future<void> loadStoredLoginData() async 
   {
     final data = await StorageService.getLoginData();
-    
+
+    if(data['contacts'] != null && data['password'] != null) 
+    {
+      phoneNumber.value = data['contacts'].toString();
+      password.value = data['password'] ?? '';
+      // Optionally, you can also set the auth level and country if needed
+      Get.offAllNamed("/homepage");
+    }
+    else
+    {
+      // If no stored data, redirect to login page
+      Get.offAllNamed("/userlogin");
+    }
   }
 
   //Metod to login a user
@@ -39,12 +51,8 @@ class LoginController extends GetxController {
     required Country country,
     //bool autoLogin = false,
   }) async {
-    final storedPrefs = await SharedPreferences.getInstance();
-    final storedContactNumber = storedPrefs.getInt('contacts');
-    final storedPassword = storedPrefs.getString('password');
-    final storedAuthLevel = storedPrefs.getString('autheLevel');
-    final storedCountry = storedPrefs.getString('country');
-
+    // Set loading state to true
+    isLoading.value = true;
     //Checks if all fields are filled
     if (password.isEmpty || contactNumber.toString().isEmpty) 
     {
@@ -71,6 +79,7 @@ class LoginController extends GetxController {
           contacts: contactNumber,
           authLevel: authenticationLevel.toString(),
           country: country.toString(),
+          password: password,
         );
 
         Get.snackbar(
