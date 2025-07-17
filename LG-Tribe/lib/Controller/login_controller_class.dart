@@ -57,11 +57,11 @@ class LoginController extends GetxController {
 
       if (result == true) {
         //Login Successful
-        final prefs = await SharedPreferences.getInstance();
-        await prefs.setInt('contacts', contactNumber);
-        await prefs.setString('password', password);
-        await prefs.setString('authLevel', authenticationLevel.name);
-        await prefs.setString('country', country.name);
+        await StorageService.saveLoginData(
+          contacts: contactNumber,
+          authLevel: authenticationLevel.toString(),
+          country: country.toString(),
+        );
 
         Get.snackbar(
           "Login Successful",
