@@ -20,6 +20,7 @@ class _UploadScreenState extends State<UploadScreen>
   List<CameraDescription> cameras = [];
   CameraController? cameraController;
   int selectedCameraIdx = 0;
+  File? _image;
 
   @override
   void didChangeAppLifecycleState(AppLifecycleState state) {
@@ -153,7 +154,15 @@ class _UploadScreenState extends State<UploadScreen>
     {
       setState((){
         _image = File(pickedFile.path);
-      })
+      });
+    }
+    else
+    {
+      Get.snackbar(
+        "Error",
+        "No image selected.",
+        snackPosition: SnackPosition.BOTTOM,
+      );
     }
   }
 }
