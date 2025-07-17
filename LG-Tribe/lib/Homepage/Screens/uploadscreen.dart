@@ -123,5 +123,8 @@ class _UploadScreenState extends State<UploadScreen>
     }
   }
 
-  Future
+  Future<void> _pickImageFromGallery() async
+  {
+    var status = await Permission.photos.request();
+  }
 }
