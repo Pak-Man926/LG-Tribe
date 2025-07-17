@@ -144,8 +144,8 @@ class _UploadScreenState extends State<UploadScreen>
     final picker = ImagePicker();
     final pickedFile = await picker.pickImage(
       source: ImageSource.gallery,
-      maxWidth: 800,
-      maxHeight: 800,
+      //maxWidth: 800,
+      //maxHeight: 800,
     );
   }
 }
