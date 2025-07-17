@@ -74,7 +74,7 @@ class _UploadScreenState extends State<UploadScreen>
                 IconButton(
                   onPressed:() => _pickImageFromGallery(),
                   icon: Icon(Icons.photo_library_outlined, color: Color(0xFFA50034)),
-                  iconSize: 100,
+                  iconSize: 60,
                 ),
                 SizedBox(width:20),
                 IconButton(
