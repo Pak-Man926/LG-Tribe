@@ -72,6 +72,11 @@ class _UploadScreenState extends State<UploadScreen>
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 IconButton(
+                  onPressed:() => _pickImageFromGallery(),
+                  
+                ),
+                SizedBox(width:20),
+                IconButton(
                   onPressed: () async {
                     XFile picture = await cameraController!.takePicture();
                     Gal.putImage(picture.path);
