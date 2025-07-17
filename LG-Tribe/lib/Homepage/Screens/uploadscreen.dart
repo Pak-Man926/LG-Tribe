@@ -1,4 +1,5 @@
 import 'dart:math';
+import "dart:io";
 
 import 'package:flutter/material.dart';
 import 'package:camera/camera.dart';
@@ -147,5 +148,12 @@ class _UploadScreenState extends State<UploadScreen>
       //maxWidth: 800,
       //maxHeight: 800,
     );
+
+    if(pickedFile != null)
+    {
+      setState((){
+        _image = File(pickedFile.path);
+      })
+    }
   }
 }
