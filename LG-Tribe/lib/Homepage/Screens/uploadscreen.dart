@@ -102,7 +102,7 @@ class _UploadScreenState extends State<UploadScreen>
                   ),
                   iconSize: 30,
                 ),
-                if(_image != null)
+                if(_image != null) Image.file(_image!),
               ],
             ),
           ],
