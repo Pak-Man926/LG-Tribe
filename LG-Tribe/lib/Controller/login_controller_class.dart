@@ -2,6 +2,7 @@ import "package:get/get.dart";
 import "package:lg_tribe_client/lg_tribe_client.dart";
 import "package:serverpod_flutter/serverpod_flutter.dart";
 import 'package:shared_preferences/shared_preferences.dart';
+import "package:lg_tribe/Controller/storage_service.dart";
 
 class LoginController extends GetxController {
   // Form fields for login
@@ -19,6 +20,15 @@ class LoginController extends GetxController {
     super.onInit();
     client = Client('http://localhost:8080/')
       ..connectivityMonitor = FlutterConnectivityMonitor();
+    // Load stored login data if available
+    loadStoredLoginData();
+  }
+
+  // Load stored login data from SharedPreferences
+  Future<void> loadStoredLoginData() async 
+  {
+    final data = await StorageService.getLoginData();
+    
   }
 
   //Metod to login a user
@@ -93,8 +103,7 @@ class LoginController extends GetxController {
 
   Future<void> logout() async {
     loggedInUser.value = null;
-    final prefs = await SharedPreferences.getInstance();
-    await prefs.clear();
+    await StorageService.clearLoginData();
 
     Get.snackbar(
       "Thank you!",
