@@ -1,7 +1,10 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:camera/camera.dart';
 import 'package:gal/gal.dart';
 import "package:permission_handler/permission_handler.dart";
+import "package:get/get.dart";
 
 class UploadScreen extends StatefulWidget {
   const UploadScreen({super.key});
@@ -127,5 +130,21 @@ class _UploadScreenState extends State<UploadScreen>
   Future<void> _pickImageFromGallery() async
   {
     var status = await Permission.photos.request();
+    if (!status.isGranted)
+    {
+      Get.snackbar(
+        "Permission Denied",
+        "Please allow gallery access to upload images.",
+        snackPosition: SnackPosition.BOTTOM,
+      );
+      return;
+    }
+
+    final picker = ImagePicker();
+    final pickedFile = await picker.pickImage(
+      source: ImageSource.gallery,
+      maxWidth: 800,
+      maxHeight: 800,
+    );
   }
 }
