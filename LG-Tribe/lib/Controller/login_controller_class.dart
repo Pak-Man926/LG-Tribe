@@ -18,7 +18,7 @@ class LoginController extends GetxController {
   @override
   void onInit() {
     super.onInit();
-    client = Client('http://localhost:8080/')
+    client = Client('http://165.22.67.240:8080/')
       ..connectivityMonitor = FlutterConnectivityMonitor();
     // Load stored login data if available
     loadStoredLoginData();
