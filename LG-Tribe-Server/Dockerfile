@@ -4,7 +4,7 @@ WORKDIR /app
 COPY . .
 
 # Install dependencies and compile the server executable
-RUN flutter pub get
+RUN dart pub get
 RUN dart compile exe bin/main.dart -o bin/server
 
 # Final stage
