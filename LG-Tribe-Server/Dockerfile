@@ -24,7 +24,7 @@ COPY --from=build /runtime/lib64 /lib64
 
 # Copy compiled server executable
 COPY --from=build /app/bin/server server
-COPY --from=build /app/bin/main main
+COPY --from=build /app/lib /app/lib
 
 # Copy configuration files and resources
 COPY --from=build /app/config/ config/
