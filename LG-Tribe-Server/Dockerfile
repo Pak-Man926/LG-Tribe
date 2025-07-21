@@ -11,7 +11,7 @@ RUN dart compile exe bin/main.dart -o bin/server
 FROM alpine:latest
 
 # Environment variables
-ENV runmode=production
+ENV runmode=development
 ENV serverid=default
 ENV logging=normal
 ENV role=monolith
@@ -36,4 +36,4 @@ EXPOSE 8081
 EXPOSE 8082
 
 # Define the entrypoint command
-ENTRYPOINT ./server --mode=$production --server-id=$serverid --logging=$logging --role=$role
+ENTRYPOINT ./server --mode=$runmode --server-id=$serverid --logging=$logging --role=$role
