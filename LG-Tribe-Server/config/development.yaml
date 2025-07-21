@@ -29,7 +29,7 @@ webServer:
 
 # This is the database setup for your server.
 database:
-  host: localhost
+  host: postgres
   port: 5432
   name: lg_tribe
   user: postgres
