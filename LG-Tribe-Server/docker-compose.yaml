@@ -39,6 +39,15 @@ services:
     environment:
       - REDIS_REPLICATION_MODE=master
 
+  lg_tribe_server:
+    image: lg_tribe_server
+    ports:
+      - "8080:8080"
+      - "8081:8081"
+      - "8082:8082"
+    depends_on:
+      - postgres
+      
 volumes:
   lg_tribe_data:
   lg_tribe_test_data:
