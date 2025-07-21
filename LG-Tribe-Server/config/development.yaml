@@ -30,7 +30,7 @@ webServer:
 # This is the database setup for your server.
 database:
   host: localhost
-  port: 8090
+  port: 5432
   name: lg_tribe
   user: postgres
   #requireSsl: true # defaults to false
