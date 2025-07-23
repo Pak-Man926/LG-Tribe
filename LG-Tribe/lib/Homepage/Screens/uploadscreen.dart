@@ -162,6 +162,8 @@ class _UploadScreenState extends State<UploadScreen>
       setState((){
         _image = File(pickedFile.path);
       });
+
+      Get.toNamed("/uploadimage",);
     }
     else
     {
