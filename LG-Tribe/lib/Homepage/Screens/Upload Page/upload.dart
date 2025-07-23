@@ -12,10 +12,7 @@ class UploadImageScreen extends StatelessWidget
         title: Text("Uploaded Image"),
         backgroundColor: Color(0xFFA50034),
       ),
-      body: Center(
-        child: Text(
-          "This is the screen for the uploaded image.",
-          style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+      body: 
         ),
       ),
     );
