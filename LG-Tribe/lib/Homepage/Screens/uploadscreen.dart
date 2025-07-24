@@ -4,6 +4,7 @@ import "dart:io";
 import 'package:flutter/material.dart';
 import 'package:camera/camera.dart';
 import 'package:gal/gal.dart';
+import 'package:lg_tribe/Homepage/Screens/Upload%20Page/upload.dart';
 import "package:permission_handler/permission_handler.dart";
 import "package:get/get.dart";
 import "package:image_picker/image_picker.dart";
@@ -166,7 +167,7 @@ class _UploadScreenState extends State<UploadScreen>
         _image = File(pickedFile.path);
       });
 
-      Get.to(() => );
+      Get.to(() => UploadImageScreen());
     }
     else
     {
