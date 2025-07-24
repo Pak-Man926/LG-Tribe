@@ -72,7 +72,10 @@ class _UploadScreenState extends State<UploadScreen>
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 IconButton(
-                  onPressed:() => _pickImageFromGallery(),
+                  onPressed:() async
+                  {
+                    _pickImageFromGallery();
+                  } ,
                   icon: Icon(Icons.photo_library_outlined, color: Color(0xFFA50034)),
                   iconSize: 60,
                 ),
