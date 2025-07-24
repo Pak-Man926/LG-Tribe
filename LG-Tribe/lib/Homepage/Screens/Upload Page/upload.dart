@@ -12,9 +12,7 @@ class UploadImageScreen extends StatelessWidget
         title: Text("Uploaded Image"),
         backgroundColor: Color(0xFFA50034),
       ),
-      body: 
-        ),
-      ),
+      
     );
   }
 }
