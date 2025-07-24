@@ -11,8 +11,9 @@ class UploadImageScreen extends StatelessWidget
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Uploaded Image"),
-        backgroundColor: Color(0xFFA50034),
+        leading: IconButton(
+          icon: const Icon(Icons.can)
+        )
       ),
       
     );
