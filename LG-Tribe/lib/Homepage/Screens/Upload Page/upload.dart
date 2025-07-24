@@ -1,9 +1,11 @@
+import "dart:io";
+
 import "package:flutter/material.dart";
 import "package:get/get.dart";
 
 class UploadImageScreen extends StatelessWidget
 {
-  const UploadImageScreen({super.key});
+  const UploadImageScreen(File file, {super.key});
 
   @override
   Widget build(BuildContext context) {

@@ -85,6 +85,8 @@ class _UploadScreenState extends State<UploadScreen>
                   onPressed: () async {
                     XFile picture = await cameraController!.takePicture();
                     Gal.putImage(picture.path);
+
+                    
                   },
                   icon: Icon(Icons.camera_outlined, color: Color(0xFFA50034)),
                   iconSize: 100,
@@ -167,7 +169,7 @@ class _UploadScreenState extends State<UploadScreen>
         _image = File(pickedFile.path);
       });
 
-      Get.to(() => UploadImageScreen(image: File(pickedFile.path)));
+      Get.to(() => UploadImageScreen(_image = File(pickedFile.path)));
     }
     else
     {
