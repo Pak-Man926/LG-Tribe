@@ -15,7 +15,7 @@ class UploadImageScreen extends StatelessWidget
           icon: const Icon(Icons.cancel_outlined),
           onPressed: () => Get.back(),
         )
-        title
+        centerTitle: true,,
       ),
       
     );
