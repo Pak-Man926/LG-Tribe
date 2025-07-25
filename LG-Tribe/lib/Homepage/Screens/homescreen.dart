@@ -28,19 +28,22 @@ class _HomescreenState extends State<Homescreen> {
       "username": "Esther Wanjiru",
       "timestamp": "1h ago",
       "imageUrl": "assets/user1.jpg",
-      "caption": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      "caption":
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
     },
     {
       "username": "John Doe",
       "timestamp": "2h ago",
       "imageUrl": "assets/user2.jpg",
-      "caption": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      "caption":
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
     },
     {
       "username": "Jane Smith",
       "timestamp": "3h ago",
       "imageUrl": "assets/user3.jpg",
-      "caption": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      "caption":
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
     },
   ];
 
@@ -95,14 +98,15 @@ class _HomescreenState extends State<Homescreen> {
                 SizedBox(height: screenHeight * 0.015),
                 // Post Image
                 ClipRRect(
-  borderRadius: BorderRadius.circular(10),
-  child: Image.asset(
-    post['imageUrl']!,
-    width: double.infinity,
-    height: screenHeight * 0.5, // Fill 50% of screen height (Instagram-like)
-    fit: BoxFit.cover, // ✅ This makes it fill the container
-  ),
-),
+                  borderRadius: BorderRadius.circular(10),
+                  child: Image.asset(
+                    post['imageUrl']!,
+                    width: double.infinity,
+                    height: screenHeight *
+                        0.5, // Fill 50% of screen height (Instagram-like)
+                    fit: BoxFit.cover, // ✅ This makes it fill the container
+                  ),
+                ),
 
                 SizedBox(height: screenHeight * 0.015),
                 // Post Caption + Read More Toggle
