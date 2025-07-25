@@ -97,16 +97,22 @@ class _HomescreenState extends State<Homescreen> {
                 ),
                 SizedBox(height: screenHeight * 0.015),
                 // Post Image
-                ClipRRect(
-                  borderRadius: BorderRadius.circular(10),
-                  child: Image.asset(
-                    post['imageUrl']!,
-                    width: double.infinity,
-                    height: screenHeight *
-                        0.5, // Fill 50% of screen height (Instagram-like)
-                    fit: BoxFit.cover, // ✅ This makes it fill the container
-                  ),
-                ),
+                Container(
+  width: double.infinity,
+  height: screenHeight * 0.5,
+  decoration: BoxDecoration(
+    color: Colors.black12,
+    borderRadius: BorderRadius.circular(10),
+  ),
+  child: ClipRRect(
+    borderRadius: BorderRadius.circular(10),
+    child: Image.asset(
+      post['imageUrl']!,
+      fit: BoxFit.cover,
+    ),
+  ),
+),
+
 
                 SizedBox(height: screenHeight * 0.015),
                 // Post Caption + Read More Toggle
