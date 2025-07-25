@@ -94,17 +94,16 @@ class _HomescreenState extends State<Homescreen> {
                 ),
                 SizedBox(height: screenHeight * 0.015),
                 // Post Image
-                Container(
-                  height: screenHeight * 0.3,
-                  width: screenWidth * double.infinity,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10),
-                    image: DecorationImage(
-                      image: AssetImage(post['imageUrl']!),
-                      fit: BoxFit.scaleDown,
-                    ),
-                  ),
-                ),
+                ClipRRect(
+  borderRadius: BorderRadius.circular(10),
+  child: Image.asset(
+    post['imageUrl']!,
+    width: double.infinity,
+    height: screenHeight * 0.5, // Fill 50% of screen height (Instagram-like)
+    fit: BoxFit.cover, // ✅ This makes it fill the container
+  ),
+),
+
                 SizedBox(height: screenHeight * 0.015),
                 // Post Caption + Read More Toggle
                 Text(
