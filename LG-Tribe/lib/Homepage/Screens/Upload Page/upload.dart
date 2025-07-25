@@ -12,9 +12,10 @@ class UploadImageScreen extends StatelessWidget
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
-          icon: const Icon(Icons.cancel),
-
+          icon: const Icon(Icons.cancel_outlined),
+          onPressed: () => Get.back(),
         )
+        title
       ),
       
     );
