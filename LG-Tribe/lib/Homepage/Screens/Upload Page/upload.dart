@@ -14,8 +14,10 @@ class UploadImageScreen extends StatelessWidget
         leading: IconButton(
           icon: const Icon(Icons.cancel_outlined),
           onPressed: () => Get.back(),
-        )
-        centerTitle: true,,
+        ),
+        centerTitle: true,
+        title: Text("Select Media Item", 
+        style:TextStyle(fontWeight: FontWeight.w600, fontSize: 12)),
       ),
       
     );
