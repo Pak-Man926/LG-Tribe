@@ -19,7 +19,10 @@ class UploadImageScreen extends StatelessWidget
         title: Text("Select Media Item", 
         style:TextStyle(fontWeight: FontWeight.w600, fontSize: 12)),
       ),
-      body: 
+      body: Container(
+        padding: EdgeInsets.all(0),
+        
+      ),
     );
   }
 }
