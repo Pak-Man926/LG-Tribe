@@ -48,7 +48,7 @@ class UploadImageScreen extends StatelessWidget {
               decoration: InputDecoration(
                 labelText: "Write a caption...",
                 hintText: "Type your caption here 😊",
-                border: OutlineInputBorder(),
+                //border: OutlineInputBorder(),
               ),
             ),
           ),
@@ -56,7 +56,7 @@ class UploadImageScreen extends StatelessWidget {
           Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            
+
           ]  
           ),
 
