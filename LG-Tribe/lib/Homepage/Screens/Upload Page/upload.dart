@@ -38,7 +38,7 @@ class UploadImageScreen extends StatelessWidget {
             height: screenHeight * 0.2,
             decoration: BoxDecoration(
               color: Colors.white,
-              borderRadius: BorderRadius.horizontal(),
+              //borderRadius: BorderRadius.horizontal(),
             ),
             child: TextField(
               //controller: ,
@@ -48,7 +48,7 @@ class UploadImageScreen extends StatelessWidget {
               decoration: InputDecoration(
                 labelText: "Write a caption...",
                 hintText: "Type your caption here 😊",
-                //border: OutlineInputBorder(),
+                border: OutlineInputBorder(),
               ),
             ),
           ),
