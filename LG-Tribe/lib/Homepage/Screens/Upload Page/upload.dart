@@ -57,7 +57,7 @@ class UploadImageScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             MaterialButton(
-              onPressed: () => Get.toNamed("/"),
+              onPressed: () => Get.toNamed("/up"),
             )
           ]  
           ),
