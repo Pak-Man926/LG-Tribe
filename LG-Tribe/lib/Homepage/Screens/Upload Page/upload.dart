@@ -52,6 +52,13 @@ class UploadImageScreen extends StatelessWidget {
               ),
             ),
           ),
+          SizedBox(height:15),
+          Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            
+          ]  
+          ),
 
         ],
       ),
