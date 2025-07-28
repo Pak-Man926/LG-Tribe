@@ -4,8 +4,8 @@ import "package:flutter/material.dart";
 import "package:get/get.dart";
 
 class UploadImageScreen extends StatelessWidget {
-  late final File file;
-  //const UploadImageScreen(this.file, {super.key});
+  final File file;
+   UploadImageScreen(this.file, {super.key});
 
   TextEditingController captionController = TextEditingController();
 
