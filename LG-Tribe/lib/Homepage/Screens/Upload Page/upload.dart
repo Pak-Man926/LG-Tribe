@@ -5,8 +5,9 @@ import "package:get/get.dart";
 
 class UploadImageScreen extends StatelessWidget
 {
-  const UploadImageScreen(File file, {super.key});
-  
+  final File file;
+  const UploadImageScreen(this.file, {super.key});
+
 
   @override
   Widget build(BuildContext context) {
@@ -22,6 +23,8 @@ class UploadImageScreen extends StatelessWidget
       ),
       body: Container(
         padding: EdgeInsets.all(0),
+        alignment: Alignment.center,
+        child: Image.file(file),
         
       ),
     );
