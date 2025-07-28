@@ -22,7 +22,7 @@ class UploadImageScreen extends StatelessWidget {
       ),
       body: Container(
         width: double.infinity,
-        height: screenHeight * 1,
+        height: screenHeight * 0.5,
         decoration: BoxDecoration(
           color: Colors.black12,
           borderRadius: BorderRadius.circular(10),
