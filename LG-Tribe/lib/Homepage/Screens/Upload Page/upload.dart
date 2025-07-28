@@ -58,7 +58,7 @@ class UploadImageScreen extends StatelessWidget {
           children: [
             MaterialButton(
               onPressed: () => Get.toNamed("/uploadscreen"),
-              elevation: BoxDecoration(
+              decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(10),
                 border: Border.all(color: Colors.black12, width: 1),
