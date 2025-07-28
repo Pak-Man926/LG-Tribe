@@ -70,7 +70,23 @@ class UploadImageScreen extends StatelessWidget {
                 style: TextStyle(fontWeight: FontWeight.w300, fontSize: 12)
                 ),
               ),
-            )
+            ),
+            Spacer(),
+            Container(
+              height: 40,
+              decoration: BoxDecoration(
+                  color: ,
+                  borderRadius: BorderRadius.circular(10),
+                  border: Border.all(color: Colors.black12, width: 1),
+                ),
+              child: MaterialButton(
+                onPressed: () => Get.toNamed("/uploadscreen"),
+                child: Text(
+                  "Share", 
+                style: TextStyle(fontWeight: FontWeight.w300, fontSize: 12)
+                ),
+              ),
+            ),
           ]  
           ),
 
