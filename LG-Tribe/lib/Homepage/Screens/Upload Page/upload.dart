@@ -39,7 +39,15 @@ class UploadImageScreen extends StatelessWidget {
               color: Colors.white,
               borderRadius: BorderRadius.horizontal(),
             ),
-            child: 
+            child: TextField(
+              controller: Textarea,
+              keyboardType: TextInputType.multiline,
+              maxLines: null,
+              minLines: 5,
+              decoration: InputDecoration(
+                labelText: "Write a caption...",
+                hintText: "Type"
+            ),
           ),
 
         ],
