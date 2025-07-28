@@ -86,7 +86,7 @@ class _UploadScreenState extends State<UploadScreen>
                     XFile picture = await cameraController!.takePicture();
                     Gal.putImage(picture.path);
 
-                    Get.to(() => UploadImageScreen());
+                    Get.to(() => UploadImageScreen(_image = File(picture.path)));
                     
                     setState(()
                     {
@@ -171,8 +171,7 @@ class _UploadScreenState extends State<UploadScreen>
     if(pickedFile != null)
     {
       
-      _image = File(pickedFile.path);
-      await Get.to(() => UploadImageScreen());
+      await Get.to(() => UploadImageScreen(_image = File(pickedFile.path)));
 
       setState(()
       {
