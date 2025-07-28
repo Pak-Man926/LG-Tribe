@@ -150,43 +150,37 @@ class _UploadScreenState extends State<UploadScreen>
     }
   }
 
-  Future<void> _pickImageFromGallery() async
-  {
-    var status = await Permission.photos.request();
-    if (!status.isGranted)
-    {
-      Get.snackbar(
-        "Permission Denied",
-        "Please allow gallery access to upload images.",
-        snackPosition: SnackPosition.BOTTOM,
-      );
-      return;
-    }
-
-    final picker = ImagePicker();
-    final pickedFile = await picker.pickImage(
-      source: ImageSource.gallery,
-      //maxWidth: 800,
-      //maxHeight: 800,
+  Future<void> _pickImageFromGallery() async {
+  var status = await Permission.photos.request();
+  if (!status.isGranted) {
+    Get.snackbar(
+      "Permission Denied",
+      "Please allow gallery access to upload images.",
+      snackPosition: SnackPosition.BOTTOM,
     );
-
-    if(pickedFile != null)
-    {
-      
-      await Get.to(() => UploadImageScreen(_image = File(pickedFile.path)));
-
-      setState(()
-      {
-        _image = null;
-      });
-    }
-    else
-    {
-      Get.snackbar(
-        "Error",
-        "No image selected.",
-        snackPosition: SnackPosition.BOTTOM,
-      );
-    }
+    return;
   }
+
+  final picker = ImagePicker();
+  final pickedFile = await picker.pickImage(
+    source: ImageSource.gallery,
+  );
+
+  if (pickedFile != null) {
+    await cameraController?.dispose(); // Dispose before navigating
+    cameraController = null;
+
+    await Get.to(() => UploadImageScreen(File(pickedFile.path)));
+
+    // Re-initialize camera when coming back
+    await _setupCameraController();
+    setState(() {});
+  } else {
+    Get.snackbar(
+      "Error",
+      "No image selected.",
+      snackPosition: SnackPosition.BOTTOM,
+    );
+  }
+}
 }
