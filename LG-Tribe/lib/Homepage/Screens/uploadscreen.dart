@@ -173,6 +173,8 @@ class _UploadScreenState extends State<UploadScreen>
     }
     else
     {
+      image.close();
+      
       Get.snackbar(
         "Error",
         "No image selected.",
