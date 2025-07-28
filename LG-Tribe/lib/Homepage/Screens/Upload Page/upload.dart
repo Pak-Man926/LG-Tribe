@@ -32,7 +32,7 @@ class UploadImageScreen extends StatelessWidget {
             ),
             child: Image.file(file, fit: BoxFit.cover),
           ),
-          SizedBox(height: 10),
+          SizedBox(height: 15),
           Container(
             width: double.infinity,
             height: screenHeight * 0.2,
