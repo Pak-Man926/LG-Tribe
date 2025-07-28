@@ -4,8 +4,10 @@ import "package:flutter/material.dart";
 import "package:get/get.dart";
 
 class UploadImageScreen extends StatelessWidget {
-  final File file;
-  const UploadImageScreen(this.file, {super.key});
+  late final File file;
+  //const UploadImageScreen(this.file, {super.key});
+
+  TextEditingController captionController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -40,7 +42,7 @@ class UploadImageScreen extends StatelessWidget {
               borderRadius: BorderRadius.horizontal(),
             ),
             child: TextField(
-              controller: Textarea,
+              controller: captionController,
               keyboardType: TextInputType.multiline,
               maxLines: null,
               minLines: 5,
@@ -48,6 +50,7 @@ class UploadImageScreen extends StatelessWidget {
                 labelText: "Write a caption...",
                 hintText: "Type your caption here 😊",
                 border: OutlineInputBorder(),
+              ),
             ),
           ),
 
