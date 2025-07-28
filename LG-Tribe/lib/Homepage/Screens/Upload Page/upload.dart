@@ -47,6 +47,7 @@ class UploadImageScreen extends StatelessWidget {
               decoration: InputDecoration(
                 labelText: "Write a caption...",
                 hintText: "Type your caption here 😊",
+                border: OutlineInputBorder(),
             ),
           ),
 
