@@ -27,8 +27,7 @@ class UploadImageScreen extends StatelessWidget {
           color: Colors.black12,
           borderRadius: BorderRadius.circular(10),
         ),
-        child: ClipRRect(
-            borderRadius: BorderRadius.circular(10), child: Image.file(file)),
+        child: Image.file(file, fit: BoxFit.cover),
       ),
     );
   }
