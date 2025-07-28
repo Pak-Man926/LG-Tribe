@@ -166,11 +166,10 @@ class _UploadScreenState extends State<UploadScreen>
 
     if(pickedFile != null)
     {
-      setState((){
-        _image = File(pickedFile.path);
-      });
-
+      
       Get.to(() => UploadImageScreen(_image = File(pickedFile.path)));
+
+      image.close();
     }
     else
     {
