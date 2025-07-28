@@ -74,7 +74,7 @@ class UploadImageScreen extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(height: 10),
+            SizedBox(height: 20),
             Expanded(
               child: Container(
                 height: 40,
