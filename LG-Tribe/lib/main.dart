@@ -42,6 +42,7 @@ void main() async
         GetPage(name: "/forgotpassword", page: () => Password()), // Sixth route
         GetPage(name: "/homepage", page: () => Homepage()), // Seventh route
         GetPage(name: "/profilescreen", page: () => ProfileScreen()), // Eighth route
+        GetPage(name: "/uploadscreen", page: () => )
         GetPage(name: "/profilepage", page: () => Profile()), // Ninth route
         GetPage(name: "/aboutapp", page: () => About()), // Tenth route
         GetPage(name: "/logout", page: () => Logout()), // Eleventh route
