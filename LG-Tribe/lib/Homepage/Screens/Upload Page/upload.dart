@@ -20,10 +20,17 @@ class UploadImageScreen extends StatelessWidget {
             style: TextStyle(fontWeight: FontWeight.w600, fontSize: 12)),
       ),
       body: Container(
-        padding: EdgeInsets.all(0),
-        alignment: Alignment.center,
-        child: Image.file(file),
-      ),
+                  width: double.infinity,
+                  height: screenHeight * 0.5,
+                  decoration: BoxDecoration(
+                    color: Colors.black12,
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(10),
+                    child: Image.file(file)
+                  ),
+                ),
     );
   }
 }
