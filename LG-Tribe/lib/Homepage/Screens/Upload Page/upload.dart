@@ -56,19 +56,21 @@ class UploadImageScreen extends StatelessWidget {
           Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            Container(
-              height: 40,
-              //width: 20,
-              decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(10),
-                  border: Border.all(color: Colors.black12, width: 1),
-                ),
-              child: MaterialButton(
-                onPressed: () => Get.toNamed("/uploadscreen"),
-                child: Text(
-                  "Back", 
-                style: TextStyle(fontWeight: FontWeight.w300, fontSize: 12)
+            Expanded(
+              child: Container(
+                height: 40,
+                //width: 20,
+                decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(10),
+                    border: Border.all(color: Colors.black12, width: 1),
+                  ),
+                child: MaterialButton(
+                  onPressed: () => Get.toNamed("/uploadscreen"),
+                  child: Text(
+                    "Back", 
+                  style: TextStyle(fontWeight: FontWeight.w300, fontSize: 12)
+                  ),
                 ),
               ),
             ),
