@@ -3,11 +3,9 @@ import "dart:io";
 import "package:flutter/material.dart";
 import "package:get/get.dart";
 
-class UploadImageScreen extends StatelessWidget
-{
+class UploadImageScreen extends StatelessWidget {
   final File file;
   const UploadImageScreen(this.file, {super.key});
-
 
   @override
   Widget build(BuildContext context) {
@@ -18,14 +16,13 @@ class UploadImageScreen extends StatelessWidget
           onPressed: () => Get.back(),
         ),
         centerTitle: true,
-        title: Text("Select Media Item", 
-        style:TextStyle(fontWeight: FontWeight.w600, fontSize: 12)),
+        title: Text("Select Media Item",
+            style: TextStyle(fontWeight: FontWeight.w600, fontSize: 12)),
       ),
       body: Container(
         padding: EdgeInsets.all(0),
         alignment: Alignment.center,
         child: Image.file(file),
-        
       ),
     );
   }
