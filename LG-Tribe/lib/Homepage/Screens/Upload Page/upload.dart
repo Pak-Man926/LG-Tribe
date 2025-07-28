@@ -6,6 +6,7 @@ import "package:get/get.dart";
 class UploadImageScreen extends StatelessWidget
 {
   const UploadImageScreen(File file, {super.key});
+  
 
   @override
   Widget build(BuildContext context) {
