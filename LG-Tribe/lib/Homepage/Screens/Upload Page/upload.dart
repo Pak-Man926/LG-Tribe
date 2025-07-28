@@ -57,7 +57,7 @@ class UploadImageScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             Container(
-              height: double.infinity,
+              height: 40,
               //width: 20,
               decoration: BoxDecoration(
                   color: Colors.white,
