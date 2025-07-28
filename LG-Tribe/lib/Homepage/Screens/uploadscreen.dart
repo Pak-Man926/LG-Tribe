@@ -144,11 +144,9 @@ class _UploadScreenState extends State<UploadScreen>
     }
   }
 
-  Future<void> _pickImageFromGallery() async
-  {
+  Future<void> _pickImageFromGallery() async {
     var status = await Permission.photos.request();
-    if (!status.isGranted)
-    {
+    if (!status.isGranted) {
       Get.snackbar(
         "Permission Denied",
         "Please allow gallery access to upload images.",
@@ -164,13 +162,14 @@ class _UploadScreenState extends State<UploadScreen>
       //maxHeight: 800,
     );
 
-    if(pickedFile != null)
-    {
-      
-      Get.to(() => UploadImageScreen(_image = File(pickedFile.path)));
-    }
-    else
-    {
+    if (pickedFile != null) {
+      // Do NOT set _image here
+      await Get.to(() => UploadImageScreen(File(pickedFile.path)));
+      // Optionally clear _image when returning
+      setState(() {
+        _image = null;
+      });
+    } else {
       Get.snackbar(
         "Error",
         "No image selected.",
