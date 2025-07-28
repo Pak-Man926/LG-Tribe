@@ -4,6 +4,7 @@ import "package:lg_tribe/Controller/registration_controller_class.dart";
 import "package:lg_tribe/Homepage/Screens/Profile%20Page/Screens/about.dart";
 import "package:lg_tribe/Homepage/Screens/Profile%20Page/profile.dart";
 import "package:lg_tribe/Homepage/Screens/profilescreen.dart";
+import "package:lg_tribe/Homepage/Screens/uploadscreen.dart";
 import 'package:lg_tribe/Splash_Screen/splash_screen.dart';
 import "package:get/get.dart";
 import "package:lg_tribe/Start_Page/startpage.dart";
@@ -42,7 +43,7 @@ void main() async
         GetPage(name: "/forgotpassword", page: () => Password()), // Sixth route
         GetPage(name: "/homepage", page: () => Homepage()), // Seventh route
         GetPage(name: "/profilescreen", page: () => ProfileScreen()), // Eighth route
-        GetPage(name: "/uploadscreen", page: () => )
+        GetPage(name: "/uploadscreen", page: () => UploadScreen())
         GetPage(name: "/profilepage", page: () => Profile()), // Ninth route
         GetPage(name: "/aboutapp", page: () => About()), // Tenth route
         GetPage(name: "/logout", page: () => Logout()), // Eleventh route
