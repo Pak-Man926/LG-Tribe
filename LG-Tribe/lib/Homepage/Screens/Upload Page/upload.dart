@@ -5,9 +5,8 @@ import "package:get/get.dart";
 
 class UploadImageScreen extends StatelessWidget {
   final File file;
-   UploadImageScreen(this.file, {super.key});
-
-  TextEditingController captionController = TextEditingController();
+  const UploadImageScreen(this.file, {super.key});
+  
 
   @override
   Widget build(BuildContext context) {
@@ -42,7 +41,7 @@ class UploadImageScreen extends StatelessWidget {
               borderRadius: BorderRadius.horizontal(),
             ),
             child: TextField(
-              controller: captionController,
+              controller: ,
               keyboardType: TextInputType.multiline,
               maxLines: null,
               minLines: 5,
