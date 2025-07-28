@@ -17,17 +17,21 @@ class UploadImageScreen extends StatelessWidget {
           onPressed: () => Get.back(),
         ),
         centerTitle: true,
-        title: Text("Select Media Item",
+        title: Text("New Post",
             style: TextStyle(fontWeight: FontWeight.w600, fontSize: 12)),
       ),
-      body: Container(
-        width: double.infinity,
-        height: screenHeight * 0.5,
-        decoration: BoxDecoration(
-          color: Colors.black12,
-          borderRadius: BorderRadius.circular(10),
-        ),
-        child: Image.file(file, fit: BoxFit.cover),
+      body: Column(
+        children: [
+          Container(
+            width: double.infinity,
+            height: screenHeight * 0.5,
+            decoration: BoxDecoration(
+              color: Colors.black12,
+              borderRadius: BorderRadius.circular(10),
+            ),
+            child: Image.file(file, fit: BoxFit.cover),
+          ),
+        ],
       ),
     );
   }
