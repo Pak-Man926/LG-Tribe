@@ -2,6 +2,7 @@ import "dart:io";
 
 import "package:flutter/material.dart";
 import "package:get/get.dart";
+import "package:lg_tribe/Homepage/Screens/uploadscreen.dart";
 
 class UploadImageScreen extends StatelessWidget {
   final File file;
@@ -66,7 +67,7 @@ class UploadImageScreen extends StatelessWidget {
                     border: Border.all(color: Colors.black12, width: 1),
                   ),
                 child: MaterialButton(
-                  onPressed: () => Get.to(),
+                  onPressed: () => Get.to(() => UploadScreen),
                   child: Text(
                     "Back", 
                   style: TextStyle(fontWeight: FontWeight.w300, fontSize: 12)
