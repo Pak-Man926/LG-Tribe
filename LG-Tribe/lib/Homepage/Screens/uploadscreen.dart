@@ -168,13 +168,9 @@ class _UploadScreenState extends State<UploadScreen>
     {
       
       Get.to(() => UploadImageScreen(_image = File(pickedFile.path)));
-
-      image.close();
     }
     else
     {
-      image.close();
-      
       Get.snackbar(
         "Error",
         "No image selected.",
