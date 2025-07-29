@@ -1,6 +1,6 @@
 
 
-class PostsEndpoints extends Endpoints
+class PostsEndpoints extends Endpoint
 {
-  
+
 }
