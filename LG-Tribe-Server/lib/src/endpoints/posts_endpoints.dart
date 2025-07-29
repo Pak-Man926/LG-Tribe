@@ -4,7 +4,7 @@ import "package:serverpod/serverpod.dart";
 class PostsEndpoints extends Endpoint
 {
   Future<bool> createPost(
-      Session session, String caption, String imageUrl) async {
+      Session session, String caption, String imageUrl, String username,) async {
     // Validate input
     if (caption.isEmpty || imageUrl.isEmpty) {
       return false; // Invalid input
