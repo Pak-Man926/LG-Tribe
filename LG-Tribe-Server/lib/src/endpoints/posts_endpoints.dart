@@ -1,0 +1,6 @@
+
+
+class PostsEndpoints extends Endpoints
+{
+  
+}
