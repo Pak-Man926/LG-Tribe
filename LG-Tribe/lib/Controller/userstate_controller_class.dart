@@ -9,6 +9,7 @@ class UserStateController extends GetxController {
   var lastName = ''.obs;
   var contacts = ''.obs;
   var email = ''.obs;
+  var loggedInUser = Rxn<User>();
   
   //var isLoggedIn = false.obs;
   loggedInUser.value = User(
