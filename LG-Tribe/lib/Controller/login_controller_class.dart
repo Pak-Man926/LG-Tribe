@@ -3,6 +3,7 @@ import "package:lg_tribe_client/lg_tribe_client.dart";
 import "package:serverpod_flutter/serverpod_flutter.dart";
 import 'package:shared_preferences/shared_preferences.dart';
 import "package:lg_tribe/Controller/storage_service.dart";
+import "package:lg_tribe/Controller/registration_controller_class.dart";
 
 class LoginController extends GetxController {
   // Form fields for login
@@ -81,7 +82,7 @@ class LoginController extends GetxController {
           contacts: contactNumber,
           email: email,
           password: password,
-          authLevel: authenticationLevel,
+          authlevel: authenticationLevel,
           country: country,
         );
         //Login Successful
