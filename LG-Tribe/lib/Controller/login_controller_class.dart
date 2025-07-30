@@ -74,6 +74,12 @@ class LoginController extends GetxController {
       );
 
       if (result == true) {
+
+        loggedInUser.value = User(
+          contactNumber: contactNumber,
+          authenticationLevel: authenticationLevel,
+          country: country,
+        );
         //Login Successful
         await StorageService.saveLoginData(
           contacts: contactNumber,
