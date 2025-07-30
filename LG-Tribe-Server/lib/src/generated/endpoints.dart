@@ -10,21 +10,44 @@
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:serverpod/serverpod.dart' as _i1;
-import '../endpoints/user_endpoints.dart' as _i2;
-import 'package:lg_tribe_server/src/generated/auth_level.dart' as _i3;
-import 'package:lg_tribe_server/src/generated/country.dart' as _i4;
+import '../endpoints/profileInfo_endpoints.dart' as _i2;
+import '../endpoints/user_endpoints.dart' as _i3;
+import 'package:lg_tribe_server/src/generated/auth_level.dart' as _i4;
+import 'package:lg_tribe_server/src/generated/country.dart' as _i5;
 
 class Endpoints extends _i1.EndpointDispatch {
   @override
   void initializeEndpoints(_i1.Server server) {
     var endpoints = <String, _i1.Endpoint>{
-      'userEndpoints': _i2.UserEndpoints()
+      'profileInfoEndpoints': _i2.ProfileInfoEndpoints()
+        ..initialize(
+          server,
+          'profileInfoEndpoints',
+          null,
+        ),
+      'userEndpoints': _i3.UserEndpoints()
         ..initialize(
           server,
           'userEndpoints',
           null,
-        )
+        ),
     };
+    connectors['profileInfoEndpoints'] = _i1.EndpointConnector(
+      name: 'profileInfoEndpoints',
+      endpoint: endpoints['profileInfoEndpoints']!,
+      methodConnectors: {
+        'getProfileInfo': _i1.MethodConnector(
+          name: 'getProfileInfo',
+          params: {},
+          call: (
+            _i1.Session session,
+            Map<String, dynamic> params,
+          ) async =>
+              (endpoints['profileInfoEndpoints'] as _i2.ProfileInfoEndpoints)
+                  .getProfileInfo(session),
+        )
+      },
+    );
     connectors['userEndpoints'] = _i1.EndpointConnector(
       name: 'userEndpoints',
       endpoint: endpoints['userEndpoints']!,
@@ -59,12 +82,12 @@ class Endpoints extends _i1.EndpointDispatch {
             ),
             'authenticationlevel': _i1.ParameterDescription(
               name: 'authenticationlevel',
-              type: _i1.getType<_i3.AuthenticationLevel>(),
+              type: _i1.getType<_i4.AuthenticationLevel>(),
               nullable: false,
             ),
             'country': _i1.ParameterDescription(
               name: 'country',
-              type: _i1.getType<_i4.Country>(),
+              type: _i1.getType<_i5.Country>(),
               nullable: false,
             ),
           },
@@ -72,7 +95,7 @@ class Endpoints extends _i1.EndpointDispatch {
             _i1.Session session,
             Map<String, dynamic> params,
           ) async =>
-              (endpoints['userEndpoints'] as _i2.UserEndpoints).registerUser(
+              (endpoints['userEndpoints'] as _i3.UserEndpoints).registerUser(
             session,
             params['firstName'],
             params['lastName'],
@@ -98,12 +121,12 @@ class Endpoints extends _i1.EndpointDispatch {
             ),
             'authenticationlevel': _i1.ParameterDescription(
               name: 'authenticationlevel',
-              type: _i1.getType<_i3.AuthenticationLevel>(),
+              type: _i1.getType<_i4.AuthenticationLevel>(),
               nullable: false,
             ),
             'country': _i1.ParameterDescription(
               name: 'country',
-              type: _i1.getType<_i4.Country>(),
+              type: _i1.getType<_i5.Country>(),
               nullable: false,
             ),
           },
@@ -111,7 +134,7 @@ class Endpoints extends _i1.EndpointDispatch {
             _i1.Session session,
             Map<String, dynamic> params,
           ) async =>
-              (endpoints['userEndpoints'] as _i2.UserEndpoints).loginUser(
+              (endpoints['userEndpoints'] as _i3.UserEndpoints).loginUser(
             session,
             params['contacts'],
             params['password'],

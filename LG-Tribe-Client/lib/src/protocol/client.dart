@@ -16,6 +16,21 @@ import 'package:lg_tribe_client/src/protocol/country.dart' as _i4;
 import 'protocol.dart' as _i5;
 
 /// {@category Endpoint}
+class EndpointProfileInfoEndpoints extends _i1.EndpointRef {
+  EndpointProfileInfoEndpoints(_i1.EndpointCaller caller) : super(caller);
+
+  @override
+  String get name => 'profileInfoEndpoints';
+
+  _i2.Future<Map<String, dynamic>> getProfileInfo() =>
+      caller.callServerEndpoint<Map<String, dynamic>>(
+        'profileInfoEndpoints',
+        'getProfileInfo',
+        {},
+      );
+}
+
+/// {@category Endpoint}
 class EndpointUserEndpoints extends _i1.EndpointRef {
   EndpointUserEndpoints(_i1.EndpointCaller caller) : super(caller);
 
@@ -89,14 +104,19 @@ class Client extends _i1.ServerpodClientShared {
           disconnectStreamsOnLostInternetConnection:
               disconnectStreamsOnLostInternetConnection,
         ) {
+    profileInfoEndpoints = EndpointProfileInfoEndpoints(this);
     userEndpoints = EndpointUserEndpoints(this);
   }
+
+  late final EndpointProfileInfoEndpoints profileInfoEndpoints;
 
   late final EndpointUserEndpoints userEndpoints;
 
   @override
-  Map<String, _i1.EndpointRef> get endpointRefLookup =>
-      {'userEndpoints': userEndpoints};
+  Map<String, _i1.EndpointRef> get endpointRefLookup => {
+        'profileInfoEndpoints': profileInfoEndpoints,
+        'userEndpoints': userEndpoints,
+      };
 
   @override
   Map<String, _i1.ModuleEndpointCaller> get moduleLookup => {};

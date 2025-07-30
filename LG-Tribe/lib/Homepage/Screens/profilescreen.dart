@@ -1,9 +1,29 @@
 import 'package:flutter/material.dart';
 import "package:country_flags/country_flags.dart";
+import "package:lg_tribe/Controller/registration_controller_class.dart";
 import "package:lg_tribe/Homepage/Screens/Profile%20Page/profile.dart";
 
-class ProfileScreen extends StatelessWidget {
+class ProfileScreen extends StatefulWidget {
   const ProfileScreen({super.key});
+
+  @override
+  State<ProfileScreen> createState() => _ProfileScreenState();
+}
+
+class _ProfileScreenState extends State<ProfileScreen> {
+  Profile? profile;
+
+  @override
+  void initState()
+  {
+    super.initState();
+
+    () async {
+      final userProfile = await client.profileInfoEndpoints.getProfileInfo();
+
+      setState(() => profile = userProfile);
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
