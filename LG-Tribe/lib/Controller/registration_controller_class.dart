@@ -1,7 +1,7 @@
 import "package:get/get.dart";
 import "package:lg_tribe_client/lg_tribe_client.dart";
 import "package:serverpod_flutter/serverpod_flutter.dart";
-import "package:lg_tribe/login/registration/user_registration.dart";
+//import "package:lg_tribe/login/registration/user_registration.dart";
 
 late final Client client;
 class RegistrationController extends GetxController {
@@ -29,7 +29,7 @@ class RegistrationController extends GetxController {
     if (firstName.isEmpty ||
         lastName.isEmpty ||
         email.isEmpty ||
-        contactNumber == null ||
+        contactNumber.toString().isEmpty ||
         password.isEmpty) {
       //Show error message if any field is empty
       Get.snackbar(
