@@ -11,6 +11,27 @@ class UserStateController extends GetxController {
   var email = ''.obs;
   //var isLoggedIn = false.obs;
 
+  // Method to set user details
+  void setUserDetails({
+    required String firstName,
+    required String lastName,
+    required String contacts,
+    required String email,
+  }) {
+    this.firstName.value = firstName;
+    this.lastName.value = lastName;
+    this.contacts.value = contacts;
+    this.email.value = email;
+  }
+  // Method to get user details
+  Map<String, String> getUserDetails() {
+    return {
+      'firstName': firstName.value,
+      'lastName': lastName.value,
+      'contacts': contacts.value,
+      'email': email.value,
+    };
+  }
   //Auth level getter
   AuthLevel getAuthLevel() {
     return selectedAuthLevel.value;
