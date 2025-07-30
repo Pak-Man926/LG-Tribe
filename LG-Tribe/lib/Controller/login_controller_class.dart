@@ -136,3 +136,13 @@ class LoginController extends GetxController {
   
   bool get isLoggedIn => loggedInUser.value != null;
 }
+// Method to get user details
+  Map<String, dynamic> getUserDetails() {
+    return {
+      'firstName': loggedInUser.value?.firstName ?? '',
+      'lastName': loggedInUser.value?.lastName ?? '',
+      'contacts': loggedInUser.value?.contacts ?? '',
+      'email': loggedInUser.value?.email ?? '',
+    };
+  }
+}
