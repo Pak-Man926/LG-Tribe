@@ -1,4 +1,4 @@
-import 'dart:math';
+//import 'dart:math';
 import "dart:io";
 
 import 'package:flutter/material.dart';
@@ -25,7 +25,8 @@ class _UploadScreenState extends State<UploadScreen>
 
   @override
   void didChangeAppLifecycleState(AppLifecycleState state) {
-    // TODO: implement didChangeAppLifecycleState
+    //TODO: implement didChangeAppLifecycleState
+    
     super.didChangeAppLifecycleState(state);
 
     if (cameraController == null ||
