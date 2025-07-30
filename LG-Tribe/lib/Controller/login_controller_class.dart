@@ -76,7 +76,7 @@ class LoginController extends GetxController {
 
       if (result == true) {
         //Fetch user details from the server
-        final userDetails = await client.userEndpoints.getUserDetails();
+        //final userDetails = await client.userEndpoints.getUserDetails();
         loggedInUser.value = User(
           firstName: firstName,
           lastName: lastName,
