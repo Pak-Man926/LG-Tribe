@@ -76,6 +76,7 @@ class LoginController extends GetxController {
       if (result == true) {
 
         loggedInUser.value = User(
+          firstName: fir
           contactNumber: contactNumber,
           authenticationLevel: authenticationLevel,
           country: country,
