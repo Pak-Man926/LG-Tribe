@@ -121,21 +121,13 @@ class Endpoints extends _i1.EndpointDispatch {
         ),
         'getUserProfile': _i1.MethodConnector(
           name: 'getUserProfile',
-          params: {
-            'contacts': _i1.ParameterDescription(
-              name: 'contacts',
-              type: _i1.getType<int>(),
-              nullable: false,
-            )
-          },
+          params: {},
           call: (
             _i1.Session session,
             Map<String, dynamic> params,
           ) async =>
-              (endpoints['userEndpoints'] as _i2.UserEndpoints).getUserProfile(
-            session,
-            params['contacts'],
-          ),
+              (endpoints['userEndpoints'] as _i2.UserEndpoints)
+                  .getUserProfile(session),
         ),
       },
     );

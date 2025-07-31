@@ -63,11 +63,11 @@ class EndpointUserEndpoints extends _i1.EndpointRef {
         },
       );
 
-  _i2.Future<_i5.User?> getUserProfile(int contacts) =>
+  _i2.Future<_i5.User?> getUserProfile() =>
       caller.callServerEndpoint<_i5.User?>(
         'userEndpoints',
         'getUserProfile',
-        {'contacts': contacts},
+        {},
       );
 }
 
