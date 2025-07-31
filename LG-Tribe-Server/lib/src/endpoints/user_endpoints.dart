@@ -8,7 +8,7 @@ import "package:bcrypt/bcrypt.dart";
 class UserEndpoints extends Endpoint {
 
 @override
-bool get requireLogin => false; // No login required for these endpoints except getUserProfile
+bool get requireLogin => true; //Login required for these endpoints
 
   Future<bool> registerUser(
       Session session,
@@ -85,10 +85,10 @@ bool get requireLogin => false; // No login required for these endpoints except 
   if (authInfo == null) {
     return null; // Not authenticated, but this should be handled by requireLogin
   }
-  final contacts = authInfo.contacts;
+  final userId = authInfo.userId;
   final userProfile = await User.db.findFirstRow(
     session,
-    where: (t) => t.id.equals(contacts),
+    where: (t) => t.id.equals(userId),
   );
   return userProfile;
 }
