@@ -5,6 +5,8 @@ import "package:serverpod_flutter/serverpod_flutter.dart";
 
 late final Client client;
 class RegistrationController extends GetxController {
+  static var to;
+
   // Client instance for making API calls
   // This will be initialized in the onInit method  
   @override
