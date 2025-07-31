@@ -13,16 +13,14 @@ class ProfileScreen extends StatefulWidget {
 class _ProfileScreenState extends State<ProfileScreen> {
   Profile? profile;
 
-  @override
-  void initState()
-  {
+ @override
+  void initState() {
     super.initState();
-
+    // Asynchronously load user profile
     () async {
-      final userProfile = await client.profileInfoEndpoints.getProfileInfo();
-
+      final userProfile = await client.userEndpoints.getUserProfile();
       setState(() => profile = userProfile);
-    }
+    }();
   }
 
   @override

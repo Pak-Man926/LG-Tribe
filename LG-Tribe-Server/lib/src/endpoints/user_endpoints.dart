@@ -75,4 +75,17 @@ class UserEndpoints extends Endpoint {
 
     return true;
   }
+
+  Future<User?> getUserProfile(Session session, int contacts) async {
+    // Fetch the user profile from the database
+    final userProfile = await User.db.findFirstRow(session, 
+    where: (t) => t.contacts.equals(contacts));
+
+    if (userProfile == null) {
+      return null; // User not found
+    }
+
+    // Return the user profile data
+    return userProfile;
+  }
 }
