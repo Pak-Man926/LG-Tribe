@@ -19,9 +19,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
     super.initState();
     // Asynchronously load user profile
     () async {
-      final userProfile = await client.userEndpoints.getUserProfile(
-        contacts: RegistrationController.to.phoneNumber.value,
-      );
+      final userProfile = await client.userEndpoints.getUserProfile();
       setState(() => user = userProfile );
     }();
   }
