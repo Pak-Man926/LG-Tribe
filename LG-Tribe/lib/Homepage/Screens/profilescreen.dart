@@ -20,7 +20,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
     // Asynchronously load user profile
     () async {
       final userProfile = await client.userEndpoints.getUserProfile();
-      setState(() => profile = userProfile);
+      setState(() => profile = userProfile as Profile?);
     }();
   }
 
