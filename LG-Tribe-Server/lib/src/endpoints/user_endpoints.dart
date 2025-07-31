@@ -77,6 +77,9 @@ class UserEndpoints extends Endpoint {
   }
 
   Future<User?> getUserProfile(Session session, int contacts) async {
+    @override
+    //bool requireLogin = true;
+
     // Fetch the user profile from the database
     final userProfile = await User.db.findFirstRow(session, 
     where: (t) => t.contacts.equals(contacts));
