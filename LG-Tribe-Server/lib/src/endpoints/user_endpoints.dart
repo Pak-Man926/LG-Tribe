@@ -8,7 +8,7 @@ import "package:bcrypt/bcrypt.dart";
 class UserEndpoints extends Endpoint {
 
 @override
-bool get requireLogin => true; //Login required for these endpoints
+bool get requireLogin => false; //Login required for these endpoints
 
   Future<bool> registerUser(
       Session session,
