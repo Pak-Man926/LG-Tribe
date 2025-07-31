@@ -81,19 +81,15 @@ bool get requireLogin => false; // No login required for these endpoints except 
   }
 
   Future<User?> getUserProfile(Session session) async {
-    @override
-    bool requireLogin = true; // Require login for this endpoint
-
-    final authInfo = await session.authenticatedUser;
-    // Fetch the user profile from the database
-    final userProfile = await User.db.findFirstRow(session, 
-    where: (t) => t.contacts.equals(contacts));
-
-    if (userProfile == null) {
-      return null; // User not found
-    }
-
-    // Return the user profile data
-    return userProfile;
+  final authInfo = await session.authenticated;
+  if (authInfo == null) {
+    return null; // Not authenticated, but this should be handled by requireLogin
   }
+  final contacts = authInfo.contacts;
+  final userProfile = await User.db.findFirstRow(
+    session,
+    where: (t) => t.id.equals(contacts),
+  );
+  return userProfile;
+}
 }
