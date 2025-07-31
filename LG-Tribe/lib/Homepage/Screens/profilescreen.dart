@@ -3,6 +3,8 @@ import "package:country_flags/country_flags.dart";
 import "package:lg_tribe/Controller/registration_controller_class.dart";
 import "package:lg_tribe/Homepage/Screens/Profile%20Page/profile.dart";
 import "package:lg_tribe_client/lg_tribe_client.dart";
+import "package:get/get.dart";
+import "package:lg_tribe/Controller/login_controller_class.dart";
 
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({super.key});
@@ -14,7 +16,9 @@ class ProfileScreen extends StatefulWidget {
 class _ProfileScreenState extends State<ProfileScreen> {
   User? user;
 
-  
+  final loginState = Get.find<LoginController>();
+  final contacts = loginState.phoneNumber.value;
+
  @override
   void initState() {
     super.initState();
