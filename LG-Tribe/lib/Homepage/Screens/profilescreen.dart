@@ -14,6 +14,7 @@ class ProfileScreen extends StatefulWidget {
 class _ProfileScreenState extends State<ProfileScreen> {
   User? user;
 
+  
  @override
   void initState() {
     super.initState();
