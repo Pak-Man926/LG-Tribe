@@ -13,22 +13,8 @@ import 'package:serverpod_client/serverpod_client.dart' as _i1;
 import 'dart:async' as _i2;
 import 'package:lg_tribe_client/src/protocol/auth_level.dart' as _i3;
 import 'package:lg_tribe_client/src/protocol/country.dart' as _i4;
-import 'protocol.dart' as _i5;
-
-/// {@category Endpoint}
-class EndpointProfileInfoEndpoints extends _i1.EndpointRef {
-  EndpointProfileInfoEndpoints(_i1.EndpointCaller caller) : super(caller);
-
-  @override
-  String get name => 'profileInfoEndpoints';
-
-  _i2.Future<Map<String, dynamic>> getProfileInfo() =>
-      caller.callServerEndpoint<Map<String, dynamic>>(
-        'profileInfoEndpoints',
-        'getProfileInfo',
-        {},
-      );
-}
+import 'package:lg_tribe_client/src/protocol/user_models.dart' as _i5;
+import 'protocol.dart' as _i6;
 
 /// {@category Endpoint}
 class EndpointUserEndpoints extends _i1.EndpointRef {
@@ -76,6 +62,13 @@ class EndpointUserEndpoints extends _i1.EndpointRef {
           'country': country,
         },
       );
+
+  _i2.Future<_i5.User?> getUserProfile(int contacts) =>
+      caller.callServerEndpoint<_i5.User?>(
+        'userEndpoints',
+        'getUserProfile',
+        {'contacts': contacts},
+      );
 }
 
 class Client extends _i1.ServerpodClientShared {
@@ -94,7 +87,7 @@ class Client extends _i1.ServerpodClientShared {
     bool? disconnectStreamsOnLostInternetConnection,
   }) : super(
           host,
-          _i5.Protocol(),
+          _i6.Protocol(),
           securityContext: securityContext,
           authenticationKeyManager: authenticationKeyManager,
           streamingConnectionTimeout: streamingConnectionTimeout,
@@ -104,19 +97,14 @@ class Client extends _i1.ServerpodClientShared {
           disconnectStreamsOnLostInternetConnection:
               disconnectStreamsOnLostInternetConnection,
         ) {
-    profileInfoEndpoints = EndpointProfileInfoEndpoints(this);
     userEndpoints = EndpointUserEndpoints(this);
   }
-
-  late final EndpointProfileInfoEndpoints profileInfoEndpoints;
 
   late final EndpointUserEndpoints userEndpoints;
 
   @override
-  Map<String, _i1.EndpointRef> get endpointRefLookup => {
-        'profileInfoEndpoints': profileInfoEndpoints,
-        'userEndpoints': userEndpoints,
-      };
+  Map<String, _i1.EndpointRef> get endpointRefLookup =>
+      {'userEndpoints': userEndpoints};
 
   @override
   Map<String, _i1.ModuleEndpointCaller> get moduleLookup => {};

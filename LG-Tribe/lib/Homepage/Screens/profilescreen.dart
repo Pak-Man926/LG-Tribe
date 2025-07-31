@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import "package:country_flags/country_flags.dart";
 import "package:lg_tribe/Controller/registration_controller_class.dart";
 import "package:lg_tribe/Homepage/Screens/Profile%20Page/profile.dart";
+import "package:lg_tribe_client/lg_tribe_client.dart";
 
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({super.key});

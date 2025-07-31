@@ -128,10 +128,6 @@ class Protocol extends _i1.SerializationManagerServer {
     if (t == _i1.getType<_i5.User?>()) {
       return (data != null ? _i5.User.fromJson(data) : null) as T;
     }
-    if (t == Map<String, dynamic>) {
-      return (data as Map).map((k, v) =>
-          MapEntry(deserialize<String>(k), deserialize<dynamic>(v))) as T;
-    }
     try {
       return _i2.Protocol().deserialize<T>(data, t);
     } on _i1.DeserializationTypeNotFoundException catch (_) {}

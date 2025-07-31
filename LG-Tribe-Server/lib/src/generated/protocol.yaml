@@ -1,5 +1,4 @@
-profileInfoEndpoints:
-  - getProfileInfo:
 userEndpoints:
   - registerUser:
   - loginUser:
+  - getUserProfile:
