@@ -6,6 +6,10 @@ import "package:lg_tribe_server/src/generated/country.dart";
 import "package:bcrypt/bcrypt.dart";
 
 class UserEndpoints extends Endpoint {
+
+@override
+bool get requireLogin => false; // No login required for these endpoints except getUserProfile
+
   Future<bool> registerUser(
       Session session,
       String firstName,
@@ -76,10 +80,11 @@ class UserEndpoints extends Endpoint {
     return true;
   }
 
-  Future<User?> getUserProfile(Session session, int contacts) async {
+  Future<User?> getUserProfile(Session session) async {
     @override
-    //bool requireLogin = true;
+    bool requireLogin = true; // Require login for this endpoint
 
+    final authInfo = await session.authenticatedUser;
     // Fetch the user profile from the database
     final userProfile = await User.db.findFirstRow(session, 
     where: (t) => t.contacts.equals(contacts));
