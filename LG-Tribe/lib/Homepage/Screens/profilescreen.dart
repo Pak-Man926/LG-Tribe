@@ -17,14 +17,15 @@ class _ProfileScreenState extends State<ProfileScreen> {
   User? user;
 
   final loginState = Get.find<LoginController>();
-  final contacts = loginState.phoneNumber.value;
 
  @override
   void initState() {
     super.initState();
     // Asynchronously load user profile
     () async {
-      final userProfile = await client.userEndpoints.getUserProfile(contacts);
+      final userProfile = await client.userEndpoints.getUserProfile(
+        loginState.loggedInUser.value!.contacts,
+        );
       setState(() => user = userProfile );
     }();
   }
