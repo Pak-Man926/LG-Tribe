@@ -12,7 +12,7 @@ class ProfileScreen extends StatefulWidget {
 }
 
 class _ProfileScreenState extends State<ProfileScreen> {
-  Profile? profile;
+  User? user;
 
  @override
   void initState() {
@@ -20,7 +20,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
     // Asynchronously load user profile
     () async {
       final userProfile = await client.userEndpoints.getUserProfile();
-      setState(() => profile = userProfile as Profile?);
+      setState(() => user = userProfile );
     }();
   }
 
@@ -53,7 +53,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   children: [
                     //UserName
                     Text(
-                      profile!.firstName + " " + profile!.lastName,
+                      "${user!.firstName} ${user!.lastName}",
                       style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                     ),
                     const SizedBox(height: 5),
