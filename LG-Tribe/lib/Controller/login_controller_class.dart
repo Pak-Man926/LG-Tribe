@@ -81,9 +81,9 @@ class LoginController extends GetxController {
 
       if (result == true) {
         //Fetch user details from the server
-        final userDetails = await client.userEndpoints.getUserProfile(
-          contactNumber,
-        );
+        // final userDetails = await client.userEndpoints.getUserProfile(
+        //   contactNumber,
+        // );
         loggedInUser.value = User(
           firstName: userDetails!.firstName,
           lastName: userDetails.lastName,
