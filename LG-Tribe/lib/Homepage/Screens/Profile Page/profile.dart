@@ -137,7 +137,7 @@ User? user;
                       children: [
                         Text("Email"),
                         Text(
-                          "${user!.email}",
+                          user!.email,
                           style: TextStyle(fontWeight: FontWeight.w700),
                         ),
                       ],
