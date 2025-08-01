@@ -30,6 +30,11 @@ User? user;
 
   @override
   Widget build(BuildContext context) {
+    // Check if user is null and show loading indicator
+    if (user == null) {
+      return const Center(child: CircularProgressIndicator());
+    }
+
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
