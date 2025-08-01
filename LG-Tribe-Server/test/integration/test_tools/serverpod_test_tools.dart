@@ -211,7 +211,9 @@ class _UserEndpoints {
   }
 
   _i3.Future<_i6.User?> getUserProfile(
-      _i1.TestSessionBuilder sessionBuilder) async {
+    _i1.TestSessionBuilder sessionBuilder,
+    int contacts,
+  ) async {
     return _i1.callAwaitableFunctionAndHandleExceptions(() async {
       var _localUniqueSession =
           (sessionBuilder as _i1.InternalTestSessionBuilder).internalBuild(
@@ -223,7 +225,7 @@ class _UserEndpoints {
           createSessionCallback: (_) => _localUniqueSession,
           endpointPath: 'userEndpoints',
           methodName: 'getUserProfile',
-          parameters: _i1.testObjectToJson({}),
+          parameters: _i1.testObjectToJson({'contacts': contacts}),
           serializationManager: _serializationManager,
         );
         var _localReturnValue = await (_localCallContext.method.call(

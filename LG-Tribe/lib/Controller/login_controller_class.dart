@@ -81,18 +81,18 @@ class LoginController extends GetxController {
 
       if (result == true) {
         //Fetch user details from the server
-        // final userDetails = await client.userEndpoints.getUserProfile(
-        //   contactNumber,
-        // );
-        // loggedInUser.value = User(
-        //   firstName: userDetails!.firstName,
-        //   lastName: userDetails.lastName,
-        //   contacts: contactNumber,
-        //   email: userDetails.email,
-        //   password: password,
-        //   authlevel: authenticationLevel,
-        //   country: country,
-        // );
+        final userDetails = await client.userEndpoints.getUserProfile(
+          contactNumber,
+        );
+        loggedInUser.value = User(
+          firstName: userDetails!.firstName,
+          lastName: userDetails.lastName,
+          contacts: contactNumber,
+          email: userDetails.email,
+          password: password,
+          authlevel: authenticationLevel,
+          country: country,
+        );
         //Login Successful
         await StorageService.saveLoginData(
           contacts: contactNumber,
