@@ -19,7 +19,7 @@ class LoginController extends GetxController {
   late final Client client;
 
   final userState = Get.find<UserStateController>();
-  final registrationState = Get.find<RegistrationController>();
+  //final registrationState = Get.find<RegistrationController>();
 
   @override
   void onInit() {
