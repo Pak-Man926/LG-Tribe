@@ -119,7 +119,7 @@ User? user;
                       children: [
                         Text("Phone Number"),
                         Text(
-                          "+254 712 345 678",
+                          "${user!.contacts}",
                           style: TextStyle(fontWeight: FontWeight.w700),
                         ),
                       ],
@@ -137,7 +137,7 @@ User? user;
                       children: [
                         Text("Email"),
                         Text(
-                          "promoter@lge.com",
+                          "${user!.email}",
                           style: TextStyle(fontWeight: FontWeight.w700),
                         ),
                       ],
