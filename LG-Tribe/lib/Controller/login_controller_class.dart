@@ -3,7 +3,7 @@ import "package:lg_tribe_client/lg_tribe_client.dart";
 import "package:serverpod_flutter/serverpod_flutter.dart";
 import 'package:shared_preferences/shared_preferences.dart';
 import "package:lg_tribe/Controller/storage_service.dart";
-import "package:lg_tribe/Controller/registration_controller_class.dart";
+//import "package:lg_tribe/Controller/registration_controller_class.dart";
 import "package:lg_tribe/Controller/userstate_controller_class.dart";
 
 
