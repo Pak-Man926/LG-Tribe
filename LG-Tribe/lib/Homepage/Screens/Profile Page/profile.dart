@@ -1,6 +1,8 @@
 import "package:flutter/material.dart";
-//import "package:lg_tribe/Homepage/homepage.dart";
 import "package:get/get.dart";
+import "package:lg_tribe/Controller/registration_controller_class.dart";
+import "package:lg_tribe_client/lg_tribe_client.dart";
+import "package:lg_tribe/Controller/login_controller_class.dart";
 
 class Profile extends StatefulWidget {
   const Profile({super.key});
