@@ -24,9 +24,9 @@ void main() async
   await SharedPreferences.getInstance(); // Initialize SharedPreferences if needed
 
 
-  Get.put(UserStateController());
-  Get.put(LoginController()); 
+  Get.put(UserStateController()); 
   Get.put(RegistrationController());
+  Get.put(LoginController());
 
 
   runApp(
