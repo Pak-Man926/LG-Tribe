@@ -71,7 +71,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       children: [
                         //Country Fag
                         CountryFlag.fromCountryCode(
-                          "KE",
+                          user!.country as String,
                           height: 20, // Set height
                           width:
                               30, // Set width if you want a rectangular flag, optional
