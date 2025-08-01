@@ -70,7 +70,7 @@ User? user;
                     ),
                     SizedBox(height: 5),
                     Text(
-                      "Promoter | User ID: 123456",
+                      "${user!.authlevel} | User ID: 123456",
                       style: TextStyle(
                         fontSize: 12,
                         fontWeight: FontWeight.w500,
