@@ -10,8 +10,22 @@ class Profile extends StatefulWidget {
 }
 
 class _ProfileState extends State<Profile> {
+User? user;
 
-  
+  final loginState = Get.find<LoginController>();
+
+ @override
+  void initState() {
+    super.initState();
+    // Asynchronously load user profile
+    () async {
+      final userProfile = await client.userEndpoints.getUserProfile(
+        loginState.loggedInUser.value!.contacts,
+      );
+      setState(() => user = userProfile );
+    }();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
