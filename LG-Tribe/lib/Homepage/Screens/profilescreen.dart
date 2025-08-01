@@ -71,7 +71,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       children: [
                         //Country Fag
                         CountryFlag.fromCountryCode(
-                          user!.country.toString().split('.').last.toUpperCase(),
+                          user!.country.toString(),
                           height: 20, // Set height
                           width:
                               30, // Set width if you want a rectangular flag, optional
