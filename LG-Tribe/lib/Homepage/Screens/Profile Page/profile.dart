@@ -57,7 +57,7 @@ User? user;
                 Column(
                   children: [
                     Text(
-                      'Esther Wanjiru',
+                      "${user!.firstName} ${user!.lastName}",
                       style: TextStyle(
                         fontSize: 18,
                         fontWeight: FontWeight.bold,
