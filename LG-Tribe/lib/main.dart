@@ -60,7 +60,7 @@ class MyApp extends StatelessWidget {
           GetPage(name: '/profile', page: () => ProfileScreen()),
           GetPage(name: '/upload', page: () => UploadScreen()),
           GetPage(name: '/about', page: () => AboutScreen()),
-          GetPage(name: '/logout', page: () => LogoutScreen()),
+          GetPage(name: '/logout', page: () => Logout()),
         ],
       );
     }
