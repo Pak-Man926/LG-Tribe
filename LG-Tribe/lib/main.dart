@@ -47,11 +47,11 @@ class MyApp extends StatelessWidget {
     Widget build(BuildContext context) {
       return GetMaterialApp(
         debugShowCheckedModeBanner: false,
-        //title: 'LG Tribe',
+        title: 'LG Tribe',
         theme: lightTheme,
         darkTheme: darkTheme,
         themeMode: ThemeMode.system,
-        //home: const SplashScreen(), // Set the initial screen to SplashScreen
+        home: Get.toNamed("/"), // Set the initial screen to SplashScreen
         getPages: [
           GetPage(name: '/', page: () => SplashScreen()),
           GetPage(name: '/start', page: () => StartPage()),
