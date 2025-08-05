@@ -48,7 +48,6 @@ class MyApp extends StatelessWidget {
       return GetMaterialApp(
         debugShowCheckedModeBanner: false,
         theme: Get.isDarkMode ? darkTheme : lightTheme,
-        initialRoute: '/',  // Set the initial screen to SplashScreen
         getPages: [
           GetPage(name: '/', page: () => SplashScreen()), //Initial Screem
           GetPage(name: '/start', page: () => Startpage()), // Second Screen
@@ -62,6 +61,7 @@ class MyApp extends StatelessWidget {
           GetPage(name: '/about', page: () => About()),
           GetPage(name: '/logout', page: () => Logout()),
         ],
+        initialRoute: '/',  // Set the initial screen to SplashScreen
       );
     }
   }
