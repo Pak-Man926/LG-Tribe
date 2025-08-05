@@ -53,7 +53,7 @@ class MyApp extends StatelessWidget {
           GetPage(name: '/', page: () => SplashScreen()),
           GetPage(name: '/start', page: () => Startpage()),
           GetPage(name: '/country', page: () => Country()),
-          GetPage(name: '/login', page: () => UserLogin()),
+          GetPage(name: '/login', page: () => Login()),
           GetPage(name: '/registration', page: () => UserRegistration()),
           GetPage(name: '/forgot-password', page: () => ForgotPassword()),
           GetPage(name: '/homepage', page: () => HomePage()),
