@@ -30,7 +30,7 @@ void main() async
 
 
   runApp(
-    const MyApp()
+   MyApp()
   );
 }
 
@@ -47,9 +47,8 @@ class MyApp extends StatelessWidget {
     Widget build(BuildContext context) {
       return GetMaterialApp(
         debugShowCheckedModeBanner: false,
-        title: 'LG Tribe',
-        theme: 
-        home: SplashScreen(), // Set the initial screen to SplashScreen
+        theme: Get.isDarkMode ? darkTheme : lightTheme,
+        initialRoute: '/',  // Set the initial screen to SplashScreen
         getPages: [
           GetPage(name: '/', page: () => SplashScreen()),
           GetPage(name: '/start', page: () => StartPage()),
