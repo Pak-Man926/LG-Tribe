@@ -47,7 +47,7 @@ class MyApp extends StatelessWidget {
     Widget build(BuildContext context) {
       return GetMaterialApp(
         debugShowCheckedModeBanner: false,
-        title: 'LG Tribe',
+        //title: 'LG Tribe',
         theme: lightTheme,
         darkTheme: darkTheme,
         themeMode: ThemeMode.system,
