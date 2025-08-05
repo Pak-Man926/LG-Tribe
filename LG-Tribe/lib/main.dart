@@ -50,7 +50,7 @@ class MyApp extends StatelessWidget {
         theme: Get.isDarkMode ? darkTheme : lightTheme,
         initialRoute: '/',  // Set the initial screen to SplashScreen
         getPages: [
-          GetPage(name: '/', page: () => SplashScreen()),
+          GetPage(name: '/', page: () => SplashScreen()), //Initial Screem
           GetPage(name: '/start', page: () => Startpage()),
           GetPage(name: '/country', page: () => Country()),
           GetPage(name: '/login', page: () => Login()),
