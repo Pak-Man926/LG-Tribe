@@ -51,12 +51,12 @@ class MyApp extends StatelessWidget {
         initialRoute: '/',  // Set the initial screen to SplashScreen
         getPages: [
           GetPage(name: '/', page: () => SplashScreen()), //Initial Screem
-          GetPage(name: '/start', page: () => Startpage()),
-          GetPage(name: '/country', page: () => Country()),
-          GetPage(name: '/login', page: () => Login()),
-          GetPage(name: '/registration', page: () => UserRegistration()),
-          GetPage(name: '/forgot-password', page: () => Password()),
-          GetPage(name: '/homepage', page: () => Homepage()),
+          GetPage(name: '/start', page: () => Startpage()), // Second Screen
+          GetPage(name: '/country', page: () => Country()), // Third Screen
+          GetPage(name: '/login', page: () => Login()), // Fourth Screen
+          GetPage(name: '/registration', page: () => UserRegistration()), // Alternative Fourth Screen1
+          GetPage(name: '/forgot-password', page: () => Password()), // Alternative Fourth Screen2
+          GetPage(name: '/homepage', page: () => Homepage()),// Fifth Screen
           GetPage(name: '/profile', page: () => ProfileScreen()),
           GetPage(name: '/upload', page: () => UploadScreen()),
           GetPage(name: '/about', page: () => About()),
