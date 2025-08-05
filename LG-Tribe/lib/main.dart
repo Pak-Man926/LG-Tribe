@@ -21,12 +21,13 @@ import "package:lg_tribe/Homepage/Screens/Profile Page/Screens/logout.dart";
 void main() async
 {
   WidgetsFlutterBinding.ensureInitialized(); // Ensure Flutter bindings are initialized
-  await SharedPreferences.getInstance(); // Initialize SharedPreferences if needed
+  
 
-
-  Get.put(UserStateController()); 
+initialBinding: BindingsBuilder(() {
+  Get.put(UserStateController());
   Get.put(RegistrationController());
   Get.put(LoginController());
+});
 
 
   runApp(
