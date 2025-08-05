@@ -34,14 +34,24 @@ void main() async
   );
 }
 
+final ThemeData lightTheme = ThemeData(
+  brightness: Brightness.light,
+);
+
+final ThemeData darkTheme = ThemeData(
+  brightness: Brightness.dark,
+);
+
 class MyApp extends StatelessWidget {
     @override
     Widget build(BuildContext context) {
       return GetMaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'LG Tribe',
-        theme: 
-        home: Get.toNamed("/"), // Set the initial screen to SplashScreen
+        theme: lightTheme,
+        darkTheme: darkTheme,
+        themeMode: ThemeMode.system,
+        //home: const SplashScreen(), // Set the initial screen to SplashScreen
         getPages: [
           GetPage(name: '/', page: () => SplashScreen()),
           GetPage(name: '/start', page: () => StartPage()),
