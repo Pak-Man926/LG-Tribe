@@ -30,28 +30,34 @@ void main() async
 
 
   runApp(
-    GetMaterialApp(
-      debugShowCheckedModeBanner: false,  
-      //Route controller
-      initialRoute: "/",
-      getPages: [
-        GetPage(name: "/", page: () => SplashScreen()), // Initial route 
-        GetPage(name: "/startpage", page: () => Startpage()), //Second route
-        GetPage(name: "/country", page: () => Country()), // Third route
-        GetPage(name: "/userlogin", page: () => Login() ),// Fourth route
-        GetPage(name: "/userregistration", page: () => UserRegistration()), // Fifth route
-        GetPage(name: "/forgotpassword", page: () => Password()), // Sixth route
-        GetPage(name: "/homepage", page: () => Homepage()), // Seventh route
-        GetPage(name: "/profilescreen", page: () => ProfileScreen()), // Eighth route
-        GetPage(name: "/uploadscreen", page: () => UploadScreen()),
-        GetPage(name: "/profilepage", page: () => Profile()), // Ninth route
-        GetPage(name: "/aboutapp", page: () => About()), // Tenth route
-        GetPage(name: "/logout", page: () => Logout()), // Eleventh route
-
-      ],
-    )
+    const MyApp();
   );
 }
+
+class MyApp extends StatelessWidget {
+    @override
+    Widget build(BuildContext context) {
+      return GetMaterialApp(
+        debugShowCheckedModeBanner: false,
+        title: 'LG Tribe',
+        theme: 
+        home: Get.toNamed("/"), // Set the initial screen to SplashScreen
+        getPages: [
+          GetPage(name: '/', page: () => SplashScreen()),
+          GetPage(name: '/start', page: () => StartPage()),
+          GetPage(name: '/country', page: () => Country()),
+          GetPage(name: '/login', page: () => UserLogin()),
+          GetPage(name: '/registration', page: () => UserRegistration()),
+          GetPage(name: '/forgot-password', page: () => ForgotPassword()),
+          GetPage(name: '/homepage', page: () => HomePage()),
+          GetPage(name: '/profile', page: () => ProfileScreen()),
+          GetPage(name: '/upload', page: () => UploadScreen()),
+          GetPage(name: '/about', page: () => AboutScreen()),
+          GetPage(name: '/logout', page: () => LogoutScreen()),
+        ],
+      );
+    }
+  }
 
 
 
