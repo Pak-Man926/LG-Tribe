@@ -18,10 +18,7 @@ class _SplashScreenState extends State<SplashScreen> {
     Timer(
       //Splash screen duration
       Duration(seconds: 3),
-       () => Get.offAllNamed("/startpage"), // Navigate to Startpage after 3 seconds
-      //=> Navigator.of(
-      //   context,
-      // ).pushReplacement(MaterialPageRoute(builder: (context) => Startpage())),
+       () => Get.toNamed("/startpage"), // Navigate to Startpage after 3 seconds
     );
   }
 
