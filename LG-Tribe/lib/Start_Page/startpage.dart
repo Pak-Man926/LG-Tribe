@@ -5,7 +5,7 @@ import "package:lg_tribe/Controller/classes/authlevel_class.dart";
 import "package:lg_tribe/Controller/userstate_controller_class.dart";
 
 //Startpage. User chooses a role to proceed with the app.
-class Startpage extends StatelessWidget {
+class Startage extends StatelessWidget {
   //const Startpage({super.key});
 
   final userState = Get.put(UserStateController());
