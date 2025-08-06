@@ -85,9 +85,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         Spacer(),
                         IconButton(
                           onPressed: () {
-                            Navigator.of(context).push(
-                              MaterialPageRoute(builder: (context) => ProfilePage()),
-                            );
+                            Get.toNamed("/profilepage");
                           },
                           icon: Icon(
                             Icons.more_vert_rounded,
