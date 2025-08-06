@@ -4,14 +4,14 @@ import "package:lg_tribe/Controller/registration_controller_class.dart";
 import "package:lg_tribe_client/lg_tribe_client.dart";
 import "package:lg_tribe/Controller/login_controller_class.dart";
 
-class Profile extends StatefulWidget {
-  const Profile({super.key});
+class ProfilePage extends StatefulWidget {
+  const ProfilePage({super.key});
 
   @override
-  State<Profile> createState() => _ProfileState();
+  State<ProfilePage> createState() => _ProfileState();
 }
 
-class _ProfileState extends State<Profile> {
+class _ProfileState extends State<ProfilePage> {
 User? user;
 
   final loginState = Get.find<LoginController>();
