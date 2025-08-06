@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import "package:lg_tribe/Homepage/Screens/Profile%20Page/profilepage.dart";
 import 'package:lg_tribe/Homepage/Screens/profilescreen.dart';
+import "package:get/get.dart";
 class About extends StatelessWidget
 {
   const About({super.key});
@@ -13,9 +14,7 @@ class About extends StatelessWidget
         leading: IconButton(
           icon: Icon(Icons.arrow_back),
           onPressed: (){
-            Navigator.of(
-                context,
-              ).push(MaterialPageRoute(builder: (context) => ProfileScreen()));
+            Get.toNamed("/profilepage");
           },
           color: Colors.blueGrey,
         ),
