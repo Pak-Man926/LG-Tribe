@@ -25,11 +25,11 @@ void main() async
   WidgetsFlutterBinding.ensureInitialized(); // Ensure Flutter bindings are initialized
   
 
-// initialBinding: BindingsBuilder(() {
-//   Get.put(UserStateController());
-//   Get.put(RegistrationController());
-//   Get.put(LoginController());
-// });
+initialBinding: BindingsBuilder(() {
+  Get.put(UserStateController());
+  Get.put(RegistrationController());
+  Get.put(LoginController());
+});
 
 
 }
