@@ -53,6 +53,7 @@ class MyApp extends StatelessWidget {
           GetPage(name: '/forgotpassword', page: () => Password()), // Alternative Fourth Screen2
           GetPage(name: '/homepage', page: () => Homepage()),// Fifth Screen
           GetPage(name: '/profile', page: () => ProfileScreen()),
+          GetPage(name: '/profilepage', page: () => ProfilePage()), // Profile Page
           GetPage(name: '/upload', page: () => UploadScreen()),
           GetPage(name: '/about', page: () => About()),
           GetPage(name: '/logout', page: () => Logout()),
