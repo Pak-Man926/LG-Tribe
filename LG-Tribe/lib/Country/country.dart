@@ -73,7 +73,7 @@ class Country extends StatelessWidget {
                   MaterialButton(
                     onPressed: () {
                       userState.setCountry(CountryLocated.kenya);
-                      Get.toNamed("/login");
+                      Get.toNamed("/userlogin");
                     },
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10),
@@ -99,7 +99,7 @@ class Country extends StatelessWidget {
                     //Ethiopian Country
                     onPressed: () {
                       userState.setCountry(CountryLocated.ethopia);
-                      Get.toNamed("/login");
+                      Get.toNamed("/userlogin");
                     },
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10),
@@ -122,7 +122,7 @@ class Country extends StatelessWidget {
                     //Tanzanian Country
                     onPressed: () {
                       userState.setCountry(CountryLocated.tanzania);
-                      Get.toNamed("/login");
+                      Get.toNamed("/userlogin");
                     },
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10),
@@ -145,7 +145,7 @@ class Country extends StatelessWidget {
                     //Sudanese Country
                     onPressed: () {
                       userState.setCountry(CountryLocated.sudan);
-                      Get.toNamed("/login");
+                      Get.toNamed("/userlogin");
                     },
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10),
@@ -168,7 +168,7 @@ class Country extends StatelessWidget {
                     //Ugandan Country
                     onPressed: () {
                       userState.setCountry(CountryLocated.uganda);
-                      Get.toNamed("/login");
+                      Get.toNamed("/userlogin");
                     },
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10),
@@ -191,7 +191,7 @@ class Country extends StatelessWidget {
                     //Zambian Country
                     onPressed: () {
                       userState.setCountry(CountryLocated.zambia);
-                      Get.toNamed("/login");
+                      Get.toNamed("/userlogin");
                     },
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10),
