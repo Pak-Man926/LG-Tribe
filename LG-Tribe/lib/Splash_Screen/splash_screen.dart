@@ -18,7 +18,7 @@ class _SplashScreenState extends State<SplashScreen> {
     Timer(
       //Splash screen duration
       Duration(seconds: 3),
-       () => Get.toNamed("/start"), // Navigate to Startpage after 3 seconds
+       () => Get.toNamed("/startpage"), // Navigate to Startpage after 3 seconds
     );
   }
 
