@@ -61,7 +61,6 @@ class MyApp extends StatelessWidget {
           GetPage(name: '/about', page: () => About()),
           GetPage(name: '/logout', page: () => Logout()),
         ],
-        initialRoute: '/',  // Set the initial screen to SplashScreen
       );
     }
   }
