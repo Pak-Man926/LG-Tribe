@@ -48,7 +48,7 @@ class MyApp extends StatelessWidget {
           GetPage(name: '/', page: () => SplashScreen()), //Initial Screem
           GetPage(name: '/startpage', page: () => StartPage()), // Second Screen
           GetPage(name: '/country', page: () => Country()), // Third Screen
-          GetPage(name: '/login', page: () => Login()), // Fourth Screen
+          GetPage(name: '/userlogin', page: () => Login()), // Fourth Screen
           GetPage(name: '/registration', page: () => UserRegistration()), // Alternative Fourth Screen1
           GetPage(name: '/forgot-password', page: () => Password()), // Alternative Fourth Screen2
           GetPage(name: '/homepage', page: () => Homepage()),// Fifth Screen
