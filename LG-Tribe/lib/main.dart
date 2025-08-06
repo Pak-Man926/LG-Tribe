@@ -43,7 +43,7 @@ class MyApp extends StatelessWidget {
     Widget build(BuildContext context) {
       return GetMaterialApp(
         debugShowCheckedModeBanner: false,
-        theme: Get.isDarkMode ? darkTheme : lightTheme,
+        theme: ,
         getPages: [
           GetPage(name: '/', page: () => SplashScreen()), //Initial Screem
           GetPage(name: '/startpage', page: () => StartPage()), // Second Screen
