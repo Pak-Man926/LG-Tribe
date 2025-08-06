@@ -20,6 +20,8 @@ import "package:lg_tribe/Homepage/Screens/Profile Page/Screens/logout.dart";
 
 void main() async
 {
+  runApp(MyApp());
+
   WidgetsFlutterBinding.ensureInitialized(); // Ensure Flutter bindings are initialized
   
 
@@ -30,9 +32,6 @@ initialBinding: BindingsBuilder(() {
 });
 
 
-  runApp(
-   MyApp()
-  );
 }
 
 final ThemeData lightTheme = ThemeData(
