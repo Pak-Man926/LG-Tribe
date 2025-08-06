@@ -25,9 +25,9 @@ void main() async
   WidgetsFlutterBinding.ensureInitialized(); // Ensure Flutter bindings are initialized
   await SharedPreferences.getInstance(); // Initialize SharedPreferences
 
-  Get.put(UserStateController());
-  Get.put(RegistrationController());
-  Get.put(LoginController());
+  Get.lazyPut(() => UserStateController());
+  Get.lazyPut( () => RegistrationController());
+  Get.lazyPut(() => LoginController());
 }
 
 final ThemeData lightTheme = ThemeData(
