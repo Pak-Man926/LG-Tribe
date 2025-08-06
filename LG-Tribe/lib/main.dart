@@ -24,7 +24,7 @@ void main() async
 
   WidgetsFlutterBinding.ensureInitialized(); // Ensure Flutter bindings are initialized
   await SharedPreferences.getInstance(); // Initialize SharedPreferences
-  
+
   Get.put(UserStateController());
   Get.put(RegistrationController());
   Get.put(LoginController());
@@ -46,7 +46,7 @@ class MyApp extends StatelessWidget {
         theme: Get.isDarkMode ? darkTheme : lightTheme,
         getPages: [
           GetPage(name: '/', page: () => SplashScreen()), //Initial Screem
-          GetPage(name: '/start', page: () => StartPage()), // Second Screen
+          GetPage(name: '/startpage', page: () => StartPage()), // Second Screen
           GetPage(name: '/country', page: () => Country()), // Third Screen
           GetPage(name: '/login', page: () => Login()), // Fourth Screen
           GetPage(name: '/registration', page: () => UserRegistration()), // Alternative Fourth Screen1
