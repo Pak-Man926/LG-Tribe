@@ -9,18 +9,6 @@ class UserStateController extends GetxController {
   var lastName = ''.obs;
   var contacts = ''.obs;
   var email = ''.obs;
-  // var loggedInUser = Rxn<User>();
-  
-  // var isLoggedIn = false.obs;
-  // loggedInUser.value = User(
-  //         firstName: firstName,
-  //         lastName: lastName,
-  //         contacts: contactNumber,
-  //         email: email,
-  //         password: password,
-  //         authlevel: authenticationLevel,
-  //         country: country,
-  //       );
   
   //Auth level getter
   AuthLevel getAuthLevel() {
