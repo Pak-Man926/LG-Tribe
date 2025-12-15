@@ -3,7 +3,7 @@ import 'package:intl_phone_field/intl_phone_field.dart';
 import "package:lg_tribe/Controller/registration_controller_class.dart";
 import "package:lg_tribe_client/lg_tribe_client.dart";
 import "package:serverpod_flutter/serverpod_flutter.dart";
-import "package:lg_tribe/login/user_login.dart";
+import "package:lg_tribe/Login/user_login.dart";
 import "package:get/get.dart";
 import 'package:lg_tribe/Controller/userstate_controller_class.dart';
 import "package:lg_tribe/main.dart";
